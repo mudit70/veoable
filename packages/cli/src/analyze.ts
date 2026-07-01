@@ -166,7 +166,7 @@ export interface AnalyzeOptions {
 }
 
 /**
- * Run the full Adorable analysis pipeline on a project:
+ * Run the full Veoable analysis pipeline on a project:
  *
  *  1. Discover source files
  *  2. Auto-detect framework plugins

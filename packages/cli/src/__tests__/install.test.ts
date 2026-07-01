@@ -211,7 +211,7 @@ describe('installCursorSkill (#363)', () => {
       command: 'someone-else',
       args: ['run'],
     });
-    // Adorable entry added alongside.
+    // Veoable entry added alongside.
     expect(cfg.mcpServers.veoable).toBeTruthy();
     expect(cfg.mcpServers.veoable.command).toBe('veoable');
   });
@@ -391,7 +391,7 @@ describe('installContinueSkill (#363)', () => {
 });
 
 describe('installVSCodeSkill (#363)', () => {
-  it('creates .github/copilot-instructions.md when none exists, with delimited Adorable section', () => {
+  it('creates .github/copilot-instructions.md when none exists, with delimited Veoable section', () => {
     const result = installVSCodeSkill({ projectDir: tmpRoot });
     expect(result.client).toBe('vscode');
     // Without --db, only the instructions file is written.
@@ -406,12 +406,12 @@ describe('installVSCodeSkill (#363)', () => {
     expect(content).toContain('<!-- veoable:start v=1 (managed by `veoable install vscode`) -->');
     expect(content).toContain('<!-- veoable:end -->');
     // Routing signals + tool-usage section present.
-    expect(content).toContain('Use Adorable tools FIRST');
-    expect(content).toContain('Do NOT invoke Adorable for');
+    expect(content).toContain('Use Veoable tools FIRST');
+    expect(content).toContain('Do NOT invoke Veoable for');
     expect(content).toContain('describe_skill');
   });
 
-  it('preserves existing copilot-instructions.md content and appends the Adorable section', () => {
+  it('preserves existing copilot-instructions.md content and appends the Veoable section', () => {
     const instructionsPath = path.join(tmpRoot, '.github', 'copilot-instructions.md');
     fs.mkdirSync(path.dirname(instructionsPath), { recursive: true });
     const existingBody = '# My Project\n\nUse TypeScript strict mode.\nPrefer pnpm.\n';
@@ -422,9 +422,9 @@ describe('installVSCodeSkill (#363)', () => {
     const merged = fs.readFileSync(instructionsPath, 'utf-8');
     // Existing content survives verbatim.
     expect(merged.startsWith(existingBody.trimEnd())).toBe(true);
-    // Adorable section appended after.
+    // Veoable section appended after.
     expect(merged).toContain('<!-- veoable:start');
-    expect(merged).toContain('## Adorable — End-to-End Flow Analysis');
+    expect(merged).toContain('## Veoable — End-to-End Flow Analysis');
     expect(merged).toContain('<!-- veoable:end -->');
   });
 
@@ -447,7 +447,7 @@ describe('installVSCodeSkill (#363)', () => {
     expect(v2.match(/<!-- veoable:start/g) ?? []).toHaveLength(1);
     expect(v2.match(/<!-- veoable:end -->/g) ?? []).toHaveLength(1);
     expect(v2).not.toContain('stale content');
-    expect(v2).toContain('Use Adorable tools FIRST');
+    expect(v2).toContain('Use Veoable tools FIRST');
   });
 
   it('preserves content BEFORE and AFTER the marker block on re-run', () => {
@@ -482,14 +482,14 @@ describe('installVSCodeSkill (#363)', () => {
     // The stale section is gone.
     expect(after).not.toContain('stale veoable section');
     // Fresh content lives between the markers.
-    expect(after).toContain('Use Adorable tools FIRST');
+    expect(after).toContain('Use Veoable tools FIRST');
   });
 
   it('collapses two stale marker pairs to a single canonical section on re-run', () => {
     // A previous half-broken install (or a copy-paste bug) left TWO
     // marker pairs in the file. We expect the upsert to replace the
     // first with our canonical section AND strip the second so the
-    // file ends with exactly one Adorable section.
+    // file ends with exactly one Veoable section.
     const instructionsPath = path.join(tmpRoot, '.github', 'copilot-instructions.md');
     fs.mkdirSync(path.dirname(instructionsPath), { recursive: true });
     const body = [
@@ -519,12 +519,12 @@ describe('installVSCodeSkill (#363)', () => {
     // Both stale bodies are gone.
     expect(after).not.toContain('first stale section');
     expect(after).not.toContain('second stale section');
-    // Non-Adorable content survives in its original position.
+    // Non-Veoable content survives in its original position.
     expect(after).toContain('# Project');
     expect(after).toContain('Middle content.');
     expect(after).toContain('## Trailing policy');
     // Current section content lives in the surviving block.
-    expect(after).toContain('Use Adorable tools FIRST');
+    expect(after).toContain('Use Veoable tools FIRST');
   });
 
   it('without --db, no .vscode/mcp.json is written; nextSteps points at re-run with --db', () => {

@@ -5,7 +5,7 @@ import { createRestServer, type RestServerOptions } from '@veoable/mcp-server';
 /**
  * Built-in chat orchestrator that connects to an OpenAI-compatible
  * LLM API (Ollama, OpenAI, etc.) and handles the tool-calling loop
- * against the Adorable knowledge graph.
+ * against the Veoable knowledge graph.
  *
  * The flow:
  *  1. Start the tool server internally

@@ -4,9 +4,9 @@ import * as path from 'node:path';
 import { getSkillDescription, getSkillMarkdown, SKILL_NAME } from '@veoable/skill';
 
 /**
- * #363 — install the Adorable skill into supported LLM clients.
+ * #363 — install the Veoable skill into supported LLM clients.
  *
- * The skill is the canonical "when to invoke Adorable" description
+ * The skill is the canonical "when to invoke Veoable" description
  * (packages/skill/SKILL.md). Each client has its own expected location
  * for skill files; this module writes the right files for the named
  * client and prints next-step instructions.
@@ -57,7 +57,7 @@ export interface InstallClaudeCodeOptions {
 }
 
 /**
- * Resolve the Claude Code skills directory for Adorable.
+ * Resolve the Claude Code skills directory for Veoable.
  *
  * Priority:
  *   1. Explicit `dir` argument (test/CI use).
@@ -76,7 +76,7 @@ function resolveSkillDir(opts: InstallClaudeCodeOptions): string {
 }
 
 /**
- * Install the Adorable skill into Claude Code by writing SKILL.md
+ * Install the Veoable skill into Claude Code by writing SKILL.md
  * into the expected skills directory. Idempotent — re-running
  * overwrites with the current canonical content.
  *
@@ -169,7 +169,7 @@ function readCursorMcpJson(jsonPath: string): { mcpServers?: Record<string, unkn
 }
 
 /**
- * Install the Adorable skill into a Cursor project.
+ * Install the Veoable skill into a Cursor project.
  *
  * Writes:
  *   - `<projectDir>/.cursor/rules/veoable.mdc` — always.
@@ -310,7 +310,7 @@ function readContinueConfig(jsonPath: string): ContinueConfig {
 }
 
 /**
- * Install the Adorable skill into Continue.dev's global config.
+ * Install the Veoable skill into Continue.dev's global config.
  *
  * Writes a single file: `<continueDir>/config.json`. Merges in:
  *   - `customCommands[veoable]` with the SKILL.md body as the prompt
@@ -420,7 +420,7 @@ export interface InstallVSCodeOptions {
   db?: string;
 }
 
-// Marker pair for the Adorable section in .github/copilot-instructions.md.
+// Marker pair for the Veoable section in .github/copilot-instructions.md.
 // The start marker carries a `v=` version tag so a future format change can
 // recognize old sections and migrate them. New installs always write the
 // CURRENT form (`COPILOT_START_MARKER`); on upsert, ANY known historical
@@ -442,13 +442,13 @@ const COPILOT_END_MARKER = '<!-- veoable:end -->';
 function buildCopilotInstructionsSection(): string {
   return [
     COPILOT_START_MARKER,
-    '## Adorable — End-to-End Flow Analysis',
+    '## Veoable — End-to-End Flow Analysis',
     '',
-    "This repository is wired up with Adorable, a tool that builds a queryable",
+    "This repository is wired up with Veoable, a tool that builds a queryable",
     'graph of every API endpoint, client caller, screen, DB table, and the flows',
     'between them. The MCP server `veoable` is registered in `.vscode/mcp.json`.',
     '',
-    '**Use Adorable tools FIRST for these question shapes:**',
+    '**Use Veoable tools FIRST for these question shapes:**',
     '',
     "- Architecture / overview — \"what does this app do?\", \"what endpoints does X expose?\"",
     "- Behavior tracing — \"what happens when user does X?\", \"trace the login flow\"",
@@ -456,12 +456,12 @@ function buildCopilotInstructionsSection(): string {
     "- Inventory / dead-code hunting — \"which endpoints are dead?\", \"where is env.X used?\"",
     "- Debugging stuck flows — \"why isn't this client call resolving?\"",
     '',
-    '**Do NOT invoke Adorable for:**',
+    '**Do NOT invoke Veoable for:**',
     '',
     '- Single-file syntax, style, or typing questions — use the editor itself.',
-    '- Build, CI, or deployment questions — Adorable analyzes source, not pipelines.',
+    '- Build, CI, or deployment questions — Veoable analyzes source, not pipelines.',
     "- Runtime / \"what's running right now\" questions — it's a static graph, not a tracer.",
-    '- Library-internal questions — Adorable only sees user code.',
+    '- Library-internal questions — Veoable only sees user code.',
     '',
     '**How to use the tools well:**',
     '',
@@ -476,13 +476,13 @@ function buildCopilotInstructionsSection(): string {
 }
 
 /**
- * Insert (or replace) the Adorable section in a Copilot instructions
+ * Insert (or replace) the Veoable section in a Copilot instructions
  * file. Three cases:
  *
- *   1. File doesn't exist → create with just the Adorable section.
+ *   1. File doesn't exist → create with just the Veoable section.
  *   2. File exists with our markers → replace the delimited region.
  *      Preserves everything outside the markers verbatim.
- *   3. File exists without our markers → append the Adorable section
+ *   3. File exists without our markers → append the Veoable section
  *      after the existing content (with a blank-line separator).
  *
  * Markers are deliberately self-describing (`managed by veoable
@@ -545,11 +545,11 @@ function readVSCodeMcpJson(jsonPath: string): { servers?: Record<string, unknown
 }
 
 /**
- * Install the Adorable skill into a VS Code workspace.
+ * Install the Veoable skill into a VS Code workspace.
  *
  * Writes:
  *   - `<projectDir>/.github/copilot-instructions.md` — always. Upserts
- *     a delimited Adorable section; existing instructions outside the
+ *     a delimited Veoable section; existing instructions outside the
  *     markers are preserved verbatim.
  *   - `<projectDir>/.vscode/mcp.json` — only when `db` is provided.
  *     Merges with existing `servers` to preserve any other servers the
@@ -589,7 +589,7 @@ export function installVSCodeSkill(opts: InstallVSCodeOptions = {}): InstallResu
     nextSteps.push(
       'Restart VS Code (or reload the window) so Copilot Chat picks up the new instructions and MCP server.',
       '',
-      'Adorable will now answer architecture and flow questions in @workspace chat.',
+      'Veoable will now answer architecture and flow questions in @workspace chat.',
       '',
       'For live updates during a session, leave a watcher running:',
       '  veoable project watch <project.json> --incremental --on-demand',
@@ -648,7 +648,7 @@ export interface InstallAutoResult {
 
 /**
  * Detect whether each supported client is installed locally and
- * install Adorable into every one that's detected. Skips clients
+ * install Veoable into every one that's detected. Skips clients
  * with no detection signal — we don't want to bootstrap a Cursor
  * project in a non-Cursor cwd, or create ~/.claude on a machine
  * that doesn't run Claude Code.
