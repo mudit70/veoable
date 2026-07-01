@@ -1,0 +1,85 @@
+name: Feature request
+description: Ask for new analyzer capability, framework coverage, or a UX improvement.
+title: "[feature] "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion. Framing the request in terms of the
+        **analysis problem** you're trying to solve — rather than the
+        specific implementation — helps us pick the right layer to add
+        support at (language plugin, framework plugin, flow stitcher,
+        CLI, or MCP).
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What analysis problem are you trying to solve?
+      description: >
+        Describe the code / workflow you're trying to understand or the
+        AI-assistance loop you're trying to unblock. What can't you do
+        today with Veoable that you wish you could?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed capability
+      description: >
+        What would the analyzer emit, or what would the CLI/MCP surface
+        expose, if this were implemented? Rough shape is fine — you
+        don't need to design the whole thing.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Best-guess layer (optional)
+      description: >
+        Which layer feels closest? Maintainers may re-scope; not
+        binding.
+      options:
+        - New framework plugin (`@veoable/framework-*`)
+        - New language plugin (`@veoable/lang-*`)
+        - Flow stitcher improvement
+        - CLI improvement
+        - MCP tool / prompt / resource
+        - Documentation
+        - Not sure
+    validations:
+      required: false
+
+  - type: input
+    id: framework
+    attributes:
+      label: Framework / library name + language (if applicable)
+      description: >
+        For plugin requests only — the exact npm / pypi / crates package
+        or the framework name. Include a link to the framework's docs.
+      placeholder: "hono (TypeScript) — https://hono.dev"
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you've considered
+      description: >
+        Workarounds you've tried, existing tools that solve part of the
+        problem, or other approaches you'd like the maintainers to
+        consider.
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: >
+        Anything else — sample repos, screenshots, prior-art
+        analyzers, links to related issues.
+    validations:
+      required: false

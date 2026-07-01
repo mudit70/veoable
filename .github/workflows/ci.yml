@@ -1,0 +1,98 @@
+name: CI
+
+# Runs on every PR and on pushes to main. The source drop for the
+# adorable→veoable rename lands in a follow-up PR (see
+# mudit70/adorable#516); until then this workflow no-ops gracefully if
+# no workspace exists yet.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: test / node ${{ matrix.node }} / ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22]
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Detect workspace
+        id: workspace
+        shell: bash
+        run: |
+          if [ -f package.json ] && grep -q '"workspaces"\|pnpm' package.json 2>/dev/null; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          elif [ -f pnpm-workspace.yaml ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::No package.json workspace detected — skipping install/build/test. The source drop for the adorable→veoable rename lands in a follow-up PR (see mudit70/adorable#516)."
+          fi
+
+      # macOS runners default to Python 3.12+ which removed distutils;
+      # tree-sitter-* native builds via node-gyp need 3.11. Pin so future
+      # native modules install cleanly. Harmless on Linux.
+      - name: Pin Python 3.11 for node-gyp
+        if: steps.workspace.outputs.present == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pnpm
+        if: steps.workspace.outputs.present == 'true'
+        uses: pnpm/action-setup@v4
+        # No `version:` field — the workspace pins pnpm via the
+        # `packageManager` field in package.json, and passing `version:`
+        # here causes pnpm/action-setup to error with "Multiple versions of
+        # pnpm specified". This is the pattern that unblocks CI on repos
+        # using Corepack-style pinning.
+
+      - name: Setup Node.js
+        if: steps.workspace.outputs.present == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: pnpm
+
+      - name: Install
+        if: steps.workspace.outputs.present == 'true'
+        run: pnpm install --frozen-lockfile
+
+      - name: Format check
+        if: steps.workspace.outputs.present == 'true'
+        run: pnpm format:check
+        continue-on-error: false
+
+      - name: Lint
+        if: steps.workspace.outputs.present == 'true'
+        run: pnpm lint
+
+      - name: Build
+        if: steps.workspace.outputs.present == 'true'
+        # Build must precede typecheck + integration tests — downstream
+        # packages consume dist/.d.ts files emitted here. Matches the
+        # ordering that unblocked adorable's CI historically.
+        run: pnpm build
+
+      - name: Unit tests
+        if: steps.workspace.outputs.present == 'true'
+        run: pnpm test
+
+      - name: Integration tests
+        if: steps.workspace.outputs.present == 'true'
+        run: pnpm test:integration
+        continue-on-error: false

@@ -1,0 +1,34 @@
+version: 2
+updates:
+  # Weekly bumps for GitHub Actions used in .github/workflows/*.yml.
+  # Cheap to review, keeps supply-chain fresh, matches the workflow's
+  # pinned-tag style.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - github-actions
+
+  # Weekly npm bumps at the workspace root. pnpm workspaces are
+  # supported by Dependabot's npm ecosystem (it reads pnpm-lock.yaml).
+  # Grouped by minor/patch to keep review load sane; majors get their
+  # own PRs so breaking changes are reviewed individually.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    labels:
+      - dependencies
+      - npm
+    groups:
+      minor-and-patch:
+        applies-to: version-updates
+        update-types:
+          - minor
+          - patch
