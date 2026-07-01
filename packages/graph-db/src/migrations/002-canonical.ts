@@ -5,7 +5,7 @@ import type Database from 'better-sqlite3';
  *
  * Creates the three tables that back `SQLiteCanonicalGraphStore`:
  *
- * - `canonical_nodes` — every `SchemaNode` from `@adorable/schema`,
+ * - `canonical_nodes` — every `SchemaNode` from `@veoable/schema`,
  *   keyed by the content-addressed id from `idFor.*`. The full node JSON
  *   lives in `data` so plugins can round-trip without information loss.
  * - `canonical_edges` — every `SchemaEdge`. Edges have no ids in the

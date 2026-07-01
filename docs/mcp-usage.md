@@ -1,10 +1,10 @@
-# Using the Adorable MCP server
+# Using the Veoable MCP server
 
-A practical guide for connecting an LLM (Claude Code, Cursor, Windsurf, etc.) to a pre-built Adorable graph and asking it to reason about the codebase. This document is intended for end users and for the LLM itself — both audiences benefit from a clear list of "what you can ask" and "what you can do."
+A practical guide for connecting an LLM (Claude Code, Cursor, Windsurf, etc.) to a pre-built Veoable graph and asking it to reason about the codebase. This document is intended for end users and for the LLM itself — both audiences benefit from a clear list of "what you can ask" and "what you can do."
 
 ## What the MCP server is
 
-`adorable serve <graph.db>` starts an MCP server (Model Context Protocol over stdio) backed by a graph database that Adorable produces from `adorable analyze` / `adorable project analyze`. An MCP-aware client (Claude Code etc.) connects, lists the available tools, and the LLM calls them as needed during a conversation.
+`adorable serve <graph.db>` starts an MCP server (Model Context Protocol over stdio) backed by a graph database that Veoable produces from `adorable analyze` / `adorable project analyze`. An MCP-aware client (Claude Code etc.) connects, lists the available tools, and the LLM calls them as needed during a conversation.
 
 The server exposes ~32 tools that read and (selectively) write the graph. It does **not** modify your source code. It can modify the project config file (`*.project.json`) only via explicit stitch-management tools, and those have `dryRun` previews.
 

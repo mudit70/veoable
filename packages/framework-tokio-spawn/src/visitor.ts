@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type ClientSideProcess } from '@adorable/schema';
-import type { RustFrameworkVisitor } from '@adorable/lang-rust';
+import { idFor, type ClientSideProcess } from '@veoable/schema';
+import type { RustFrameworkVisitor } from '@veoable/lang-rust';
 
 /**
  * tokio::spawn visitor (#538).

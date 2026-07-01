@@ -1,6 +1,6 @@
 import { Node } from 'ts-morph';
-import { idFor, type ClientSideProcess } from '@adorable/schema';
-import { type TsFrameworkVisitor, buildEvidence } from '@adorable/lang-ts';
+import { idFor, type ClientSideProcess } from '@veoable/schema';
+import { type TsFrameworkVisitor, buildEvidence } from '@veoable/lang-ts';
 
 /**
  * Vue.js framework visitor (#57).

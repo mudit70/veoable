@@ -7,13 +7,13 @@ import {
   type DatabaseSystem,
   type DatabaseTable,
   type HttpEgressConfidence,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import {
   buildEvidence,
   readStringLiteral,
   type TsFrameworkVisitor,
   type TsVisitContext,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * AWS SDK v3 visitor — covers S3, DynamoDB, SQS, SNS, Lambda.

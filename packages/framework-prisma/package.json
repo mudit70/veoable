@@ -1,5 +1,5 @@
 {
-  "name": "@adorable/framework-prisma",
+  "name": "@veoable/framework-prisma",
   "version": "0.3.0",
   "private": true,
   "type": "module",
@@ -12,20 +12,20 @@
     }
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --external @adorable/schema --external @adorable/plugin-api --external @adorable/observability --external @adorable/lang-ts --external @mrleebo/prisma-ast --external ts-morph",
-    "dev": "tsup src/index.ts --format esm --dts --external @adorable/schema --external @adorable/plugin-api --external @adorable/observability --external @adorable/lang-ts --external @mrleebo/prisma-ast --external ts-morph --watch",
+    "build": "tsup src/index.ts --format esm --dts --external @veoable/schema --external @veoable/plugin-api --external @veoable/observability --external @veoable/lang-ts --external @mrleebo/prisma-ast --external ts-morph",
+    "dev": "tsup src/index.ts --format esm --dts --external @veoable/schema --external @veoable/plugin-api --external @veoable/observability --external @veoable/lang-ts --external @mrleebo/prisma-ast --external ts-morph --watch",
     "test": "vitest run"
   },
   "dependencies": {
-    "@adorable/lang-ts": "workspace:*",
-    "@adorable/observability": "workspace:*",
-    "@adorable/plugin-api": "workspace:*",
-    "@adorable/schema": "workspace:*",
+    "@veoable/lang-ts": "workspace:*",
+    "@veoable/observability": "workspace:*",
+    "@veoable/plugin-api": "workspace:*",
+    "@veoable/schema": "workspace:*",
     "@mrleebo/prisma-ast": "^0.15.0",
     "ts-morph": "^27.0.0"
   },
   "devDependencies": {
-    "@adorable/graph-db": "workspace:*",
+    "@veoable/graph-db": "workspace:*",
     "@opentelemetry/api": "^1.9.0",
     "@opentelemetry/sdk-trace-base": "^2.0.0",
     "@opentelemetry/sdk-trace-node": "^2.0.0",

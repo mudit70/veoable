@@ -7,9 +7,9 @@ import {
   type SchemaEdge,
   type SchemaNode,
   type SourceFile as SourceFileNode,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { recordConfidenceDecision } from '@adorable/observability';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { recordConfidenceDecision } from '@veoable/observability';
 import { evalConstant } from './eval-constant.js';
 
 /**

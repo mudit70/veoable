@@ -4,7 +4,7 @@ import {
   validateNode,
   type Screen,
   type SchemaNode,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import { extractSveltePages, findSvelteKitRoutes } from '../page-routes.js';
 import { SveltePlugin } from '../svelte-plugin.js';
 

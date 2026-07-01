@@ -3,7 +3,7 @@ import * as os from 'node:os';
 import * as path from 'node:path';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { watchProject } from '../watch.js';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
 
 /**
  * Tests for #294 Phase 1 — `adorable project watch`.

@@ -1,9 +1,9 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { describe, expect, it } from 'vitest';
-import { validateNode, type ClientSideProcess, type SchemaNode } from '@adorable/schema';
-import { type NodeBatch } from '@adorable/plugin-api';
-import { GoLanguagePlugin } from '@adorable/lang-go';
+import { validateNode, type ClientSideProcess, type SchemaNode } from '@veoable/schema';
+import { type NodeBatch } from '@veoable/plugin-api';
+import { GoLanguagePlugin } from '@veoable/lang-go';
 import { GocliPlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

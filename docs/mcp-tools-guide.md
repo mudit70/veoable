@@ -1,4 +1,4 @@
-# Adorable — MCP Tools Guide
+# Veoable — MCP Tools Guide
 
 This guide answers two questions:
 
@@ -35,7 +35,7 @@ back when `adorable serve <graph.db>` is running.
 
 ## How the tools fit together
 
-Every Adorable tool reads from one canonical SQLite graph. The graph is a typed
+Every Veoable tool reads from one canonical SQLite graph. The graph is a typed
 set of **nodes** (`APIEndpoint`, `ClientSideAPICaller`, `ClientSideProcess`,
 `SourceFile`, `DatabaseTable`, …) connected by typed **edges**
 (`CALLS_FUNCTION`, `READS`, `WRITES`, `RESOLVES_TO_ENDPOINT`, …). See the
@@ -73,7 +73,7 @@ following a `walk_*` and inspecting branches.
 
 This is the load-bearing section. Each subsection is a real question a
 developer would type into Claude/Cursor, with the tool the LLM should reach
-for. Phrase questions naturally — Adorable's MCP descriptions are tuned so a
+for. Phrase questions naturally — Veoable's MCP descriptions are tuned so a
 modern LLM routes correctly.
 
 ### "What's in this project?"

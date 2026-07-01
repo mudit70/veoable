@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type APIEndpoint } from '@adorable/schema';
-import type { JavaFrameworkVisitor, JavaVisitContext } from '@adorable/lang-java';
+import { idFor, type APIEndpoint } from '@veoable/schema';
+import type { JavaFrameworkVisitor, JavaVisitContext } from '@veoable/lang-java';
 
 /**
  * Spring Boot framework visitor (#28).

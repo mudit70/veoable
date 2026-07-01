@@ -1,4 +1,4 @@
-import type { NodeBatch } from '@adorable/schema';
+import type { NodeBatch } from '@veoable/schema';
 import type { FrameworkVisitor } from './language-plugin.js';
 import type { ProjectContext } from './types.js';
 
@@ -40,7 +40,7 @@ export interface FrameworkPlugin {
    * The visitor that will be registered with the language plugin if
    * `appliesTo` returns true. Its concrete shape is defined by the
    * target language plugin and should be imported from that plugin's
-   * public API, not from `@adorable/plugin-api`.
+   * public API, not from `@veoable/plugin-api`.
    */
   readonly visitor: FrameworkVisitor;
 

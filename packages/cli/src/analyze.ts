@@ -1,9 +1,9 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { createHash } from 'node:crypto';
-import { makeBatchMeta, type LanguagePlugin, type ProjectContext } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
-import { idFor, SCHEMA_VERSION } from '@adorable/schema';
+import { makeBatchMeta, type LanguagePlugin, type ProjectContext } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
+import { idFor, SCHEMA_VERSION } from '@veoable/schema';
 import {
   FLOW_STITCHER_PRODUCER_ID,
   createFlowWalker,
@@ -11,9 +11,9 @@ import {
   stitchStore,
   type Flow,
   type ProxyRule,
-} from '@adorable/flow-stitcher';
-import { resolveAngularTemplates, resolveInlineHandlers } from '@adorable/lang-html';
-import { resolveRustCrossModCalls } from '@adorable/lang-rust';
+} from '@veoable/flow-stitcher';
+import { resolveAngularTemplates, resolveInlineHandlers } from '@veoable/lang-html';
+import { resolveRustCrossModCalls } from '@veoable/lang-rust';
 import { mergeTraceFiles } from './merge-trace.js';
 import {
   buildProjectContext,
@@ -124,7 +124,7 @@ export interface AnalyzeOptions {
    * an application with the caller's `repository`. Default behavior
    * (no scope) preserves v1 cross-repo stitching.
    */
-  applicationScope?: import('@adorable/flow-stitcher').ApplicationScope;
+  applicationScope?: import('@veoable/flow-stitcher').ApplicationScope;
   /**
    * Pre-synthesized compiler paths (#325). When `analyze` is called
    * per-repo by `analyzeProject`, the workspace declaration usually
@@ -155,7 +155,7 @@ export interface AnalyzeOptions {
    */
   frameworkDiscoveries?: Readonly<Record<string, readonly string[]>>;
   /**
-   * #535 — Trace JSONL files produced by `@adorable/trace`'s test-
+   * #535 — Trace JSONL files produced by `@veoable/trace`'s test-
    * bootstrap hook. When supplied, the analyze pass loads each file
    * and materializes runtime-observed edges as canonical-graph
    * `ClientSideAPICaller` + `MAKES_REQUEST` nodes/edges with
@@ -434,7 +434,7 @@ export async function analyze(opts: AnalyzeOptions): Promise<AnalysisResult> {
     // Type guard: `onProjectLoaded` is optional on FrameworkPlugin.
     // The concrete plugin union from detectPlugins doesn't expose it
     // uniformly, so we check and cast at runtime.
-    const hookable = plugin as { onProjectLoaded?: (ctx: ProjectContext) => import('@adorable/plugin-api').NodeBatch | Promise<import('@adorable/plugin-api').NodeBatch> };
+    const hookable = plugin as { onProjectLoaded?: (ctx: ProjectContext) => import('@veoable/plugin-api').NodeBatch | Promise<import('@veoable/plugin-api').NodeBatch> };
     if (typeof hookable.onProjectLoaded === 'function') {
       const batch = await Promise.resolve(hookable.onProjectLoaded(ctx));
       store.commit(batch, makeBatchMeta(plugin.id));
@@ -467,9 +467,9 @@ export async function analyze(opts: AnalyzeOptions): Promise<AnalysisResult> {
   }
 
   // 5b. Register Redux Saga/Thunk visitor for dispatch → saga handler binding.
-  let reduxVisitor: import('@adorable/framework-react').ReduxVisitorWithBindings | null = null;
+  let reduxVisitor: import('@veoable/framework-react').ReduxVisitorWithBindings | null = null;
   if (langPlugins.has('ts') && plugins.some((p) => p.id === 'react' || p.id === 'react-native')) {
-    const { createReduxVisitor } = await import('@adorable/framework-react');
+    const { createReduxVisitor } = await import('@veoable/framework-react');
     reduxVisitor = createReduxVisitor();
     langPlugins.get('ts')!.registerVisitor(reduxVisitor);
   }

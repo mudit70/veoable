@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type DatabaseInteraction } from '@adorable/schema';
-import type { GoFrameworkVisitor, GoVisitContext } from '@adorable/lang-go';
+import { idFor, type DatabaseInteraction } from '@veoable/schema';
+import type { GoFrameworkVisitor, GoVisitContext } from '@veoable/lang-go';
 
 /**
  * GORM framework visitor (#52).

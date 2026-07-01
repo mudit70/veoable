@@ -4,13 +4,13 @@ import {
   type DatabaseInteraction,
   type DatabaseOperation,
   type DatabaseTable,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import {
   buildEvidence,
   readStringLiteral,
   type TsFrameworkVisitor,
   type TsVisitContext,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * ioredis / node-redis visitor.

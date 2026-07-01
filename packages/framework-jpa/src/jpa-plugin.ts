@@ -1,6 +1,6 @@
-import type { FrameworkPlugin, ProjectContext } from '@adorable/plugin-api';
-import { hasMavenArtifact } from '@adorable/plugin-api';
-import type { JavaFrameworkVisitor } from '@adorable/lang-java';
+import type { FrameworkPlugin, ProjectContext } from '@veoable/plugin-api';
+import { hasMavenArtifact } from '@veoable/plugin-api';
+import type { JavaFrameworkVisitor } from '@veoable/lang-java';
 import { createJpaVisitor } from './visitor.js';
 
 /**

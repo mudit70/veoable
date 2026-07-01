@@ -1,5 +1,5 @@
-import type { FrameworkPlugin, ProjectContext } from '@adorable/plugin-api';
-import type { PyFrameworkVisitor } from '@adorable/lang-py';
+import type { FrameworkPlugin, ProjectContext } from '@veoable/plugin-api';
+import type { PyFrameworkVisitor } from '@veoable/lang-py';
 import { createPycliVisitor } from './visitor.js';
 
 /**

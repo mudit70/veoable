@@ -1,7 +1,7 @@
-import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@adorable/plugin-api';
-import { hasCargoCrate } from '@adorable/plugin-api';
-import type { RustFrameworkVisitor } from '@adorable/lang-rust';
-import { idFor, type DatabaseSystem } from '@adorable/schema';
+import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@veoable/plugin-api';
+import { hasCargoCrate } from '@veoable/plugin-api';
+import type { RustFrameworkVisitor } from '@veoable/lang-rust';
+import { idFor, type DatabaseSystem } from '@veoable/schema';
 import { createDieselVisitor } from './visitor.js';
 
 /**

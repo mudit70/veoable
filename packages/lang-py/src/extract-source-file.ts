@@ -13,8 +13,8 @@ import {
   type ExportsEdge,
   type ImportsEdge,
   type CallsFunctionEdge,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
 import type { PyFrameworkVisitor, PyVisitContext } from './framework-visitor.js';
 
 /**

@@ -1,11 +1,11 @@
 import * as path from 'node:path';
 import { Node } from 'ts-morph';
-import { idFor, type APIEndpoint } from '@adorable/schema';
+import { idFor, type APIEndpoint } from '@veoable/schema';
 import {
   type TsFrameworkVisitor,
   buildEvidence,
   resolveIdentifierTypeToDeclaration,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * tRPC framework visitor (#29).
@@ -166,7 +166,7 @@ function findProcedureType(node: Node): 'query' | 'mutation' | 'subscription' | 
  * Resolve an Identifier reference (`users: usersRouter`) to the
  * ObjectLiteralExpression argument of its declaration's
  * `router({...})` call. Walks across files via the type-checker-first
- * helper from `@adorable/lang-ts` (#200).
+ * helper from `@veoable/lang-ts` (#200).
  *
  * Returns null when the identifier doesn't resolve to a
  * `VariableDeclaration` whose initializer is a `router(...)` /

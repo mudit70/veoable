@@ -1,13 +1,13 @@
 import { Node, type CallExpression, type Expression } from 'ts-morph';
-import { idFor, type APIEndpoint, type MiddlewareEntry } from '@adorable/schema';
-import { recordConfidenceDecision } from '@adorable/observability';
+import { idFor, type APIEndpoint, type MiddlewareEntry } from '@veoable/schema';
+import { recordConfidenceDecision } from '@veoable/observability';
 import {
   type TsFrameworkVisitor,
   buildEvidence,
   emitTemplateRenderScreens,
   resolveHandlerToFunctionId,
   resolveToString,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * Hono framework visitor (#31).
@@ -33,7 +33,7 @@ import {
  * the same as Express.
  *
  * Handler resolution uses the shared `resolveHandlerToFunctionId`
- * utility from `@adorable/lang-ts`.
+ * utility from `@veoable/lang-ts`.
  */
 
 const HTTP_METHODS: ReadonlySet<string> = new Set([

@@ -2,7 +2,7 @@ import * as path from 'node:path';
 import * as url from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { Node } from 'ts-morph';
-import { idFor, validateEdge, validateNode, type SchemaEdge, type SchemaNode } from '@adorable/schema';
+import { idFor, validateEdge, validateNode, type SchemaEdge, type SchemaNode } from '@veoable/schema';
 import { TsLanguagePlugin } from '../index.js';
 import type { TsFrameworkVisitor } from '../framework-visitor.js';
 

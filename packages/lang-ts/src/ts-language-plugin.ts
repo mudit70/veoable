@@ -1,9 +1,9 @@
 import * as path from 'node:path';
 import * as fs from 'node:fs';
 import { Project, ts } from 'ts-morph';
-import type { NodeBatch } from '@adorable/schema';
-import type { FrameworkVisitor, LanguagePlugin, ProjectHandle, ProjectOptions } from '@adorable/plugin-api';
-import { withSpan } from '@adorable/observability';
+import type { NodeBatch } from '@veoable/schema';
+import type { FrameworkVisitor, LanguagePlugin, ProjectHandle, ProjectOptions } from '@veoable/plugin-api';
+import { withSpan } from '@veoable/observability';
 import { extractSourceFile } from './extract-source-file.js';
 import { unwrapHandle, wrapHandle, type TsProjectInternal } from './project-handle.js';
 import type { TsFrameworkVisitor } from './framework-visitor.js';
@@ -25,7 +25,7 @@ export const TS_FILE_EXTENSIONS = ['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs']
  *    .jsx/.mjs/.cjs`.
  *  - Plugins emit `NodeBatch` values; they never write to the graph
  *    store directly.
- *  - All node ids go through `idFor.*` from `@adorable/schema`.
+ *  - All node ids go through `idFor.*` from `@veoable/schema`.
  *  - All extraction work is wrapped in `withSpan` so a debugger can see
  *    which file took how long and which decisions were made.
  */
@@ -278,7 +278,7 @@ export class TsLanguagePlugin implements LanguagePlugin {
         const sourceFile = internal.project.getSourceFile(absolute);
         if (!sourceFile) {
           throw new Error(
-            `@adorable/lang-ts: extractFile called for '${filePath}' but the file was not loaded into the project. ` +
+            `@veoable/lang-ts: extractFile called for '${filePath}' but the file was not loaded into the project. ` +
               'Make sure loadProject was called with a rootDir that contains it.'
           );
         }
@@ -327,13 +327,13 @@ export class TsLanguagePlugin implements LanguagePlugin {
   registerVisitor(visitor: FrameworkVisitor | TsFrameworkVisitor): void {
     if (visitor.language !== TS_PLUGIN_ID) {
       throw new Error(
-        `@adorable/lang-ts: cannot register visitor for language '${visitor.language}'; ` +
+        `@veoable/lang-ts: cannot register visitor for language '${visitor.language}'; ` +
           `this plugin only accepts visitors with language: '${TS_PLUGIN_ID}'.`
       );
     }
     if (typeof (visitor as TsFrameworkVisitor).onNode !== 'function') {
       throw new Error(
-        `@adorable/lang-ts: visitor is missing the required onNode(ctx, node) method.`
+        `@veoable/lang-ts: visitor is missing the required onNode(ctx, node) method.`
       );
     }
     this.visitors.push(visitor as TsFrameworkVisitor);

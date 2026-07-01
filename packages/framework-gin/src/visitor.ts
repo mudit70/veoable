@@ -1,8 +1,8 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type APIEndpoint } from '@adorable/schema';
-import { recordConfidenceDecision } from '@adorable/observability';
-import type { GoFrameworkVisitor, GoVisitContext } from '@adorable/lang-go';
+import { idFor, type APIEndpoint } from '@veoable/schema';
+import { recordConfidenceDecision } from '@veoable/observability';
+import type { GoFrameworkVisitor, GoVisitContext } from '@veoable/lang-go';
 import type { HandlerMap } from './handler-resolver.js';
 
 /**

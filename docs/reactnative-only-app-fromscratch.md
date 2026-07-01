@@ -1,6 +1,6 @@
-# React-Native-Only Adorable: From Scratch
+# React-Native-Only Veoable: From Scratch
 
-This is the companion to `docs/reactnative-only-app.md`. That guide trims the existing Adorable codebase down. **This guide assumes you start from an empty repo** and write every package yourself, treating the upstream Adorable code only as a reference design.
+This is the companion to `docs/reactnative-only-app.md`. That guide trims the existing Veoable codebase down. **This guide assumes you start from an empty repo** and write every package yourself, treating the upstream Veoable code only as a reference design.
 
 Pick this path if you want to:
 - Learn the architecture by re-deriving it.
@@ -17,7 +17,7 @@ Same scope as the trim-down guide:
 
 ## 1. Mindset shift: contracts before code
 
-Adorable's superpower is that every plugin is a tiny implementation of two interfaces. If you copy nothing else from the upstream design, copy that. Build in this order:
+Veoable's superpower is that every plugin is a tiny implementation of two interfaces. If you copy nothing else from the upstream design, copy that. Build in this order:
 
 ```
    schema (data shapes)
@@ -203,7 +203,7 @@ Write integration tests that feed it a 3-file fake project and assert the emitte
 
 ## 6. Phase 4 — Python language plugin (2 days)
 
-Create `packages/lang-py/`. Use **libcst** via a child-process bridge, or **tree-sitter-python** if you want pure Node. The upstream Adorable uses a custom Python parser; for a smaller build, tree-sitter is faster to stand up.
+Create `packages/lang-py/`. Use **libcst** via a child-process bridge, or **tree-sitter-python** if you want pure Node. The upstream Veoable uses a custom Python parser; for a smaller build, tree-sitter is faster to stand up.
 
 The plugin shape mirrors `lang-ts`:
 
@@ -440,7 +440,7 @@ Realistic estimate for one engineer with prior TS-tooling experience. Double it 
 
 ---
 
-## 15. Decisions where you can diverge from upstream Adorable
+## 15. Decisions where you can diverge from upstream Veoable
 
 The trim-down guide preserves upstream choices because diverging means rewriting working code. From scratch, you have license to reconsider:
 
@@ -459,7 +459,7 @@ The contracts in §4 don't change either way — that's the point. Whatever you 
 
 ## 16. Reference: when to look at upstream code
 
-You're writing this from scratch, but the upstream Adorable repo is the best reference design that exists for this problem. Useful files to read (not copy):
+You're writing this from scratch, but the upstream Veoable repo is the best reference design that exists for this problem. Useful files to read (not copy):
 
 | When you're working on… | Read |
 |-------------------------|------|

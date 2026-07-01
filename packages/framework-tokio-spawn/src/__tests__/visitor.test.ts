@@ -1,8 +1,8 @@
 import * as path from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { idFor, type ClientSideProcess, type FunctionDefinition, type SchemaNode } from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { RustLanguagePlugin } from '@adorable/lang-rust';
+import { idFor, type ClientSideProcess, type FunctionDefinition, type SchemaNode } from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { RustLanguagePlugin } from '@veoable/lang-rust';
 import { TokioSpawnPlugin } from '../index.js';
 
 const FIXTURE_ROOT = path.resolve(__dirname, '../../../../tests/fixtures/tokio-spawn/basic');

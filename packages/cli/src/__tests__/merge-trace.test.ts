@@ -2,9 +2,9 @@ import * as fs from 'node:fs';
 import * as os from 'node:os';
 import * as path from 'node:path';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
-import { makeBatchMeta } from '@adorable/plugin-api';
-import { idFor, type FunctionDefinition, type SourceFile } from '@adorable/schema';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
+import { makeBatchMeta } from '@veoable/plugin-api';
+import { idFor, type FunctionDefinition, type SourceFile } from '@veoable/schema';
 import { mergeTraceFiles } from '../merge-trace.js';
 
 let tmpDir: string;

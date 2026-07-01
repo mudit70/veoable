@@ -1,5 +1,5 @@
 {
-  "name": "@adorable/graph-db",
+  "name": "@veoable/graph-db",
   "version": "0.3.0",
   "private": true,
   "type": "module",
@@ -12,14 +12,14 @@
     }
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --external @adorable/schema --external @adorable/plugin-api",
-    "dev": "tsup src/index.ts --format esm --dts --external @adorable/schema --external @adorable/plugin-api --watch",
+    "build": "tsup src/index.ts --format esm --dts --external @veoable/schema --external @veoable/plugin-api",
+    "dev": "tsup src/index.ts --format esm --dts --external @veoable/schema --external @veoable/plugin-api --watch",
     "test": "vitest run",
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@adorable/plugin-api": "workspace:*",
-    "@adorable/schema": "workspace:*",
+    "@veoable/plugin-api": "workspace:*",
+    "@veoable/schema": "workspace:*",
     "better-sqlite3": "^11.0.0"
   },
   "devDependencies": {

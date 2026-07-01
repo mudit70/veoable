@@ -1,4 +1,4 @@
-import { SCHEMA_VERSION, type NodeBatch } from '@adorable/schema';
+import { SCHEMA_VERSION, type NodeBatch } from '@veoable/schema';
 
 export type { NodeBatch };
 

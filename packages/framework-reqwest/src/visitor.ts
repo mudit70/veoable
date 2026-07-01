@@ -1,8 +1,8 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type ClientSideAPICaller, type HttpEgressConfidence } from '@adorable/schema';
-import { detectExternalUrl } from '@adorable/plugin-api';
-import { hasCrateImport, type RustFrameworkVisitor, type RustVisitContext } from '@adorable/lang-rust';
+import { idFor, type ClientSideAPICaller, type HttpEgressConfidence } from '@veoable/schema';
+import { detectExternalUrl } from '@veoable/plugin-api';
+import { hasCrateImport, type RustFrameworkVisitor, type RustVisitContext } from '@veoable/lang-rust';
 
 /**
  * reqwest visitor.

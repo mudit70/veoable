@@ -1,6 +1,6 @@
 import { Node, type CallExpression, type Expression } from 'ts-morph';
-import { idFor, type APIEndpoint, type MiddlewareEntry } from '@adorable/schema';
-import { recordConfidenceDecision } from '@adorable/observability';
+import { idFor, type APIEndpoint, type MiddlewareEntry } from '@veoable/schema';
+import { recordConfidenceDecision } from '@veoable/observability';
 import {
   type TsFrameworkVisitor,
   type TsVisitContext,
@@ -8,7 +8,7 @@ import {
   emitTemplateRenderScreens,
   resolveHandlerToFunctionId,
   resolveToString,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 import { classifyExpressReceiver } from './resolve-receiver.js';
 import { emitDispatcherEndpoints, matchDispatcher } from './dispatcher.js';
 
@@ -32,7 +32,7 @@ import { emitDispatcherEndpoints, matchDispatcher } from './dispatcher.js';
  * `post`, `put`, `delete`, `patch`, `head`, `options`, or `all`.
  *
  * Handler resolution uses the shared `resolveHandlerToFunctionId`
- * utility from `@adorable/lang-ts`.
+ * utility from `@veoable/lang-ts`.
  *
  * Route pattern:
  *
@@ -165,7 +165,7 @@ const EXPRESS_RENDER_CONFIG = {
 };
 
 // (express's res.render Screen + RENDERS edge logic now lives in
-// `@adorable/lang-ts`'s `emitTemplateRenderScreens` and is shared
+// `@veoable/lang-ts`'s `emitTemplateRenderScreens` and is shared
 // with framework-koa, framework-hapi, framework-hono.)
 
 // ──────────────────────────────────────────────────────────────────────

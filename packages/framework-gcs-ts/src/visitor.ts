@@ -3,12 +3,12 @@ import {
   idFor,
   type ClientSideAPICaller,
   type HttpEgressConfidence,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import {
   buildEvidence,
   readStringLiteral,
   type TsFrameworkVisitor,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * @google-cloud/storage visitor.

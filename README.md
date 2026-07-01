@@ -2,7 +2,7 @@
 
 > **Renaming in progress.** Veoable is the new home for a project previously
 > released as [`adorable`](https://github.com/mudit70/adorable). Package
-> namespaces are moving from `@adorable/*` to `@veoable/*`, the CLI is being
+> namespaces are moving from `@veoable/*` to `@veoable/*`, the CLI is being
 > renamed from `adorable` to `veoable`, and the source tree is being
 > republished here as `mudit70/veoable`. Tracking issue:
 > [`mudit70/adorable#516`](https://github.com/mudit70/adorable/issues/516).
@@ -10,7 +10,7 @@
 > This repository currently contains only the community-facing artifacts
 > (README, CONTRIBUTING, SECURITY, CI). The source drop lands in a
 > follow-up mechanical-rename PR that migrates the ~130-package workspace
-> from `@adorable/*` to `@veoable/*`.
+> from `@veoable/*` to `@veoable/*`.
 
 ## What Veoable does
 
@@ -69,7 +69,7 @@ propose changes.
 ## Get started
 
 > These instructions temporarily reference the adorable source. Once the
-> mechanical-rename PR lands, replace `adorable` / `@adorable/*` with
+> mechanical-rename PR lands, replace `adorable` / `@veoable/*` with
 > `veoable` / `@veoable/*`.
 
 Requires **Node.js 20+** and **pnpm 10**.
@@ -91,10 +91,10 @@ for the 60-second tour, MCP setup, and the recommended
 
 - ✅ Community-facing artifacts (this README, CONTRIBUTING, SECURITY, CoC,
   issue + PR templates, GitHub Actions CI).
-- ⏳ Mechanical-rename PR — `@adorable/*` → `@veoable/*` across ~622 files.
+- ⏳ Mechanical-rename PR — `@veoable/*` → `@veoable/*` across ~622 files.
 - ⏳ npm publication of `@veoable/*` packages (with `--provenance`).
 - ⏳ Migration command: `npx @veoable/migrate-from-adorable`.
-- ⏳ Deprecation of `@adorable/*` packages with pointers here.
+- ⏳ Deprecation of `@veoable/*` packages with pointers here.
 
 Follow [`mudit70/adorable#516`](https://github.com/mudit70/adorable/issues/516)
 for the full sequencing.

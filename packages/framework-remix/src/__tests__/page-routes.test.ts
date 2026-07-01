@@ -4,7 +4,7 @@ import {
   validateNode,
   type Screen,
   type SchemaNode,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import { extractRemixPages, findRemixRoutes } from '../page-routes.js';
 import { RemixPlugin } from '../remix-plugin.js';
 

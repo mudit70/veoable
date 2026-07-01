@@ -1,6 +1,6 @@
-import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@adorable/plugin-api';
-import { hasPythonPackage } from '@adorable/plugin-api';
-import type { PyFrameworkVisitor } from '@adorable/lang-py';
+import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@veoable/plugin-api';
+import { hasPythonPackage } from '@veoable/plugin-api';
+import type { PyFrameworkVisitor } from '@veoable/lang-py';
 import { createFastapiVisitor } from './visitor.js';
 import { buildIncludeRouterMap, type IncludeRouterMap } from './include-resolver.js';
 

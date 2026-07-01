@@ -1,5 +1,5 @@
 {
-  "name": "adorable",
+  "name": "veoable",
   "version": "0.3.0",
   "private": true,
   "type": "module",
@@ -12,8 +12,8 @@
     "format": "prettier --write \"packages/*/src/**/*.ts\"",
     "format:check": "prettier --check \"packages/*/src/**/*.ts\"",
     "adorable": "node packages/cli/dist/cli.js",
-    "install-cli": "pnpm build && pnpm --filter @adorable/cli exec pnpm link --global",
-    "uninstall-cli": "pnpm --filter @adorable/cli exec pnpm unlink --global"
+    "install-cli": "pnpm build && pnpm --filter @veoable/cli exec pnpm link --global",
+    "uninstall-cli": "pnpm --filter @veoable/cli exec pnpm unlink --global"
   },
   "devDependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",

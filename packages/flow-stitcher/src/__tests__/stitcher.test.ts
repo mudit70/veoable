@@ -4,9 +4,9 @@ import {
   type APIEndpoint,
   type ClientSideAPICaller,
   type ResolvesToEndpointEdge,
-} from '@adorable/schema';
-import { makeBatchMeta } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
+} from '@veoable/schema';
+import { makeBatchMeta } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
 import {
   InMemorySpanExporter,
   SimpleSpanProcessor,
@@ -16,7 +16,7 @@ import {
   initObservability,
   resetObservability,
   withSpan,
-} from '@adorable/observability';
+} from '@veoable/observability';
 import { FLOW_STITCHER_PRODUCER_ID, stitchResolves, stitchStore } from '../index.js';
 
 // ──────────────────────────────────────────────────────────────────────

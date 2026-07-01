@@ -1,6 +1,6 @@
 import * as path from 'node:path';
 import { Node, SyntaxKind } from 'ts-morph';
-import { idFor } from '@adorable/schema';
+import { idFor } from '@veoable/schema';
 import type { TsProjectInternal } from './project-handle.js';
 
 /**

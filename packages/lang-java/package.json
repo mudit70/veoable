@@ -1,5 +1,5 @@
 {
-  "name": "@adorable/lang-java",
+  "name": "@veoable/lang-java",
   "version": "0.3.0",
   "private": true,
   "type": "module",
@@ -12,19 +12,19 @@
     }
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --external @adorable/schema --external @adorable/plugin-api --external @adorable/observability --external web-tree-sitter",
-    "dev": "tsup src/index.ts --format esm --dts --external @adorable/schema --external @adorable/plugin-api --external @adorable/observability --external web-tree-sitter --watch",
+    "build": "tsup src/index.ts --format esm --dts --external @veoable/schema --external @veoable/plugin-api --external @veoable/observability --external web-tree-sitter",
+    "dev": "tsup src/index.ts --format esm --dts --external @veoable/schema --external @veoable/plugin-api --external @veoable/observability --external web-tree-sitter --watch",
     "test": "vitest run"
   },
   "dependencies": {
-    "@adorable/observability": "workspace:*",
-    "@adorable/plugin-api": "workspace:*",
-    "@adorable/schema": "workspace:*",
+    "@veoable/observability": "workspace:*",
+    "@veoable/plugin-api": "workspace:*",
+    "@veoable/schema": "workspace:*",
     "web-tree-sitter": "^0.24.7",
     "tree-sitter-wasms": "^0.1.13"
   },
   "devDependencies": {
-    "@adorable/graph-db": "workspace:*",
+    "@veoable/graph-db": "workspace:*",
     "@types/node": "^25.5.2",
     "tsup": "^8.0.0",
     "typescript": "^5.5.0",

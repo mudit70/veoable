@@ -1,7 +1,7 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { describe, expect, it, beforeAll } from 'vitest';
-import { idFor, validateNode, validateEdge, type SchemaEdge, type SchemaNode } from '@adorable/schema';
+import { idFor, validateNode, validateEdge, type SchemaEdge, type SchemaNode } from '@veoable/schema';
 import { TsLanguagePlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

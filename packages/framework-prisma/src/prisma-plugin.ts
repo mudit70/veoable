@@ -1,14 +1,14 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@adorable/plugin-api';
-import type { TsFrameworkVisitor } from '@adorable/lang-ts';
+import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@veoable/plugin-api';
+import type { TsFrameworkVisitor } from '@veoable/lang-ts';
 import { extractPrismaSchemas } from './schema-parser.js';
 import { createPrismaVisitor } from './visitor.js';
 
 /**
  * Prisma framework plugin (#47).
  *
- * Implements `FrameworkPlugin` from `@adorable/plugin-api` and
+ * Implements `FrameworkPlugin` from `@veoable/plugin-api` and
  * contributes both project-level and file-level extraction:
  *
  *  - `onProjectLoaded(ctx)` — parses every `schema.prisma` file under

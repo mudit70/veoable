@@ -3,8 +3,8 @@ import { readFileSync } from 'node:fs';
 import * as path from 'node:path';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { z } from 'zod';
-import type { CanonicalGraphStore } from '@adorable/graph-db';
-import { makeBatchMeta } from '@adorable/plugin-api';
+import type { CanonicalGraphStore } from '@veoable/graph-db';
+import { makeBatchMeta } from '@veoable/plugin-api';
 import {
   FLOW_STITCHER_PRODUCER_ID,
   createFlowWalker,
@@ -15,14 +15,14 @@ import {
   type ApplicationScope,
   type Flow,
   type ServiceHop,
-} from '@adorable/flow-stitcher';
-import { EDGE_TYPES } from '@adorable/schema';
+} from '@veoable/flow-stitcher';
+import { EDGE_TYPES } from '@veoable/schema';
 import type {
   NodeType,
   EdgeType,
   SchemaNode,
-} from '@adorable/schema';
-import { getSkillMarkdown } from '@adorable/skill';
+} from '@veoable/schema';
+import { getSkillMarkdown } from '@veoable/skill';
 
 /**
  * Create an MCP server wired to a canonical graph store.
@@ -3152,7 +3152,7 @@ function formatFlows(flows: Flow[], includeEvidence = false) {
 
 /** Check if a flow touches a table, including via service hops. */
 function flowTouchesTable(flow: Flow, tableName: string): boolean {
-  const hopsTouch = (hops: import('@adorable/flow-stitcher').FlowDatabaseHop[]) =>
+  const hopsTouch = (hops: import('@veoable/flow-stitcher').FlowDatabaseHop[]) =>
     hops.some((hop) =>
       hop.readsTables.some((t) => t.name === tableName) ||
       hop.writesTables.some((t) => t.name === tableName)

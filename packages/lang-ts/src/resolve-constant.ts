@@ -719,4 +719,4 @@ export function resolveCallerUrl(expr: Node): CallerUrlInfo {
  *
  * Returns `{ isExternal: true, host }` or `{ isExternal: false, host: null }`.
  */
-export { detectExternalUrl } from '@adorable/plugin-api';
+export { detectExternalUrl } from '@veoable/plugin-api';

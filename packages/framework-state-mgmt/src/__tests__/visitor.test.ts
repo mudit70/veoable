@@ -9,10 +9,10 @@ import {
   type SchemaNode,
   type StateStore,
   type WritesStateEdge,
-} from '@adorable/schema';
-import { makeBatchMeta, type NodeBatch } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
+} from '@veoable/schema';
+import { makeBatchMeta, type NodeBatch } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
 import { StateMgmtPlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);
@@ -266,7 +266,7 @@ describe('dispatch detection', () => {
 
 describe('redux-saga take-effect detection (#256 Phase A)', () => {
   function callsFunctionEdges(batch: { edges: SchemaEdge[] }) {
-    return batch.edges.filter((e): e is import('@adorable/schema').CallsFunctionEdge => e.edgeType === 'CALLS_FUNCTION');
+    return batch.edges.filter((e): e is import('@veoable/schema').CallsFunctionEdge => e.edgeType === 'CALLS_FUNCTION');
   }
 
   it('emits a ClientSideProcess for takeLatest with imported-constant action type', async () => {
@@ -301,7 +301,7 @@ describe('redux-saga take-effect detection (#256 Phase A)', () => {
     // the actual edge count is higher — assert lower bound only.
     const handlers = ['loginModule', 'logoutModule', 'searchModule'];
     const fns = batch.nodes.filter(
-      (n): n is import('@adorable/schema').FunctionDefinition => n.nodeType === 'FunctionDefinition',
+      (n): n is import('@veoable/schema').FunctionDefinition => n.nodeType === 'FunctionDefinition',
     );
     const targetIds = new Set(
       handlers.map((name) => fns.find((f) => f.name === name)?.id).filter(Boolean) as string[],
@@ -344,13 +344,13 @@ describe('redux-saga take-effect detection (#256 Phase A)', () => {
 describe('rtk createAsyncThunk dispatch indirection (#256 Phase B)', () => {
   function fnsByName(batch: { nodes: SchemaNode[] }, name: string) {
     return batch.nodes.filter(
-      (n): n is import('@adorable/schema').FunctionDefinition =>
+      (n): n is import('@veoable/schema').FunctionDefinition =>
         n.nodeType === 'FunctionDefinition' && (n as { name: string }).name === name,
     );
   }
   function callsEdgesTo(batch: { edges: SchemaEdge[] }, target: string) {
     return batch.edges.filter(
-      (e): e is import('@adorable/schema').CallsFunctionEdge =>
+      (e): e is import('@veoable/schema').CallsFunctionEdge =>
         e.edgeType === 'CALLS_FUNCTION' && e.to === target,
     );
   }
@@ -427,7 +427,7 @@ describe('rtk createAsyncThunk dispatch indirection (#256 Phase B)', () => {
 describe('tanstack/rtk query indirection (#256 Phase C)', () => {
   function fnsByName(batch: { nodes: SchemaNode[] }, name: string) {
     return batch.nodes.filter(
-      (n): n is import('@adorable/schema').FunctionDefinition =>
+      (n): n is import('@veoable/schema').FunctionDefinition =>
         n.nodeType === 'FunctionDefinition' && (n as { name: string }).name === name,
     );
   }

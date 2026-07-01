@@ -1,10 +1,10 @@
-import type { NodeBatch } from '@adorable/schema';
+import type { NodeBatch } from '@veoable/schema';
 import type { ProjectHandle, ProjectOptions } from './types.js';
 
 /**
  * Abstract framework visitor. Language plugins define the concrete shape
  * (what AST-node categories they dispatch on, what payload each handler
- * receives) when they are implemented. `@adorable/plugin-api` intentionally
+ * receives) when they are implemented. `@veoable/plugin-api` intentionally
  * does not pin the visitor shape here because the right abstraction is
  * language-specific: ts-morph `SyntaxKind` visitors look very different
  * from libcst `Visitor` classes from go/ast walkers.

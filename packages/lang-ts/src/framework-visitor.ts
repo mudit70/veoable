@@ -1,6 +1,6 @@
 import type { Node, Project } from 'ts-morph';
-import type { FrameworkVisitor } from '@adorable/plugin-api';
-import type { FunctionDefinition, SchemaEdge, SchemaNode, SourceFile as SchemaSourceFile } from '@adorable/schema';
+import type { FrameworkVisitor } from '@veoable/plugin-api';
+import type { FunctionDefinition, SchemaEdge, SchemaNode, SourceFile as SchemaSourceFile } from '@veoable/schema';
 
 /**
  * Context passed to a `TsFrameworkVisitor.onNode` callback for every

@@ -1,9 +1,9 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { beforeEach, describe, expect, it } from 'vitest';
-import type { APIEndpoint } from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
+import type { APIEndpoint } from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
 import { createFastifyVisitor } from '../visitor.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

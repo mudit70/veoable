@@ -5,12 +5,12 @@ import {
   type DatabaseInteraction,
   type DatabaseOperation,
   type DatabaseTable,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import {
   type TsFrameworkVisitor,
   buildEvidence,
   resolveNamespaceImportProperty,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * Drizzle visitor (#365). Two extraction surfaces share the same

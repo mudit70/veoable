@@ -1,6 +1,6 @@
-import type { FrameworkPlugin, ProjectContext } from '@adorable/plugin-api';
-import { hasComposerPackage } from '@adorable/plugin-api';
-import type { PhpFrameworkVisitor } from '@adorable/lang-php';
+import type { FrameworkPlugin, ProjectContext } from '@veoable/plugin-api';
+import { hasComposerPackage } from '@veoable/plugin-api';
+import type { PhpFrameworkVisitor } from '@veoable/lang-php';
 import { createLaravelVisitor } from './visitor.js';
 
 /**

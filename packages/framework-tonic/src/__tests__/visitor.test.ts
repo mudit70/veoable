@@ -1,8 +1,8 @@
 import * as path from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { idFor, type APIEndpoint, type SchemaNode } from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { RustLanguagePlugin } from '@adorable/lang-rust';
+import { idFor, type APIEndpoint, type SchemaNode } from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { RustLanguagePlugin } from '@veoable/lang-rust';
 import { TonicPlugin } from '../index.js';
 
 const FIXTURE_ROOT = path.resolve(__dirname, '../../../../tests/fixtures/tonic/basic');

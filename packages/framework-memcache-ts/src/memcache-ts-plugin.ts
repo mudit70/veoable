@@ -1,6 +1,6 @@
-import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@adorable/plugin-api';
-import { idFor, type DatabaseSystem } from '@adorable/schema';
-import type { TsFrameworkVisitor } from '@adorable/lang-ts';
+import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@veoable/plugin-api';
+import { idFor, type DatabaseSystem } from '@veoable/schema';
+import type { TsFrameworkVisitor } from '@veoable/lang-ts';
 import { createMemcacheTsVisitor } from './visitor.js';
 
 /**

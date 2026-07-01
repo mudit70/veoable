@@ -1,5 +1,5 @@
 {
-  "name": "@adorable/plugin-api",
+  "name": "@veoable/plugin-api",
   "version": "0.3.0",
   "private": true,
   "type": "module",
@@ -17,7 +17,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@adorable/schema": "workspace:*"
+    "@veoable/schema": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^25.5.2",

@@ -1,6 +1,6 @@
 import { Node } from 'ts-morph';
-import { idFor, type APIEndpoint } from '@adorable/schema';
-import { type TsFrameworkVisitor, buildEvidence } from '@adorable/lang-ts';
+import { idFor, type APIEndpoint } from '@veoable/schema';
+import { type TsFrameworkVisitor, buildEvidence } from '@veoable/lang-ts';
 import { filePathToRoutePattern } from './route-convention.js';
 
 /**

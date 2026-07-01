@@ -1,6 +1,6 @@
 import { Node, SyntaxKind } from 'ts-morph';
-import { idFor, type APIEndpoint } from '@adorable/schema';
-import { type TsFrameworkVisitor, type TsVisitContext, buildEvidence } from '@adorable/lang-ts';
+import { idFor, type APIEndpoint } from '@veoable/schema';
+import { type TsFrameworkVisitor, type TsVisitContext, buildEvidence } from '@veoable/lang-ts';
 
 /**
  * Next.js framework visitor (#37, #60).

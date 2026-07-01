@@ -12,7 +12,7 @@ const FIXTURE_ROOT = path.resolve(__dirname, '../../../../tests/fixtures/callgra
  * *"extraction adds < 50% overhead to the per-file AST parse time"*
  *
  * The real-world guarantee is that telemetry at the no-op level
- * (already measured by `@adorable/observability`'s no-op canary) plus
+ * (already measured by `@veoable/observability`'s no-op canary) plus
  * extraction together stay below the budget. This test measures the
  * extractor layer only.
  *

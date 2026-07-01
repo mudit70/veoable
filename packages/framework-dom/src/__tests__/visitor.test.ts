@@ -1,9 +1,9 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { describe, expect, it } from 'vitest';
-import type { ClientSideProcess, TriggersEdge, SchemaEdge } from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
+import type { ClientSideProcess, TriggersEdge, SchemaEdge } from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
 import { createDomVisitor, DomPlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

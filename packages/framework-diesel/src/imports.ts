@@ -4,7 +4,7 @@ import {
   scanCrateImports,
   isImportedFromCrate,
   type CrateImports,
-} from '@adorable/lang-rust';
+} from '@veoable/lang-rust';
 
 /**
  * #442 — file-local `use diesel::*` import index, now a thin wrapper

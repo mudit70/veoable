@@ -1,6 +1,6 @@
 # Graph Generation: Import Graph & Call Graph
 
-This document describes how Adorable generates its knowledge graph from TypeScript/JavaScript source code. The process runs in a single pass per file, producing an **import graph** (file-level dependencies), a **call graph** (function-level invocations), and **framework-specific nodes** (API endpoints, fetch calls, database interactions, etc.).
+This document describes how Veoable generates its knowledge graph from TypeScript/JavaScript source code. The process runs in a single pass per file, producing an **import graph** (file-level dependencies), a **call graph** (function-level invocations), and **framework-specific nodes** (API endpoints, fetch calls, database interactions, etc.).
 
 ---
 

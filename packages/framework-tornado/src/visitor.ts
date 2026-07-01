@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type APIEndpoint } from '@adorable/schema';
-import type { PyFrameworkVisitor, PyVisitContext } from '@adorable/lang-py';
+import { idFor, type APIEndpoint } from '@veoable/schema';
+import type { PyFrameworkVisitor, PyVisitContext } from '@veoable/lang-py';
 
 /**
  * Tornado visitor.

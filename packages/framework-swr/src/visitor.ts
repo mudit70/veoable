@@ -1,11 +1,11 @@
 import { Node, type Expression } from 'ts-morph';
-import { idFor, type ClientSideProcess } from '@adorable/schema';
+import { idFor, type ClientSideProcess } from '@veoable/schema';
 import {
   type TsFrameworkVisitor,
   type TsVisitContext,
   buildEvidence,
   resolveFunctionDefinitionIdFromDecl,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * SWR hook visitor (#550). Mirrors framework-react-query in shape:

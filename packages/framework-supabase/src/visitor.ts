@@ -6,8 +6,8 @@ import {
   type DatabaseInteraction,
   type DatabaseTable,
   type DatabaseOperation,
-} from '@adorable/schema';
-import { type TsFrameworkVisitor, buildEvidence, SERVE_HANDLER_SUFFIX } from '@adorable/lang-ts';
+} from '@veoable/schema';
+import { type TsFrameworkVisitor, buildEvidence, SERVE_HANDLER_SUFFIX } from '@veoable/lang-ts';
 import { edgeFunctionRoutePattern } from './edge-functions.js';
 
 /**

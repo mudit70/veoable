@@ -4,8 +4,8 @@ import {
   type DatabaseInteraction,
   type DatabaseOperation,
   type DatabaseTable,
-} from '@adorable/schema';
-import { type TsFrameworkVisitor, buildEvidence, resolveToString } from '@adorable/lang-ts';
+} from '@veoable/schema';
+import { type TsFrameworkVisitor, buildEvidence, resolveToString } from '@veoable/lang-ts';
 
 /**
  * Knex visitor (#369).

@@ -3,9 +3,9 @@ import {
   idFor,
   type DatabaseOperation,
   type DatabaseInteractionConfidence,
-} from '@adorable/schema';
-import { recordConfidenceDecision } from '@adorable/observability';
-import { type TsFrameworkVisitor, buildEvidence } from '@adorable/lang-ts';
+} from '@veoable/schema';
+import { recordConfidenceDecision } from '@veoable/observability';
+import { type TsFrameworkVisitor, buildEvidence } from '@veoable/lang-ts';
 import { modelNameFromAccessor } from './model-name.js';
 import { classifyPrismaReceiver, type ResolverTrace } from './resolve-receiver.js';
 

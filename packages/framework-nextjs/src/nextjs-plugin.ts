@@ -1,6 +1,6 @@
 import * as path from 'node:path';
-import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@adorable/plugin-api';
-import type { TsFrameworkVisitor } from '@adorable/lang-ts';
+import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@veoable/plugin-api';
+import type { TsFrameworkVisitor } from '@veoable/lang-ts';
 import { createNextjsVisitor } from './visitor.js';
 import { extractNextjsPages } from './page-routes.js';
 

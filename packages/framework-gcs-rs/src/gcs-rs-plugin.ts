@@ -1,6 +1,6 @@
-import type { FrameworkPlugin, ProjectContext } from '@adorable/plugin-api';
-import { hasCargoCrate } from '@adorable/plugin-api';
-import type { RustFrameworkVisitor } from '@adorable/lang-rust';
+import type { FrameworkPlugin, ProjectContext } from '@veoable/plugin-api';
+import { hasCargoCrate } from '@veoable/plugin-api';
+import type { RustFrameworkVisitor } from '@veoable/lang-rust';
 import { createGcsRsVisitor } from './visitor.js';
 
 /**

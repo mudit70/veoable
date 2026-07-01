@@ -1,9 +1,9 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { describe, expect, it } from 'vitest';
-import type { DatabaseInteraction, DatabaseTable, SchemaNode } from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { GoLanguagePlugin } from '@adorable/lang-go';
+import type { DatabaseInteraction, DatabaseTable, SchemaNode } from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { GoLanguagePlugin } from '@veoable/lang-go';
 import { EntPlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

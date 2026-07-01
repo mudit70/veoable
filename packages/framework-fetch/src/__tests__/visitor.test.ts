@@ -5,14 +5,14 @@ import {
   validateNode,
   type ClientSideAPICaller,
   type SchemaNode,
-} from '@adorable/schema';
-import { makeBatchMeta, type NodeBatch } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
+} from '@veoable/schema';
+import { makeBatchMeta, type NodeBatch } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
 import {
   initObservability,
   resetObservability,
-} from '@adorable/observability';
+} from '@veoable/observability';
 import { InMemorySpanExporter, SimpleSpanProcessor } from '@opentelemetry/sdk-trace-base';
 import { NodeTracerProvider } from '@opentelemetry/sdk-trace-node';
 import { FetchPlugin, createFetchVisitor } from '../index.js';

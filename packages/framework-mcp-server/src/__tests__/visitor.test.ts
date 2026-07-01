@@ -1,8 +1,8 @@
 import * as path from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { type APIEndpoint, type SchemaNode } from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
+import { type APIEndpoint, type SchemaNode } from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
 import { MCPServerPlugin } from '../index.js';
 
 const FIXTURE_ROOT = path.resolve(__dirname, '../../../../tests/fixtures/mcp-server/basic');

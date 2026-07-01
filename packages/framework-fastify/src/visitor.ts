@@ -5,9 +5,9 @@ import {
   type APIEndpoint,
   type MiddlewareEntry,
   type ResponseShape,
-} from '@adorable/schema';
-import { recordConfidenceDecision } from '@adorable/observability';
-import { type TsFrameworkVisitor, buildEvidence, resolveToString } from '@adorable/lang-ts';
+} from '@veoable/schema';
+import { recordConfidenceDecision } from '@veoable/observability';
+import { type TsFrameworkVisitor, buildEvidence, resolveToString } from '@veoable/lang-ts';
 
 /**
  * Fastify framework visitor (#17, #110).

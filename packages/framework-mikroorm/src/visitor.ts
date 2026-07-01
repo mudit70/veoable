@@ -5,8 +5,8 @@ import {
   type DatabaseInteraction,
   type DatabaseOperation,
   type DatabaseTable,
-} from '@adorable/schema';
-import { type TsFrameworkVisitor, buildEvidence } from '@adorable/lang-ts';
+} from '@veoable/schema';
+import { type TsFrameworkVisitor, buildEvidence } from '@veoable/lang-ts';
 
 /**
  * MikroORM visitor (#372). Structure mirrors framework-typeorm but

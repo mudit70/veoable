@@ -3,13 +3,13 @@ import {
   idFor,
   type APIEndpoint,
   type ClientSideAPICaller,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import {
   type TsFrameworkVisitor,
   buildEvidence,
   readStringLiteral,
   resolveHandlerToFunctionId,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * BullMQ framework visitor (#110).

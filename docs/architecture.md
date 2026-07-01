@@ -1,8 +1,8 @@
-# Adorable - System Architecture Document
+# Veoable - System Architecture Document
 
 ## 1. Overview
 
-This document describes the system architecture of Adorable, a code analysis platform that builds a knowledge graph from multi-repository codebases and exposes it through NLP, graphical, and MCP interfaces. The architecture is designed around a modular agent system for code analysis, a central knowledge graph for storage, and multiple interface layers for human and AI consumption.
+This document describes the system architecture of Veoable, a code analysis platform that builds a knowledge graph from multi-repository codebases and exposes it through NLP, graphical, and MCP interfaces. The architecture is designed around a modular agent system for code analysis, a central knowledge graph for storage, and multiple interface layers for human and AI consumption.
 
 ---
 

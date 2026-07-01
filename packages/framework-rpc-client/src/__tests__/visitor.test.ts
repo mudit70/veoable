@@ -1,9 +1,9 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { beforeAll, describe, expect, it } from 'vitest';
-import type { ClientSideAPICaller } from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
+import type { ClientSideAPICaller } from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
 import { RpcClientPlugin } from '../rpc-client-plugin.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

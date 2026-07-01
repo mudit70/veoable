@@ -1,9 +1,9 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { InMemoryTransport } from '@modelcontextprotocol/sdk/inMemory.js';
-import { idFor, type APIEndpoint, type ClientSideAPICaller, type ClientSideProcess, type DatabaseInteraction, type DatabaseTable, type EnvironmentVariable, type FunctionDefinition, type Screen, type SourceFile } from '@adorable/schema';
-import { makeBatchMeta } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
+import { idFor, type APIEndpoint, type ClientSideAPICaller, type ClientSideProcess, type DatabaseInteraction, type DatabaseTable, type EnvironmentVariable, type FunctionDefinition, type Screen, type SourceFile } from '@veoable/schema';
+import { makeBatchMeta } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
 import { createMcpServer } from '../server.js';
 
 
@@ -266,12 +266,12 @@ describe('find_edges', () => {
     expect(edges[0].matchedBy).toBe('exact-url');
   });
 
-  it('accepts every canonical edge type from @adorable/schema EDGE_TYPES (#290)', async () => {
+  it('accepts every canonical edge type from @veoable/schema EDGE_TYPES (#290)', async () => {
     // Pre-fix the find_edges enum was missing 4 of 19 canonical edge
     // types (RENDERS, READS_STATE, WRITES_STATE, BUNDLES_TO). Now
     // derived from the schema's exported EDGE_TYPES — every member
     // must be accepted by the tool without a zod validation error.
-    const { EDGE_TYPES } = await import('@adorable/schema');
+    const { EDGE_TYPES } = await import('@veoable/schema');
     seedStore(store);
     for (const et of EDGE_TYPES) {
       const result = await client.callTool({
@@ -805,7 +805,7 @@ describe('error contract: every id-taking tool returns isError + code on bad inp
       const projectStore = new SQLiteCanonicalGraphStore(':memory:');
       try {
         // Seed a SourceFile node so the substring lookup has a target.
-        const { idFor } = await import('@adorable/schema');
+        const { idFor } = await import('@veoable/schema');
         const sfId = idFor.sourceFile({ repository: 'test', filePath: 'src/users.ts' });
         projectStore.commit({
           nodes: [{
@@ -868,7 +868,7 @@ describe('error contract: every id-taking tool returns isError + code on bad inp
       const projectStore = new SQLiteCanonicalGraphStore(':memory:');
       try {
         // Seed a SourceFile node whose filePath points outside the project root.
-        const { idFor } = await import('@adorable/schema');
+        const { idFor } = await import('@veoable/schema');
         const sfId = idFor.sourceFile({ repository: 'test', filePath: '../../etc/passwd' });
         projectStore.commit({
           nodes: [{
@@ -919,7 +919,7 @@ describe('error contract: every id-taking tool returns isError + code on bad inp
       await fs.writeFile(path.join(tmp, 'src/b.ts'), 'export const b = 2;\n');
       const projectStore = new SQLiteCanonicalGraphStore(':memory:');
       try {
-        const { idFor } = await import('@adorable/schema');
+        const { idFor } = await import('@veoable/schema');
         projectStore.commit({
           nodes: [
             {

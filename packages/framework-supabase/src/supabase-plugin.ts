@@ -1,8 +1,8 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@adorable/plugin-api';
-import type { TsFrameworkVisitor } from '@adorable/lang-ts';
-import { idFor, type DatabaseSystem } from '@adorable/schema';
+import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@veoable/plugin-api';
+import type { TsFrameworkVisitor } from '@veoable/lang-ts';
+import { idFor, type DatabaseSystem } from '@veoable/schema';
 import { createSupabaseVisitor } from './visitor.js';
 import { extractEdgeFunctions } from './edge-functions.js';
 

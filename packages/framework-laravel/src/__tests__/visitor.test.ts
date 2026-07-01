@@ -1,10 +1,10 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { describe, expect, it } from 'vitest';
-import { validateNode, type APIEndpoint, type DatabaseInteraction, type SchemaNode } from '@adorable/schema';
-import { makeBatchMeta, type NodeBatch } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
-import { PhpLanguagePlugin } from '@adorable/lang-php';
+import { validateNode, type APIEndpoint, type DatabaseInteraction, type SchemaNode } from '@veoable/schema';
+import { makeBatchMeta, type NodeBatch } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
+import { PhpLanguagePlugin } from '@veoable/lang-php';
 import { LaravelPlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

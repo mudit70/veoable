@@ -2,8 +2,8 @@ import * as fs from 'node:fs';
 import * as os from 'node:os';
 import * as path from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { hasDependency, type ProjectContext } from '@adorable/plugin-api';
-import { ExpressPlugin } from '@adorable/framework-express';
+import { hasDependency, type ProjectContext } from '@veoable/plugin-api';
+import { ExpressPlugin } from '@veoable/framework-express';
 import {
   buildProjectContext,
   detectPlugins,
@@ -23,7 +23,7 @@ import {
   hasMavenArtifact,
   hasComposerPackage,
   hasCargoCrate,
-} from '@adorable/plugin-api';
+} from '@veoable/plugin-api';
 
 /**
  * Tests for monorepo subpackage manifest discovery (#184). The

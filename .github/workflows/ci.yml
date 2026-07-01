@@ -1,9 +1,9 @@
 name: CI
 
-# Runs on every PR and on pushes to main. The source drop for the
-# adorable→veoable rename lands in a follow-up PR (see
-# mudit70/adorable#516); until then this workflow no-ops gracefully if
-# no workspace exists yet.
+# Runs on every PR and on pushes to main. Source drop and mechanical
+# @adorable/* → @veoable/* sweep landed via mudit70/veoable#2; the
+# workspace detect guard stays as a safety net for docs-only branches
+# that might land in the future.
 
 on:
   pull_request:
@@ -40,7 +40,7 @@ jobs:
             echo "present=true" >> "$GITHUB_OUTPUT"
           else
             echo "present=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::No package.json workspace detected — skipping install/build/test. The source drop for the adorable→veoable rename lands in a follow-up PR (see mudit70/adorable#516)."
+            echo "::notice::No package.json workspace detected — skipping install/build/test. Restore the workspace before merging."
           fi
 
       # macOS runners default to Python 3.12+ which removed distutils;
@@ -85,7 +85,7 @@ jobs:
         if: steps.workspace.outputs.present == 'true'
         # Build must precede typecheck + integration tests — downstream
         # packages consume dist/.d.ts files emitted here. Matches the
-        # ordering that unblocked adorable's CI historically.
+        # ordering that unblocked upstream CI historically.
         run: pnpm build
 
       - name: Unit tests

@@ -3,12 +3,12 @@ import {
   idFor,
   type ClientSideProcess,
   type ProcessKind,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import {
   type TsFrameworkVisitor,
   buildEvidence,
   resolveHandlerToFunctionId,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * Vanilla-DOM framework visitor (#306).

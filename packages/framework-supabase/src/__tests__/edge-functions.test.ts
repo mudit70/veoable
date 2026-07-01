@@ -7,7 +7,7 @@ import {
   type APIEndpoint,
   type SchemaNode,
   type SourceFile,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import {
   edgeFunctionRoutePattern,
   extractEdgeFunctions,

@@ -5,9 +5,9 @@ import {
   type DatabaseInteraction,
   type DatabaseOperation,
   type DatabaseTable,
-} from '@adorable/schema';
-import type { GoFrameworkVisitor, GoVisitContext } from '@adorable/lang-go';
-import { extractFirstTableOp } from '@adorable/framework-sqlx';
+} from '@veoable/schema';
+import type { GoFrameworkVisitor, GoVisitContext } from '@veoable/lang-go';
+import { extractFirstTableOp } from '@veoable/framework-sqlx';
 
 type SqlOperation = 'read' | 'insert' | 'update' | 'delete';
 

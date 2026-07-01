@@ -1,7 +1,7 @@
 import * as path from 'node:path';
 import { Node, type Node as TsNode } from 'ts-morph';
-import { idFor, type ClientSideProcess, type NavigatorKind, type ProcessKind, type Screen, type TriggersEdge } from '@adorable/schema';
-import { type TsFrameworkVisitor, buildEvidence, resolveIdentifierTypeToDeclaration, resolveFunctionDefinitionIdFromDecl } from '@adorable/lang-ts';
+import { idFor, type ClientSideProcess, type NavigatorKind, type ProcessKind, type Screen, type TriggersEdge } from '@veoable/schema';
+import { type TsFrameworkVisitor, buildEvidence, resolveIdentifierTypeToDeclaration, resolveFunctionDefinitionIdFromDecl } from '@veoable/lang-ts';
 
 /**
  * React Native framework visitor (#167).

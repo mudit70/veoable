@@ -1,6 +1,6 @@
-# Adorable — User Guide
+# Veoable — User Guide
 
-Adorable analyzes your codebase and builds a queryable graph of end-to-end flows:
+Veoable analyzes your codebase and builds a queryable graph of end-to-end flows:
 **UI handler → API call → backend endpoint → service/handler → database read/write
 → response → DOM update.** You then point an AI assistant (Claude, Cursor, any
 MCP-compatible client) at that graph so it can answer questions like *"what
@@ -129,7 +129,7 @@ method + path template it would hit at runtime.
 
 ### Non-HTTP entry points use marker `httpMethod` values
 
-Adorable models task queues, gRPC services, WebSockets, and MCP tool
+Veoable models task queues, gRPC services, WebSockets, and MCP tool
 registrations as `APIEndpoint` nodes too — the schema doesn't grow a new
 node type per category. Instead, the `httpMethod` field carries a marker:
 
@@ -169,7 +169,7 @@ plugin produced real graph content."
 
 ## Framework coverage
 
-Adorable ships 114+ framework plugins covering TypeScript / JavaScript,
+Veoable ships 114+ framework plugins covering TypeScript / JavaScript,
 Python, Go, and Rust, plus partial Java and PHP support. Each plugin
 activates by reading its language's manifest (`package.json` /
 `requirements.txt` / `go.mod` / `Cargo.toml`) and matching specific call
@@ -214,7 +214,7 @@ When the analyzer can't see a plugin firing in your codebase, that's
 working as designed — the activation gates are deliberately conservative.
 If you expect a plugin and don't see it, check that its manifest entry
 is present at the analysis root (or in a subpackage manifest, if you're
-analyzing a monorepo — Adorable reads every nested manifest under
+analyzing a monorepo — Veoable reads every nested manifest under
 `rootDir` for activation).
 
 ---
@@ -272,7 +272,7 @@ adorable analyze . --format json   # full graph + flows as JSON
 ### Memory
 
 ts-morph loads every TS file into a single project for cross-file resolution.
-On large repos (~5k+ TS files) this needs a bigger V8 heap. Adorable
+On large repos (~5k+ TS files) this needs a bigger V8 heap. Veoable
 auto-respawns Node with `--max-old-space-size=8192` (8 GB) the first time it
 starts. Override:
 
@@ -286,15 +286,15 @@ ADORABLE_NO_HEAP_BUMP=1 adorable analyze .  # skip the auto bump
 ## Multi-repo projects
 
 Most real apps are multiple repos: a frontend, a backend, maybe a shared
-package. Adorable analyzes each repo independently and stitches across them.
+package. Veoable analyzes each repo independently and stitches across them.
 
-> **A note on monorepos.** Adorable also handles a single repo that
+> **A note on monorepos.** Veoable also handles a single repo that
 > internally has per-package `tsconfig.json` files (the typebot.io /
 > cal.com / dub / papermark shape). In that case you can just point
 > `adorable analyze` at the repo root — the language plugin walks every
 > subpackage's source into a single project. If the root `tsconfig.json`
 > uses `references: [./apps/x]` to delegate to subpackage configs,
-> Adorable trusts the reference graph and does not sweep further. If
+> Veoable trusts the reference graph and does not sweep further. If
 > the references are missing or the subpackage tsconfig is opaque, it
 > falls back to a full rootDir sweep. Either way, you don't usually
 > need to write a `.project.json` — that's for genuinely separate
@@ -425,7 +425,7 @@ restart needed.
    the ratio cap on a small one.
 
 If the canonical schema version in the hash sidecar doesn't match the running
-Adorable's schema, the whole sidecar is invalidated and a full re-extract
+Veoable's schema, the whole sidecar is invalidated and a full re-extract
 runs.
 
 ---
@@ -433,8 +433,8 @@ runs.
 ## Connecting Claude / Cursor / Continue / VS Code
 
 The fastest path is `adorable install <client>` (or `--auto`). It writes
-the canonical Adorable skill into the client's expected location so the
-agent recognizes when to invoke Adorable's MCP tools without you having
+the canonical Veoable skill into the client's expected location so the
+agent recognizes when to invoke Veoable's MCP tools without you having
 to explain it. The full reference — flags, paths, troubleshooting,
 removal — lives in [**docs/llm-client-install.md**](llm-client-install.md).
 
@@ -451,7 +451,7 @@ adorable install vscode    --db my-project.db
 ```
 
 After install, restart the client (fully quit, not just close the window).
-You'll see Adorable's tools surface — Claude Code prints "🔧 tool:
+You'll see Veoable's tools surface — Claude Code prints "🔧 tool:
 list_repositories", Cursor shows a 🛠️ chip, etc. Ask a question that
 matches the skill's triggers and the agent routes the call:
 
@@ -470,9 +470,9 @@ matches the skill's triggers and the agent routes the call:
 | continue     | user          | `~/.continue/config.json` merge — `/adorable` slash command + (with `--db`) `mcpServers` entry      |
 | vscode       | project       | `.github/copilot-instructions.md` delimited section + (with `--db`) `.vscode/mcp.json` merge        |
 
-Every adapter is idempotent — re-running with the current Adorable
+Every adapter is idempotent — re-running with the current Veoable
 version refreshes the skill content; existing client-specific config
-outside Adorable's section is preserved.
+outside Veoable's section is preserved.
 
 ### Manual MCP setup (no `adorable install`)
 
@@ -580,7 +580,7 @@ OpenRouter.
 ## Using OpenRouter (or any OpenAI-compatible endpoint)
 
 [OpenRouter](https://openrouter.ai/) is a unified API that routes a single key
-to dozens of LLM providers. It's the **fastest path to try Adorable** if you
+to dozens of LLM providers. It's the **fastest path to try Veoable** if you
 don't already have Claude Desktop / Cursor / a local Ollama, because
 `adorable chat` works against it directly — no MCP client setup, no
 desktop-app config files.
@@ -659,7 +659,7 @@ git clone https://github.com/lukevella/rallly ~/code/rallly
 cd ~/code/rallly
 pnpm install
 
-# 2. Bootstrap an Adorable config.
+# 2. Bootstrap an Veoable config.
 adorable project init .
 
 # When prompted, accept the discovered repos (it'll find the Next.js app +
@@ -724,8 +724,8 @@ If a particular repo never appears dirty, check the `IGNORED_DIRS` list
 
 ### "Schema version drift detected" on incremental
 
-Your `source_file_hashes` sidecar was written by a previous Adorable build
-with a different canonical schema. Adorable auto-falls-back to a full
+Your `source_file_hashes` sidecar was written by a previous Veoable build
+with a different canonical schema. Veoable auto-falls-back to a full
 re-extract for that repo and rebuilds the sidecar. One free cycle, no
 action needed.
 
@@ -826,8 +826,8 @@ A full annotated config:
   verifying the install, updating, removing, and troubleshooting.
 - **[`docs/mcp-tools-guide.md`](mcp-tools-guide.md)** — what every MCP tool
   does and the developer questions it answers. The companion to this guide
-  for anyone using Adorable with an AI assistant.
-- **`docs/architecture.md`** — how Adorable parses, what plugins do, how
+  for anyone using Veoable with an AI assistant.
+- **`docs/architecture.md`** — how Veoable parses, what plugins do, how
   stitching is implemented.
 - **`docs/MCPInteractionBestPractices.md`** — patterns for prompting an
   AI assistant against the graph.

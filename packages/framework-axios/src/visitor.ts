@@ -1,13 +1,13 @@
 import { Node, type CallExpression, type Expression } from 'ts-morph';
-import { idFor, type ClientSideAPICaller } from '@adorable/schema';
-import { recordConfidenceDecision } from '@adorable/observability';
+import { idFor, type ClientSideAPICaller } from '@veoable/schema';
+import { recordConfidenceDecision } from '@veoable/observability';
 import {
   type TsFrameworkVisitor,
   buildEvidence,
   resolveCallerUrl,
   detectExternalUrl,
   resolveToString,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * Axios framework visitor (#128, #127, #532).

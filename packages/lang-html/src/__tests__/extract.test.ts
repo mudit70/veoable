@@ -9,8 +9,8 @@ import {
   type ClientSideProcess,
   type Screen,
   type SchemaEdge,
-} from '@adorable/schema';
-import { type NodeBatch } from '@adorable/plugin-api';
+} from '@veoable/schema';
+import { type NodeBatch } from '@veoable/plugin-api';
 import { HtmlLanguagePlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

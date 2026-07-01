@@ -4,13 +4,13 @@ import {
   type PropertyAssignment,
   type Expression,
 } from 'ts-morph';
-import { idFor, type ClientSideProcess } from '@adorable/schema';
+import { idFor, type ClientSideProcess } from '@veoable/schema';
 import {
   type TsFrameworkVisitor,
   type TsVisitContext,
   buildEvidence,
   resolveFunctionDefinitionIdFromDecl,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * React Query hook visitor (#549).

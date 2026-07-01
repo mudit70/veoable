@@ -1,8 +1,8 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@adorable/plugin-api';
-import { hasGoModule } from '@adorable/plugin-api';
-import type { GoFrameworkVisitor } from '@adorable/lang-go';
+import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@veoable/plugin-api';
+import { hasGoModule } from '@veoable/plugin-api';
+import type { GoFrameworkVisitor } from '@veoable/lang-go';
 import { createGinVisitor } from './visitor.js';
 import { buildGinHandlerMap, type HandlerMap } from './handler-resolver.js';
 

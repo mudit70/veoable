@@ -4,8 +4,8 @@ import * as path from 'node:path';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { InMemoryTransport } from '@modelcontextprotocol/sdk/inMemory.js';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
-import { createMcpServer } from '@adorable/mcp-server';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
+import { createMcpServer } from '@veoable/mcp-server';
 
 /**
  * #270 — MCP smoke-and-shape harness.

@@ -10,7 +10,7 @@ import {
   type SchemaNode,
   type SchemaEdge,
   type SourceFile,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import {
   extractRedirects,
   findRedirectConfigs,

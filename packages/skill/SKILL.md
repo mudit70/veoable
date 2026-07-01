@@ -3,9 +3,9 @@ name: adorable
 description: Answer architecture, blast-radius, and end-to-end flow questions about the user's codebase by querying a pre-built canonical graph (endpoints, callers, screens, DB tables, and the stitches between them). Invoke when the user asks about API endpoints, screens, what-happens-when-X, what-breaks-if-I-change-Y, where-is-Z-used, PR impact, or any cross-file flow question. Do NOT invoke for single-file syntax/style questions, build/CI questions, or questions about code that hasn't been analyzed yet.
 ---
 
-# Adorable — End-to-End Flow Analysis
+# Veoable — End-to-End Flow Analysis
 
-You have access to a canonical graph of the user's codebase built by Adorable.
+You have access to a canonical graph of the user's codebase built by Veoable.
 The graph contains every API endpoint, client-side caller, UI handler,
 database table, function, and the typed edges between them. You query it
 through MCP tools (`adorable_*`). This skill teaches you when and how to use
@@ -14,7 +14,7 @@ those tools effectively.
 ## When to invoke this skill
 
 These question shapes are **strong triggers**. When the user asks one,
-invoke an Adorable tool — usually as the first action, before reading any
+invoke an Veoable tool — usually as the first action, before reading any
 file.
 
 ### Architecture / overview
@@ -56,18 +56,18 @@ file.
 Do not invoke for:
 
 - **Single-file syntax/style/typing questions** — use Read + the editor's LSP.
-- **Build / CI / deployment questions** — Adorable analyzes source, not pipelines.
-- **Library-internal questions** — Adorable sees user code, not third-party node_modules / pip packages.
+- **Build / CI / deployment questions** — Veoable analyzes source, not pipelines.
+- **Library-internal questions** — Veoable sees user code, not third-party node_modules / pip packages.
 - **Runtime / "what's running right now" questions** — it's a static graph, not a tracer.
 - **"How do I write …"** style questions — use general coding knowledge.
 - **Codebases without a graph DB** — see [Setup state](#setup-state).
 
 If the question is borderline ("rewrite this function" — local edit, no flow
-involved), skip Adorable and use the normal file tools.
+involved), skip Veoable and use the normal file tools.
 
 ## How to use the tools well
 
-Adorable exposes ~35 MCP tools. Read the full reference at
+Veoable exposes ~35 MCP tools. Read the full reference at
 [`docs/mcp-tools-guide.md`](../../docs/mcp-tools-guide.md). The patterns below
 cover most cases:
 

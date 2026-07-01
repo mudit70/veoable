@@ -10,8 +10,8 @@ import type {
   ResolvesToEndpointEdge,
   Screen,
   WritesEdge,
-} from '@adorable/schema';
-import type { CanonicalGraphStore } from '@adorable/graph-db';
+} from '@veoable/schema';
+import type { CanonicalGraphStore } from '@veoable/graph-db';
 import type { Flow, FlowCompleteness, FlowDatabaseHop, FlowNavigationTarget, ServiceHop } from './flow-types.js';
 
 /**

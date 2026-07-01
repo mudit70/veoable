@@ -1,8 +1,8 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import type { CanonicalGraphStore } from '@adorable/graph-db';
-import type { NodeBatch } from '@adorable/plugin-api';
-import type { CallsFunctionEdge, FunctionDefinition, SourceFile } from '@adorable/schema';
+import type { CanonicalGraphStore } from '@veoable/graph-db';
+import type { NodeBatch } from '@veoable/plugin-api';
+import type { CallsFunctionEdge, FunctionDefinition, SourceFile } from '@veoable/schema';
 
 /**
  * Cross-module CALLS_FUNCTION resolver for Rust (#546).

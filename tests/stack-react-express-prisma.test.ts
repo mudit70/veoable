@@ -7,19 +7,19 @@ import {
   type ClientSideProcess,
   type DatabaseInteraction,
   type DatabaseTable,
-} from '@adorable/schema';
-import { makeBatchMeta } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
-import { PrismaPlugin } from '@adorable/framework-prisma';
-import { ReactPlugin } from '@adorable/framework-react';
-import { ExpressPlugin } from '@adorable/framework-express';
-import { FetchPlugin } from '@adorable/framework-fetch';
+} from '@veoable/schema';
+import { makeBatchMeta } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
+import { PrismaPlugin } from '@veoable/framework-prisma';
+import { ReactPlugin } from '@veoable/framework-react';
+import { ExpressPlugin } from '@veoable/framework-express';
+import { FetchPlugin } from '@veoable/framework-fetch';
 import {
   FLOW_STITCHER_PRODUCER_ID,
   createFlowWalker,
   stitchStore,
-} from '@adorable/flow-stitcher';
+} from '@veoable/flow-stitcher';
 
 /**
  * End-to-end demo (#39): React + Express + Prisma stitched into a

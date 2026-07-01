@@ -4,9 +4,9 @@ import type {
   APIEndpoint,
   ClientSideAPICaller,
   SchemaNode,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { RustLanguagePlugin } from '@adorable/lang-rust';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { RustLanguagePlugin } from '@veoable/lang-rust';
 import { WsRsPlugin } from '../index.js';
 
 const FIXTURE_ROOT = path.resolve(__dirname, '../../../../tests/fixtures/ws-rs/basic');

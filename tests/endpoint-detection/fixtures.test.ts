@@ -13,7 +13,7 @@ import * as path from 'node:path';
 import * as url from 'node:url';
 import { describe, expect, it, beforeAll } from 'vitest';
 import { runFixture, assertEndpointsMatch, assertNoNegatives, assertSchemaValid } from './harness/runner.js';
-import type { APIEndpoint } from '@adorable/schema';
+import type { APIEndpoint } from '@veoable/schema';
 import type { ExpectedDetectionResult } from './harness/types.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

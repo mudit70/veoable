@@ -1,6 +1,6 @@
-import type { CanonicalGraphStore } from '@adorable/graph-db';
-import type { NodeBatch } from '@adorable/plugin-api';
-import type { CallsFunctionEdge, FunctionDefinition, SchemaEdge, SourceFile } from '@adorable/schema';
+import type { CanonicalGraphStore } from '@veoable/graph-db';
+import type { NodeBatch } from '@veoable/plugin-api';
+import type { CallsFunctionEdge, FunctionDefinition, SchemaEdge, SourceFile } from '@veoable/schema';
 import { isHtmlSynthetic, isPerProcessSynthetic } from './synthetic-names.js';
 
 /**

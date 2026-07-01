@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type ClientSideAPICaller, type HttpEgressConfidence } from '@adorable/schema';
-import { hasCrateImport, type RustFrameworkVisitor } from '@adorable/lang-rust';
+import { idFor, type ClientSideAPICaller, type HttpEgressConfidence } from '@veoable/schema';
+import { hasCrateImport, type RustFrameworkVisitor } from '@veoable/lang-rust';
 
 /**
  * google-cloud-storage (Rust) visitor.

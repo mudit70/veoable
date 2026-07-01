@@ -1,5 +1,5 @@
 import { describe, expect, expectTypeOf, it } from 'vitest';
-import type { NodeBatch } from '@adorable/schema';
+import type { NodeBatch } from '@veoable/schema';
 import type {
   FrameworkPlugin,
   FrameworkVisitor,

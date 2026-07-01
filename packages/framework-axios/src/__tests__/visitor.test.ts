@@ -1,9 +1,9 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { describe, expect, it } from 'vitest';
-import { type ClientSideAPICaller, type SchemaNode } from '@adorable/schema';
-import { type NodeBatch } from '@adorable/plugin-api';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
+import { type ClientSideAPICaller, type SchemaNode } from '@veoable/schema';
+import { type NodeBatch } from '@veoable/plugin-api';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
 import { AxiosPlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

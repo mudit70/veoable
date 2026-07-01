@@ -4,9 +4,9 @@ import type {
   DatabaseInteraction,
   DatabaseTable,
   SchemaNode,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
 import { MemcacheTsPlugin } from '../index.js';
 
 const FIXTURE_ROOT = path.resolve(__dirname, '../../../../tests/fixtures/memcache-ts/basic');

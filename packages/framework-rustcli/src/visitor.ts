@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type ClientSideProcess } from '@adorable/schema';
-import type { RustFrameworkVisitor, RustVisitContext } from '@adorable/lang-rust';
+import { idFor, type ClientSideProcess } from '@veoable/schema';
+import type { RustFrameworkVisitor, RustVisitContext } from '@veoable/lang-rust';
 
 /**
  * Rust CLI/desktop framework visitor (#62).

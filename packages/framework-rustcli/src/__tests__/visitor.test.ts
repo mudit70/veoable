@@ -1,9 +1,9 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { describe, expect, it } from 'vitest';
-import { validateNode, type ClientSideProcess, type SchemaNode } from '@adorable/schema';
-import { type NodeBatch } from '@adorable/plugin-api';
-import { RustLanguagePlugin } from '@adorable/lang-rust';
+import { validateNode, type ClientSideProcess, type SchemaNode } from '@veoable/schema';
+import { type NodeBatch } from '@veoable/plugin-api';
+import { RustLanguagePlugin } from '@veoable/lang-rust';
 import { RustcliPlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

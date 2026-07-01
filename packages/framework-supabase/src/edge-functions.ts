@@ -6,9 +6,9 @@ import {
   type SchemaEdge,
   type SchemaNode,
   type SourceFile,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { recordConfidenceDecision } from '@adorable/observability';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { recordConfidenceDecision } from '@veoable/observability';
 
 /**
  * Supabase Edge Functions discovery (#190).

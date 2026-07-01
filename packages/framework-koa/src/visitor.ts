@@ -1,13 +1,13 @@
 import { Node, type CallExpression, type Expression, type Node as TsNode } from 'ts-morph';
-import { idFor, type APIEndpoint, type MiddlewareEntry } from '@adorable/schema';
-import { recordConfidenceDecision } from '@adorable/observability';
+import { idFor, type APIEndpoint, type MiddlewareEntry } from '@veoable/schema';
+import { recordConfidenceDecision } from '@veoable/observability';
 import {
   type TsFrameworkVisitor,
   buildEvidence,
   emitTemplateRenderScreens,
   resolveHandlerToFunctionId,
   resolveToString,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * Koa framework visitor (#27).
@@ -34,7 +34,7 @@ import {
  * Prefix composition is deferred to the flow stitcher (#4).
  *
  * Handler resolution uses the shared `resolveHandlerToFunctionId`
- * utility from `@adorable/lang-ts`.
+ * utility from `@veoable/lang-ts`.
  */
 
 const HTTP_METHODS: ReadonlySet<string> = new Set([

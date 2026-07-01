@@ -5,8 +5,8 @@ import {
   type Screen,
   type SchemaNode,
   type SchemaEdge,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
 
 /**
  * Nuxt 3 file-based router (#370).

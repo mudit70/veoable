@@ -1,8 +1,8 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type ClientSideAPICaller, type HttpEgressConfidence } from '@adorable/schema';
-import { detectExternalUrl } from '@adorable/plugin-api';
-import type { PyFrameworkVisitor, PyVisitContext } from '@adorable/lang-py';
+import { idFor, type ClientSideAPICaller, type HttpEgressConfidence } from '@veoable/schema';
+import { detectExternalUrl } from '@veoable/plugin-api';
+import type { PyFrameworkVisitor, PyVisitContext } from '@veoable/lang-py';
 
 /**
  * Python HTTP-client visitor — covers httpx + requests.

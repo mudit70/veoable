@@ -1,6 +1,6 @@
-import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@adorable/plugin-api';
-import { idFor, type SchemaNode } from '@adorable/schema';
-import type { TsFrameworkVisitor } from '@adorable/lang-ts';
+import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@veoable/plugin-api';
+import { idFor, type SchemaNode } from '@veoable/schema';
+import type { TsFrameworkVisitor } from '@veoable/lang-ts';
 import { createMongooseVisitor } from './visitor.js';
 import { scanMongooseSchemas } from './schema-scanner.js';
 

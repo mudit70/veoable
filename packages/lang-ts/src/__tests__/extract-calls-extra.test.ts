@@ -7,16 +7,16 @@ import {
   __resetConfidenceDecisionWarning,
   initObservability,
   resetObservability,
-} from '@adorable/observability';
-import { makeBatchMeta } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
+} from '@veoable/observability';
+import { makeBatchMeta } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
 import {
   idFor,
   validateEdge,
   type CallsFunctionEdge,
   type SchemaNode,
   type NodeBatch,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import { TsLanguagePlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

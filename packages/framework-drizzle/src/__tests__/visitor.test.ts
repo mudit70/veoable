@@ -6,9 +6,9 @@ import {
   type DatabaseColumn,
   type DatabaseInteraction,
   type DatabaseTable,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
 import { DrizzlePlugin } from '../drizzle-plugin.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

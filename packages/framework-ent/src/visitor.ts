@@ -5,8 +5,8 @@ import {
   type DatabaseInteraction,
   type DatabaseOperation,
   type DatabaseTable,
-} from '@adorable/schema';
-import type { GoFrameworkVisitor, GoVisitContext } from '@adorable/lang-go';
+} from '@veoable/schema';
+import type { GoFrameworkVisitor, GoVisitContext } from '@veoable/lang-go';
 
 /**
  * Ent visitor.

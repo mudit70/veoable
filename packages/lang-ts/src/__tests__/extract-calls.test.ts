@@ -7,7 +7,7 @@ import {
   type CallsFunctionEdge,
   type SchemaEdge,
   type SchemaNode,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import { TsLanguagePlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

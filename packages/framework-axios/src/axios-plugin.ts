@@ -1,5 +1,5 @@
-import type { FrameworkPlugin, ProjectContext } from '@adorable/plugin-api';
-import type { TsFrameworkVisitor } from '@adorable/lang-ts';
+import type { FrameworkPlugin, ProjectContext } from '@veoable/plugin-api';
+import type { TsFrameworkVisitor } from '@veoable/lang-ts';
 import { createAxiosVisitor } from './visitor.js';
 
 export const AXIOS_PLUGIN_ID = 'axios' as const;

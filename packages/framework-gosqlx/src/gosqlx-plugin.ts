@@ -1,7 +1,7 @@
-import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@adorable/plugin-api';
-import { hasGoModule } from '@adorable/plugin-api';
-import type { GoFrameworkVisitor } from '@adorable/lang-go';
-import { idFor, type DatabaseSystem } from '@adorable/schema';
+import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@veoable/plugin-api';
+import { hasGoModule } from '@veoable/plugin-api';
+import type { GoFrameworkVisitor } from '@veoable/lang-go';
+import { idFor, type DatabaseSystem } from '@veoable/schema';
 import { createGosqlxVisitor } from './visitor.js';
 
 /**

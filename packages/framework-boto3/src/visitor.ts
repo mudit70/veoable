@@ -8,8 +8,8 @@ import {
   type DatabaseSystem,
   type DatabaseTable,
   type HttpEgressConfidence,
-} from '@adorable/schema';
-import type { PyFrameworkVisitor, PyVisitContext } from '@adorable/lang-py';
+} from '@veoable/schema';
+import type { PyFrameworkVisitor, PyVisitContext } from '@veoable/lang-py';
 
 /**
  * boto3 visitor.

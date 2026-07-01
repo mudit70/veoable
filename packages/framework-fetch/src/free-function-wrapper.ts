@@ -5,7 +5,7 @@ import {
   type ArrowFunction,
   type FunctionExpression,
 } from 'ts-morph';
-import { resolveIdentifierTypeToDeclaration } from '@adorable/lang-ts';
+import { resolveIdentifierTypeToDeclaration } from '@veoable/lang-ts';
 
 /**
  * #8b — free-function fetch wrapper resolver.

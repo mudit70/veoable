@@ -1,6 +1,6 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import { idFor, type DatabaseTable } from '@adorable/schema';
+import { idFor, type DatabaseTable } from '@veoable/schema';
 
 /**
  * Scan TS source files for `@Schema()`-decorated classes (NestJS Mongoose

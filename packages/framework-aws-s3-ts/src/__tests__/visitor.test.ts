@@ -3,9 +3,9 @@ import { describe, expect, it } from 'vitest';
 import type {
   ClientSideAPICaller,
   SchemaNode,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
 import { AwsS3TsPlugin } from '../index.js';
 
 const FIXTURE_ROOT = path.resolve(__dirname, '../../../../tests/fixtures/aws-s3-ts/basic');

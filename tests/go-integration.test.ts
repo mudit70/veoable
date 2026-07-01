@@ -8,7 +8,7 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { describe, expect, it, afterEach } from 'vitest';
-import { analyze, type AnalysisResult } from '@adorable/cli';
+import { analyze, type AnalysisResult } from '@veoable/cli';
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

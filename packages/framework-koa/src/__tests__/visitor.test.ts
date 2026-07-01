@@ -8,10 +8,10 @@ import {
   type SchemaEdge,
   type SchemaNode,
   type Screen,
-} from '@adorable/schema';
-import { makeBatchMeta, type NodeBatch } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
+} from '@veoable/schema';
+import { makeBatchMeta, type NodeBatch } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
 import { KoaPlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { SCHEMA_VERSION } from '@adorable/schema';
+import { SCHEMA_VERSION } from '@veoable/schema';
 import { emptyBatch, makeBatchMeta } from '../batch.js';
 
 describe('makeBatchMeta', () => {

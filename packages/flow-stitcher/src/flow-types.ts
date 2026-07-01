@@ -10,7 +10,7 @@ import type {
   ResponseHandler,
   ResponseShape,
   Screen,
-} from '@adorable/schema';
+} from '@veoable/schema';
 
 /**
  * How far a flow walk was able to get through the canonical graph

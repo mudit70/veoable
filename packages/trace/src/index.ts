@@ -1,5 +1,5 @@
 /**
- * @adorable/trace — runtime instrumentation library (#535).
+ * @veoable/trace — runtime instrumentation library (#535).
  *
  * A one-line import in a test bootstrap that monkey-patches a small
  * set of registration / network primitives so observed behaviour is
@@ -11,7 +11,7 @@
  * Usage:
  *
  *     // vitest.setup.ts (or playwright.config.ts, jest.setup.ts, etc.)
- *     import { initAdorableTrace } from '@adorable/trace';
+ *     import { initAdorableTrace } from '@veoable/trace';
  *     initAdorableTrace({ outputFile: '.adorable/trace.jsonl' });
  *
  * No other code changes required. The library writes one JSONL line
@@ -31,7 +31,7 @@ import { fileURLToPath } from 'node:url';
 /**
  * Self-locate via `import.meta.url` so the call-site filter
  * recognises this library's own frames regardless of how it was
- * installed: published `node_modules/@adorable/trace/dist`, a
+ * installed: published `node_modules/@veoable/trace/dist`, a
  * monorepo workspace named `adorable`, or a forked checkout named
  * something else entirely. We strip the file's basename to get the
  * containing dist directory, which V8 stack frames will quote
@@ -196,12 +196,12 @@ export function captureCallSite(skipFrames: number = 1): SourceLocation | null {
     if (filePath.includes('node_modules')) continue;
     // Skip this library's own frames. `LIBRARY_DIR` is computed via
     // import.meta.url at module load so it works under any install
-    // layout: `node_modules/@adorable/trace/dist`, a monorepo
+    // layout: `node_modules/@veoable/trace/dist`, a monorepo
     // workspace (regardless of repo-root name), or a forked
     // checkout. The published-install fallback substring check
     // keeps things robust if `import.meta.url` ever fails to resolve.
     if (LIBRARY_DIR && filePath.startsWith(LIBRARY_DIR)) continue;
-    if (filePath.includes('@adorable/trace')) continue;
+    if (filePath.includes('@veoable/trace')) continue;
     return {
       filePath,
       line: Number.parseInt(m[2]!, 10),

@@ -6,9 +6,9 @@ import {
   type DatabaseSystem,
   type DatabaseTable,
   type SchemaNode,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { PyLanguagePlugin } from '@adorable/lang-py';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { PyLanguagePlugin } from '@veoable/lang-py';
 import { SqlalchemyPlugin } from '../index.js';
 
 const FIXTURE_ROOT = path.resolve(__dirname, '../../../../tests/fixtures/python/sqlalchemy/basic');

@@ -2,8 +2,8 @@ import * as fs from 'node:fs';
 import * as os from 'node:os';
 import * as path from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { SCHEMA_VERSION } from '@adorable/schema';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
+import { SCHEMA_VERSION } from '@veoable/schema';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
 import { analyze } from '../analyze.js';
 
 /**
@@ -193,7 +193,7 @@ describe('analyze --incremental (#294 Phase 2a)', () => {
     // was REBUILT by re-extraction, not just left dangling at a stale
     // target id. Without the reverse-import cascade, deleteByFile(a)
     // would have orphaned the edge.
-    const { idFor } = await import('@adorable/schema');
+    const { idFor } = await import('@veoable/schema');
     const bSfId = idFor.sourceFile({ repository: REPO_NAME, filePath: 'src/b.ts' });
     const aSfId = idFor.sourceFile({ repository: REPO_NAME, filePath: 'src/a.ts' });
     const store = new SQLiteCanonicalGraphStore(dbPath);

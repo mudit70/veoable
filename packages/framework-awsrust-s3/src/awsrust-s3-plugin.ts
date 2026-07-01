@@ -1,6 +1,6 @@
-import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@adorable/plugin-api';
-import { hasCargoCrate } from '@adorable/plugin-api';
-import type { RustFrameworkVisitor } from '@adorable/lang-rust';
+import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@veoable/plugin-api';
+import { hasCargoCrate } from '@veoable/plugin-api';
+import type { RustFrameworkVisitor } from '@veoable/lang-rust';
 import { createAwsrustS3Visitor } from './visitor.js';
 import { buildStructFieldMap, type StructFieldMap } from './struct-field-resolver.js';
 

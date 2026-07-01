@@ -1,5 +1,5 @@
-import type { FrameworkPlugin, ProjectContext } from '@adorable/plugin-api';
-import type { GoFrameworkVisitor } from '@adorable/lang-go';
+import type { FrameworkPlugin, ProjectContext } from '@veoable/plugin-api';
+import type { GoFrameworkVisitor } from '@veoable/lang-go';
 import { createGoHttpVisitor } from './visitor.js';
 
 /**
