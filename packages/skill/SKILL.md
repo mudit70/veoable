@@ -1,5 +1,5 @@
 ---
-name: adorable
+name: veoable
 description: Answer architecture, blast-radius, and end-to-end flow questions about the user's codebase by querying a pre-built canonical graph (endpoints, callers, screens, DB tables, and the stitches between them). Invoke when the user asks about API endpoints, screens, what-happens-when-X, what-breaks-if-I-change-Y, where-is-Z-used, PR impact, or any cross-file flow question. Do NOT invoke for single-file syntax/style questions, build/CI questions, or questions about code that hasn't been analyzed yet.
 ---
 
@@ -8,7 +8,7 @@ description: Answer architecture, blast-radius, and end-to-end flow questions ab
 You have access to a canonical graph of the user's codebase built by Veoable.
 The graph contains every API endpoint, client-side caller, UI handler,
 database table, function, and the typed edges between them. You query it
-through MCP tools (`adorable_*`). This skill teaches you when and how to use
+through the Veoable MCP tools. This skill teaches you when and how to use
 those tools effectively.
 
 ## When to invoke this skill
@@ -141,13 +141,13 @@ analyzed yet. Tell the user:
 ```
 The project hasn't been analyzed yet. Run:
 
-  adorable project init <path>      # if no project config exists
-  adorable project analyze <config>  # to build the graph
+  veoable project init <path>      # if no project config exists
+  veoable project analyze <config>  # to build the graph
 
 Then I can answer architecture and flow questions about the code.
 
 For live updates on a long-running session, run:
-  adorable project watch <config> --incremental --on-demand
+  veoable project watch <config> --incremental --on-demand
 and press 'r' in that terminal before asking me a fresh question.
 ```
 

@@ -68,7 +68,7 @@ export function createMcpServer(store: CanonicalGraphStore, opts?: McpServerOpti
   }
 
   const server = new McpServer({
-    name: 'adorable',
+    name: 'veoable',
     version: '0.1.0',
   });
 

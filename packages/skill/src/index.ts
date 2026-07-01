@@ -56,4 +56,4 @@ export function getSkillDescription(): string {
 }
 
 /** Skill identifier — used as the name in per-client adapter configs. */
-export const SKILL_NAME = 'adorable';
+export const SKILL_NAME = 'veoable';

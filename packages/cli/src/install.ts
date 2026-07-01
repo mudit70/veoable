@@ -43,8 +43,8 @@ export interface InstallResult {
 export interface InstallClaudeCodeOptions {
   /**
    * Target skills directory. Defaults to:
-   *   $CLAUDE_CONFIG_DIR/skills/adorable
-   *   ~/.claude/skills/adorable
+   *   $CLAUDE_CONFIG_DIR/skills/veoable
+   *   ~/.claude/skills/veoable
    * In that order. Pass an explicit value from tests to avoid touching
    * the user's real Claude Code config.
    */
@@ -61,9 +61,9 @@ export interface InstallClaudeCodeOptions {
  *
  * Priority:
  *   1. Explicit `dir` argument (test/CI use).
- *   2. `$CLAUDE_CONFIG_DIR/skills/adorable` (Claude Code honors this
+ *   2. `$CLAUDE_CONFIG_DIR/skills/veoable` (Claude Code honors this
  *      env var when discovering skills).
- *   3. `~/.claude/skills/adorable` (the default Claude Code path).
+ *   3. `~/.claude/skills/veoable` (the default Claude Code path).
  */
 function resolveSkillDir(opts: InstallClaudeCodeOptions): string {
   if (opts.dir) return opts.dir;
@@ -100,14 +100,14 @@ export function installClaudeCodeSkill(opts: InstallClaudeCodeOptions = {}): Ins
     filesWritten: [skillFile],
     nextSteps: [
       'Build a graph for your project (if you haven\'t already):',
-      '  adorable project init <path>',
-      '  adorable project analyze <project.json>',
+      '  veoable project init <path>',
+      '  veoable project analyze <project.json>',
       '',
       'Register the MCP server with Claude Code so the skill has data to query:',
-      '  claude mcp add adorable -- adorable serve <project.db>',
+      '  claude mcp add veoable -- veoable serve <project.db>',
       '',
       'For live updates during a session, leave a watcher running:',
-      '  adorable project watch <project.json> --incremental --on-demand',
+      '  veoable project watch <project.json> --incremental --on-demand',
       "  (press 'r' before asking Claude a question that needs fresh data)",
     ],
   };
@@ -126,8 +126,8 @@ export interface InstallCursorOptions {
   projectDir?: string;
   /**
    * Absolute path to the graph DB. When provided, .cursor/mcp.json is
-   * merged with an `adorable` entry pointing here. When omitted, the
-   * rule still installs but the user must run `adorable install cursor
+   * merged with an `veoable` entry pointing here. When omitted, the
+   * rule still installs but the user must run `veoable install cursor
    * --db <path>` (or edit .cursor/mcp.json by hand) to wire up the
    * MCP server.
    */
@@ -172,7 +172,7 @@ function readCursorMcpJson(jsonPath: string): { mcpServers?: Record<string, unkn
  * Install the Adorable skill into a Cursor project.
  *
  * Writes:
- *   - `<projectDir>/.cursor/rules/adorable.mdc` — always.
+ *   - `<projectDir>/.cursor/rules/veoable.mdc` — always.
  *   - `<projectDir>/.cursor/mcp.json` — only when `db` is provided.
  *     Merges with existing `mcpServers` to preserve any other servers
  *     the user has configured.
@@ -196,14 +196,14 @@ export function installCursorSkill(opts: InstallCursorOptions = {}): InstallResu
     // Resolve --db relative to projectDir, not cwd. Absolute paths
     // pass through unchanged (path.resolve ignores earlier args once
     // it hits an absolute segment). Without this, a user running
-    // `adorable install cursor --db p.db` from a parent directory
+    // `veoable install cursor --db p.db` from a parent directory
     // would silently bake the wrong path into mcp.json.
     const dbAbs = path.resolve(projectDir, opts.db);
     const mcpFile = path.join(cursorDir, 'mcp.json');
     const existing = readCursorMcpJson(mcpFile);
     const servers = (existing.mcpServers ?? {}) as Record<string, unknown>;
     servers[SKILL_NAME] = {
-      command: 'adorable',
+      command: 'veoable',
       args: ['serve', dbAbs],
     };
     const merged = { ...existing, mcpServers: servers };
@@ -214,17 +214,17 @@ export function installCursorSkill(opts: InstallCursorOptions = {}): InstallResu
       'Restart Cursor (or reload the window) so it picks up the new rule and MCP server.',
       '',
       'For live updates during a session, leave a watcher running:',
-      '  adorable project watch <project.json> --incremental --on-demand',
+      '  veoable project watch <project.json> --incremental --on-demand',
       "  (press 'r' before asking Cursor a question that needs fresh data)",
     );
   } else {
     nextSteps.push(
       'Build a graph for your project (if you haven\'t already):',
-      '  adorable project init <path>',
-      '  adorable project analyze <project.json>',
+      '  veoable project init <path>',
+      '  veoable project analyze <project.json>',
       '',
       'Re-run this command with --db to wire the MCP server entry:',
-      '  adorable install cursor --db <project.db>',
+      '  veoable install cursor --db <project.db>',
       '',
       'Restart Cursor (or reload the window) once both files are in place.',
     );
@@ -273,7 +273,7 @@ function resolveContinueDir(opts: InstallContinueOptions): string {
  *     ... (other top-level keys preserved verbatim)
  *   }
  *
- * Custom commands surface as `/adorable` slash commands; the prompt
+ * Custom commands surface as `/veoable` slash commands; the prompt
  * is the SKILL.md body so the agent has the full routing layer in
  * context whenever the user invokes it.
  *
@@ -313,9 +313,9 @@ function readContinueConfig(jsonPath: string): ContinueConfig {
  * Install the Adorable skill into Continue.dev's global config.
  *
  * Writes a single file: `<continueDir>/config.json`. Merges in:
- *   - `customCommands[adorable]` with the SKILL.md body as the prompt
+ *   - `customCommands[veoable]` with the SKILL.md body as the prompt
  *     and the SKILL.md frontmatter description as the help text.
- *   - `mcpServers.adorable` pointing at the graph DB (when `db` given).
+ *   - `mcpServers.veoable` pointing at the graph DB (when `db` given).
  *
  * Other entries in `customCommands` and `mcpServers` are preserved.
  * Other top-level keys in config.json are preserved verbatim. The
@@ -330,7 +330,7 @@ export function installContinueSkill(opts: InstallContinueOptions = {}): Install
   const existing = readContinueConfig(configFile);
 
   // Custom command — always installed. Continue surfaces this as
-  // `/adorable` in the chat input. The prompt is the full SKILL.md
+  // `/veoable` in the chat input. The prompt is the full SKILL.md
   // body so when the user invokes the command, the agent gets the
   // routing layer + recipes in one shot.
   const adorableCommand: ContinueCustomCommand = {
@@ -356,30 +356,30 @@ export function installContinueSkill(opts: InstallContinueOptions = {}): Install
     // because Cursor configs are project-scoped — different concern.
     const dbAbs = path.resolve(opts.db);
     mcpServers[SKILL_NAME] = {
-      command: 'adorable',
+      command: 'veoable',
       args: ['serve', dbAbs],
     };
     nextSteps.push(
       'Restart Continue (or reload your editor) so it picks up the new slash command and MCP server.',
       '',
-      'In a Continue chat, type:  /adorable',
+      'In a Continue chat, type:  /veoable',
       'to invoke the skill explicitly. Continue also routes free-form questions',
       'to the MCP server when the description matches.',
       '',
       'For live updates during a session, leave a watcher running:',
-      '  adorable project watch <project.json> --incremental --on-demand',
+      '  veoable project watch <project.json> --incremental --on-demand',
       "  (press 'r' before asking Continue a question that needs fresh data)",
     );
   } else {
     nextSteps.push(
       'Build a graph for your project (if you haven\'t already):',
-      '  adorable project init <path>',
-      '  adorable project analyze <project.json>',
+      '  veoable project init <path>',
+      '  veoable project analyze <project.json>',
       '',
       'Re-run this command with --db to wire the MCP server entry:',
-      '  adorable install continue --db <project.db>',
+      '  veoable install continue --db <project.db>',
       '',
-      'Without an MCP server, the /adorable slash command can still surface',
+      'Without an MCP server, the /veoable slash command can still surface',
       'the skill description and recipes, but tools won\'t be callable.',
     );
   }
@@ -413,7 +413,7 @@ export interface InstallVSCodeOptions {
   projectDir?: string;
   /**
    * Absolute or projectDir-relative path to the graph DB. When given,
-   * `.vscode/mcp.json` is merged with an `adorable` server entry. When
+   * `.vscode/mcp.json` is merged with an `veoable` server entry. When
    * omitted, only the Copilot instructions section is written and the
    * user must re-run with --db to wire up the MCP server.
    */
@@ -426,11 +426,11 @@ export interface InstallVSCodeOptions {
 // CURRENT form (`COPILOT_START_MARKER`); on upsert, ANY known historical
 // form (listed in `COPILOT_START_MARKERS`) matches the existing section and
 // gets replaced with the current form. This keeps migrations clean.
-const COPILOT_START_MARKER = '<!-- adorable:start v=1 (managed by `adorable install vscode`) -->';
+const COPILOT_START_MARKER = '<!-- veoable:start v=1 (managed by `veoable install vscode`) -->';
 const COPILOT_START_MARKERS: readonly string[] = [
   COPILOT_START_MARKER,
 ];
-const COPILOT_END_MARKER = '<!-- adorable:end -->';
+const COPILOT_END_MARKER = '<!-- veoable:end -->';
 
 /**
  * Build the Copilot instructions section. Deliberately SHORT (~400
@@ -446,7 +446,7 @@ function buildCopilotInstructionsSection(): string {
     '',
     "This repository is wired up with Adorable, a tool that builds a queryable",
     'graph of every API endpoint, client caller, screen, DB table, and the flows',
-    'between them. The MCP server `adorable` is registered in `.vscode/mcp.json`.',
+    'between them. The MCP server `veoable` is registered in `.vscode/mcp.json`.',
     '',
     '**Use Adorable tools FIRST for these question shapes:**',
     '',
@@ -470,7 +470,7 @@ function buildCopilotInstructionsSection(): string {
     '3. Prefer aggregated tools (`list_server_endpoints`, `list_screens`) over chaining graph primitives.',
     '4. Cite `sourceFile`/`sourceLine` from every node so the user can jump there.',
     '',
-    "If the graph DB hasn't been built yet, tell the user to run `adorable project init` + `adorable project analyze`.",
+    "If the graph DB hasn't been built yet, tell the user to run `veoable project init` + `veoable project analyze`.",
     COPILOT_END_MARKER,
   ].join('\n');
 }
@@ -485,7 +485,7 @@ function buildCopilotInstructionsSection(): string {
  *   3. File exists without our markers → append the Adorable section
  *      after the existing content (with a blank-line separator).
  *
- * Markers are deliberately self-describing (`managed by adorable
+ * Markers are deliberately self-describing (`managed by veoable
  * install vscode`) so a user who finds them in a diff knows where they
  * came from.
  */
@@ -579,7 +579,7 @@ export function installVSCodeSkill(opts: InstallVSCodeOptions = {}): InstallResu
     const servers = (existing.servers ?? {}) as Record<string, unknown>;
     servers[SKILL_NAME] = {
       type: 'stdio',
-      command: 'adorable',
+      command: 'veoable',
       args: ['serve', dbAbs],
     };
     const merged = { ...existing, servers };
@@ -592,17 +592,17 @@ export function installVSCodeSkill(opts: InstallVSCodeOptions = {}): InstallResu
       'Adorable will now answer architecture and flow questions in @workspace chat.',
       '',
       'For live updates during a session, leave a watcher running:',
-      '  adorable project watch <project.json> --incremental --on-demand',
+      '  veoable project watch <project.json> --incremental --on-demand',
       "  (press 'r' before asking Copilot a question that needs fresh data)",
     );
   } else {
     nextSteps.push(
       "Build a graph for your project (if you haven't already):",
-      '  adorable project init <path>',
-      '  adorable project analyze <project.json>',
+      '  veoable project init <path>',
+      '  veoable project analyze <project.json>',
       '',
       'Re-run this command with --db to wire the MCP server entry:',
-      '  adorable install vscode --db <project.db>',
+      '  veoable install vscode --db <project.db>',
       '',
       'Restart VS Code once both files are in place.',
     );
@@ -691,7 +691,7 @@ export function installAuto(opts: InstallAutoOptions = {}): InstallAutoResult {
   } else {
     skipped.push({
       client: 'claude-code',
-      reason: `${claudeDir} not found (Claude Code doesn't appear to be installed; run \`adorable install claude-code\` to set up anyway)`,
+      reason: `${claudeDir} not found (Claude Code doesn't appear to be installed; run \`veoable install claude-code\` to set up anyway)`,
     });
   }
 
@@ -702,7 +702,7 @@ export function installAuto(opts: InstallAutoOptions = {}): InstallAutoResult {
   } else {
     skipped.push({
       client: 'cursor',
-      reason: `${cursorRoot} not found (this project isn't using Cursor yet; run \`adorable install cursor\` from the project root to set up)`,
+      reason: `${cursorRoot} not found (this project isn't using Cursor yet; run \`veoable install cursor\` from the project root to set up)`,
     });
   }
 
@@ -713,7 +713,7 @@ export function installAuto(opts: InstallAutoOptions = {}): InstallAutoResult {
   } else {
     skipped.push({
       client: 'continue',
-      reason: `${continueDir} not found (Continue doesn't appear to be installed; run \`adorable install continue\` to set up anyway)`,
+      reason: `${continueDir} not found (Continue doesn't appear to be installed; run \`veoable install continue\` to set up anyway)`,
     });
   }
 
@@ -729,7 +729,7 @@ export function installAuto(opts: InstallAutoOptions = {}): InstallAutoResult {
   } else {
     skipped.push({
       client: 'vscode',
-      reason: `neither ${vscodeRoot} nor ${copilotInstructions} found (this project doesn't appear to use VS Code/Copilot; run \`adorable install vscode\` from the project root to set up)`,
+      reason: `neither ${vscodeRoot} nor ${copilotInstructions} found (this project doesn't appear to use VS Code/Copilot; run \`veoable install vscode\` from the project root to set up)`,
     });
   }
 

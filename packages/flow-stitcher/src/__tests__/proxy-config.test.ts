@@ -16,7 +16,7 @@ import { discoverProxyRules } from '../proxy-config.js';
 let tmpDir: string;
 
 beforeEach(() => {
-  tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-proxy-test-'));
+  tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-proxy-test-'));
 });
 
 afterEach(() => {

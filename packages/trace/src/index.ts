@@ -3,7 +3,7 @@
  *
  * A one-line import in a test bootstrap that monkey-patches a small
  * set of registration / network primitives so observed behaviour is
- * captured as edge records to a JSONL file. `adorable analyze
+ * captured as edge records to a JSONL file. `veoable analyze
  * --merge-trace <file>` later merges those edges into the canonical
  * graph as a fallback for the static-analysis gaps the framework
  * plugins can't close.
@@ -12,7 +12,7 @@
  *
  *     // vitest.setup.ts (or playwright.config.ts, jest.setup.ts, etc.)
  *     import { initAdorableTrace } from '@veoable/trace';
- *     initAdorableTrace({ outputFile: '.adorable/trace.jsonl' });
+ *     initAdorableTrace({ outputFile: '.veoable/trace.jsonl' });
  *
  * No other code changes required. The library writes one JSONL line
  * per observed edge. Schema below.
@@ -21,7 +21,7 @@
  *   - Request bodies are NEVER captured.
  *   - Headers are NEVER captured.
  *   - The trace file is local; the library does not upload it
- *     anywhere. Suggest gitignoring `.adorable/`.
+ *     anywhere. Suggest gitignoring `.veoable/`.
  */
 
 import * as fs from 'node:fs';
@@ -32,7 +32,7 @@ import { fileURLToPath } from 'node:url';
  * Self-locate via `import.meta.url` so the call-site filter
  * recognises this library's own frames regardless of how it was
  * installed: published `node_modules/@veoable/trace/dist`, a
- * monorepo workspace named `adorable`, or a forked checkout named
+ * monorepo workspace named `veoable`, or a forked checkout named
  * something else entirely. We strip the file's basename to get the
  * containing dist directory, which V8 stack frames will quote
  * verbatim.
@@ -279,7 +279,7 @@ function patchAxios(axios: AxiosLike): () => void {
 }
 
 // ──────────────────────────────────────────────────────────────────────
-// Trace-file reader (used by adorable analyze --merge-trace)
+// Trace-file reader (used by veoable analyze --merge-trace)
 // ──────────────────────────────────────────────────────────────────────
 
 export interface TraceFileLoadResult {

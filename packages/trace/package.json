@@ -2,7 +2,7 @@
   "name": "@veoable/trace",
   "version": "0.3.0",
   "private": false,
-  "description": "Runtime instrumentation library that records edges observed during test runs, so adorable analyze can merge them as fallback for static-analysis misses (#535).",
+  "description": "Runtime instrumentation library that records edges observed during test runs, so veoable analyze can merge them as fallback for static-analysis misses (#535).",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

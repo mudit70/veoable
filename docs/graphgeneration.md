@@ -426,7 +426,7 @@ Framework visitors use `resolveToString()` to trace compile-time string values t
 The complete execution flow for analyzing one project:
 
 ```
-  CLI: adorable analyze ./my-project --output graph.db
+  CLI: veoable analyze ./my-project --output graph.db
                     │
                     ▼
   ┌─────────────────────────────────────────────────────────┐

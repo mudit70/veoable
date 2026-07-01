@@ -24,7 +24,7 @@ afterEach(() => {
 // Fixture builders
 // ──────────────────────────────────────────────────────────────────────
 
-const repo = 'adorable';
+const repo = 'veoable';
 
 function buildSourceFile(filePath = 'src/users.ts'): SchemaNode {
   return {
@@ -235,9 +235,9 @@ describe('findNodes', () => {
     const a = buildSourceFile('a.ts');
     const b: SchemaNode = { ...buildSourceFile('a.ts'), repository: 'other-repo', id: 'SourceFile:other' };
     store.commit(buildBatch([a, b]), makeBatchMeta('ts'));
-    const result = store.findNodes('SourceFile', { filePath: 'a.ts', repository: 'adorable' });
+    const result = store.findNodes('SourceFile', { filePath: 'a.ts', repository: 'veoable' });
     expect(result).toHaveLength(1);
-    expect(result[0].repository).toBe('adorable');
+    expect(result[0].repository).toBe('veoable');
   });
 
   it('returns empty when no node matches', () => {

@@ -588,7 +588,7 @@ All inter-agent communication uses JSON Schema-validated messages (R-11.1.1). Ev
 
 ```json
 {
-  "$schema": "https://adorable.dev/schemas/agent-message/v1",
+  "$schema": "https://veoable.dev/schemas/agent-message/v1",
   "message_id": "uuid",
   "from_agent": "express-endpoint-detector",
   "to_agent": "api-list-generator",

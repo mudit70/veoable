@@ -49,7 +49,7 @@ The reason to build the schema and the contracts first — even before you've wr
 ## 2. Phase 0 — Repository scaffold (½ day)
 
 ```
-rn-adorable/
+rn-veoable/
 ├── package.json              # workspace root, private: true
 ├── pnpm-workspace.yaml       # packages: ["packages/*"]
 ├── tsconfig.base.json        # strict, ES2022, NodeNext modules
@@ -376,9 +376,9 @@ for each framework plugin with onProjectLoaded:
 
 CLI surface — keep it to three commands:
 ```
-rn-adorable analyze <path> [-o output.db] [--format text|json]
-rn-adorable stitch <db>             # run the stitcher against a saved graph
-rn-adorable query <db> <query>      # a few canned queries: list-endpoints, list-callers, walk-flow
+rn-veoable analyze <path> [-o output.db] [--format text|json]
+rn-veoable stitch <db>             # run the stitcher against a saved graph
+rn-veoable query <db> <query>      # a few canned queries: list-endpoints, list-callers, walk-flow
 ```
 
 Skip MCP, skip multi-repo, skip NLP. Add them later if you want.
@@ -414,7 +414,7 @@ examples/
     └── ml-svc/     (FastAPI)
 ```
 
-Write integration tests that run `rn-adorable analyze` against each sample and assert the expected nodes, edges, and stitches exist. These tests are your regression net for everything in phases 3–10.
+Write integration tests that run `rn-veoable analyze` against each sample and assert the expected nodes, edges, and stitches exist. These tests are your regression net for everything in phases 3–10.
 
 ---
 

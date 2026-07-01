@@ -293,7 +293,7 @@ Result: confirmed match, persisted permanently
 The simplest case. Client code and server code live in the same repo (e.g., a monorepo or a full-stack app).
 
 ```
-adorable analyze ./my-fullstack-app --output graph.db
+veoable analyze ./my-fullstack-app --output graph.db
 
 Phase 1: Per-file AST walk (all files)
   ├── src/components/*.tsx  → client graph nodes
@@ -354,9 +354,9 @@ The frontend calls both backend services. Each service has its own database. The
 Each repository is analyzed independently, producing its own `graph.db`:
 
 ```
-adorable analyze ./frontend-app    --output frontend.db
-adorable analyze ./user-service    --output user-service.db
-adorable analyze ./post-service    --output post-service.db
+veoable analyze ./frontend-app    --output frontend.db
+veoable analyze ./user-service    --output user-service.db
+veoable analyze ./post-service    --output post-service.db
 ```
 
 Each database contains a self-contained graph:
@@ -385,12 +385,12 @@ frontend.db:                    user-service.db:              post-service.db:
 A **project** groups multiple repositories (R-11.4). The stitching layer operates at the project level, not the repository level:
 
 ```
-adorable project create my-system
-adorable project add-repo my-system ./frontend-app    --label frontend
-adorable project add-repo my-system ./user-service    --label user-api
-adorable project add-repo my-system ./post-service    --label post-api
-adorable project analyze my-system
-adorable project stitch my-system
+veoable project create my-system
+veoable project add-repo my-system ./frontend-app    --label frontend
+veoable project add-repo my-system ./user-service    --label user-api
+veoable project add-repo my-system ./post-service    --label post-api
+veoable project analyze my-system
+veoable project stitch my-system
 ```
 
 The project-level analysis:
@@ -676,7 +676,7 @@ Two approaches:
 Analyze each repo into its own `.db`, then merge into a single `project.db`:
 
 ```
-adorable project merge \
+veoable project merge \
     --frontend frontend.db \
     --user-api user-service.db \
     --post-api post-service.db \
@@ -695,9 +695,9 @@ Each repo keeps its own `.db`. The MCP server queries all of them:
 ```json
 {
   "mcpServers": {
-    "adorable": {
+    "veoable": {
       "command": "node",
-      "args": ["adorable", "serve-project", "--config", "project.json"]
+      "args": ["veoable", "serve-project", "--config", "project.json"]
     }
   }
 }

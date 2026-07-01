@@ -135,7 +135,7 @@ describe('describe_skill (#363)', () => {
     // (e.g. half the file lost to a stream bug) fails loudly.
     expect(text.length).toBeGreaterThan(5000);
     // Frontmatter delimiter — pins the YAML header survived.
-    expect(text.startsWith('---\nname: adorable')).toBe(true);
+    expect(text.startsWith('---\nname: veoable')).toBe(true);
     // Load-bearing routing + workflow + recipe sections — pin them
     // so a future SKILL.md edit that drops one fails loudly.
     expect(text).toContain('## When to invoke this skill');
@@ -572,7 +572,7 @@ describe('add_stitch_rule (#273)', () => {
     const fs = await import('node:fs');
     const os = await import('node:os');
     const path = await import('node:path');
-    tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-asr-'));
+    tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-asr-'));
     configPath = path.join(tmpDir, 'project.json');
     fs.writeFileSync(configPath, JSON.stringify({
       name: 'test-project',
@@ -798,7 +798,7 @@ describe('error contract: every id-taking tool returns isError + code on bad inp
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
     const path = await import('node:path');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-gsf-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-gsf-'));
     try {
       await fs.mkdir(path.join(tmp, 'src'), { recursive: true });
       await fs.writeFile(path.join(tmp, 'src/users.ts'), 'export function listUsers() { return []; }\n');
@@ -863,7 +863,7 @@ describe('error contract: every id-taking tool returns isError + code on bad inp
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
     const path = await import('node:path');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-gsf-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-gsf-'));
     try {
       const projectStore = new SQLiteCanonicalGraphStore(':memory:');
       try {
@@ -912,7 +912,7 @@ describe('error contract: every id-taking tool returns isError + code on bad inp
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
     const path = await import('node:path');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-idx-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-idx-'));
     try {
       await fs.mkdir(path.join(tmp, 'src'), { recursive: true });
       await fs.writeFile(path.join(tmp, 'src/a.ts'), 'export const a = 1;\n');

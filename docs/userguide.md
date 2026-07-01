@@ -34,20 +34,20 @@ in under 10 minutes, then covers every flag and workflow you'll need after that.
 Requires **Node.js 20+** and **pnpm**.
 
 ```bash
-git clone https://github.com/mudit70/adorable
-cd adorable
+git clone https://github.com/mudit70/veoable
+cd veoable
 git checkout v0.3.0      # or main for the bleeding edge
 pnpm install
-pnpm install-cli         # exposes `adorable` on your $PATH
+pnpm install-cli         # exposes `veoable` on your $PATH
 ```
 
 Verify:
 
 ```bash
-adorable --help
+veoable --help
 ```
 
-If `adorable: command not found`, your shell's PATH doesn't see pnpm's global
+If `veoable: command not found`, your shell's PATH doesn't see pnpm's global
 bin directory. Run `pnpm bin --global` and add that path to your shell rc.
 
 ---
@@ -58,7 +58,7 @@ Inside any TypeScript / Python / Go / Java / PHP / Rust project:
 
 ```bash
 cd ~/code/my-app
-adorable analyze . --output graph.db
+veoable analyze . --output graph.db
 ```
 
 You'll see something like:
@@ -78,15 +78,15 @@ the call edges between them. Use it three ways:
 
 ```bash
 # 1. Inspect from the terminal (good for a sanity check).
-adorable analyze . --format json | jq '.flows[:5]'
+veoable analyze . --format json | jq '.flows[:5]'
 
 # 2. Serve to an MCP client (Claude Desktop, Claude Code, Cursor).
-adorable serve graph.db
+veoable serve graph.db
 
 # 3. Chat with an LLM that already knows how to query the graph.
 #    The CLI resolves the API key from --api-key, then $OPENROUTER_API_KEY,
 #    then $OPENAI_API_KEY — set whichever fits your provider.
-adorable chat graph.db --model anthropic/claude-sonnet-4 --api-key $OPENROUTER_API_KEY
+veoable chat graph.db --model anthropic/claude-sonnet-4 --api-key $OPENROUTER_API_KEY
 ```
 
 The MCP path (#2) is what most people want — see
@@ -160,7 +160,7 @@ Every analyze result reports two plugin lists:
   node to the graph. This is the "working set" — what your stack is
   *really* exercising.
 
-`adorable analyze` prints the emitting list as the headline `Frameworks:`
+`veoable analyze` prints the emitting list as the headline `Frameworks:`
 line and surfaces silent activations on a separate `(detected, silent: ...)`
 line, so you can tell "this plugin saw your stack" apart from "this
 plugin produced real graph content."
@@ -222,32 +222,32 @@ analyzing a monorepo — Veoable reads every nested manifest under
 ## Single-repo analysis
 
 ```bash
-adorable analyze <path> [options]
+veoable analyze <path> [options]
 ```
 
 The defaults are sensible. Common flags:
 
 ```bash
 # Persist to disk (without --output the graph is in-memory and lost on exit).
-adorable analyze . --output graph.db
+veoable analyze . --output graph.db
 
 # JSON output (pipe to jq, grep, etc).
-adorable analyze . --format json > flows.json
+veoable analyze . --format json > flows.json
 
 # Show per-file extraction progress.
-adorable analyze . --verbose
+veoable analyze . --verbose
 
 # Override the repo name (defaults to the directory name).
-adorable analyze ./backend --output graph.db --repo-name api
+veoable analyze ./backend --output graph.db --repo-name api
 
 # Wipe just this repo's nodes from an existing graph before re-analyzing.
-adorable analyze ./backend --output graph.db --repo-name api --clean
+veoable analyze ./backend --output graph.db --repo-name api --clean
 
 # Wipe the entire DB and start fresh.
-adorable analyze . --output graph.db --fresh
+veoable analyze . --output graph.db --fresh
 
 # Incremental: re-extract only files whose content changed since last run.
-adorable analyze . --output graph.db --incremental
+veoable analyze . --output graph.db --incremental
 ```
 
 ### `--clean` vs `--fresh` vs `--incremental`
@@ -265,8 +265,8 @@ incremental records the new hashes.
 ### Output formats
 
 ```bash
-adorable analyze . --format text   # default — readable flow summary
-adorable analyze . --format json   # full graph + flows as JSON
+veoable analyze . --format text   # default — readable flow summary
+veoable analyze . --format json   # full graph + flows as JSON
 ```
 
 ### Memory
@@ -277,8 +277,8 @@ auto-respawns Node with `--max-old-space-size=8192` (8 GB) the first time it
 starts. Override:
 
 ```bash
-ADORABLE_HEAP_MB=12288 adorable analyze .   # 12 GB
-ADORABLE_NO_HEAP_BUMP=1 adorable analyze .  # skip the auto bump
+ADORABLE_HEAP_MB=12288 veoable analyze .   # 12 GB
+ADORABLE_NO_HEAP_BUMP=1 veoable analyze .  # skip the auto bump
 ```
 
 ---
@@ -291,7 +291,7 @@ package. Veoable analyzes each repo independently and stitches across them.
 > **A note on monorepos.** Veoable also handles a single repo that
 > internally has per-package `tsconfig.json` files (the typebot.io /
 > cal.com / dub / papermark shape). In that case you can just point
-> `adorable analyze` at the repo root — the language plugin walks every
+> `veoable analyze` at the repo root — the language plugin walks every
 > subpackage's source into a single project. If the root `tsconfig.json`
 > uses `references: [./apps/x]` to delegate to subpackage configs,
 > Veoable trusts the reference graph and does not sweep further. If
@@ -304,7 +304,7 @@ package. Veoable analyzes each repo independently and stitches across them.
 ### 1. Bootstrap a config
 
 ```bash
-adorable project init ~/code/myapp
+veoable project init ~/code/myapp
 ```
 
 This walks the directory, finds likely repo roots, asks you to confirm, and
@@ -335,7 +335,7 @@ Notes on the fields:
 ### 2. Run the full analysis
 
 ```bash
-adorable project analyze myapp.project.json --verbose
+veoable project analyze myapp.project.json --verbose
 ```
 
 You get per-repo progress, then global cross-repo stitching, then a summary
@@ -346,7 +346,7 @@ of any unresolved callers + suggested stitch rules.
 Edit some code; re-run:
 
 ```bash
-adorable project analyze myapp.project.json --incremental
+veoable project analyze myapp.project.json --incremental
 ```
 
 Only files with changed SHA-256 hashes get re-extracted. On a 700-file project
@@ -355,7 +355,7 @@ this typically takes 4–5 seconds instead of 20–30.
 To nuke everything and start over:
 
 ```bash
-adorable project analyze myapp.project.json --fresh
+veoable project analyze myapp.project.json --fresh
 ```
 
 ---
@@ -366,7 +366,7 @@ Instead of re-running `project analyze` after each edit, leave a watcher
 running:
 
 ```bash
-adorable project watch myapp.project.json --incremental --on-demand
+veoable project watch myapp.project.json --incremental --on-demand
 ```
 
 What you see:
@@ -432,7 +432,7 @@ runs.
 
 ## Connecting Claude / Cursor / Continue / VS Code
 
-The fastest path is `adorable install <client>` (or `--auto`). It writes
+The fastest path is `veoable install <client>` (or `--auto`). It writes
 the canonical Veoable skill into the client's expected location so the
 agent recognizes when to invoke Veoable's MCP tools without you having
 to explain it. The full reference — flags, paths, troubleshooting,
@@ -441,13 +441,13 @@ removal — lives in [**docs/llm-client-install.md**](llm-client-install.md).
 ```bash
 # One command, every client we detect on your machine:
 cd ~/my-project
-adorable install --auto --db my-project.db
+veoable install --auto --db my-project.db
 
 # Or pick one explicitly:
-adorable install claude-code
-adorable install cursor    --db my-project.db
-adorable install continue  --db "$PWD/my-project.db"
-adorable install vscode    --db my-project.db
+veoable install claude-code
+veoable install cursor    --db my-project.db
+veoable install continue  --db "$PWD/my-project.db"
+veoable install vscode    --db my-project.db
 ```
 
 After install, restart the client (fully quit, not just close the window).
@@ -461,20 +461,20 @@ matches the skill's triggers and the agent routes the call:
 >
 > *"Why is the `/api/orders` endpoint slow? Walk me through it."*
 
-### What `adorable install` writes per client
+### What `veoable install` writes per client
 
 | Client       | Scope         | Files written                                                                                       |
 | ------------ | ------------- | --------------------------------------------------------------------------------------------------- |
-| claude-code  | user          | `~/.claude/skills/adorable/SKILL.md`                                                                |
-| cursor       | project       | `.cursor/rules/adorable.mdc` + (with `--db`) `.cursor/mcp.json` merge                               |
-| continue     | user          | `~/.continue/config.json` merge — `/adorable` slash command + (with `--db`) `mcpServers` entry      |
+| claude-code  | user          | `~/.claude/skills/veoable/SKILL.md`                                                                |
+| cursor       | project       | `.cursor/rules/veoable.mdc` + (with `--db`) `.cursor/mcp.json` merge                               |
+| continue     | user          | `~/.continue/config.json` merge — `/veoable` slash command + (with `--db`) `mcpServers` entry      |
 | vscode       | project       | `.github/copilot-instructions.md` delimited section + (with `--db`) `.vscode/mcp.json` merge        |
 
 Every adapter is idempotent — re-running with the current Veoable
 version refreshes the skill content; existing client-specific config
 outside Veoable's section is preserved.
 
-### Manual MCP setup (no `adorable install`)
+### Manual MCP setup (no `veoable install`)
 
 If you prefer to wire things up by hand (e.g. for a client we don't yet
 support, or for Claude Desktop), the MCP server entry shape is uniform
@@ -483,8 +483,8 @@ across MCP clients:
 ```json
 {
   "mcpServers": {
-    "adorable": {
-      "command": "adorable",
+    "veoable": {
+      "command": "veoable",
       "args": ["serve", "/absolute/path/to/myapp.db"]
     }
   }
@@ -499,7 +499,7 @@ Code in the install guide).
 Some clients prefer the HTTP transport:
 
 ```bash
-adorable serve myapp.db --transport http --port 3001
+veoable serve myapp.db --transport http --port 3001
 # Then point the client at http://localhost:3001
 ```
 
@@ -519,7 +519,7 @@ If you don't want MCP, two alternatives:
 ### Plain REST
 
 ```bash
-adorable serve myapp.db --rest --port 3001
+veoable serve myapp.db --rest --port 3001
 ```
 
 The REST server exposes the same tools as MCP, on two routes:
@@ -550,21 +550,21 @@ curl -X POST http://localhost:3001/api/tools/get_source_file \
      -d '{"file_path": "src/api/users.ts"}' | jq '.result'
 ```
 
-`adorable tools` from the CLI prints the same list with each parameter
+`veoable tools` from the CLI prints the same list with each parameter
 documented.
 
 ### Built-in chat
 
 ```bash
 # OpenRouter — recommended quickstart (no LLM-client install required):
-adorable chat myapp.db --provider openrouter --model anthropic/claude-sonnet-4
+veoable chat myapp.db --provider openrouter --model anthropic/claude-sonnet-4
 # (with $OPENROUTER_API_KEY set in your env or .env)
 
 # OpenAI:
-adorable chat myapp.db --provider openai --model gpt-4o
+veoable chat myapp.db --provider openai --model gpt-4o
 
 # Local Ollama:
-adorable chat myapp.db --model llama3
+veoable chat myapp.db --model llama3
 ```
 
 You type questions, the chat loop hands them to the LLM with the graph tools
@@ -582,16 +582,16 @@ OpenRouter.
 [OpenRouter](https://openrouter.ai/) is a unified API that routes a single key
 to dozens of LLM providers. It's the **fastest path to try Veoable** if you
 don't already have Claude Desktop / Cursor / a local Ollama, because
-`adorable chat` works against it directly — no MCP client setup, no
+`veoable chat` works against it directly — no MCP client setup, no
 desktop-app config files.
 
 ### Quickstart
 
 ```bash
 export OPENROUTER_API_KEY=sk-or-...
-adorable project init ~/my-project
-adorable project analyze my-project.project.json
-adorable chat my-project.db --provider openrouter --model anthropic/claude-sonnet-4
+veoable project init ~/my-project
+veoable project analyze my-project.project.json
+veoable chat my-project.db --provider openrouter --model anthropic/claude-sonnet-4
 ```
 
 That's the whole loop: analyze, chat. The `--provider openrouter` shortcut
@@ -614,7 +614,7 @@ For a self-hosted OpenAI-compatible proxy, skip `--provider` and pass `--llm`
 explicitly:
 
 ```bash
-adorable chat my-project.db --llm https://llm.mycompany.com/v1 --model my-model
+veoable chat my-project.db --llm https://llm.mycompany.com/v1 --model my-model
 ```
 
 Explicit `--llm` always wins over `--provider`'s URL, so you can combine the
@@ -623,7 +623,7 @@ for a proxy.
 
 ### What about MCP clients (Cursor, Continue, Claude Code, VS Code)?
 
-`adorable install <client>` writes the canonical SKILL.md into the client's
+`veoable install <client>` writes the canonical SKILL.md into the client's
 config — it doesn't pick the LLM the client uses to think. That's the
 client's own setting:
 
@@ -641,9 +641,9 @@ client's own setting:
 - **VS Code Copilot Chat** — uses your GitHub Copilot subscription
   directly, not OpenRouter.
 
-So for Cursor and Continue you can `adorable install <client>` once and
+So for Cursor and Continue you can `veoable install <client>` once and
 configure OpenRouter in the client separately. For Claude Code and VS Code
-Copilot, `adorable chat` is the OpenRouter path; the install adapters there
+Copilot, `veoable chat` is the OpenRouter path; the install adapters there
 assume their native backend.
 
 ---
@@ -660,20 +660,20 @@ cd ~/code/rallly
 pnpm install
 
 # 2. Bootstrap an Veoable config.
-adorable project init .
+veoable project init .
 
 # When prompted, accept the discovered repos (it'll find the Next.js app +
 # every package under packages/).
 
 # 3. First analysis.
-adorable project analyze rallly.project.json --verbose
+veoable project analyze rallly.project.json --verbose
 # Takes ~8 seconds on a fresh machine.
 
 # 4. Start a watch + serve loop.
 #    Terminal A:
-adorable project watch rallly.project.json --incremental --on-demand
+veoable project watch rallly.project.json --incremental --on-demand
 #    Terminal B (or hook into Claude Desktop, see above):
-adorable serve rallly.db --rest --port 3001 --project-root ~/code/rallly
+veoable serve rallly.db --rest --port 3001 --project-root ~/code/rallly
 
 # 5. Ask questions.
 # List every POST endpoint.
@@ -704,7 +704,7 @@ When you edit a file in the rallly tree, press `r` in Terminal A. The next
 Bump the heap:
 
 ```bash
-ADORABLE_HEAP_MB=16384 adorable analyze .
+ADORABLE_HEAP_MB=16384 veoable analyze .
 ```
 
 If it still fails, your project is too big for a single ts-morph project.
@@ -736,7 +736,7 @@ ones. If you rename `handlers.ts:fn` and `app.ts` imports it via a re-export
 through `barrel.ts`, `app.ts`'s edge will be stale until you either:
 
 - Touch `app.ts` (any whitespace change works), or
-- Run `adorable project analyze --fresh`.
+- Run `veoable project analyze --fresh`.
 
 ### `RangeError: Maximum call stack size exceeded`
 
@@ -745,7 +745,7 @@ file path that triggered it.
 
 ### Tools/MCP — "no tools shown" in Claude Desktop
 
-Claude Desktop caches the MCP server on a startup. After `adorable serve`
+Claude Desktop caches the MCP server on a startup. After `veoable serve`
 changes, fully quit (not just close) and reopen.
 
 ---
@@ -755,13 +755,13 @@ changes, fully quit (not just close) and reopen.
 Each command has its own detailed help:
 
 ```bash
-adorable analyze --help
-adorable serve --help
-adorable chat --help
-adorable project init --help
-adorable project analyze --help
-adorable project watch --help
-adorable tools --help
+veoable analyze --help
+veoable serve --help
+veoable chat --help
+veoable project init --help
+veoable project analyze --help
+veoable project watch --help
+veoable tools --help
 ```
 
 ### Environment variables
@@ -821,7 +821,7 @@ A full annotated config:
 ## Where to go next
 
 - **[`docs/llm-client-install.md`](llm-client-install.md)** — full reference
-  for `adorable install <client>` (Claude Code, Cursor, Continue, VS Code,
+  for `veoable install <client>` (Claude Code, Cursor, Continue, VS Code,
   `--auto`). Includes per-client paths, the `--db` flag semantics,
   verifying the install, updating, removing, and troubleshooting.
 - **[`docs/mcp-tools-guide.md`](mcp-tools-guide.md)** — what every MCP tool

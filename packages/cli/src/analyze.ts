@@ -199,8 +199,8 @@ export async function analyze(opts: AnalyzeOptions): Promise<AnalysisResult> {
     log(
       `  warning: ${files.length} source files detected — large projects may run out of memory.\n` +
       `    If analyze fails with "JavaScript heap out of memory", run\n` +
-      `    \`adorable project init\` to generate a per-package config and use\n` +
-      `    \`adorable project analyze <config>\` instead.`
+      `    \`veoable project init\` to generate a per-package config and use\n` +
+      `    \`veoable project analyze <config>\` instead.`
     );
   }
 
@@ -487,7 +487,7 @@ export async function analyze(opts: AnalyzeOptions): Promise<AnalysisResult> {
       // Warnings always go to stderr — they exist precisely to
       // surface silent-failure modes (e.g., #338 cap-hit). Routing
       // them through verbose-only `log` would defeat the purpose.
-      onWarning: (msg) => console.warn(`adorable analyze [${effectiveRepoName}] warning: ${msg}`),
+      onWarning: (msg) => console.warn(`veoable analyze [${effectiveRepoName}] warning: ${msg}`),
     });
     // Under --incremental, only call extractFile on files that
     // actually changed. The full langFiles list is still loaded into
@@ -528,8 +528,8 @@ export async function analyze(opts: AnalyzeOptions): Promise<AnalysisResult> {
         if (/heap out of memory|out of memory|allocation failed/i.test(msg)) {
           throw new Error(
             `Heap exhausted at ${file} after extracting ${totalExtracted} files. ` +
-            `Use \`adorable project init\` to generate a per-package config and run ` +
-            `\`adorable project analyze\` instead — that decomposes large monorepos ` +
+            `Use \`veoable project init\` to generate a per-package config and run ` +
+            `\`veoable project analyze\` instead — that decomposes large monorepos ` +
             `into independent ts-morph instances that fit in 8 GB. (Original: ${msg})`,
           );
         }

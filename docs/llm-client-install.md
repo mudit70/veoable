@@ -1,12 +1,12 @@
 # Veoable — Installing the LLM-Client Skill
 
-`adorable install <client>` writes the canonical Veoable skill into your LLM
+`veoable install <client>` writes the canonical Veoable skill into your LLM
 client's expected location so the agent knows when to invoke Veoable's MCP
 tools without you having to explain it. This guide covers the four supported
 clients and the `--auto` shortcut.
 
 If you're new to Veoable, start with the [User Guide](userguide.md) — get
-`adorable project analyze` producing a graph DB first, then come back here.
+`veoable project analyze` producing a graph DB first, then come back here.
 
 ---
 
@@ -14,7 +14,7 @@ If you're new to Veoable, start with the [User Guide](userguide.md) — get
 
 1. [Mental model](#mental-model)
 2. [Prerequisites](#prerequisites)
-3. [Quick start: `adorable install --auto`](#quick-start-adorable-install---auto)
+3. [Quick start: `veoable install --auto`](#quick-start-veoable-install---auto)
 4. [Per-client install](#per-client-install)
    - [Claude Code](#claude-code)
    - [Cursor](#cursor)
@@ -24,7 +24,7 @@ If you're new to Veoable, start with the [User Guide](userguide.md) — get
 6. [Verifying the install](#verifying-the-install)
 7. [Updating the skill](#updating-the-skill)
 8. [Removing the skill](#removing-the-skill)
-9. [What `adorable install` doesn't do](#what-adorable-install-doesnt-do)
+9. [What `veoable install` doesn't do](#what-veoable-install-doesnt-do)
 10. [Troubleshooting](#troubleshooting)
 
 ---
@@ -39,11 +39,11 @@ Veoable ships in two pieces for any LLM client:
    change this endpoint?") and the question shapes that shouldn't
    (syntax errors, build/CI issues, runtime traces).
 2. **An MCP server entry** — the wiring that lets the agent actually
-   *call* Veoable. The server is `adorable serve <graph.db>` — same
+   *call* Veoable. The server is `veoable serve <graph.db>` — same
    binary you already have installed, pointed at the graph you built
-   with `adorable project analyze`.
+   with `veoable project analyze`.
 
-`adorable install <client>` writes both into your LLM client's expected
+`veoable install <client>` writes both into your LLM client's expected
 locations. Each client's install path is slightly different (some are
 user-scoped, some project-scoped; some use one file, some use two) and
 this guide explains each. The canonical content is shared: the same
@@ -58,19 +58,19 @@ Before installing into any client:
 
 ```bash
 # 1. Install Veoable itself.
-git clone https://github.com/mudit70/adorable
-cd adorable
+git clone https://github.com/mudit70/veoable
+cd veoable
 git checkout v0.3.0
 pnpm install
 pnpm install-cli
 
 # 2. Build a graph for your project.
 cd ~/my-project
-adorable project init .
-adorable project analyze my-project.project.json
+veoable project init .
+veoable project analyze my-project.project.json
 
 # 3. Verify the graph works.
-adorable serve my-project.db --transport http --port 3001
+veoable serve my-project.db --transport http --port 3001
 # In another terminal:
 curl http://localhost:3001/api/tools | jq '.tools[] | .function.name' | head
 # (Ctrl-C the serve command once you've confirmed it lists tools.)
@@ -81,32 +81,32 @@ point Veoable's MCP server at it.
 
 ---
 
-## Quick start: `adorable install --auto`
+## Quick start: `veoable install --auto`
 
 If you don't know (or don't care) which LLM clients are installed on your
 machine, run:
 
 ```bash
 cd ~/my-project
-adorable install --auto --db my-project.db
+veoable install --auto --db my-project.db
 ```
 
 It detects each supported client and installs into every one it finds:
 
 ```
 ✓ Installed skill 'claude-code'.
-  Wrote: /Users/me/.claude/skills/adorable/SKILL.md
+  Wrote: /Users/me/.claude/skills/veoable/SKILL.md
 ✓ Installed skill 'cursor'.
-  Wrote: /Users/me/my-project/.cursor/rules/adorable.mdc
+  Wrote: /Users/me/my-project/.cursor/rules/veoable.mdc
          /Users/me/my-project/.cursor/mcp.json
 Skipped (no detection signal):
-  · continue: ~/.continue not found (Continue doesn't appear to be installed; run `adorable install continue` to set up anyway)
+  · continue: ~/.continue not found (Continue doesn't appear to be installed; run `veoable install continue` to set up anyway)
   · vscode:   neither .vscode/ nor .github/copilot-instructions.md found (...)
 Next steps:
   [claude-code]
     Build a graph for your project (if you haven't already): ...
     Register the MCP server with Claude Code so the skill has data to query:
-      claude mcp add adorable -- adorable serve <project.db>
+      claude mcp add veoable -- veoable serve <project.db>
   [cursor]
     Restart Cursor (or reload the window) ...
 ```
@@ -136,23 +136,23 @@ non-zero if anything failed, so CI can react.
 ### Claude Code
 
 ```bash
-adorable install claude-code
+veoable install claude-code
 ```
 
 - **Scope:** user-scoped.
-- **Writes:** `SKILL.md` to `$CLAUDE_CONFIG_DIR/skills/adorable/` (or
-  `~/.claude/skills/adorable/` by default).
+- **Writes:** `SKILL.md` to `$CLAUDE_CONFIG_DIR/skills/veoable/` (or
+  `~/.claude/skills/veoable/` by default).
 - **Idempotent:** re-running overwrites with the current canonical
   content.
 - **MCP server:** *not* registered automatically. Claude Code stores MCP
-  server entries in `~/.claude.json` which `adorable install` won't
+  server entries in `~/.claude.json` which `veoable install` won't
   touch — you don't want a corrupted config from a tool you didn't
   schedule. Wire the server yourself once your graph DB exists:
 
   ```bash
   cd ~/my-project
-  adorable project analyze my-project.project.json
-  claude mcp add adorable -- adorable serve "$PWD/my-project.db"
+  veoable project analyze my-project.project.json
+  claude mcp add veoable -- veoable serve "$PWD/my-project.db"
   ```
 
 Restart Claude Code (fully quit, not just close the window) so it
@@ -167,18 +167,18 @@ to Veoable's tools automatically.
 
 ```bash
 cd ~/my-project
-adorable install cursor --db my-project.db
+veoable install cursor --db my-project.db
 ```
 
 - **Scope:** project-scoped — run from the project root.
 - **Writes:**
-  - `.cursor/rules/adorable.mdc` — always. A Cursor "Agent Requested"
+  - `.cursor/rules/veoable.mdc` — always. A Cursor "Agent Requested"
     rule (`alwaysApply: false`) that activates by description matching.
   - `.cursor/mcp.json` — only when `--db` is provided. Merges the
-    `adorable` entry with whatever you already have under
+    `veoable` entry with whatever you already have under
     `mcpServers` (other server entries are preserved).
 - **Idempotent:** re-running rewrites the rule + replaces just the
-  `adorable` entry in `mcp.json`.
+  `veoable` entry in `mcp.json`.
 - **`--db` resolution:** relative paths resolve against the project root,
   not your shell's cwd. So `--db my-project.db` works the same
   whether you run from the project root or a subdirectory.
@@ -192,20 +192,20 @@ picked up.
 ### Continue.dev
 
 ```bash
-adorable install continue --db /abs/path/to/my-project.db
+veoable install continue --db /abs/path/to/my-project.db
 ```
 
 - **Scope:** user-scoped.
 - **Writes:** `$CONTINUE_GLOBAL_DIR/config.json` (or
   `~/.continue/config.json` by default). Merges two things:
-  - `customCommands[adorable]` — a `/adorable` slash command whose
-    prompt is the SKILL.md body. Typing `/adorable` in a Continue chat
+  - `customCommands[veoable]` — a `/veoable` slash command whose
+    prompt is the SKILL.md body. Typing `/veoable` in a Continue chat
     invokes the skill explicitly.
-  - `mcpServers.adorable` — wired only when `--db` is provided.
+  - `mcpServers.veoable` — wired only when `--db` is provided.
 - **Other entries preserved:** other `customCommands`, other
   `mcpServers`, and any other top-level keys in `config.json` are
   passed through untouched.
-- **Idempotent:** the adorable customCommand entry is replaced on
+- **Idempotent:** the veoable customCommand entry is replaced on
   re-install, so re-running doesn't grow a list of duplicates.
 - **`--db` resolution:** absolute paths recommended (Continue is
   user-scoped, so relative paths resolve against the shell cwd, which
@@ -223,7 +223,7 @@ Restart Continue (or reload your editor).
 
 ```bash
 cd ~/my-project
-adorable install vscode --db my-project.db
+veoable install vscode --db my-project.db
 ```
 
 - **Scope:** project-scoped — run from the project root.
@@ -232,9 +232,9 @@ adorable install vscode --db my-project.db
     Veoable section**:
 
     ```markdown
-    <!-- adorable:start v=1 (managed by `adorable install vscode`) -->
+    <!-- veoable:start v=1 (managed by `veoable install vscode`) -->
     ...
-    <!-- adorable:end -->
+    <!-- veoable:end -->
     ```
 
     Your existing instructions outside the markers are preserved
@@ -265,7 +265,7 @@ lives. It's optional for `cursor`, `continue`, and `vscode` (the rule
 or slash command still installs without it; the MCP server entry is
 just deferred). For `claude-code` it's not accepted — Claude Code's
 MCP config is registered with `claude mcp add` separately, not by
-`adorable install`.
+`veoable install`.
 
 **Path resolution rules:**
 
@@ -279,7 +279,7 @@ MCP config is registered with `claude mcp add` separately, not by
 If in doubt, pass an absolute path:
 
 ```bash
-adorable install continue --db "$HOME/my-project/my-project.db"
+veoable install continue --db "$HOME/my-project/my-project.db"
 ```
 
 ---
@@ -292,24 +292,24 @@ After installing into a client:
 
    ```bash
    # claude-code
-   head ~/.claude/skills/adorable/SKILL.md
+   head ~/.claude/skills/veoable/SKILL.md
    # cursor (run from project root)
-   head .cursor/rules/adorable.mdc
+   head .cursor/rules/veoable.mdc
    # continue
-   jq '.customCommands[] | select(.name == "adorable") | .description' ~/.continue/config.json
+   jq '.customCommands[] | select(.name == "veoable") | .description' ~/.continue/config.json
    # vscode (run from project root)
-   grep -A 2 'adorable:start' .github/copilot-instructions.md
+   grep -A 2 'veoable:start' .github/copilot-instructions.md
    ```
 
 2. **Confirm the MCP server entry is wired** (where applicable):
 
    ```bash
    # cursor
-   jq '.mcpServers.adorable' .cursor/mcp.json
+   jq '.mcpServers.veoable' .cursor/mcp.json
    # continue
-   jq '.mcpServers.adorable' ~/.continue/config.json
+   jq '.mcpServers.veoable' ~/.continue/config.json
    # vscode
-   jq '.servers.adorable' .vscode/mcp.json
+   jq '.servers.veoable' .vscode/mcp.json
    # claude-code
    claude mcp list  # if Claude Code is installed
    ```
@@ -346,7 +346,7 @@ SKILL.md content may change. Re-run the install command for each client
 you use:
 
 ```bash
-adorable install --auto --db ~/my-project/my-project.db
+veoable install --auto --db ~/my-project/my-project.db
 ```
 
 All adapters are idempotent — your existing client-specific content
@@ -357,41 +357,41 @@ outside Veoable's marker blocks (especially in
 
 ## Removing the skill
 
-There's no `adorable uninstall` command yet. To remove manually:
+There's no `veoable uninstall` command yet. To remove manually:
 
 ```bash
 # claude-code
-rm -rf ~/.claude/skills/adorable
-# (also remove the MCP entry: `claude mcp remove adorable`)
+rm -rf ~/.claude/skills/veoable
+# (also remove the MCP entry: `claude mcp remove veoable`)
 
 # cursor (from project root)
-rm .cursor/rules/adorable.mdc
-# Edit .cursor/mcp.json and delete the "adorable" key under "mcpServers".
+rm .cursor/rules/veoable.mdc
+# Edit .cursor/mcp.json and delete the "veoable" key under "mcpServers".
 
 # continue
 # Edit ~/.continue/config.json:
-#   - Remove the "adorable" entry from customCommands.
-#   - Remove the "adorable" entry from mcpServers.
+#   - Remove the "veoable" entry from customCommands.
+#   - Remove the "veoable" entry from mcpServers.
 
 # vscode (from project root)
 # Edit .github/copilot-instructions.md and delete the block between:
-#   <!-- adorable:start v=1 ... -->
-#   <!-- adorable:end -->
-# Edit .vscode/mcp.json and delete the "adorable" key under "servers".
+#   <!-- veoable:start v=1 ... -->
+#   <!-- veoable:end -->
+# Edit .vscode/mcp.json and delete the "veoable" key under "servers".
 ```
 
 ---
 
-## What `adorable install` doesn't do
+## What `veoable install` doesn't do
 
 For safety, the install command refuses to touch a few things:
 
 - **Claude Code's `~/.claude.json`** — `claude mcp add` is the official
   way to register an MCP server. We don't compete with it.
-- **The actual MCP server process** — `adorable install` writes config
+- **The actual MCP server process** — `veoable install` writes config
   only. The server runs when the LLM client launches it on demand.
-- **Building the graph DB** — you need `adorable project analyze` (or
-  `adorable analyze` for a single repo) before the MCP server has data
+- **Building the graph DB** — you need `veoable project analyze` (or
+  `veoable analyze` for a single repo) before the MCP server has data
   to serve. The install command's next-steps remind you of this.
 - **Restarting the client** — every adapter's next-steps print a
   "restart your client" reminder, but the install command can't do it
@@ -405,7 +405,7 @@ For safety, the install command refuses to touch a few things:
   Cursor and Continue both support OpenRouter as a backend out of the
   box; Claude Code and VS Code Copilot use their native subscriptions.
   If you're an OpenRouter-only user with no Claude Desktop / Copilot
-  subscription, the easiest path is `adorable chat --provider openrouter`
+  subscription, the easiest path is `veoable chat --provider openrouter`
   instead of an MCP install.
 
 ---
@@ -436,7 +436,7 @@ Code with a hard quit (`Cmd+Q` on macOS, not just close the window).
 
 ### "Cursor says my .mdc rule is invalid"
 
-`adorable install` writes Cursor's expected frontmatter:
+`veoable install` writes Cursor's expected frontmatter:
 
 ```yaml
 ---
@@ -455,30 +455,30 @@ frontmatter by hand, or upgrade Cursor.
 Re-run with the new `--db`:
 
 ```bash
-adorable install cursor --db /path/to/different-graph.db
+veoable install cursor --db /path/to/different-graph.db
 ```
 
-The merge logic replaces only the `adorable` entry in `mcp.json` /
+The merge logic replaces only the `veoable` entry in `mcp.json` /
 `config.json`; other servers are untouched.
 
-### "`adorable install --auto` skips a client I have installed"
+### "`veoable install --auto` skips a client I have installed"
 
 The detection signal looks for the client's config directory
 (`~/.claude`, `.cursor/`, etc.) in the expected location. If you've
 relocated it (e.g. `$CLAUDE_CONFIG_DIR=/elsewhere`), set the env var
-in your shell or pass an explicit `adorable install <client>` instead.
+in your shell or pass an explicit `veoable install <client>` instead.
 
 ### "My `.github/copilot-instructions.md` has duplicate Veoable sections"
 
 A half-broken previous install or a copy-paste error can leave two
-marker pairs. Re-run `adorable install vscode` — the upsert collapses
+marker pairs. Re-run `veoable install vscode` — the upsert collapses
 both into a single canonical section automatically.
 
 ### "The MCP server crashes on startup"
 
 Two common causes:
 
-- **The graph DB doesn't exist yet.** Run `adorable project analyze`
+- **The graph DB doesn't exist yet.** Run `veoable project analyze`
   first.
 - **The DB path in the config is wrong.** Open the relevant `mcp.json`
   / `config.json` and confirm `args` contains the absolute path to
@@ -487,7 +487,7 @@ Two common causes:
 You can also test the server directly:
 
 ```bash
-adorable serve /abs/path/to/graph.db
+veoable serve /abs/path/to/graph.db
 # (it should print a startup banner; Ctrl-C to stop)
 ```
 
@@ -501,10 +501,10 @@ adorable serve /abs/path/to/graph.db
   agent's next answer), leave a watcher running in another terminal:
 
   ```bash
-  adorable project watch my-project.project.json --incremental --on-demand
+  veoable project watch my-project.project.json --incremental --on-demand
   # Press 'r' before asking the agent a question that needs fresh data.
   ```
 
-- **Missing your favorite client?** Track [#363](https://github.com/mudit70/adorable/issues/363)
+- **Missing your favorite client?** Track [#363](https://github.com/mudit70/veoable/issues/363)
   — ChatGPT custom GPT, OpenClaw, and marketplace listings are planned
   follow-ups.

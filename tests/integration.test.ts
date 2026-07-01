@@ -34,7 +34,7 @@ afterEach(async () => {
 
 describe('foundational integration', () => {
   it('a plugin-shaped commit round-trips through every foundational package', async () => {
-    const repo = 'adorable';
+    const repo = 'veoable';
     const filePath = 'src/users.ts';
     const fileId = idFor.sourceFile({ repository: repo, filePath });
     const fnId = idFor.functionDefinition({ sourceFileId: fileId, name: 'getUser', sourceLine: 10 });
@@ -95,7 +95,7 @@ describe('foundational integration', () => {
   });
 
   it('committing the same batch twice is idempotent across the full stack', () => {
-    const repo = 'adorable';
+    const repo = 'veoable';
     const fileId = idFor.sourceFile({ repository: repo, filePath: 'a.ts' });
     const node = {
       nodeType: 'SourceFile' as const,
