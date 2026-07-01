@@ -486,7 +486,7 @@ describe('printHelp', () => {
   it('falls back to the overview for an empty command (top-level --help path)', () => {
     const out = capture(() => printHelp(''));
     // Overview lists every command in one place.
-    expect(out).toContain('Adorable — end-to-end flow analysis');
+    expect(out).toContain('Veoable — end-to-end flow analysis');
     expect(out).toContain('analyze <path>');
     expect(out).toContain('serve <graph.db>');
     expect(out).toContain('chat <graph.db>');
@@ -496,7 +496,7 @@ describe('printHelp', () => {
 
   it('falls back to the overview for an unknown command (default branch)', () => {
     const out = capture(() => printHelp('nonexistent-command'));
-    expect(out).toContain('Adorable — end-to-end flow analysis');
+    expect(out).toContain('Veoable — end-to-end flow analysis');
     expect(out).toContain('Commands:');
   });
 });

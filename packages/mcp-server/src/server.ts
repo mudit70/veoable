@@ -27,7 +27,7 @@ import { getSkillMarkdown } from '@veoable/skill';
 /**
  * Create an MCP server wired to a canonical graph store.
  *
- * The server exposes tools for querying the Adorable knowledge graph
+ * The server exposes tools for querying the Veoable knowledge graph
  * — both raw graph primitives (`list_nodes`, `get_node`, `find_edges`)
  * and high-level flow operations (`walk_flows`, `walk_all_flows`,
  * `stitch`). An AI agent connected via the MCP protocol can ask
@@ -125,7 +125,7 @@ export function createMcpServer(store: CanonicalGraphStore, opts?: McpServerOpti
   // self-introspection path for agents that didn't get it embedded.
   server.tool(
     'describe_skill',
-    "Return the canonical Adorable skill description (SKILL.md): when to invoke Adorable tools, when not to, and the recommended tool chains for common questions. Call this once at session start if you don't already have the Adorable skill loaded, if you're unsure whether a question should be answered with Adorable, or if you need a refresher on which tool fits which question shape.",
+    "Return the canonical Veoable skill description (SKILL.md): when to invoke Veoable tools, when not to, and the recommended tool chains for common questions. Call this once at session start if you don't already have the Veoable skill loaded, if you're unsure whether a question should be answered with Veoable, or if you need a refresher on which tool fits which question shape.",
     {},
     async () => {
       return {

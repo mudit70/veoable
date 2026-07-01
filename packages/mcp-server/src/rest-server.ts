@@ -35,7 +35,7 @@ export interface RestServerOptions {
 }
 
 /**
- * Create an HTTP server that exposes the Adorable knowledge graph tools
+ * Create an HTTP server that exposes the Veoable knowledge graph tools
  * as a REST API. Each MCP tool becomes a POST endpoint:
  *
  *   GET  /api/tools              → list all tools with schemas
@@ -163,7 +163,7 @@ function buildToolDefs(store: CanonicalGraphStore, projectRoot?: string, project
     {
       name: 'describe_skill',
       description:
-        "Return the canonical Adorable skill description (SKILL.md): when to invoke Adorable tools, when not to, and the recommended tool chains for common questions. Call this once at session start if you don't already have the Adorable skill loaded, if you're unsure whether a question should be answered with Adorable, or if you need a refresher on which tool fits which question shape.",
+        "Return the canonical Veoable skill description (SKILL.md): when to invoke Veoable tools, when not to, and the recommended tool chains for common questions. Call this once at session start if you don't already have the Veoable skill loaded, if you're unsure whether a question should be answered with Veoable, or if you need a refresher on which tool fits which question shape.",
       parameters: { type: 'object', properties: {} },
       handler: async () => ({ markdown: getSkillMarkdown() }),
     },

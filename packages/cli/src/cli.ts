@@ -14,7 +14,7 @@ import { analyze } from './analyze.js';
 import { formatJson, formatText } from './format.js';
 
 /**
- * CLI entry point for Adorable.
+ * CLI entry point for Veoable.
  *
  * Usage:
  *   veoable analyze <path> [options]
@@ -205,7 +205,7 @@ export function parseArgs(argv: string[]): CliArgs {
 /** Top-level help — concise overview of all commands. */
 function printOverview(): void {
   console.log(`
-Adorable — end-to-end flow analysis for AI-written code
+Veoable — end-to-end flow analysis for AI-written code
 
 Usage:
   veoable <command> [args] [options]
@@ -218,7 +218,7 @@ Commands:
   project init <path>      Initialize a multi-repo project config
   project analyze <conf>   Analyze every repo in a project config
   tools                    List MCP tools available to LLMs / clients
-  install <client|--auto>  Install Adorable as a skill in an LLM client (claude-code, cursor, continue, vscode, --auto)
+  install <client|--auto>  Install Veoable as a skill in an LLM client (claude-code, cursor, continue, vscode, --auto)
 
 Quick start:
   veoable analyze ./my-project --output graph.db
@@ -331,7 +331,7 @@ Examples:
   # Local Ollama, no API key needed:
   veoable chat graph.db --model llama3
 
-  # OpenRouter — the fastest "try Adorable without installing an LLM client" path:
+  # OpenRouter — the fastest "try Veoable without installing an LLM client" path:
   veoable chat graph.db --provider openrouter --model anthropic/claude-sonnet-4
   # (with OPENROUTER_API_KEY set in env or .env)
 
@@ -382,7 +382,7 @@ Examples:
 
 function printInstallHelp(): void {
   console.log(`
-veoable install <client> — Install Adorable as a skill in an LLM client.
+veoable install <client> — Install Veoable as a skill in an LLM client.
 
 Usage:
   veoable install <client> [--db <path>]
@@ -409,7 +409,7 @@ Supported clients:
 
   vscode        Project-scoped. Run from the project directory you want
                 VS Code + Copilot Chat to use. Upserts a delimited
-                Adorable section in .github/copilot-instructions.md
+                Veoable section in .github/copilot-instructions.md
                 (existing instructions outside the markers are
                 preserved verbatim), and (when --db is provided) merges
                 .vscode/mcp.json with an "veoable" server entry.
@@ -431,7 +431,7 @@ Options:
                 installs but the MCP entry is deferred — re-run with
                 --db once your project is analyzed.
 
-The skill is the canonical "when to invoke Adorable" description that the
+The skill is the canonical "when to invoke Veoable" description that the
 agent reads to know which question shapes belong to this tool.
 
 Typical workflow:
@@ -813,7 +813,7 @@ async function main(): Promise<void> {
   }
 
   if (args.command === 'install') {
-    // `veoable install <client>` — drop the Adorable skill into the
+    // `veoable install <client>` — drop the Veoable skill into the
     // named LLM client's expected location. claude-code + continue are
     // user-scoped (~/.claude/skills/, ~/.continue/config.json); cursor
     // is project-scoped (./.cursor/) so it honors cwd. `--auto` walks
@@ -926,7 +926,7 @@ async function main(): Promise<void> {
         const pcPath = args.projectConfig ? path.resolve(args.projectConfig) : undefined;
         const rest = createRestServer(store, { projectRoot, port: args.port, projectConfigPath: pcPath, dbPath: resolvedDbPath });
         await rest.start();
-        console.error(`Adorable REST API server listening on http://localhost:${args.port}`);
+        console.error(`Veoable REST API server listening on http://localhost:${args.port}`);
         console.error(`  Tools: http://localhost:${args.port}/api/tools`);
         console.error(`  Graph: ${dbPath}, projectRoot: ${projectRoot}`);
       } else if (args.transport === 'http') {
@@ -961,7 +961,7 @@ async function main(): Promise<void> {
         });
 
         httpServer.listen(args.port, () => {
-          console.error(`Adorable HTTP MCP server listening on http://localhost:${args.port}/mcp`);
+          console.error(`Veoable HTTP MCP server listening on http://localhost:${args.port}/mcp`);
           console.error(`  Graph: ${dbPath}, projectRoot: ${projectRoot}`);
         });
       } else {
@@ -973,7 +973,7 @@ async function main(): Promise<void> {
         const { server } = createMcpServer(store, { projectRoot, projectConfigPath: args.projectConfig ? path.resolve(args.projectConfig) : undefined, dbPath: resolvedDbPath });
         const transport = new StdioServerTransport();
         await server.connect(transport);
-        console.error(`Adorable MCP server connected (graph: ${dbPath}, projectRoot: ${projectRoot})`);
+        console.error(`Veoable MCP server connected (graph: ${dbPath}, projectRoot: ${projectRoot})`);
       }
     } catch (err) {
       console.error(`Error starting server:`);

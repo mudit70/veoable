@@ -13,7 +13,7 @@ export function formatText(result: AnalysisResult): string {
   const lines: string[] = [];
 
   lines.push('');
-  lines.push(`Adorable analysis: ${result.rootDir}`);
+  lines.push(`Veoable analysis: ${result.rootDir}`);
   lines.push(`${'─'.repeat(60)}`);
   lines.push(`Source files:  ${result.sourceFileCount}`);
   // The user-facing "Frameworks" line shows the working set (plugins

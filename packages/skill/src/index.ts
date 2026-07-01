@@ -3,7 +3,7 @@ import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 /**
- * Canonical Adorable skill description, loaded from SKILL.md at the
+ * Canonical Veoable skill description, loaded from SKILL.md at the
  * package root. This is the source of truth for per-client adapters
  * (Claude Code, Cursor, Continue, ChatGPT, ...) — each one embeds or
  * references this content. Mid-session, the `describe_skill` MCP tool
