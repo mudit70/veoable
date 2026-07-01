@@ -1,0 +1,110 @@
+name: Bug report
+description: Something the analyzer emits (or fails to emit) doesn't match reality.
+title: "[bug] "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug. A minimal reproducer is
+        the single most valuable thing you can attach — even a link to a
+        public repo + a git SHA + the exact command you ran usually gets
+        us to a fix quickly.
+
+        For **security vulnerabilities** please do NOT use this template.
+        Follow the private-disclosure process in
+        [`SECURITY.md`](../../SECURITY.md).
+
+  - type: input
+    id: version
+    attributes:
+      label: Veoable version
+      description: >
+        Output of `veoable --version` (or the `@veoable/*` package
+        version if you're using the API directly).
+      placeholder: "0.3.0"
+    validations:
+      required: true
+
+  - type: input
+    id: node
+    attributes:
+      label: Node.js version
+      description: Output of `node --version`.
+      placeholder: "v20.11.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Linux
+        - Windows
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Surface area
+      description: Which part of the analyzer is misbehaving?
+      options:
+        - CLI (`veoable ...`)
+        - MCP server (`@veoable/mcp-server`)
+        - A specific language plugin (`@veoable/lang-*`)
+        - A specific framework plugin (`@veoable/framework-*`)
+        - Flow stitcher (cross-file / cross-repo edges)
+        - Graph DB / storage layer
+        - Something else / not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: >
+        Ideally a link to a public repo + git SHA + the exact command(s)
+        you ran. If that's not possible, paste the smallest snippet that
+        triggers the bug.
+      placeholder: |
+        1. Clone https://example.com/repro.git @ SHA abc123
+        2. `veoable analyze --project my-app`
+        3. Expected: an edge from `Login.tsx#handleSubmit` to
+           `POST /auth/login`.
+        4. Actual: no edge emitted.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to see?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: >
+        What actually happened? Paste error messages, stack traces, or the
+        offending analyzer output.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: >
+        Anything else that might help — screenshots of the emitted flow,
+        related issues, workarounds you tried, etc.
+    validations:
+      required: false

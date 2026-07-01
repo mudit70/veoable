@@ -1,0 +1,12 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/mudit70/veoable/security/advisories/new
+    about: >
+      Do NOT open a public issue for security bugs. Use GitHub's private
+      vulnerability report or email security@veoable.dev — see SECURITY.md.
+  - name: Question or discussion
+    url: https://github.com/mudit70/veoable/discussions
+    about: >
+      Open-ended questions, "how do I…", showing off a plugin you built,
+      or sharing a workflow — GitHub Discussions is the right home.
