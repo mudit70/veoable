@@ -1,0 +1,32 @@
+{
+  "name": "@veoable/migrate-from-adorable",
+  "version": "0.3.0",
+  "private": false,
+  "description": "One-shot migration command that upgrades a user's project from @adorable/* + adorable CLI to @veoable/* + veoable CLI. Rewrites imports, package.json deps, and MCP configs.",
+  "type": "module",
+  "bin": {
+    "veoable-migrate-from-adorable": "./dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/cli.ts src/index.ts --format esm --dts",
+    "dev": "tsup src/cli.ts src/index.ts --format esm --dts --watch",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}
