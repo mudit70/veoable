@@ -4,21 +4,15 @@ Thanks for using Veoable. Here's where to go depending on what you need.
 
 ## Questions & discussion
 
-- **GitHub Discussions** — <https://github.com/mudit70/veoable/discussions>
-  (enabled once the source drop lands). Best for open-ended questions,
-  "how do I…?", showing off a plugin you built, or sharing an analysis
-  workflow.
+- **GitHub Discussions** — <https://github.com/mudit70/veoable/discussions>.
+  Best for open-ended questions, "how do I…?", showing off a plugin you
+  built, or sharing an analysis workflow.
 - **Framework matrix / plugin capabilities** — start with the
-  [User Guide](https://github.com/mudit70/adorable/blob/main/docs/userguide.md).
-  It lists every supported framework and what the analyzer emits for it.
+  [User Guide](docs/userguide.md). It lists every supported framework
+  and what the analyzer emits for it.
 - **MCP setup** — the
-  [LLM Client Install Guide](https://github.com/mudit70/adorable/blob/main/docs/llm-client-install.md)
-  covers Claude Desktop, Cursor, Continue, and Zed.
-
-> Documentation links currently point at the `mudit70/adorable`
-> repository. They will move to `mudit70/veoable` once the
-> mechanical-rename PR lands. See
-> [`mudit70/adorable#516`](https://github.com/mudit70/adorable/issues/516).
+  [LLM Client Install Guide](docs/llm-client-install.md) covers Claude
+  Desktop, Cursor, Continue, and Zed.
 
 ## Bug reports
 
