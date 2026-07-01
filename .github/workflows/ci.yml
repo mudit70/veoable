@@ -54,7 +54,7 @@ jobs:
 
       - name: Install pnpm
         if: steps.workspace.outputs.present == 'true'
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         # No `version:` field — the workspace pins pnpm via the
         # `packageManager` field in package.json, and passing `version:`
         # here causes pnpm/action-setup to error with "Multiple versions of
