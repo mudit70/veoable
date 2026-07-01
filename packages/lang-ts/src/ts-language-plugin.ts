@@ -165,7 +165,8 @@ export class TsLanguagePlugin implements LanguagePlugin {
       const shouldSweep =
         opts.include !== undefined ||
         !tsconfigPath ||
-        hasMonorepoSubpackageTsconfigs(rootDir, tsconfigPath);
+        hasMonorepoSubpackageTsconfigs(rootDir, tsconfigPath) ||
+        isProjectReferencesShellTsconfig(tsconfigPath);
       if (shouldSweep) {
         const include = opts.include ?? defaultGlobsForExtensions(rootDir);
         // ts-morph's glob matcher requires exclusion patterns to share
@@ -370,6 +371,43 @@ function countUniquePathTargets(
 
 function defaultGlobsForExtensions(rootDir: string): string[] {
   return TS_FILE_EXTENSIONS.map((ext) => path.join(rootDir, '**/*' + ext));
+}
+
+/**
+ * Detect the TypeScript project-references "shell" pattern: a root
+ * `tsconfig.json` that delegates entirely via `references` and covers
+ * no files itself (`files: []` and no `include`). This is the default
+ * shape emitted by Vite templates, `create-react-app --template
+ * typescript`, and any repo that follows the TS Handbook's
+ * project-references guide.
+ *
+ * ts-morph loads the shell tsconfig but does not walk its `references`,
+ * so without a filesystem sweep the resulting Project is empty and
+ * every downstream `extractFile` call throws "file was not loaded into
+ * the project". #15, root-caused after `analyze` produced 0 flows on
+ * trade-unison (Vite + React + Supabase, 282 files) despite the
+ * framework visitors being wired up correctly.
+ */
+function isProjectReferencesShellTsconfig(rootTsconfigPath: string): boolean {
+  try {
+    const raw = fs.readFileSync(rootTsconfigPath, 'utf8');
+    const result = ts.parseConfigFileTextToJson(rootTsconfigPath, raw);
+    if (result.error || result.config === undefined) return false;
+    const parsed = result.config as {
+      references?: unknown[];
+      files?: unknown[];
+      include?: unknown[];
+    };
+    const hasReferences = Array.isArray(parsed.references) && parsed.references.length > 0;
+    if (!hasReferences) return false;
+    const hasInclude = Array.isArray(parsed.include) && parsed.include.length > 0;
+    if (hasInclude) return false;
+    const hasFiles = Array.isArray(parsed.files) && parsed.files.length > 0;
+    if (hasFiles) return false;
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 /**
