@@ -1,0 +1,9 @@
+[package]
+name = "kafkars-basic"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rdkafka = "0.36"
+tokio = { version = "1", features = ["full"] }
+anyhow = "1"

@@ -1,0 +1,11 @@
+{
+  "description": "Basic Flask routes",
+  "pluginId": "flask",
+  "language": "py",
+  "endpoints": [
+    { "httpMethod": "GET", "routePattern": "/users", "framework": "flask" },
+    { "httpMethod": "GET", "routePattern": "/users/:id", "framework": "flask" },
+    { "httpMethod": "POST", "routePattern": "/users", "framework": "flask" },
+    { "httpMethod": "DELETE", "routePattern": "/users/:id", "framework": "flask" }
+  ]
+}

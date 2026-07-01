@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- Form A — has action and an onsubmit handler -->
+  <form action="/api/A" method="POST" onsubmit="customA()">
+    <button type="submit" onclick="trackA()">A: submit-button (default semantics)</button>
+    <button type="button" onclick="cancelA()">A: type=button — NOT submit</button>
+    <input type="text" name="qA" onchange="searchA()" />
+  </form>
+
+  <!-- Form B — has action; default-type button (no `type` attr) is submit -->
+  <form action="/api/B" method="POST">
+    <button onclick="trackB()">B: default-type button</button>
+    <input type="submit" onclick="trackBImg()" />
+  </form>
+
+  <!-- Form C — NO action: handlers fall through to per-process fns -->
+  <form>
+    <button type="submit" onclick="customSubmitC()">C: would-be submit, no action</button>
+  </form>
+
+  <!-- Standalone button — outside any form -->
+  <button onclick="standalone()">Standalone</button>
+</body>
+</html>

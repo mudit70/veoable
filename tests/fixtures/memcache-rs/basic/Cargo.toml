@@ -1,0 +1,8 @@
+[package]
+name = "memcache-rs-basic"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+memcache = "0.17"
+anyhow = "1"

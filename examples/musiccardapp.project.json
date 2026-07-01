@@ -1,0 +1,9 @@
+{
+  "name": "musiccardapp",
+  "output": "musiccardapp.db",
+  "repos": [
+    { "path": "/path/to/musiccardapp/appfe-v2", "name": "appfe-v2" },
+    { "path": "/path/to/musiccardapp/apiapp", "name": "apiapp" }
+  ],
+  "stitchMode": "auto-exact"
+}

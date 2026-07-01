@@ -1,0 +1,16 @@
+node_modules/
+dist/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+.env
+.env.local
+.DS_Store
+coverage/
+tmp/
+
+# Local analysis workspaces (not for upstream)
+grade-tcc/
+veodiagram*.project.json
+.claude/

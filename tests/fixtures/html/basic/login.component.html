@@ -1,0 +1,20 @@
+<div class="login-page">
+  <h1>Sign in</h1>
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <input
+      name="username"
+      [(ngModel)]="model.username"
+      (focus)="onFocus()"
+      required />
+    <input
+      type="password"
+      name="password"
+      [(ngModel)]="model.password"
+      required />
+    <button type="submit" (click)="trackClick()" [disabled]="!loginForm.valid">
+      Sign in
+    </button>
+  </form>
+
+  <button (click)="openHelp()" (mouseover)="showTooltip()">Help</button>
+</div>

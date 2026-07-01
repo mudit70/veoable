@@ -1,0 +1,12 @@
+{
+  "name": "aws-s3-ts-basic",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.660.0",
+    "@aws-sdk/client-dynamodb": "^3.660.0",
+    "@aws-sdk/client-sqs": "^3.660.0",
+    "@aws-sdk/client-sns": "^3.660.0",
+    "@aws-sdk/client-lambda": "^3.660.0"
+  }
+}

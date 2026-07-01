@@ -1,0 +1,25 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// A deliberately awkward field ordering where the relation navigation
+// property appears BEFORE the scalar FK column it references. The
+// parser's two-pass FK patching must still mark `authorId` as
+// isForeignKey: true regardless of source order.
+model Author {
+  id    Int     @id @default(autoincrement())
+  name  String
+  books Book[]
+}
+
+model Book {
+  id       Int     @id @default(autoincrement())
+  author   Author  @relation(fields: [authorId], references: [id])
+  title    String
+  authorId Int
+}

@@ -1,0 +1,8 @@
+// Model shard — NO datasource block. Pre-#325 the parser silently
+// dropped these.
+model User {
+  id    Int    @id @default(autoincrement())
+  email String @unique
+  name  String?
+  posts Post[]
+}

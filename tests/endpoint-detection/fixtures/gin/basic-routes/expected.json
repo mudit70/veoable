@@ -1,0 +1,11 @@
+{
+  "description": "Basic Gin routes",
+  "pluginId": "gin",
+  "language": "go",
+  "endpoints": [
+    { "httpMethod": "GET", "routePattern": "/users", "framework": "gin" },
+    { "httpMethod": "POST", "routePattern": "/users", "framework": "gin" },
+    { "httpMethod": "PUT", "routePattern": "/users/:id", "framework": "gin" },
+    { "httpMethod": "DELETE", "routePattern": "/users/:id", "framework": "gin" }
+  ]
+}

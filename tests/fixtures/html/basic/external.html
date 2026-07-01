@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <form action="https://api.stripe.com/v1/charges" method="POST">
+    <input type="hidden" name="amount" value="500" />
+    <button type="submit">Pay</button>
+  </form>
+
+  <form action="http://localhost:3001/local-only" method="POST">
+    <button type="submit">Local</button>
+  </form>
+
+  <form>
+    <button type="submit">No action — should be skipped</button>
+  </form>
+</body>
+</html>

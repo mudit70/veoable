@@ -1,0 +1,10 @@
+{
+  "description": "Basic GraphQL code-first resolvers (Query + Mutation)",
+  "pluginId": "graphql",
+  "language": "ts",
+  "endpoints": [
+    { "httpMethod": "GET", "routePattern": "/graphql/Query/users", "framework": "graphql" },
+    { "httpMethod": "GET", "routePattern": "/graphql/Query/user", "framework": "graphql" },
+    { "httpMethod": "POST", "routePattern": "/graphql/Mutation/createUser", "framework": "graphql" }
+  ]
+}

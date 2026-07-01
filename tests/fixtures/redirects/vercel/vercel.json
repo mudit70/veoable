@@ -1,0 +1,7 @@
+{
+  "redirects": [
+    { "source": "/try", "destination": "/signup", "permanent": true },
+    { "source": "/temp", "destination": "/permanent", "permanent": false },
+    { "source": "/with-status", "destination": "/elsewhere", "statusCode": 301 }
+  ]
+}

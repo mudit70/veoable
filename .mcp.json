@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "adorable": {
+      "command": "node",
+      "args": ["packages/cli/dist/cli.js", "serve", "graph.db"]
+    }
+  }
+}

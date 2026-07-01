@@ -1,0 +1,12 @@
+datasource beta {
+  provider = "postgresql"
+  url      = env("BETA_DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model UserB {
+  id Int @id
+}

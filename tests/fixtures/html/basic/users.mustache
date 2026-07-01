@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>{{title}}</h1>
+  <form action="/api/users" method="POST">
+    <button type="submit">Create</button>
+  </form>
+  {{#users}}
+    <div>{{name}}</div>
+  {{/users}}
+</body>
+</html>

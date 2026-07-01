@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+</head>
+<body>
+  <h1>Sign in</h1>
+  <form action="/api/login" method="POST">
+    <input type="text" name="username" />
+    <input type="password" name="password" />
+    <button type="submit" onclick="trackClick()">Sign in</button>
+  </form>
+
+  <form action="/api/search" method="get">
+    <input type="text" name="q" onchange="onSearchChange()" />
+  </form>
+
+  <button onclick="openHelp()" onmouseover="showTooltip()">Help</button>
+
+  <a href="/somewhere">Just a link, ignored</a>
+</body>
+</html>

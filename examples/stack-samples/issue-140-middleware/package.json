@@ -1,0 +1,7 @@
+{
+  "name": "issue-140-middleware",
+  "dependencies": {
+    "react": "^18.0.0",
+    "express": "^4.0.0"
+  }
+}

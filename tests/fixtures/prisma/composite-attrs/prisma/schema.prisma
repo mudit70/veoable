@@ -1,0 +1,32 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Composite primary key / unique / index attributes. The parser must not
+// blow up on these. The current implementation does not attempt to map
+// composite @@id into isPrimaryKey on the member columns — that's pinned
+// as a known gap for a later PR.
+model Membership {
+  userId    Int
+  groupId   Int
+  role      String
+  joinedAt  DateTime @default(now())
+
+  @@id([userId, groupId])
+  @@unique([userId, role])
+  @@index([groupId])
+}
+
+// A model whose only fields are navigation properties plus a composite
+// primary key attribute. Should still emit the DatabaseTable.
+model Pivot {
+  leftId  Int
+  rightId Int
+
+  @@id([leftId, rightId])
+}

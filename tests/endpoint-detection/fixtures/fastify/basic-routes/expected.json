@@ -1,0 +1,11 @@
+{
+  "description": "Basic Fastify routes",
+  "pluginId": "fastify",
+  "language": "ts",
+  "endpoints": [
+    { "httpMethod": "GET", "routePattern": "/users", "framework": "fastify" },
+    { "httpMethod": "POST", "routePattern": "/users", "framework": "fastify" },
+    { "httpMethod": "PUT", "routePattern": "/users/:id", "framework": "fastify" },
+    { "httpMethod": "DELETE", "routePattern": "/users/:id", "framework": "fastify" }
+  ]
+}

@@ -1,0 +1,13 @@
+// `prismaSchemaFolder` preview layout. This file carries ONLY the
+// datasource + generator; the actual models live in sibling .prisma
+// files (`user.prisma`, `post.prisma`). #325 — the parser must
+// attribute those models to this file's datasource.
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["prismaSchemaFolder"]
+}

@@ -1,0 +1,12 @@
+{
+  "description": "Basic Express routes with all HTTP methods",
+  "pluginId": "express",
+  "language": "ts",
+  "endpoints": [
+    { "httpMethod": "GET", "routePattern": "/users", "framework": "express" },
+    { "httpMethod": "POST", "routePattern": "/users", "framework": "express" },
+    { "httpMethod": "PUT", "routePattern": "/users/:id", "framework": "express" },
+    { "httpMethod": "DELETE", "routePattern": "/users/:id", "framework": "express" },
+    { "httpMethod": "PATCH", "routePattern": "/users/:id", "framework": "express" }
+  ]
+}

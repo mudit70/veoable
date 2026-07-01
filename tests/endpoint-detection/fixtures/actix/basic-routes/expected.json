@@ -1,0 +1,11 @@
+{
+  "description": "Basic Actix-web routes with attribute macros",
+  "pluginId": "actix",
+  "language": "rust",
+  "endpoints": [
+    { "httpMethod": "GET", "routePattern": "/users", "framework": "actix" },
+    { "httpMethod": "GET", "routePattern": "/users/:id", "framework": "actix" },
+    { "httpMethod": "POST", "routePattern": "/users", "framework": "actix" },
+    { "httpMethod": "DELETE", "routePattern": "/users/:id", "framework": "actix" }
+  ]
+}

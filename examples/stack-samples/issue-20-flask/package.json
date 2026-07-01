@@ -1,0 +1,4 @@
+{
+  "name": "issue-20-flask-frontend",
+  "dependencies": { "react": "^18.0.0" }
+}

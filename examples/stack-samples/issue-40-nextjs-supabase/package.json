@@ -1,0 +1,8 @@
+{
+  "name": "issue-40-nextjs-supabase",
+  "dependencies": {
+    "react": "^18.0.0",
+    "next": "^14.0.0",
+    "@supabase/supabase-js": "^2.0.0"
+  }
+}

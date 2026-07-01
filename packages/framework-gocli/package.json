@@ -1,0 +1,26 @@
+{
+  "name": "@adorable/framework-gocli",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --external @adorable/schema --external @adorable/plugin-api --external @adorable/observability --external @adorable/lang-go --external web-tree-sitter",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@adorable/lang-go": "workspace:*",
+    "@adorable/observability": "workspace:*",
+    "@adorable/plugin-api": "workspace:*",
+    "@adorable/schema": "workspace:*"
+  },
+  "devDependencies": {
+    "@adorable/graph-db": "workspace:*",
+    "@types/node": "^25.5.2",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}

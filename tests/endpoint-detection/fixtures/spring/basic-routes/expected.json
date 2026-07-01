@@ -1,0 +1,11 @@
+{
+  "description": "Basic Spring Boot routes with @RequestMapping prefix",
+  "pluginId": "spring",
+  "language": "java",
+  "endpoints": [
+    { "httpMethod": "GET", "routePattern": "/api/users", "framework": "spring" },
+    { "httpMethod": "GET", "routePattern": "/api/users/{id}", "framework": "spring" },
+    { "httpMethod": "POST", "routePattern": "/api/users", "framework": "spring" },
+    { "httpMethod": "DELETE", "routePattern": "/api/users/{id}", "framework": "spring" }
+  ]
+}
