@@ -1,0 +1,11 @@
+{
+  "name": "postgres-basic",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@prisma/client": "^5.0.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.0.0"
+  }
+}

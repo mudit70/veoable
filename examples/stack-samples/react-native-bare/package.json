@@ -1,0 +1,9 @@
+{
+  "name": "rn-bare-app",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-native": "^0.74.0",
+    "@react-navigation/native": "^6.0.0",
+    "@react-navigation/stack": "^6.0.0"
+  }
+}

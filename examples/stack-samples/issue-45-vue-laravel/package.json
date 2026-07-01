@@ -1,0 +1,4 @@
+{
+  "name": "issue-45-frontend",
+  "dependencies": { "vue": "^3.0.0", "axios": "^1.0.0" }
+}

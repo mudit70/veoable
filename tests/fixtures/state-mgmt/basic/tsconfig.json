@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "redux-saga/effects": ["src/stubs.ts"],
+      "@reduxjs/toolkit": ["src/stubs.ts"],
+      "@reduxjs/toolkit/*": ["src/stubs.ts"],
+      "@tanstack/react-query": ["src/stubs.ts"],
+      "mobx": ["src/stubs.ts"],
+      "pinia": ["src/stubs.ts"],
+      "zustand": ["src/stubs.ts"]
+    }
+  },
+  "include": ["src"]
+}

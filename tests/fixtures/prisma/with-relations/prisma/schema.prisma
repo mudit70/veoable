@@ -1,0 +1,36 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Customer {
+  id      Int      @id @default(autoincrement())
+  name    String
+  orders  Order[]
+}
+
+model Order {
+  id          Int      @id @default(autoincrement())
+  total       Decimal
+  customerId  Int
+  customer    Customer @relation(fields: [customerId], references: [id])
+  items       OrderItem[]
+}
+
+model OrderItem {
+  id       Int    @id @default(autoincrement())
+  orderId  Int
+  productSku String
+  order    Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product  Product @relation(fields: [productSku], references: [sku])
+}
+
+model Product {
+  sku   String @id
+  name  String
+  items OrderItem[]
+}

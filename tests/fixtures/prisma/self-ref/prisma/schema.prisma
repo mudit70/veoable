@@ -1,0 +1,19 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Self-referential relation: a tree of nodes where each node optionally
+// points at its parent. Both the `parent` and `children` fields must be
+// treated as navigation properties and NOT emitted as DatabaseColumns.
+model TreeNode {
+  id       Int        @id @default(autoincrement())
+  label    String
+  parentId Int?
+  parent   TreeNode?  @relation("ParentChild", fields: [parentId], references: [id])
+  children TreeNode[] @relation("ParentChild")
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Basic tRPC router with query/mutation/subscription procedures",
+  "pluginId": "trpc",
+  "language": "ts",
+  "endpoints": [
+    { "httpMethod": "GET", "routePattern": "/trpc/getUser", "framework": "trpc" },
+    { "httpMethod": "POST", "routePattern": "/trpc/createUser", "framework": "trpc" },
+    { "httpMethod": "WS", "routePattern": "/trpc/watchUser", "framework": "trpc" }
+  ]
+}

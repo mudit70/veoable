@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>{{ title }}</h1>
+
+  <form action="/api/users" method="POST">
+    <input type="text" name="email" />
+    <button type="submit">Create</button>
+  </form>
+
+  {% for user in users %}
+    <div>
+      {{ user.name }}
+      <button onclick="deleteUser('{{ user.id }}')">Delete</button>
+    </div>
+  {% endfor %}
+</body>
+</html>

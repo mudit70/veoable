@@ -1,0 +1,8 @@
+{
+  "name": "grpc-node-basic",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@grpc/grpc-js": "^1.12.2"
+  }
+}

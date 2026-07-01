@@ -1,0 +1,19 @@
+// Prisma 5+ briefly shipped multi-datasource preview features and real
+// projects still contain files with two datasource blocks for
+// historical or template reasons. The parser must pick the first in
+// source order and silently skip the rest so we don't crash or emit
+// duplicate systems.
+datasource primary {
+  provider = "postgresql"
+  url      = env("PRIMARY_URL")
+}
+
+datasource secondary {
+  provider = "mysql"
+  url      = env("SECONDARY_URL")
+}
+
+model Widget {
+  id   Int    @id @default(autoincrement())
+  name String
+}

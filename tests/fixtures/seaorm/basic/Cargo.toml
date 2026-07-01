@@ -1,0 +1,8 @@
+[package]
+name = "seaorm-fixture"
+version = "0.0.1"
+edition = "2021"
+
+[dependencies]
+sea-orm = { version = "0.12", features = ["runtime-tokio-rustls", "sqlx-postgres", "macros"] }
+tokio = { version = "1", features = ["full"] }
