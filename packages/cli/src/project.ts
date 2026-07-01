@@ -63,7 +63,7 @@ export interface StitchRule {
 }
 
 /**
- * Run `adorable project analyze` — analyze all repos in a project
+ * Run `veoable project analyze` — analyze all repos in a project
  * config file into a single database.
  *
  * After analysis:

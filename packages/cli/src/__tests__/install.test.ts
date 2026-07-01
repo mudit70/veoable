@@ -20,7 +20,7 @@ import {
 let tmpRoot: string;
 
 beforeEach(() => {
-  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-install-'));
+  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-install-'));
 });
 
 afterEach(() => {
@@ -39,7 +39,7 @@ describe('installClaudeCodeSkill (#363)', () => {
 
     const written = fs.readFileSync(skillPath, 'utf-8');
     // Frontmatter survived the write.
-    expect(written.startsWith('---\nname: adorable')).toBe(true);
+    expect(written.startsWith('---\nname: veoable')).toBe(true);
     // Full content (not a truncated copy).
     expect(written.length).toBeGreaterThan(5000);
     // Load-bearing routing sections present — pins the same contract
@@ -71,7 +71,7 @@ describe('installClaudeCodeSkill (#363)', () => {
     expect(result.filesWritten[0]).toBe(skillPath);
 
     const written = fs.readFileSync(skillPath, 'utf-8');
-    expect(written.startsWith('---\nname: adorable')).toBe(true);
+    expect(written.startsWith('---\nname: veoable')).toBe(true);
     expect(written.length).toBeGreaterThan(5000);
   });
 
@@ -81,10 +81,10 @@ describe('installClaudeCodeSkill (#363)', () => {
     // The instructions thread the user from install -> analyzed graph ->
     // registered MCP server -> live updates. All three steps are the
     // load-bearing flow; missing any of them leaves a new user stuck.
-    expect(joined).toContain('adorable project init');
-    expect(joined).toContain('adorable project analyze');
-    expect(joined).toContain('claude mcp add adorable');
-    expect(joined).toContain('adorable project watch');
+    expect(joined).toContain('veoable project init');
+    expect(joined).toContain('veoable project analyze');
+    expect(joined).toContain('claude mcp add veoable');
+    expect(joined).toContain('veoable project watch');
   });
 
   it('honors $CLAUDE_CONFIG_DIR when set and dir is omitted', () => {
@@ -93,7 +93,7 @@ describe('installClaudeCodeSkill (#363)', () => {
     const result = installClaudeCodeSkill({
       env: { CLAUDE_CONFIG_DIR: fakeConfig },
     });
-    const expected = path.join(fakeConfig, 'skills', 'adorable', 'SKILL.md');
+    const expected = path.join(fakeConfig, 'skills', 'veoable', 'SKILL.md');
     expect(result.filesWritten[0]).toBe(expected);
     expect(fs.existsSync(expected)).toBe(true);
   });
@@ -111,29 +111,29 @@ describe('installClaudeCodeSkill (#363)', () => {
     // dir wins -> file lands in explicit, NOT in env-config.
     expect(result.filesWritten[0]).toBe(path.join(explicitDir, 'SKILL.md'));
     expect(fs.existsSync(path.join(explicitDir, 'SKILL.md'))).toBe(true);
-    expect(fs.existsSync(path.join(envConfig, 'skills', 'adorable', 'SKILL.md'))).toBe(false);
+    expect(fs.existsSync(path.join(envConfig, 'skills', 'veoable', 'SKILL.md'))).toBe(false);
   });
 
-  it('falls back to $HOME/.claude/skills/adorable when no overrides given', () => {
+  it('falls back to $HOME/.claude/skills/veoable when no overrides given', () => {
     const fakeHome = path.join(tmpRoot, 'fake-home');
     fs.mkdirSync(fakeHome);
     const result = installClaudeCodeSkill({
       env: { HOME: fakeHome },
     });
-    const expected = path.join(fakeHome, '.claude', 'skills', 'adorable', 'SKILL.md');
+    const expected = path.join(fakeHome, '.claude', 'skills', 'veoable', 'SKILL.md');
     expect(result.filesWritten[0]).toBe(expected);
     expect(fs.existsSync(expected)).toBe(true);
   });
 });
 
 describe('installCursorSkill (#363)', () => {
-  it('writes .cursor/rules/adorable.mdc into the project dir', () => {
+  it('writes .cursor/rules/veoable.mdc into the project dir', () => {
     const result = installCursorSkill({ projectDir: tmpRoot });
     expect(result.client).toBe('cursor');
     // Without --db, only the rule file is written.
     expect(result.filesWritten).toHaveLength(1);
 
-    const rulePath = path.join(tmpRoot, '.cursor', 'rules', 'adorable.mdc');
+    const rulePath = path.join(tmpRoot, '.cursor', 'rules', 'veoable.mdc');
     expect(result.filesWritten[0]).toBe(rulePath);
     expect(fs.existsSync(rulePath)).toBe(true);
   });
@@ -141,14 +141,14 @@ describe('installCursorSkill (#363)', () => {
   it('rule file uses Cursor-format frontmatter, not SKILL.md frontmatter', () => {
     installCursorSkill({ projectDir: tmpRoot });
     const written = fs.readFileSync(
-      path.join(tmpRoot, '.cursor', 'rules', 'adorable.mdc'),
+      path.join(tmpRoot, '.cursor', 'rules', 'veoable.mdc'),
       'utf-8',
     );
     // First three lines must be the Cursor frontmatter, NOT
-    // SKILL.md's `name: adorable` opener.
+    // SKILL.md's `name: veoable` opener.
     expect(written.startsWith('---\ndescription: ')).toBe(true);
     expect(written).toContain('\nalwaysApply: false\n');
-    expect(written).not.toContain('name: adorable');
+    expect(written).not.toContain('name: veoable');
     // Body survived intact.
     expect(written).toContain('## When to invoke this skill');
     expect(written).toContain('## When NOT to invoke this skill');
@@ -162,11 +162,11 @@ describe('installCursorSkill (#363)', () => {
     expect(filesWritten.some((f) => f.endsWith('mcp.json'))).toBe(false);
 
     const joined = nextSteps.join('\n');
-    expect(joined).toContain('adorable install cursor --db');
-    expect(joined).toContain('adorable project analyze');
+    expect(joined).toContain('veoable install cursor --db');
+    expect(joined).toContain('veoable project analyze');
   });
 
-  it('with --db, writes .cursor/mcp.json with the adorable entry pointing at the absolute path', () => {
+  it('with --db, writes .cursor/mcp.json with the veoable entry pointing at the absolute path', () => {
     const dbRel = 'project.db';
     const dbAbs = path.resolve(tmpRoot, dbRel);
     // We deliberately pass the relative form; the install must
@@ -179,8 +179,8 @@ describe('installCursorSkill (#363)', () => {
     expect(fs.existsSync(mcpPath)).toBe(true);
     const cfg = JSON.parse(fs.readFileSync(mcpPath, 'utf-8'));
     expect(cfg.mcpServers).toBeTruthy();
-    expect(cfg.mcpServers.adorable).toEqual({
-      command: 'adorable',
+    expect(cfg.mcpServers.veoable).toEqual({
+      command: 'veoable',
       args: ['serve', dbAbs],
     });
   });
@@ -212,11 +212,11 @@ describe('installCursorSkill (#363)', () => {
       args: ['run'],
     });
     // Adorable entry added alongside.
-    expect(cfg.mcpServers.adorable).toBeTruthy();
-    expect(cfg.mcpServers.adorable.command).toBe('adorable');
+    expect(cfg.mcpServers.veoable).toBeTruthy();
+    expect(cfg.mcpServers.veoable.command).toBe('veoable');
   });
 
-  it('is idempotent — re-running with --db rewrites the adorable entry without disturbing others', () => {
+  it('is idempotent — re-running with --db rewrites the veoable entry without disturbing others', () => {
     installCursorSkill({ projectDir: tmpRoot, db: path.join(tmpRoot, 'first.db') });
 
     // Inject an unrelated entry between runs to confirm it survives.
@@ -229,7 +229,7 @@ describe('installCursorSkill (#363)', () => {
     installCursorSkill({ projectDir: tmpRoot, db: path.join(tmpRoot, 'second.db') });
 
     const cfg2 = JSON.parse(fs.readFileSync(mcpPath, 'utf-8'));
-    expect(cfg2.mcpServers.adorable.args).toEqual([
+    expect(cfg2.mcpServers.veoable.args).toEqual([
       'serve',
       path.resolve(tmpRoot, 'second.db'),
     ]);
@@ -250,7 +250,7 @@ describe('installCursorSkill (#363)', () => {
     const cfgPath = path.join(tmpRoot, '.cursor', 'mcp.json');
     installCursorSkill({ projectDir: tmpRoot, db: 'p.db' });
     const cfg = JSON.parse(fs.readFileSync(cfgPath, 'utf-8'));
-    expect(cfg.mcpServers.adorable.args).toEqual([
+    expect(cfg.mcpServers.veoable.args).toEqual([
       'serve',
       path.join(tmpRoot, 'p.db'),
     ]);
@@ -263,12 +263,12 @@ describe('installCursorSkill (#363)', () => {
     const cfg = JSON.parse(
       fs.readFileSync(path.join(tmpRoot, '.cursor', 'mcp.json'), 'utf-8'),
     );
-    expect(cfg.mcpServers.adorable.args).toEqual(['serve', abs]);
+    expect(cfg.mcpServers.veoable.args).toEqual(['serve', abs]);
   });
 });
 
 describe('installContinueSkill (#363)', () => {
-  it('creates ~/.continue/config.json from scratch with the /adorable slash command', () => {
+  it('creates ~/.continue/config.json from scratch with the /veoable slash command', () => {
     const result = installContinueSkill({ continueDir: tmpRoot });
     expect(result.client).toBe('continue');
     expect(result.filesWritten).toHaveLength(1);
@@ -280,17 +280,17 @@ describe('installContinueSkill (#363)', () => {
     const cfg = JSON.parse(fs.readFileSync(cfgPath, 'utf-8'));
     expect(cfg.customCommands).toHaveLength(1);
     const cmd = cfg.customCommands[0];
-    expect(cmd.name).toBe('adorable');
+    expect(cmd.name).toBe('veoable');
     expect(cmd.description.length).toBeGreaterThan(50);
     // The slash command prompt is the SKILL.md body, not the YAML
     // frontmatter — verify by checking we kept the body's section
-    // headings but stripped `name: adorable` from the front.
-    expect(cmd.prompt).not.toContain('name: adorable');
+    // headings but stripped `name: veoable` from the front.
+    expect(cmd.prompt).not.toContain('name: veoable');
     expect(cmd.prompt).toContain('## When to invoke this skill');
     expect(cmd.prompt).toContain('## How to use the tools well');
   });
 
-  it('without --db, the mcpServers section has no adorable entry', () => {
+  it('without --db, the mcpServers section has no veoable entry', () => {
     installContinueSkill({ continueDir: tmpRoot });
     const cfg = JSON.parse(
       fs.readFileSync(path.join(tmpRoot, 'config.json'), 'utf-8'),
@@ -298,14 +298,14 @@ describe('installContinueSkill (#363)', () => {
     expect(cfg.mcpServers).toEqual({});
   });
 
-  it('with --db, mcpServers.adorable is wired with absolute path', () => {
+  it('with --db, mcpServers.veoable is wired with absolute path', () => {
     const dbAbs = path.join(tmpRoot, 'graph.db');
     installContinueSkill({ continueDir: tmpRoot, db: dbAbs });
     const cfg = JSON.parse(
       fs.readFileSync(path.join(tmpRoot, 'config.json'), 'utf-8'),
     );
-    expect(cfg.mcpServers.adorable).toEqual({
-      command: 'adorable',
+    expect(cfg.mcpServers.veoable).toEqual({
+      command: 'veoable',
       args: ['serve', dbAbs],
     });
   });
@@ -332,13 +332,13 @@ describe('installContinueSkill (#363)', () => {
     // Other customCommand preserved.
     const names = (cfg.customCommands as Array<{ name: string }>).map((c) => c.name);
     expect(names).toContain('preexisting');
-    expect(names).toContain('adorable');
+    expect(names).toContain('veoable');
     // Other mcpServer preserved.
     expect(cfg.mcpServers['other-mcp']).toEqual({ command: 'x', args: [] });
-    expect(cfg.mcpServers.adorable).toBeTruthy();
+    expect(cfg.mcpServers.veoable).toBeTruthy();
   });
 
-  it('is idempotent — re-running replaces the adorable command, not appends a duplicate', () => {
+  it('is idempotent — re-running replaces the veoable command, not appends a duplicate', () => {
     installContinueSkill({ continueDir: tmpRoot, db: path.join(tmpRoot, 'first.db') });
     installContinueSkill({ continueDir: tmpRoot, db: path.join(tmpRoot, 'second.db') });
 
@@ -346,10 +346,10 @@ describe('installContinueSkill (#363)', () => {
       fs.readFileSync(path.join(tmpRoot, 'config.json'), 'utf-8'),
     );
     const adorableCmds = (cfg.customCommands as Array<{ name: string }>).filter(
-      (c) => c.name === 'adorable',
+      (c) => c.name === 'veoable',
     );
     expect(adorableCmds).toHaveLength(1);
-    expect(cfg.mcpServers.adorable.args).toEqual([
+    expect(cfg.mcpServers.veoable.args).toEqual([
       'serve',
       path.join(tmpRoot, 'second.db'),
     ]);
@@ -386,7 +386,7 @@ describe('installContinueSkill (#363)', () => {
       fs.readFileSync(path.join(tmpRoot, 'config.json'), 'utf-8'),
     );
     expect(Array.isArray(cfg.customCommands)).toBe(true);
-    expect(cfg.customCommands[0].name).toBe('adorable');
+    expect(cfg.customCommands[0].name).toBe('veoable');
   });
 });
 
@@ -403,8 +403,8 @@ describe('installVSCodeSkill (#363)', () => {
 
     const content = fs.readFileSync(instructionsPath, 'utf-8');
     // Marker pair present.
-    expect(content).toContain('<!-- adorable:start v=1 (managed by `adorable install vscode`) -->');
-    expect(content).toContain('<!-- adorable:end -->');
+    expect(content).toContain('<!-- veoable:start v=1 (managed by `veoable install vscode`) -->');
+    expect(content).toContain('<!-- veoable:end -->');
     // Routing signals + tool-usage section present.
     expect(content).toContain('Use Adorable tools FIRST');
     expect(content).toContain('Do NOT invoke Adorable for');
@@ -423,9 +423,9 @@ describe('installVSCodeSkill (#363)', () => {
     // Existing content survives verbatim.
     expect(merged.startsWith(existingBody.trimEnd())).toBe(true);
     // Adorable section appended after.
-    expect(merged).toContain('<!-- adorable:start');
+    expect(merged).toContain('<!-- veoable:start');
     expect(merged).toContain('## Adorable — End-to-End Flow Analysis');
-    expect(merged).toContain('<!-- adorable:end -->');
+    expect(merged).toContain('<!-- veoable:end -->');
   });
 
   it('idempotent — re-running replaces the delimited region in place, not appending duplicates', () => {
@@ -435,8 +435,8 @@ describe('installVSCodeSkill (#363)', () => {
     // section the user couldn't recover).
     const v1 = fs.readFileSync(instructionsPath, 'utf-8');
     const tampered = v1.replace(
-      /<!-- adorable:start[\s\S]*?<!-- adorable:end -->/,
-      '<!-- adorable:start v=1 (managed by `adorable install vscode`) -->\nstale content\n<!-- adorable:end -->',
+      /<!-- veoable:start[\s\S]*?<!-- veoable:end -->/,
+      '<!-- veoable:start v=1 (managed by `veoable install vscode`) -->\nstale content\n<!-- veoable:end -->',
     );
     fs.writeFileSync(instructionsPath, tampered, 'utf-8');
 
@@ -444,8 +444,8 @@ describe('installVSCodeSkill (#363)', () => {
     const v2 = fs.readFileSync(instructionsPath, 'utf-8');
 
     // Marker pair appears exactly once, and the stale content is gone.
-    expect(v2.match(/<!-- adorable:start/g) ?? []).toHaveLength(1);
-    expect(v2.match(/<!-- adorable:end -->/g) ?? []).toHaveLength(1);
+    expect(v2.match(/<!-- veoable:start/g) ?? []).toHaveLength(1);
+    expect(v2.match(/<!-- veoable:end -->/g) ?? []).toHaveLength(1);
     expect(v2).not.toContain('stale content');
     expect(v2).toContain('Use Adorable tools FIRST');
   });
@@ -459,9 +459,9 @@ describe('installVSCodeSkill (#363)', () => {
       '',
       'Top-level guidance.',
       '',
-      '<!-- adorable:start v=1 (managed by `adorable install vscode`) -->',
-      'stale adorable section',
-      '<!-- adorable:end -->',
+      '<!-- veoable:start v=1 (managed by `veoable install vscode`) -->',
+      'stale veoable section',
+      '<!-- veoable:end -->',
       '',
       '## Other policies',
       '',
@@ -480,7 +480,7 @@ describe('installVSCodeSkill (#363)', () => {
     expect(after).toContain('## Other policies');
     expect(after).toContain('Always run tests.');
     // The stale section is gone.
-    expect(after).not.toContain('stale adorable section');
+    expect(after).not.toContain('stale veoable section');
     // Fresh content lives between the markers.
     expect(after).toContain('Use Adorable tools FIRST');
   });
@@ -495,15 +495,15 @@ describe('installVSCodeSkill (#363)', () => {
     const body = [
       '# Project',
       '',
-      '<!-- adorable:start v=1 (managed by `adorable install vscode`) -->',
+      '<!-- veoable:start v=1 (managed by `veoable install vscode`) -->',
       'first stale section',
-      '<!-- adorable:end -->',
+      '<!-- veoable:end -->',
       '',
       'Middle content.',
       '',
-      '<!-- adorable:start v=1 (managed by `adorable install vscode`) -->',
+      '<!-- veoable:start v=1 (managed by `veoable install vscode`) -->',
       'second stale section',
-      '<!-- adorable:end -->',
+      '<!-- veoable:end -->',
       '',
       '## Trailing policy',
       '',
@@ -514,8 +514,8 @@ describe('installVSCodeSkill (#363)', () => {
     const after = fs.readFileSync(instructionsPath, 'utf-8');
 
     // Exactly one marker pair survives.
-    expect(after.match(/<!-- adorable:start/g) ?? []).toHaveLength(1);
-    expect(after.match(/<!-- adorable:end -->/g) ?? []).toHaveLength(1);
+    expect(after.match(/<!-- veoable:start/g) ?? []).toHaveLength(1);
+    expect(after.match(/<!-- veoable:end -->/g) ?? []).toHaveLength(1);
     // Both stale bodies are gone.
     expect(after).not.toContain('first stale section');
     expect(after).not.toContain('second stale section');
@@ -531,19 +531,19 @@ describe('installVSCodeSkill (#363)', () => {
     const { filesWritten, nextSteps } = installVSCodeSkill({ projectDir: tmpRoot });
     expect(filesWritten.some((f) => f.endsWith('mcp.json'))).toBe(false);
     expect(fs.existsSync(path.join(tmpRoot, '.vscode', 'mcp.json'))).toBe(false);
-    expect(nextSteps.join('\n')).toContain('adorable install vscode --db');
+    expect(nextSteps.join('\n')).toContain('veoable install vscode --db');
   });
 
-  it('with --db, .vscode/mcp.json gets a servers.adorable entry with type stdio', () => {
+  it('with --db, .vscode/mcp.json gets a servers.veoable entry with type stdio', () => {
     const dbAbs = path.join(tmpRoot, 'graph.db');
     installVSCodeSkill({ projectDir: tmpRoot, db: dbAbs });
 
     const mcpPath = path.join(tmpRoot, '.vscode', 'mcp.json');
     expect(fs.existsSync(mcpPath)).toBe(true);
     const cfg = JSON.parse(fs.readFileSync(mcpPath, 'utf-8'));
-    expect(cfg.servers.adorable).toEqual({
+    expect(cfg.servers.veoable).toEqual({
       type: 'stdio',
-      command: 'adorable',
+      command: 'veoable',
       args: ['serve', dbAbs],
     });
   });
@@ -553,7 +553,7 @@ describe('installVSCodeSkill (#363)', () => {
     const cfg = JSON.parse(
       fs.readFileSync(path.join(tmpRoot, '.vscode', 'mcp.json'), 'utf-8'),
     );
-    expect(cfg.servers.adorable.args).toEqual(['serve', path.join(tmpRoot, 'p.db')]);
+    expect(cfg.servers.veoable.args).toEqual(['serve', path.join(tmpRoot, 'p.db')]);
   });
 
   it('merges with existing mcp.json, preserving other servers and top-level keys', () => {
@@ -580,7 +580,7 @@ describe('installVSCodeSkill (#363)', () => {
       command: 'x',
       args: ['run'],
     });
-    expect(cfg.servers.adorable.command).toBe('adorable');
+    expect(cfg.servers.veoable.command).toBe('veoable');
   });
 });
 
@@ -657,7 +657,7 @@ describe('installAuto (#363)', () => {
 
     // Actual on-disk artifacts.
     expect(fs.existsSync(
-      path.join(fakeHome, '.claude', 'skills', 'adorable', 'SKILL.md'),
+      path.join(fakeHome, '.claude', 'skills', 'veoable', 'SKILL.md'),
     )).toBe(true);
     expect(fs.existsSync(
       path.join(fakeHome, '.continue', 'config.json'),
@@ -683,8 +683,8 @@ describe('installAuto (#363)', () => {
       path.join(fakeHome, '.continue', 'config.json'),
       'utf-8',
     ));
-    expect(continueCfg.mcpServers.adorable).toEqual({
-      command: 'adorable',
+    expect(continueCfg.mcpServers.veoable).toEqual({
+      command: 'veoable',
       args: ['serve', dbAbs],
     });
     // Cursor's mcp.json got the same entry.
@@ -692,8 +692,8 @@ describe('installAuto (#363)', () => {
       path.join(proj, '.cursor', 'mcp.json'),
       'utf-8',
     ));
-    expect(cursorCfg.mcpServers.adorable).toEqual({
-      command: 'adorable',
+    expect(cursorCfg.mcpServers.veoable).toEqual({
+      command: 'veoable',
       args: ['serve', dbAbs],
     });
   });

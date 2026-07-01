@@ -11,7 +11,7 @@ describe('SCHEMA_VERSION', () => {
   });
 });
 
-const repo = 'adorable';
+const repo = 'veoable';
 const fileId = idFor.sourceFile({ repository: repo, filePath: 'src/users.ts' });
 const fnId = idFor.functionDefinition({ sourceFileId: fileId, name: 'getUser', sourceLine: 10 });
 const sysId = idFor.databaseSystem({ kind: 'postgres', name: 'main' });

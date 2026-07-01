@@ -604,7 +604,7 @@ describe('extractPrismaSchemas — prismaSchemaFolder fixture (#325)', () => {
   it('returns an empty batch when no file carries a datasource block', async () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-no-ds-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-no-ds-'));
     try {
       await fs.mkdir(path.join(tmp, 'prisma'), { recursive: true });
       await fs.writeFile(
@@ -632,7 +632,7 @@ describe('extractPrismaSchemas — prismaSchemaFolder fixture (#325)', () => {
   it('deduplicates when the same model appears in two shards', async () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-dup-model-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-dup-model-'));
     try {
       await fs.mkdir(path.join(tmp, 'prisma'), { recursive: true });
       await fs.writeFile(
@@ -682,7 +682,7 @@ describe('extractPrismaSchemas — prismaSchemaFolder fixture (#325)', () => {
   it('picks the first datasource across files and attributes all models to it', async () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-multi-ds-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-multi-ds-'));
     try {
       await fs.mkdir(path.join(tmp, 'prisma'), { recursive: true });
       // a.prisma — postgres datasource + User
@@ -762,7 +762,7 @@ describe('findCanonicalPrismaSchemas', () => {
   it('finds canonical schema.prisma under a workspace', async () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-find-canonical-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-find-canonical-'));
     try {
       await fs.mkdir(path.join(tmp, 'packages/prisma'), { recursive: true });
       const schemaPath = path.join(tmp, 'packages/prisma/schema.prisma');
@@ -777,7 +777,7 @@ describe('findCanonicalPrismaSchemas', () => {
   it('finds multiple canonical schemas in distinct sub-packages', async () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-find-multi-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-find-multi-'));
     try {
       await fs.mkdir(path.join(tmp, 'packages/a/prisma'), { recursive: true });
       await fs.mkdir(path.join(tmp, 'packages/b/prisma'), { recursive: true });
@@ -794,7 +794,7 @@ describe('findCanonicalPrismaSchemas', () => {
   it('skips stray .prisma files outside a prisma/ directory', async () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-find-stray-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-find-stray-'));
     try {
       await fs.writeFile(path.join(tmp, 'fixtures.prisma'), '');
       await fs.mkdir(path.join(tmp, 'packages/prisma'), { recursive: true });
@@ -811,7 +811,7 @@ describe('findCanonicalPrismaSchemas', () => {
   it('skips node_modules and dotfiles', async () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-find-skips-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-find-skips-'));
     try {
       await fs.mkdir(path.join(tmp, 'node_modules/dep/prisma'), { recursive: true });
       await fs.mkdir(path.join(tmp, '.cache/prisma'), { recursive: true });
@@ -827,7 +827,7 @@ describe('findCanonicalPrismaSchemas', () => {
   it('returns empty for a workspace with no schemas', async () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-find-none-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-find-none-'));
     try {
       await fs.mkdir(path.join(tmp, 'apps/web'), { recursive: true });
       const found = findCanonicalPrismaSchemas(tmp);

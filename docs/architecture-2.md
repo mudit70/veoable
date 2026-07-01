@@ -544,7 +544,7 @@ Every step shows its confidence and strategy. The user can see that steps 1-3 an
 | **R-7.3** Dead Code Detection | Not implemented | Client graph: orphan processes. Server graph: orphan endpoints/tables |
 | **R-9** Incremental Re-Analysis | Not implemented | Confirmed stitches preserved across re-analysis |
 | **R-11.4** Multi-repo projects | Not implemented | Project concept, per-repo graphs, cross-repo stitching with routing config |
-| **UC-1** Set Up a Project | Not implemented | `adorable project create`, `add-repo`, routing config |
+| **UC-1** Set Up a Project | Not implemented | `veoable project create`, `add-repo`, routing config |
 | **UC-9** Trace End-to-End Flow | Done but noisy | Clean flows with provenance, can span repos |
 | **UC-10** Resolve Ambiguous Stitching | Not implemented | Full stitching interface |
 | **UC-14** AI-Assisted via MCP | Partial | AI can stitch using evidence + source retrieval |
@@ -581,7 +581,7 @@ Every step shows its confidence and strategy. The user can see that steps 1-3 an
 ### Step 5: CLI and Multi-Repo (#103)
 - `--stitch-mode none|auto-exact|auto-all` flag
 - Default to `none` (build graphs only)
-- `adorable project create/add-repo/analyze/stitch` commands
+- `veoable project create/add-repo/analyze/stitch` commands
 - Project routing config for cross-repo stitching
 - Merged project database
 

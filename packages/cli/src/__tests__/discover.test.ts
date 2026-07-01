@@ -45,7 +45,7 @@ function writeJson(p: string, value: unknown): void {
 }
 
 beforeEach(() => {
-  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-discover-'));
+  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-discover-'));
 });
 
 afterEach(() => {
@@ -376,7 +376,7 @@ describe('synthesizeWorkspaceCompilerPaths', () => {
   describe('#371 — source-entry preference', () => {
     let tmp: string;
     beforeEach(() => {
-      tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-synth-src-'));
+      tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-synth-src-'));
     });
     afterEach(() => {
       fs.rmSync(tmp, { recursive: true, force: true });

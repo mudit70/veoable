@@ -17,7 +17,7 @@ import { findUniqueExportedDeclaration } from '../find-exported-declaration.js';
 let tmpRoot: string;
 
 beforeEach(() => {
-  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-find-exp-'));
+  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-find-exp-'));
 });
 
 afterEach(() => {

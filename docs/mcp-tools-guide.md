@@ -10,7 +10,7 @@ Read it once front-to-back to get the lay of the land, then bookmark
 you'll come back to.
 
 If you haven't installed yet, start with the [User Guide](userguide.md) and come
-back when `adorable serve <graph.db>` is running.
+back when `veoable serve <graph.db>` is running.
 
 ---
 
@@ -537,5 +537,5 @@ watch terminal before asking again.
 - [User Guide](userguide.md) — install, CLI, MCP setup, recommended workflows.
 - [MCP Interaction Best Practices](MCPInteractionBestPractices.md) — patterns
   for prompting an AI assistant against the graph.
-- `adorable tools` from the CLI — same content as this guide, generated
+- `veoable tools` from the CLI — same content as this guide, generated
   directly from the live tool registry.

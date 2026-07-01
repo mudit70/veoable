@@ -11,7 +11,7 @@ import type { TsVisitContext } from '../framework-visitor.js';
 let tmpRoot: string;
 
 beforeEach(() => {
-  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-resolve-fn-id-'));
+  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-resolve-fn-id-'));
 });
 
 afterEach(() => {

@@ -16,7 +16,7 @@ describe('findWorkspaceRoot (#345)', () => {
   let tmp: string;
 
   beforeEach(async () => {
-    tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-fwr-'));
+    tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-fwr-'));
     // Resolve symlinks so comparisons match what findWorkspaceRoot
     // returns (macOS' /var → /private/var, /tmp → /private/tmp).
     tmp = await fs.realpath(tmp);
@@ -152,7 +152,7 @@ describe('findWorkspaceRoot (#345)', () => {
     // path between configDir and $HOME. The walk must NOT reach
     // $HOME's parent (where stray markers might exist on real dev
     // machines).
-    const fakeHome = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-fake-home-'));
+    const fakeHome = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-fake-home-'));
     try {
       // Plant a marker JUST ABOVE $HOME — if the walk crossed the
       // boundary, it would pick this up.
@@ -189,7 +189,7 @@ describe('findWorkspaceRoot (#345)', () => {
     // not that's true on the runner, we set up an explicit symlink
     // and verify the result is the realpath, not the symlink.
     await fs.writeFile(path.join(tmp, 'nx.json'), '');
-    const linkParent = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-symlink-'));
+    const linkParent = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-symlink-'));
     try {
       const link = path.join(linkParent, 'workspace-link');
       await fs.symlink(tmp, link);

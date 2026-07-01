@@ -47,7 +47,7 @@ function endpoints(batch: { nodes: SchemaNode[] }): APIEndpoint[] {
 describe('path-aliased Express receiver (#311)', () => {
   let tmpRoot: string;
   beforeEach(() => {
-    tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-express-pathalias-'));
+    tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-express-pathalias-'));
   });
   afterEach(() => {
     fs.rmSync(tmpRoot, { recursive: true, force: true });
