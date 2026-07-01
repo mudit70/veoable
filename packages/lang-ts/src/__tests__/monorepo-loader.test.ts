@@ -281,6 +281,50 @@ describe('monorepo loader (#529)', () => {
     expect(filePaths).toContain('apps/builder/src/page.tsx');
   });
 
+  it('sweeps when root tsconfig is a project-references shell (Vite/CRA pattern, #15)', async () => {
+    // Vite templates and `create-react-app --template typescript`
+    // both emit a root tsconfig with `files: []` and `references`
+    // pointing at `tsconfig.app.json` + `tsconfig.node.json`, where
+    // the actual `include` lives in the referenced configs. ts-morph
+    // loads the shell but does not follow `references`, so without
+    // the gate hitting here the Project ends up empty and every
+    // `extractFile` call throws — reproduced against trade-unison
+    // (282 files → 0 flows).
+    write(
+      'tsconfig.json',
+      JSON.stringify({
+        files: [],
+        references: [
+          { path: './tsconfig.app.json' },
+          { path: './tsconfig.node.json' },
+        ],
+      }),
+    );
+    write(
+      'tsconfig.app.json',
+      JSON.stringify({ compilerOptions: { module: 'esnext' }, include: ['src'] }),
+    );
+    write(
+      'tsconfig.node.json',
+      JSON.stringify({ compilerOptions: { module: 'esnext' }, include: ['vite.config.ts'] }),
+    );
+    write('src/App.tsx', 'export const App = () => null;\n');
+    write('src/hooks/useX.ts', 'export const useX = () => 1;\n');
+    write('vite.config.ts', 'export default {};\n');
+
+    const plugin = new TsLanguagePlugin();
+    const handle = await plugin.loadProject({ rootDir: tmpRoot });
+    const internal = unwrapHandle(handle);
+    const filePaths = internal.project
+      .getSourceFiles()
+      .map((sf) => path.relative(tmpRoot, sf.getFilePath()))
+      .map((p) => p.split(path.sep).join('/'));
+
+    expect(filePaths).toContain('src/App.tsx');
+    expect(filePaths).toContain('src/hooks/useX.ts');
+    expect(filePaths).toContain('vite.config.ts');
+  });
+
   it('respects node_modules exclusion when sweeping subpackages', async () => {
     write('tsconfig.json', JSON.stringify({ compilerOptions: { module: 'esnext' } }));
     write('src/app.ts', 'export const app = 1;\n');
