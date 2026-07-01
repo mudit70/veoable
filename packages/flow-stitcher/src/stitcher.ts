@@ -3,10 +3,10 @@ import type {
   ClientSideAPICaller,
   ResolvesToEndpointEdge,
   SchemaEdge,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { recordConfidenceDecision } from '@adorable/observability';
-import type { CanonicalGraphStore } from '@adorable/graph-db';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { recordConfidenceDecision } from '@veoable/observability';
+import type { CanonicalGraphStore } from '@veoable/graph-db';
 import {
   matchCallerToEndpoints,
   type MatcherCaller,
@@ -33,7 +33,7 @@ import { ALLOW_ANY_APPLICATION_PAIR, type ApplicationScope } from './application
  * Every emitted edge is typed `RESOLVES_TO_ENDPOINT` with `matchedBy`
  * and `matchConfidence` fields populated by the matcher. Every
  * `medium` / `low` / skipped-dynamic decision records a
- * `ConfidenceDecision` span event via `@adorable/observability` so
+ * `ConfidenceDecision` span event via `@veoable/observability` so
  * the stitching rationale is visible in the trace.
  */
 

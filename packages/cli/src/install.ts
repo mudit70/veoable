@@ -1,7 +1,7 @@
 import * as fs from 'node:fs';
 import * as os from 'node:os';
 import * as path from 'node:path';
-import { getSkillDescription, getSkillMarkdown, SKILL_NAME } from '@adorable/skill';
+import { getSkillDescription, getSkillMarkdown, SKILL_NAME } from '@veoable/skill';
 
 /**
  * #363 — install the Adorable skill into supported LLM clients.

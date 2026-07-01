@@ -1,7 +1,7 @@
 import { describe, expect, it, beforeEach, afterEach } from 'vitest';
-import { idFor, type FunctionDefinition, type SourceFile } from '@adorable/schema';
-import { makeBatchMeta } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
+import { idFor, type FunctionDefinition, type SourceFile } from '@veoable/schema';
+import { makeBatchMeta } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
 import { extractCallNames, resolveInlineHandlers } from '../resolve-inline-handlers.js';
 
 // ──────────────────────────────────────────────────────────────────────

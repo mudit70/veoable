@@ -1,4 +1,4 @@
-# Adorable -- Status Update and User Guide
+# Veoable -- Status Update and User Guide
 
 **Date:** April 9, 2026
 
@@ -24,7 +24,7 @@
 
 ## Project Overview
 
-Adorable analyzes AI-written code to build explainable end-to-end flows. It discovers API endpoints, client-side API callers, UI interaction elements (processes), and database interactions across a codebase, then stitches them together so a user can see what happens when they invoke a user interaction -- all the way from the initial handler through API calls to database interactions and back.
+Veoable analyzes AI-written code to build explainable end-to-end flows. It discovers API endpoints, client-side API callers, UI interaction elements (processes), and database interactions across a codebase, then stitches them together so a user can see what happens when they invoke a user interaction -- all the way from the initial handler through API calls to database interactions and back.
 
 This compressed context can be used to get more accurate results from AI when debugging, fixing, or changing anything related to the flow.
 
@@ -40,17 +40,17 @@ This compressed context can be used to get more accurate results from AI when de
 
 ## Architecture
 
-Adorable is a **pnpm monorepo** consisting of **16 TypeScript ESM packages**, organized into five layers.
+Veoable is a **pnpm monorepo** consisting of **16 TypeScript ESM packages**, organized into five layers.
 
 ```
                          +-------------------+
-                         |    @adorable/cli   |   CLI entry point
+                         |    @veoable/cli   |   CLI entry point
                          +-------------------+
                                   |
               +-------------------+-------------------+
               |                                       |
     +-------------------+                   +-------------------+
-    | @adorable/mcp-server |                | @adorable/flow-stitcher |
+    | @veoable/mcp-server |                | @veoable/flow-stitcher |
     +-------------------+                   +-------------------+
               |                                       |
               +-------------------+-------------------+
@@ -79,11 +79,11 @@ Adorable is a **pnpm monorepo** consisting of **16 TypeScript ESM packages**, or
 
 | Package | Purpose |
 |---------|---------|
-| `@adorable/schema` | Canonical knowledge graph schema (Zod). Single source of truth for every node type and edge type. Content-addressed IDs via `idFor.*` helpers. Runtime validators. `SCHEMA_VERSION` constant. |
-| `@adorable/plugin-api` | Plugin contract: `LanguagePlugin`, `FrameworkPlugin` (with optional `onProjectLoaded` hook), `FrameworkVisitor` interfaces, `BatchMeta`, `NodeBatch` types. Types only, zero runtime logic. |
-| `@adorable/observability` | OpenTelemetry wrapper. `withSpan` for tracing, `recordConfidenceDecision` for the hard rule that every dynamic/inferred heuristic decision must be traceable. No-op default exporter (zero overhead in production). |
-| `@adorable/graph-db` | SQLite-backed canonical `GraphStore`. `commit` (transactional, validates via schema, idempotent on content-addressed IDs), `getNode`, `findNodes` (with property filters including boolean coercion), `findEdges`. Content-addressed edge IDs via SHA-1 of canonical JSON. |
-| `@adorable/core` | Shared utility (currently `createLogger` / `Logger`). |
+| `@veoable/schema` | Canonical knowledge graph schema (Zod). Single source of truth for every node type and edge type. Content-addressed IDs via `idFor.*` helpers. Runtime validators. `SCHEMA_VERSION` constant. |
+| `@veoable/plugin-api` | Plugin contract: `LanguagePlugin`, `FrameworkPlugin` (with optional `onProjectLoaded` hook), `FrameworkVisitor` interfaces, `BatchMeta`, `NodeBatch` types. Types only, zero runtime logic. |
+| `@veoable/observability` | OpenTelemetry wrapper. `withSpan` for tracing, `recordConfidenceDecision` for the hard rule that every dynamic/inferred heuristic decision must be traceable. No-op default exporter (zero overhead in production). |
+| `@veoable/graph-db` | SQLite-backed canonical `GraphStore`. `commit` (transactional, validates via schema, idempotent on content-addressed IDs), `getNode`, `findNodes` (with property filters including boolean coercion), `findEdges`. Content-addressed edge IDs via SHA-1 of canonical JSON. |
+| `@veoable/core` | Shared utility (currently `createLogger` / `Logger`). |
 
 #### Node Types
 
@@ -97,22 +97,22 @@ Adorable is a **pnpm monorepo** consisting of **16 TypeScript ESM packages**, or
 
 | Package | Purpose |
 |---------|---------|
-| `@adorable/lang-ts` | TypeScript/JavaScript language plugin built on ts-morph 27. Structural extraction (`SourceFile`, `FunctionDefinition`, `IMPORTS`, `EXPORTS`, `DEFINED_IN`). Call graph (`CALLS_FUNCTION` with 4-level confidence: direct/method/indirect/dynamic). Cross-file resolution. Recursive walker covering nested functions, class methods, getters/setters/constructors, class expressions. `TsFrameworkVisitor` interface with single `onNode(ctx, node)` callback dispatched during the AST walk. Performance canary asserting less than 3x overhead. |
+| `@veoable/lang-ts` | TypeScript/JavaScript language plugin built on ts-morph 27. Structural extraction (`SourceFile`, `FunctionDefinition`, `IMPORTS`, `EXPORTS`, `DEFINED_IN`). Call graph (`CALLS_FUNCTION` with 4-level confidence: direct/method/indirect/dynamic). Cross-file resolution. Recursive walker covering nested functions, class methods, getters/setters/constructors, class expressions. `TsFrameworkVisitor` interface with single `onNode(ctx, node)` callback dispatched during the AST walk. Performance canary asserting less than 3x overhead. |
 
 ### Framework Plugins
 
 | Package | Purpose |
 |---------|---------|
-| `@adorable/framework-prisma` | Prisma schema parsing (`DatabaseSystem`/`Table`/`Column`/`FOREIGN_KEY` from `schema.prisma`) and Prisma Client call-site detection (`DatabaseInteraction` + `READS`/`WRITES`/`PERFORMED_BY` for `prisma.X.crudMethod()` patterns including `$queryRaw` tagged templates). Name-based receiver heuristic with inferred confidence. |
-| `@adorable/framework-react` | React client-side process detection. JSX event handlers (`onClick`, `onSubmit`, etc. via `/^on[A-Z]/` rule) and lifecycle hooks (`useEffect`, `useLayoutEffect`, `useInsertionEffect`). Emits `ClientSideProcess` nodes. |
-| `@adorable/framework-express` | Express server-side endpoint detection. `app.get('/path', handler)` and `router.METHOD` patterns. Same-file handler resolution to `FunctionDefinition` IDs. |
-| `@adorable/framework-fetch` | Client-side API caller detection for the built-in `fetch()` API. URL + method extraction with 3-level egress confidence (exact/pattern/dynamic). Template literal prefix extraction for pattern matching. |
+| `@veoable/framework-prisma` | Prisma schema parsing (`DatabaseSystem`/`Table`/`Column`/`FOREIGN_KEY` from `schema.prisma`) and Prisma Client call-site detection (`DatabaseInteraction` + `READS`/`WRITES`/`PERFORMED_BY` for `prisma.X.crudMethod()` patterns including `$queryRaw` tagged templates). Name-based receiver heuristic with inferred confidence. |
+| `@veoable/framework-react` | React client-side process detection. JSX event handlers (`onClick`, `onSubmit`, etc. via `/^on[A-Z]/` rule) and lifecycle hooks (`useEffect`, `useLayoutEffect`, `useInsertionEffect`). Emits `ClientSideProcess` nodes. |
+| `@veoable/framework-express` | Express server-side endpoint detection. `app.get('/path', handler)` and `router.METHOD` patterns. Same-file handler resolution to `FunctionDefinition` IDs. |
+| `@veoable/framework-fetch` | Client-side API caller detection for the built-in `fetch()` API. URL + method extraction with 3-level egress confidence (exact/pattern/dynamic). Template literal prefix extraction for pattern matching. |
 
 ### Flow Stitcher
 
 | Package | Purpose |
 |---------|---------|
-| `@adorable/flow-stitcher` | Two layers: (1) URL matcher + `RESOLVES_TO_ENDPOINT` edge emission, matching `ClientSideAPICaller` URLs against `APIEndpoint` route patterns with confidence levels (high/medium/low) and `matchedBy` types (exact-url/pattern/inferred). Internal `matchRank` tier for tiebreak. (2) Flow walker / query API via `createFlowWalker(store).walkAllProcesses()`, returning structured `Flow` objects tracing the full path from process to database. Gap handling via `FlowCompleteness`. BFS with cycle breaking and bounded depth (default 10). |
+| `@veoable/flow-stitcher` | Two layers: (1) URL matcher + `RESOLVES_TO_ENDPOINT` edge emission, matching `ClientSideAPICaller` URLs against `APIEndpoint` route patterns with confidence levels (high/medium/low) and `matchedBy` types (exact-url/pattern/inferred). Internal `matchRank` tier for tiebreak. (2) Flow walker / query API via `createFlowWalker(store).walkAllProcesses()`, returning structured `Flow` objects tracing the full path from process to database. Gap handling via `FlowCompleteness`. BFS with cycle breaking and bounded depth (default 10). |
 
 #### Flow Completeness Levels
 
@@ -129,15 +129,15 @@ Adorable is a **pnpm monorepo** consisting of **16 TypeScript ESM packages**, or
 
 | Package | Purpose |
 |---------|---------|
-| `@adorable/cli` | CLI entry point. `adorable analyze <path>` runs the full pipeline and prints human-readable flows. `adorable serve <graph.db>` starts the MCP server. Options: `--output`, `--format text\|json`, `--verbose`, `--max-call-depth`, `--exclude`. |
-| `@adorable/mcp-server` | MCP server exposing 8 tools for AI agent integration. Pure data server, no AI API key needed. |
+| `@veoable/cli` | CLI entry point. `adorable analyze <path>` runs the full pipeline and prints human-readable flows. `adorable serve <graph.db>` starts the MCP server. Options: `--output`, `--format text\|json`, `--verbose`, `--max-call-depth`, `--exclude`. |
+| `@veoable/mcp-server` | MCP server exposing 8 tools for AI agent integration. Pure data server, no AI API key needed. |
 
 ### Placeholder Packages
 
 | Package | Purpose |
 |---------|---------|
-| `@adorable/agents` | Placeholder for future detection engines. |
-| `@adorable/ui` | Placeholder for future graphical interface. |
+| `@veoable/agents` | Placeholder for future detection engines. |
+| `@veoable/ui` | Placeholder for future graphical interface. |
 
 ---
 
@@ -268,7 +268,7 @@ Each repo's nodes carry a distinct `repository` name. The `--clean` flag deletes
 ### Example output
 
 ```
-Adorable analysis: /path/to/project
+Veoable analysis: /path/to/project
 --------------------------------------------------------------------
 Source files:  7
 Frameworks:    prisma, react, express, fetch
@@ -295,7 +295,7 @@ End-to-end flows:
 
 ## Serving the Knowledge Graph
 
-Adorable exposes the knowledge graph via four serve modes. All modes use the same tool implementations — the difference is the transport.
+Veoable exposes the knowledge graph via four serve modes. All modes use the same tool implementations — the difference is the transport.
 
 ### Four serve modes
 
@@ -324,7 +324,7 @@ adorable chat graph.db --model llama3
 
 The default mode. The AI client spawns the server as a child process and communicates via stdin/stdout using the MCP protocol.
 
-The repo includes a `.mcp.json` at the project root with the Adorable MCP server pre-configured. Claude Code and Cursor will pick it up automatically — no manual setup needed.
+The repo includes a `.mcp.json` at the project root with the Veoable MCP server pre-configured. Claude Code and Cursor will pick it up automatically — no manual setup needed.
 
 To configure manually in another project:
 
@@ -426,7 +426,7 @@ LM Studio supports both MCP and OpenAI-compatible tool calling. Three ways to in
 
 **Option A: MCP config in LM Studio**
 
-In LM Studio's MCP settings, add the Adorable server. Use absolute paths:
+In LM Studio's MCP settings, add the Veoable server. Use absolute paths:
 
 ```json
 {
@@ -476,11 +476,11 @@ adorable serve graph.db --rest --port 3001
 
 ### How it works with Claude
 
-When Claude Code starts, it reads `.mcp.json`, connects to the Adorable MCP server, and receives the list of available tools. These tool names and descriptions become part of Claude's context — just like its built-in tools (Read, Edit, Bash, etc.).
+When Claude Code starts, it reads `.mcp.json`, connects to the Veoable MCP server, and receives the list of available tools. These tool names and descriptions become part of Claude's context — just like its built-in tools (Read, Edit, Bash, etc.).
 
-When you ask a question, Claude matches it against all available tools. If your question is about flows, endpoints, or the knowledge graph, Claude recognizes that the Adorable MCP tools are the right fit and calls them automatically. There is no special syntax — you just ask naturally.
+When you ask a question, Claude matches it against all available tools. If your question is about flows, endpoints, or the knowledge graph, Claude recognizes that the Veoable MCP tools are the right fit and calls them automatically. There is no special syntax — you just ask naturally.
 
-If the MCP server is not running or `graph.db` does not exist, Claude will not have access to the Adorable tools and cannot answer these questions.
+If the MCP server is not running or `graph.db` does not exist, Claude will not have access to the Veoable tools and cannot answer these questions.
 
 ### Example questions you can ask
 
@@ -544,7 +544,7 @@ All tools are available in all four serve modes (MCP, HTTP MCP, REST API, and ch
 ## Programmatic API
 
 ```typescript
-import { analyze, formatText } from '@adorable/cli';
+import { analyze, formatText } from '@veoable/cli';
 
 const result = await analyze({
   rootDir: '/path/to/project',
@@ -582,7 +582,7 @@ pnpm build             # Build all packages
 
 ## Supported Stack
 
-As of April 9, 2026, Adorable supports the following technologies:
+As of April 9, 2026, Veoable supports the following technologies:
 
 | Layer | Technology | Detection Capability |
 |-------|-----------|---------------------|

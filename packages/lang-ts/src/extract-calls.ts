@@ -4,8 +4,8 @@ import {
   type CallExpression,
   type SourceFile as TsSourceFile,
 } from 'ts-morph';
-import { recordConfidenceDecision } from '@adorable/observability';
-import type { CallConfidence, FunctionDefinition, SchemaEdge } from '@adorable/schema';
+import { recordConfidenceDecision } from '@veoable/observability';
+import type { CallConfidence, FunctionDefinition, SchemaEdge } from '@veoable/schema';
 import { functionDefinitionIdFor, isFunctionShape } from './function-id.js';
 import type { TsProjectInternal } from './project-handle.js';
 
@@ -26,7 +26,7 @@ import type { TsProjectInternal } from './project-handle.js';
  *
  * Every `indirect` and `dynamic` decision records a
  * `ConfidenceDecision` span event explaining the reason — this is the
- * hard rule from `@adorable/observability`.
+ * hard rule from `@veoable/observability`.
  */
 export interface CallExtractionResult {
   edges: SchemaEdge[];

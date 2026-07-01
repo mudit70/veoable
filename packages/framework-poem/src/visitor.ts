@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type APIEndpoint } from '@adorable/schema';
-import { hasCrateImport, type RustFrameworkVisitor, type RustVisitContext } from '@adorable/lang-rust';
+import { idFor, type APIEndpoint } from '@veoable/schema';
+import { hasCrateImport, type RustFrameworkVisitor, type RustVisitContext } from '@veoable/lang-rust';
 
 /**
  * Poem framework visitor.

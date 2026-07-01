@@ -1,10 +1,10 @@
 import { Node, type CallExpression, type Expression, type NewExpression } from 'ts-morph';
-import { idFor, type ClientSideAPICaller } from '@adorable/schema';
+import { idFor, type ClientSideAPICaller } from '@veoable/schema';
 import {
   type TsFrameworkVisitor,
   buildEvidence,
   resolveToString,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * RPC-client visitor (#408).

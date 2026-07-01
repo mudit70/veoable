@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type APIEndpoint } from '@adorable/schema';
-import type { RustFrameworkVisitor } from '@adorable/lang-rust';
+import { idFor, type APIEndpoint } from '@veoable/schema';
+import type { RustFrameworkVisitor } from '@veoable/lang-rust';
 
 /**
  * Rust MCP server visitor (#537).

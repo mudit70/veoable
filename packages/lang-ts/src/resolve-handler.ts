@@ -1,7 +1,7 @@
 import * as path from 'node:path';
 import { Node, type Expression } from 'ts-morph';
-import { idFor } from '@adorable/schema';
-import { recordConfidenceDecision } from '@adorable/observability';
+import { idFor } from '@veoable/schema';
+import { recordConfidenceDecision } from '@veoable/observability';
 import type { TsVisitContext } from './framework-visitor.js';
 import { resolveIdentifierTypeToDeclaration } from './cross-file-resolver.js';
 

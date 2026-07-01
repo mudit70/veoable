@@ -1,5 +1,5 @@
 {
-  "name": "@adorable/framework-sqlalchemy",
+  "name": "@veoable/framework-sqlalchemy",
   "version": "0.3.0",
   "private": true,
   "type": "module",
@@ -7,14 +7,14 @@
   "types": "dist/index.d.ts",
   "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --external @adorable/schema --external @adorable/plugin-api --external @adorable/observability --external @adorable/lang-py --external web-tree-sitter",
+    "build": "tsup src/index.ts --format esm --dts --external @veoable/schema --external @veoable/plugin-api --external @veoable/observability --external @veoable/lang-py --external web-tree-sitter",
     "test": "vitest run"
   },
   "dependencies": {
-    "@adorable/lang-py": "workspace:*",
-    "@adorable/observability": "workspace:*",
-    "@adorable/plugin-api": "workspace:*",
-    "@adorable/schema": "workspace:*"
+    "@veoable/lang-py": "workspace:*",
+    "@veoable/observability": "workspace:*",
+    "@veoable/plugin-api": "workspace:*",
+    "@veoable/schema": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^25.5.2",

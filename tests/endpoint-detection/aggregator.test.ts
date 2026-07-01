@@ -5,9 +5,9 @@
  * projects, deduplication, and cross-framework endpoint compilation.
  */
 import { describe, expect, it } from 'vitest';
-import { makeBatchMeta, type NodeBatch } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
-import { type APIEndpoint, type SchemaNode, idFor, validateNode } from '@adorable/schema';
+import { makeBatchMeta, type NodeBatch } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
+import { type APIEndpoint, type SchemaNode, idFor, validateNode } from '@veoable/schema';
 
 function endpoints(nodes: SchemaNode[]): APIEndpoint[] {
   return nodes.filter((n): n is APIEndpoint => n.nodeType === 'APIEndpoint');

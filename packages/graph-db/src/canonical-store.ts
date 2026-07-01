@@ -8,8 +8,8 @@ import {
   type NodeType,
   type SchemaEdge,
   type SchemaNode,
-} from '@adorable/schema';
-import type { BatchMeta, NodeBatch } from '@adorable/plugin-api';
+} from '@veoable/schema';
+import type { BatchMeta, NodeBatch } from '@veoable/plugin-api';
 import { migrateCanonical } from './migrations/002-canonical.js';
 
 /**
@@ -31,7 +31,7 @@ import { migrateCanonical } from './migrations/002-canonical.js';
 export interface CanonicalGraphStore {
   /**
    * Commit a batch transactionally and idempotently. Validates every
-   * node and edge via `@adorable/schema` first; on any validation
+   * node and edge via `@veoable/schema` first; on any validation
    * failure the entire transaction rolls back and a
    * `SchemaValidationError` is thrown. Identical content (same node
    * id, same edge content hash) committed twice is a no-op on the

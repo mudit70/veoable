@@ -6,13 +6,13 @@ import {
   type ParameterDeclaration,
   type FunctionLikeDeclaration,
 } from 'ts-morph';
-import { idFor, type APIEndpoint } from '@adorable/schema';
+import { idFor, type APIEndpoint } from '@veoable/schema';
 import {
   type TsVisitContext,
   buildEvidence,
   resolveIdentifierTypeToDeclaration,
   resolveHandlerToFunctionId,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * Express request-name dispatcher detection (#194).

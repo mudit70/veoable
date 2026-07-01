@@ -17,9 +17,9 @@ import {
   type SchemaNode,
   type SourceFile,
   type WritesEdge,
-} from '@adorable/schema';
-import { makeBatchMeta } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
+} from '@veoable/schema';
+import { makeBatchMeta } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
 import { createFlowWalker, stitchStore, FLOW_STITCHER_PRODUCER_ID } from '../index.js';
 
 // ──────────────────────────────────────────────────────────────────────

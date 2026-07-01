@@ -9,7 +9,7 @@ import {
   type SchemaEdge,
   type SchemaNode,
   type SourceFile,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import {
   evalConstant,
   extractBundles,

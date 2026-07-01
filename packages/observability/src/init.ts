@@ -15,7 +15,7 @@ import { NodeTracerProvider } from '@opentelemetry/sdk-trace-node';
  * OTLP support is deferred until we actually turn on remote tracing.
  */
 
-const TRACER_NAME = '@adorable/observability';
+const TRACER_NAME = '@veoable/observability';
 const TRACER_VERSION = '0.1.0';
 
 export type ExporterKind = 'none' | 'console';

@@ -3,13 +3,13 @@ import {
   idFor,
   type APIEndpoint,
   type ClientSideAPICaller,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import {
   buildEvidence,
   readStringLiteral,
   type TsFrameworkVisitor,
   type TsVisitContext,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * ws + socket.io visitor.

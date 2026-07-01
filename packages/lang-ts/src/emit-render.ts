@@ -1,6 +1,6 @@
 import { Node, SyntaxKind, type Expression } from 'ts-morph';
-import { idFor, type RendersEdge, type Screen } from '@adorable/schema';
-import { recordConfidenceDecision } from '@adorable/observability';
+import { idFor, type RendersEdge, type Screen } from '@veoable/schema';
+import { recordConfidenceDecision } from '@veoable/observability';
 import type { TsVisitContext } from './framework-visitor.js';
 import { resolveToString } from './resolve-constant.js';
 import { resolveIdentifierTypeToDeclaration } from './cross-file-resolver.js';

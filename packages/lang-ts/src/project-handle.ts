@@ -1,10 +1,10 @@
 import type { Project } from 'ts-morph';
-import type { ProjectHandle } from '@adorable/plugin-api';
+import type { ProjectHandle } from '@veoable/plugin-api';
 
 /**
  * Internal-only struct that backs the opaque `ProjectHandle` returned
  * from `TsLanguagePlugin.loadProject`. The `ProjectHandle` brand is a
- * `unique symbol` from `@adorable/plugin-api` so callers cannot construct
+ * `unique symbol` from `@veoable/plugin-api` so callers cannot construct
  * one; the only way to obtain a usable handle is to go through the
  * plugin's `loadProject` method, which gives the plugin sole control of
  * the underlying ts-morph `Project` lifetime.
@@ -34,7 +34,7 @@ export function unwrapHandle(handle: ProjectHandle): TsProjectInternal {
   const internal = HANDLE_TO_INTERNAL.get(handle);
   if (!internal) {
     throw new Error(
-      '@adorable/lang-ts: ProjectHandle was not produced by TsLanguagePlugin.loadProject. ' +
+      '@veoable/lang-ts: ProjectHandle was not produced by TsLanguagePlugin.loadProject. ' +
         'Plugins must use the handle returned from loadProject; do not forge one.'
     );
   }

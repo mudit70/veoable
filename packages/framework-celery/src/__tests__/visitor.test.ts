@@ -1,9 +1,9 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { describe, expect, it } from 'vitest';
-import type { APIEndpoint, ClientSideAPICaller, SchemaNode } from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { PyLanguagePlugin } from '@adorable/lang-py';
+import type { APIEndpoint, ClientSideAPICaller, SchemaNode } from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { PyLanguagePlugin } from '@veoable/lang-py';
 import { CeleryPlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

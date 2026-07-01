@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type APIEndpoint, type ClientSideAPICaller } from '@adorable/schema';
-import type { GoFrameworkVisitor, GoVisitContext } from '@adorable/lang-go';
+import { idFor, type APIEndpoint, type ClientSideAPICaller } from '@veoable/schema';
+import type { GoFrameworkVisitor, GoVisitContext } from '@veoable/lang-go';
 
 /**
  * WebSockets (Go) visitor.

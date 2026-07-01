@@ -7,9 +7,9 @@ import {
   type FunctionDefinition,
   type SchemaNode,
   type SchemaEdge,
-} from '@adorable/schema';
-import { makeBatchMeta, type NodeBatch } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
+} from '@veoable/schema';
+import { makeBatchMeta, type NodeBatch } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
 import { GoLanguagePlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

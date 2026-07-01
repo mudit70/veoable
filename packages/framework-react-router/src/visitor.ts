@@ -12,8 +12,8 @@ import {
   type Screen,
   type NavigatesToEdge,
   type ScreenComponentEdge,
-} from '@adorable/schema';
-import { type TsFrameworkVisitor, buildEvidence } from '@adorable/lang-ts';
+} from '@veoable/schema';
+import { type TsFrameworkVisitor, buildEvidence } from '@veoable/lang-ts';
 
 /**
  * react-router-dom framework visitor (#187 piece A).

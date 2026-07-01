@@ -1,6 +1,6 @@
-import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@adorable/plugin-api';
-import type { TsFrameworkVisitor } from '@adorable/lang-ts';
-import { idFor, type DatabaseSystem } from '@adorable/schema';
+import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@veoable/plugin-api';
+import type { TsFrameworkVisitor } from '@veoable/lang-ts';
+import { idFor, type DatabaseSystem } from '@veoable/schema';
 import { createTypeormVisitor } from './visitor.js';
 
 export const TYPEORM_PLUGIN_ID = 'typeorm' as const;

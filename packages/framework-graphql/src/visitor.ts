@@ -1,11 +1,11 @@
 import * as path from 'node:path';
 import { Node, type ObjectLiteralExpression } from 'ts-morph';
-import { idFor, type APIEndpoint } from '@adorable/schema';
+import { idFor, type APIEndpoint } from '@veoable/schema';
 import {
   type TsFrameworkVisitor,
   buildEvidence,
   resolveIdentifierTypeToDeclaration,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * GraphQL framework visitor (#30).

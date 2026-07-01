@@ -6,14 +6,14 @@ import {
   type FunctionDefinition,
   type SchemaEdge,
   type SourceFile,
-} from '@adorable/schema';
-import { makeBatchMeta, type NodeBatch } from '@adorable/plugin-api';
-import type { CanonicalGraphStore } from '@adorable/graph-db';
-import { loadTraceFile, type TraceEdge } from '@adorable/trace';
+} from '@veoable/schema';
+import { makeBatchMeta, type NodeBatch } from '@veoable/plugin-api';
+import type { CanonicalGraphStore } from '@veoable/graph-db';
+import { loadTraceFile, type TraceEdge } from '@veoable/trace';
 
 /**
  * Trace-merge pass (#535). Read one or more JSONL trace files
- * produced by `@adorable/trace`, materialize the runtime-observed
+ * produced by `@veoable/trace`, materialize the runtime-observed
  * edges as canonical-graph nodes/edges, and commit them as a
  * fallback for static-analysis misses (#531's residue).
  *

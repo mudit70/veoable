@@ -5,7 +5,7 @@ From zero to asking Claude about your codebase in five minutes.
 ## 1. Install (one-time)
 
 ```sh
-pnpm add -g @adorable/cli   # or however you install adorable
+pnpm add -g @veoable/cli   # or however you install adorable
 ```
 
 Verify with `adorable --help`.

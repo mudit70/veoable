@@ -1,4 +1,4 @@
-import type { MatchConfidence, ResolvesMatchedBy } from '@adorable/schema';
+import type { MatchConfidence, ResolvesMatchedBy } from '@veoable/schema';
 import type { ProxyRule } from './proxy-config.js';
 
 /**

@@ -5,9 +5,9 @@ import type {
   APIEndpoint,
   ClientSideAPICaller,
   SchemaNode,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { PyLanguagePlugin } from '@adorable/lang-py';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { PyLanguagePlugin } from '@veoable/lang-py';
 import { WsPyPlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

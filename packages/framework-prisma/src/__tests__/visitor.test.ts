@@ -11,11 +11,11 @@ import {
   type SchemaEdge,
   type SchemaNode,
   type WritesEdge,
-} from '@adorable/schema';
-import { makeBatchMeta, type NodeBatch } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
-import { resetObservability, initObservability } from '@adorable/observability';
+} from '@veoable/schema';
+import { makeBatchMeta, type NodeBatch } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
+import { resetObservability, initObservability } from '@veoable/observability';
 import { InMemorySpanExporter, SimpleSpanProcessor } from '@opentelemetry/sdk-trace-base';
 import { NodeTracerProvider } from '@opentelemetry/sdk-trace-node';
 import { PrismaPlugin, PRISMA_PLUGIN_ID, modelNameFromAccessor } from '../index.js';

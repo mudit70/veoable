@@ -8,8 +8,8 @@ import {
   type DatabaseSystem,
   type DatabaseTable,
   type HttpEgressConfidence,
-} from '@adorable/schema';
-import type { GoFrameworkVisitor, GoVisitContext } from '@adorable/lang-go';
+} from '@veoable/schema';
+import type { GoFrameworkVisitor, GoVisitContext } from '@veoable/lang-go';
 
 /**
  * aws-sdk-go-v2 visitor — covers S3, DynamoDB, SQS, SNS, Lambda.

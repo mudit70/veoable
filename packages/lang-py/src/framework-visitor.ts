@@ -1,5 +1,5 @@
-import type { FrameworkVisitor } from '@adorable/plugin-api';
-import type { SourceFile, FunctionDefinition } from '@adorable/schema';
+import type { FrameworkVisitor } from '@veoable/plugin-api';
+import type { SourceFile, FunctionDefinition } from '@veoable/schema';
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
 
@@ -11,8 +11,8 @@ export interface PyVisitContext {
   readonly enclosingFunction: FunctionDefinition | undefined;
   readonly rootDir: string;
   readonly repository: string;
-  emitNode(node: import('@adorable/schema').SchemaNode): void;
-  emitEdge(edge: import('@adorable/schema').SchemaEdge): void;
+  emitNode(node: import('@veoable/schema').SchemaNode): void;
+  emitEdge(edge: import('@veoable/schema').SchemaEdge): void;
 }
 
 /**

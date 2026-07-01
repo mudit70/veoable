@@ -59,7 +59,7 @@ describe('endpoint detection regression suite (#35)', () => {
           : repoDir;
 
         // Run analysis
-        const { analyze } = await import('@adorable/cli');
+        const { analyze } = await import('@veoable/cli');
         const result = await analyze({
           rootDir: targetDir,
           stitchMode: 'none',

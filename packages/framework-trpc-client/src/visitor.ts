@@ -1,6 +1,6 @@
 import { Node } from 'ts-morph';
-import { idFor, type ClientSideAPICaller } from '@adorable/schema';
-import { type TsFrameworkVisitor, buildEvidence } from '@adorable/lang-ts';
+import { idFor, type ClientSideAPICaller } from '@veoable/schema';
+import { type TsFrameworkVisitor, buildEvidence } from '@veoable/lang-ts';
 
 /**
  * tRPC client proxy-call visitor (#551).

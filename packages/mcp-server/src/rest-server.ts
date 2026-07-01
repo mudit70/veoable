@@ -3,17 +3,17 @@ import * as fs from 'node:fs/promises';
 import { readFileSync } from 'node:fs';
 import * as path from 'node:path';
 // zod removed — REST server uses runtime type checks, not schema validation
-import type { CanonicalGraphStore } from '@adorable/graph-db';
-import { makeBatchMeta } from '@adorable/plugin-api';
+import type { CanonicalGraphStore } from '@veoable/graph-db';
+import { makeBatchMeta } from '@veoable/plugin-api';
 import {
   FLOW_STITCHER_PRODUCER_ID,
   createFlowWalker,
   matchCallerToEndpoints,
   stitchStore,
-} from '@adorable/flow-stitcher';
-import { EDGE_TYPES } from '@adorable/schema';
-import type { NodeType, EdgeType, SchemaNode } from '@adorable/schema';
-import { getSkillMarkdown } from '@adorable/skill';
+} from '@veoable/flow-stitcher';
+import { EDGE_TYPES } from '@veoable/schema';
+import type { NodeType, EdgeType, SchemaNode } from '@veoable/schema';
+import { getSkillMarkdown } from '@veoable/skill';
 
 /**
  * Tool definition for the REST API. Each tool has a name, description,
@@ -154,7 +154,7 @@ function buildToolDefs(store: CanonicalGraphStore, projectRoot?: string, project
     'DatabaseInteraction',
   ];
 
-  // #290 — EDGE_TYPES imported from @adorable/schema; single source
+  // #290 — EDGE_TYPES imported from @veoable/schema; single source
   // of truth for what edge types exist. Pre-fix this was a local list
   // missing 6 of 19 canonical edge types (NAVIGATES_TO, SCREEN_COMPONENT,
   // RENDERS, READS_STATE, WRITES_STATE, BUNDLES_TO).

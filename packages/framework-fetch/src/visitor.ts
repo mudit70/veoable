@@ -13,9 +13,9 @@ import {
   type HttpEgressConfidence,
   type ResponseHandler,
   type SourceEvidence,
-} from '@adorable/schema';
-import { recordConfidenceDecision } from '@adorable/observability';
-import { type TsFrameworkVisitor, type TsVisitContext, buildEvidence, resolveCallerUrl, detectExternalUrl, resolveIdentifierTypeToDeclaration } from '@adorable/lang-ts';
+} from '@veoable/schema';
+import { recordConfidenceDecision } from '@veoable/observability';
+import { type TsFrameworkVisitor, type TsVisitContext, buildEvidence, resolveCallerUrl, detectExternalUrl, resolveIdentifierTypeToDeclaration } from '@veoable/lang-ts';
 import { resolveWrapperCall, type WrapperResolution } from './wrapper-resolver.js';
 import { resolveFreeFunctionWrapperCall } from './free-function-wrapper.js';
 
@@ -48,7 +48,7 @@ import { resolveFreeFunctionWrapperCall } from './free-function-wrapper.js';
  *
  * Module-top-level calls (no enclosing function) are silently
  * skipped. Every `'dynamic'` or `'pattern'` classification records a
- * `ConfidenceDecision` span event via `@adorable/observability`.
+ * `ConfidenceDecision` span event via `@veoable/observability`.
  *
  * Non-goals at this layer:
  *

@@ -1,7 +1,7 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { describe, expect, it } from 'vitest';
-import type { Screen } from '@adorable/schema';
+import type { Screen } from '@veoable/schema';
 import { findNuxtPages, extractNuxtScreens, VuePlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

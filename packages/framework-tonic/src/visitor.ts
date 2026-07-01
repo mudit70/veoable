@@ -1,12 +1,12 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type APIEndpoint } from '@adorable/schema';
+import { idFor, type APIEndpoint } from '@veoable/schema';
 import {
   isImportedFromCrate,
   scanCrateImports,
   type CrateImports,
   type RustFrameworkVisitor,
-} from '@adorable/lang-rust';
+} from '@veoable/lang-rust';
 
 /**
  * tonic visitor (#439 third slice).

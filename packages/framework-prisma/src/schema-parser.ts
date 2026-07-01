@@ -10,15 +10,15 @@ import {
   type DatabaseTableKind,
   type SchemaEdge,
   type SchemaNode,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
 
 /**
  * Schema-level extraction for Prisma.
  *
  * Walks a project root looking for `schema.prisma` files, parses them
  * via `@mrleebo/prisma-ast`, and emits the canonical data-model nodes
- * and edges from `@adorable/schema` + `@adorable/framework-prisma`:
+ * and edges from `@veoable/schema` + `@veoable/framework-prisma`:
  *
  *   - `DatabaseSystem` — one per `datasource` block
  *   - `DatabaseTable`  — one per `model` block
@@ -173,7 +173,7 @@ export function extractPrismaSchemas(opts: ExtractSchemasOptions): NodeBatch {
     if (!nodes.has(n.id)) nodes.set(n.id, n);
   };
   const pushEdge = (e: SchemaEdge): void => {
-    // Edges are not content-addressed in `@adorable/schema`; dedupe
+    // Edges are not content-addressed in `@veoable/schema`; dedupe
     // on `(edgeType, from, to)` for structural edges because we expect
     // at most one of each per pair. Relation attributes may declare
     // multi-column foreign keys — each column pair gets its own edge.

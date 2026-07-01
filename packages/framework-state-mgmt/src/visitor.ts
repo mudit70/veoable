@@ -12,15 +12,15 @@ import {
   type StateStore,
   type StateStoreField,
   type WritesStateEdge,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import {
   type TsFrameworkVisitor,
   buildEvidence,
   resolveToString,
   resolveIdentifierTypeToDeclaration,
   resolveFunctionDefinitionIdFromDecl,
-} from '@adorable/lang-ts';
-import type { CallsFunctionEdge } from '@adorable/schema';
+} from '@veoable/lang-ts';
+import type { CallsFunctionEdge } from '@veoable/schema';
 
 /**
  * State management framework visitor (#61).

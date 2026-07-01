@@ -188,7 +188,7 @@ describe('analyze OOM diagnostic (#253)', () => {
       fs.writeFileSync(path.join(tmp, 'src', 'b.ts'), 'export const b = 2;');
       fs.writeFileSync(path.join(tmp, 'package.json'), '{"name":"oom-test"}');
 
-      // Mock @adorable/lang-ts so extractFile throws the V8 OOM error.
+      // Mock @veoable/lang-ts so extractFile throws the V8 OOM error.
       // We can't easily mock the dynamic-loaded module from inside
       // analyze, so we monkey-patch the prototype after analyze starts
       // calling extractFile. Simpler: stub via vi.doMock, but tsx ESM

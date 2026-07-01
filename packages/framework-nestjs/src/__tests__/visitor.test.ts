@@ -1,9 +1,9 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { beforeAll, describe, expect, it } from 'vitest';
-import { validateNode, type APIEndpoint } from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
+import { validateNode, type APIEndpoint } from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
 import { NestjsPlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

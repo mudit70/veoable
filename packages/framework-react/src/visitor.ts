@@ -1,6 +1,6 @@
 import { Node, SyntaxKind, type Node as TsNode } from 'ts-morph';
-import { idFor, type ClientSideProcess, type ProcessKind } from '@adorable/schema';
-import { type TsFrameworkVisitor, buildEvidence, resolveHandlerToFunctionId } from '@adorable/lang-ts';
+import { idFor, type ClientSideProcess, type ProcessKind } from '@veoable/schema';
+import { type TsFrameworkVisitor, buildEvidence, resolveHandlerToFunctionId } from '@veoable/lang-ts';
 
 /**
  * React framework visitor (#56).

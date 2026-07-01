@@ -1,5 +1,5 @@
 {
-  "name": "@adorable/framework-gin",
+  "name": "@veoable/framework-gin",
   "version": "0.3.0",
   "private": true,
   "type": "module",
@@ -12,17 +12,17 @@
     }
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --external @adorable/schema --external @adorable/plugin-api --external @adorable/observability --external @adorable/lang-go --external web-tree-sitter",
+    "build": "tsup src/index.ts --format esm --dts --external @veoable/schema --external @veoable/plugin-api --external @veoable/observability --external @veoable/lang-go --external web-tree-sitter",
     "test": "vitest run"
   },
   "dependencies": {
-    "@adorable/lang-go": "workspace:*",
-    "@adorable/observability": "workspace:*",
-    "@adorable/plugin-api": "workspace:*",
-    "@adorable/schema": "workspace:*"
+    "@veoable/lang-go": "workspace:*",
+    "@veoable/observability": "workspace:*",
+    "@veoable/plugin-api": "workspace:*",
+    "@veoable/schema": "workspace:*"
   },
   "devDependencies": {
-    "@adorable/graph-db": "workspace:*",
+    "@veoable/graph-db": "workspace:*",
     "@types/node": "^25.5.2",
     "tsup": "^8.0.0",
     "typescript": "^5.5.0",

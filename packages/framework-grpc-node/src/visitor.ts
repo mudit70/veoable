@@ -2,12 +2,12 @@ import { Node, type Expression } from 'ts-morph';
 import {
   idFor,
   type APIEndpoint,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import {
   buildEvidence,
   resolveHandlerToFunctionId,
   type TsFrameworkVisitor,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * @grpc/grpc-js server visitor.

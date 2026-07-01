@@ -1,7 +1,7 @@
 import { Node, SyntaxKind, type Decorator } from 'ts-morph';
-import { idFor, type APIEndpoint, type MiddlewareEntry } from '@adorable/schema';
-import { recordConfidenceDecision } from '@adorable/observability';
-import { type TsFrameworkVisitor, buildEvidence } from '@adorable/lang-ts';
+import { idFor, type APIEndpoint, type MiddlewareEntry } from '@veoable/schema';
+import { recordConfidenceDecision } from '@veoable/observability';
+import { type TsFrameworkVisitor, buildEvidence } from '@veoable/lang-ts';
 
 /**
  * NestJS framework visitor (#16, #127).

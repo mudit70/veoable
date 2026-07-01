@@ -1,9 +1,9 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { describe, expect, it } from 'vitest';
-import { validateNode, type Screen, type NavigatesToEdge, type SchemaNode, type SchemaEdge } from '@adorable/schema';
-import { type NodeBatch } from '@adorable/plugin-api';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
+import { validateNode, type Screen, type NavigatesToEdge, type SchemaNode, type SchemaEdge } from '@veoable/schema';
+import { type NodeBatch } from '@veoable/plugin-api';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
 import { ReactRouterPlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

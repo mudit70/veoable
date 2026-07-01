@@ -1,6 +1,6 @@
-import type { FrameworkPlugin, ProjectContext } from '@adorable/plugin-api';
-import { hasDependency } from '@adorable/plugin-api';
-import type { TsFrameworkVisitor } from '@adorable/lang-ts';
+import type { FrameworkPlugin, ProjectContext } from '@veoable/plugin-api';
+import { hasDependency } from '@veoable/plugin-api';
+import type { TsFrameworkVisitor } from '@veoable/lang-ts';
 import { createExpressVisitor } from './visitor.js';
 
 /**

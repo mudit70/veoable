@@ -1,8 +1,8 @@
-# Adorable - Requirements Document
+# Veoable - Requirements Document
 
 ## 1. Overview
 
-Adorable is a code analysis platform that takes code written by AI (or humans) and analyzes it in explainable ways. It builds a knowledge graph of API endpoints, client-side API callers, and UI interaction elements across multiple repositories. It then stitches together end-to-end flows so a user can trace what happens from a user interaction through API calls, database interactions, responses, and DOM updates. This compressed context can be fed back to AI for more accurate debugging, fixing, and feature work.
+Veoable is a code analysis platform that takes code written by AI (or humans) and analyzes it in explainable ways. It builds a knowledge graph of API endpoints, client-side API callers, and UI interaction elements across multiple repositories. It then stitches together end-to-end flows so a user can trace what happens from a user interaction through API calls, database interactions, responses, and DOM updates. This compressed context can be fed back to AI for more accurate debugging, fixing, and feature work.
 
 ## 2. System Architecture
 

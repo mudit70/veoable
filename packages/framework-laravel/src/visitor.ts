@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type APIEndpoint, type DatabaseInteraction } from '@adorable/schema';
-import type { PhpFrameworkVisitor, PhpVisitContext } from '@adorable/lang-php';
+import { idFor, type APIEndpoint, type DatabaseInteraction } from '@veoable/schema';
+import type { PhpFrameworkVisitor, PhpVisitContext } from '@veoable/lang-php';
 
 /**
  * Laravel framework visitor (#45, #55).

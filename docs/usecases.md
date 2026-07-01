@@ -1,4 +1,4 @@
-# Adorable - Use Cases Document
+# Veoable - Use Cases Document
 
 ## 1. Personas
 
@@ -40,7 +40,7 @@ Handles customer-reported issues and escalations. Needs to quickly trace a user-
 
 **Personas:** P1, P2, P3, P4, P6
 
-**Description:** A user creates a new Adorable project that groups together the repositories that make up their application.
+**Description:** A user creates a new Veoable project that groups together the repositories that make up their application.
 
 **Preconditions:** User has access to the repositories to be analyzed.
 

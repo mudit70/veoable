@@ -1,11 +1,11 @@
 import { Node, type Expression } from 'ts-morph';
-import { idFor, type APIEndpoint } from '@adorable/schema';
+import { idFor, type APIEndpoint } from '@veoable/schema';
 import {
   type TsFrameworkVisitor,
   buildEvidence,
   readStringLiteral,
   resolveHandlerToFunctionId,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * MCP server tool registration visitor (#272 first slice).

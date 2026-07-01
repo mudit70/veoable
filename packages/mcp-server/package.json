@@ -1,5 +1,5 @@
 {
-  "name": "@adorable/mcp-server",
+  "name": "@veoable/mcp-server",
   "version": "0.3.0",
   "private": true,
   "type": "module",
@@ -12,16 +12,16 @@
     }
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --external @modelcontextprotocol/sdk --external @adorable/schema --external @adorable/plugin-api --external @adorable/graph-db --external @adorable/flow-stitcher --external @adorable/skill",
-    "dev": "tsup src/index.ts --format esm --dts --external @modelcontextprotocol/sdk --external @adorable/schema --external @adorable/plugin-api --external @adorable/graph-db --external @adorable/flow-stitcher --external @adorable/skill --watch",
+    "build": "tsup src/index.ts --format esm --dts --external @modelcontextprotocol/sdk --external @veoable/schema --external @veoable/plugin-api --external @veoable/graph-db --external @veoable/flow-stitcher --external @veoable/skill",
+    "dev": "tsup src/index.ts --format esm --dts --external @modelcontextprotocol/sdk --external @veoable/schema --external @veoable/plugin-api --external @veoable/graph-db --external @veoable/flow-stitcher --external @veoable/skill --watch",
     "test": "vitest run"
   },
   "dependencies": {
-    "@adorable/flow-stitcher": "workspace:*",
-    "@adorable/graph-db": "workspace:*",
-    "@adorable/plugin-api": "workspace:*",
-    "@adorable/schema": "workspace:*",
-    "@adorable/skill": "workspace:*",
+    "@veoable/flow-stitcher": "workspace:*",
+    "@veoable/graph-db": "workspace:*",
+    "@veoable/plugin-api": "workspace:*",
+    "@veoable/schema": "workspace:*",
+    "@veoable/skill": "workspace:*",
     "@modelcontextprotocol/sdk": "^1.29.0",
     "zod": "^3.23.0"
   },

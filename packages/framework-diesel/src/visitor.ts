@@ -6,8 +6,8 @@ import {
   type DatabaseInteraction,
   type DatabaseOperation,
   type DatabaseTable,
-} from '@adorable/schema';
-import type { RustFrameworkVisitor, RustVisitContext } from '@adorable/lang-rust';
+} from '@veoable/schema';
+import type { RustFrameworkVisitor, RustVisitContext } from '@veoable/lang-rust';
 import { parseTableMacro } from './table-macro.js';
 import { type DieselImports, isImportedFromDiesel, scanDieselImports } from './imports.js';
 

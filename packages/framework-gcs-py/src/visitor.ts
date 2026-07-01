@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type ClientSideAPICaller, type HttpEgressConfidence } from '@adorable/schema';
-import type { PyFrameworkVisitor } from '@adorable/lang-py';
+import { idFor, type ClientSideAPICaller, type HttpEgressConfidence } from '@veoable/schema';
+import type { PyFrameworkVisitor } from '@veoable/lang-py';
 
 /**
  * google-cloud-storage (Python) visitor.

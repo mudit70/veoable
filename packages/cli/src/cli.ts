@@ -61,7 +61,7 @@ export interface CliArgs {
   /** Auto-detect every installed LLM client + install into each. */
   auto: boolean;
   /**
-   * Path(s) to JSONL trace file(s) produced by `@adorable/trace`'s
+   * Path(s) to JSONL trace file(s) produced by `@veoable/trace`'s
    * test-bootstrap hook. The analyze pass reads each file and
    * materializes runtime-observed fetch/axios edges as
    * `ClientSideAPICaller` + `MAKES_REQUEST` nodes/edges with
@@ -496,8 +496,8 @@ interface ToolListing {
  * @internal
  */
 export async function listMcpToolsByCategory(): Promise<ToolListing> {
-  const { SQLiteCanonicalGraphStore } = await import('@adorable/graph-db');
-  const { createMcpServer } = await import('@adorable/mcp-server');
+  const { SQLiteCanonicalGraphStore } = await import('@veoable/graph-db');
+  const { createMcpServer } = await import('@veoable/mcp-server');
   const { Client } = await import('@modelcontextprotocol/sdk/client/index.js');
   const { InMemoryTransport } = await import('@modelcontextprotocol/sdk/inMemory.js');
 
@@ -913,7 +913,7 @@ async function main(): Promise<void> {
       process.exit(1);
     }
     try {
-      const { SQLiteCanonicalGraphStore } = await import('@adorable/graph-db');
+      const { SQLiteCanonicalGraphStore } = await import('@veoable/graph-db');
       const resolvedDbPath = path.resolve(dbPath);
       const projectRoot = args.projectRoot
         ? path.resolve(args.projectRoot)
@@ -922,7 +922,7 @@ async function main(): Promise<void> {
 
       if (args.rest) {
         // REST API mode — HTTP server with JSON endpoints.
-        const { createRestServer } = await import('@adorable/mcp-server');
+        const { createRestServer } = await import('@veoable/mcp-server');
         const pcPath = args.projectConfig ? path.resolve(args.projectConfig) : undefined;
         const rest = createRestServer(store, { projectRoot, port: args.port, projectConfigPath: pcPath, dbPath: resolvedDbPath });
         await rest.start();
@@ -932,7 +932,7 @@ async function main(): Promise<void> {
       } else if (args.transport === 'http') {
         // HTTP MCP mode — StreamableHTTP transport for network MCP clients.
         // Single transport instance shared across all requests.
-        const { createMcpServer } = await import('@adorable/mcp-server');
+        const { createMcpServer } = await import('@veoable/mcp-server');
         const { StreamableHTTPServerTransport } = await import(
           '@modelcontextprotocol/sdk/server/streamableHttp.js'
         );
@@ -966,7 +966,7 @@ async function main(): Promise<void> {
         });
       } else {
         // stdio MCP mode — for Claude Code, Cursor, Windsurf, etc.
-        const { createMcpServer } = await import('@adorable/mcp-server');
+        const { createMcpServer } = await import('@veoable/mcp-server');
         const { StdioServerTransport } = await import(
           '@modelcontextprotocol/sdk/server/stdio.js'
         );
@@ -990,7 +990,7 @@ async function main(): Promise<void> {
       process.exit(1);
     }
     try {
-      const { SQLiteCanonicalGraphStore } = await import('@adorable/graph-db');
+      const { SQLiteCanonicalGraphStore } = await import('@veoable/graph-db');
       const { runChat } = await import('./chat.js');
       const { resolveProvider } = await import('./providers.js');
       const resolvedDbPath = path.resolve(dbPath);

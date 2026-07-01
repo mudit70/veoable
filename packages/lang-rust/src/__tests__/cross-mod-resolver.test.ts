@@ -2,9 +2,9 @@ import * as path from 'node:path';
 import * as url from 'node:url';
 import * as fs from 'node:fs';
 import { describe, expect, it, beforeEach, afterEach } from 'vitest';
-import type { CallsFunctionEdge, FunctionDefinition, SourceFile } from '@adorable/schema';
-import { makeBatchMeta, type NodeBatch } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
+import type { CallsFunctionEdge, FunctionDefinition, SourceFile } from '@veoable/schema';
+import { makeBatchMeta, type NodeBatch } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
 import { RustLanguagePlugin } from '../rust-language-plugin.js';
 import { resolveRustCrossModCalls } from '../cross-mod-resolver.js';
 

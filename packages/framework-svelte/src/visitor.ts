@@ -1,6 +1,6 @@
 import { Node, SyntaxKind } from 'ts-morph';
-import { idFor, type APIEndpoint, type ClientSideProcess, type ProcessKind } from '@adorable/schema';
-import { type TsFrameworkVisitor, buildEvidence } from '@adorable/lang-ts';
+import { idFor, type APIEndpoint, type ClientSideProcess, type ProcessKind } from '@veoable/schema';
+import { type TsFrameworkVisitor, buildEvidence } from '@veoable/lang-ts';
 
 /**
  * Svelte/SvelteKit framework visitor (#59).
@@ -142,7 +142,7 @@ export function createSvelteVisitor(): TsFrameworkVisitor {
  *   src/routes/+page.ts → /
  *
  * Note: The `[param]` → `:param` normalization logic overlaps with
- * `@adorable/framework-remix/route-convention.ts`. The conventions
+ * `@veoable/framework-remix/route-convention.ts`. The conventions
  * themselves differ (SvelteKit uses directories, Remix uses flat files)
  * so they are kept separate, but the normalization could be consolidated
  * into a shared utility in the future.

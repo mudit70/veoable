@@ -1,6 +1,6 @@
 # MCP Interaction Best Practices
 
-This guide shows how to effectively use Adorable's MCP tools — either through the interactive chat CLI or through an AI assistant (Claude Code, Cursor, Windsurf) connected via MCP.
+This guide shows how to effectively use Veoable's MCP tools — either through the interactive chat CLI or through an AI assistant (Claude Code, Cursor, Windsurf) connected via MCP.
 
 ---
 

@@ -1,7 +1,7 @@
-import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@adorable/plugin-api';
-import { hasPythonPackage } from '@adorable/plugin-api';
-import type { PyFrameworkVisitor } from '@adorable/lang-py';
-import { idFor, type DatabaseSystem } from '@adorable/schema';
+import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@veoable/plugin-api';
+import { hasPythonPackage } from '@veoable/plugin-api';
+import type { PyFrameworkVisitor } from '@veoable/lang-py';
+import { idFor, type DatabaseSystem } from '@veoable/schema';
 import { createDjangoVisitor } from './visitor.js';
 import { buildDjangoUrlMap, type DjangoUrlMap } from './urls-resolver.js';
 

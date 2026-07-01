@@ -1,12 +1,12 @@
 import { Node, type CallExpression, type ObjectLiteralExpression, type Expression } from 'ts-morph';
-import { idFor, type APIEndpoint } from '@adorable/schema';
-import { recordConfidenceDecision } from '@adorable/observability';
+import { idFor, type APIEndpoint } from '@veoable/schema';
+import { recordConfidenceDecision } from '@veoable/observability';
 import {
   type TsFrameworkVisitor,
   buildEvidence,
   emitTemplateRenderScreens,
   resolveHandlerToFunctionId,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * Hapi framework visitor (#27).
@@ -28,7 +28,7 @@ import {
  * The receiver must match `/^(this\.)?server$/` (conservative heuristic).
  *
  * Handler resolution uses the shared `resolveHandlerToFunctionId`
- * utility from `@adorable/lang-ts`, including cross-file resolution.
+ * utility from `@veoable/lang-ts`, including cross-file resolution.
  */
 
 const RECEIVER_NAME_PATTERN = /^(this\.)?server$/;

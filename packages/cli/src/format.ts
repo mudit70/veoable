@@ -1,4 +1,4 @@
-import type { Flow, FlowDatabaseHop } from '@adorable/flow-stitcher';
+import type { Flow, FlowDatabaseHop } from '@veoable/flow-stitcher';
 import type { AnalysisResult } from './analyze.js';
 
 /**

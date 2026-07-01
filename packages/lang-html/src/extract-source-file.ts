@@ -15,8 +15,8 @@ import {
   type MakesRequestEdge,
   type NavigatesToEdge,
   type TriggersEdge,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
 import { formFnName, perProcessFnName } from './synthetic-names.js';
 
 /**

@@ -1,5 +1,5 @@
-import type { FrameworkPlugin, ProjectContext } from '@adorable/plugin-api';
-import type { TsFrameworkVisitor } from '@adorable/lang-ts';
+import type { FrameworkPlugin, ProjectContext } from '@veoable/plugin-api';
+import type { TsFrameworkVisitor } from '@veoable/lang-ts';
 import { createNestjsVisitor } from './visitor.js';
 
 export const NESTJS_PLUGIN_ID = 'nestjs' as const;

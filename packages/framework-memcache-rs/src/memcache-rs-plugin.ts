@@ -1,7 +1,7 @@
-import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@adorable/plugin-api';
-import { hasCargoCrate } from '@adorable/plugin-api';
-import { idFor, type DatabaseSystem } from '@adorable/schema';
-import type { RustFrameworkVisitor } from '@adorable/lang-rust';
+import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@veoable/plugin-api';
+import { hasCargoCrate } from '@veoable/plugin-api';
+import { idFor, type DatabaseSystem } from '@veoable/schema';
+import type { RustFrameworkVisitor } from '@veoable/lang-rust';
 import { createMemcacheRsVisitor } from './visitor.js';
 
 /**

@@ -1,6 +1,6 @@
 import { Node, SyntaxKind, type Node as TsNode } from 'ts-morph';
-import { idFor, type ClientSideProcess, type ProcessKind } from '@adorable/schema';
-import { type TsFrameworkVisitor, buildEvidence } from '@adorable/lang-ts';
+import { idFor, type ClientSideProcess, type ProcessKind } from '@veoable/schema';
+import { type TsFrameworkVisitor, buildEvidence } from '@veoable/lang-ts';
 
 /**
  * Angular framework visitor (#58).

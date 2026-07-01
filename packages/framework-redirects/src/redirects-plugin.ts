@@ -1,6 +1,6 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@adorable/plugin-api';
+import type { FrameworkPlugin, NodeBatch, ProjectContext } from '@veoable/plugin-api';
 import { extractRedirects } from './parser.js';
 
 /**

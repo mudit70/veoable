@@ -11,7 +11,7 @@ import {
   type Parameter,
   type RequestField,
   type ResponseShape,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import { extractCalls, findDynamicImports } from './extract-calls.js';
 import type { TsProjectInternal } from './project-handle.js';
 import type { TsFrameworkVisitor, TsVisitContext } from './framework-visitor.js';

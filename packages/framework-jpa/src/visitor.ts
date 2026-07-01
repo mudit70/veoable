@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type DatabaseInteraction } from '@adorable/schema';
-import type { JavaFrameworkVisitor, JavaVisitContext } from '@adorable/lang-java';
+import { idFor, type DatabaseInteraction } from '@veoable/schema';
+import type { JavaFrameworkVisitor, JavaVisitContext } from '@veoable/lang-java';
 
 /**
  * JPA/Hibernate framework visitor (#51).

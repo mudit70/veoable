@@ -1,6 +1,6 @@
 # Knowledge Graph Benefits
 
-A living document recording concrete instances where Adorable's knowledge graph surfaced insights that would be difficult to spot through manual code review alone.
+A living document recording concrete instances where Veoable's knowledge graph surfaced insights that would be difficult to spot through manual code review alone.
 
 ---
 

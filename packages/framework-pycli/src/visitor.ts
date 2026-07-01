@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type ClientSideProcess } from '@adorable/schema';
-import type { PyFrameworkVisitor, PyVisitContext } from '@adorable/lang-py';
+import { idFor, type ClientSideProcess } from '@veoable/schema';
+import type { PyFrameworkVisitor, PyVisitContext } from '@veoable/lang-py';
 
 /**
  * Python CLI framework visitor (#62).

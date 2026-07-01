@@ -1,6 +1,6 @@
 import * as readline from 'node:readline';
-import type { CanonicalGraphStore } from '@adorable/graph-db';
-import { createRestServer, type RestServerOptions } from '@adorable/mcp-server';
+import type { CanonicalGraphStore } from '@veoable/graph-db';
+import { createRestServer, type RestServerOptions } from '@veoable/mcp-server';
 
 /**
  * Built-in chat orchestrator that connects to an OpenAI-compatible

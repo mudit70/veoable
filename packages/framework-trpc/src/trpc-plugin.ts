@@ -1,5 +1,5 @@
-import type { FrameworkPlugin, ProjectContext } from '@adorable/plugin-api';
-import type { TsFrameworkVisitor } from '@adorable/lang-ts';
+import type { FrameworkPlugin, ProjectContext } from '@veoable/plugin-api';
+import type { TsFrameworkVisitor } from '@veoable/lang-ts';
 import { createTrpcVisitor } from './visitor.js';
 
 export const TRPC_PLUGIN_ID = 'trpc' as const;

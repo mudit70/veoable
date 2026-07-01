@@ -4,7 +4,7 @@ import {
   validateNode,
   type Screen,
   type SchemaNode,
-} from '@adorable/schema';
+} from '@veoable/schema';
 import {
   extractNextjsPages,
   findAppRouterPages,

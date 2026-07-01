@@ -1,5 +1,5 @@
-import { idFor, type APIEndpoint, type DatabaseInteraction, type DatabaseTable, type DatabaseOperation } from '@adorable/schema';
-import type { PyFrameworkVisitor, PyVisitContext } from '@adorable/lang-py';
+import { idFor, type APIEndpoint, type DatabaseInteraction, type DatabaseTable, type DatabaseOperation } from '@veoable/schema';
+import type { PyFrameworkVisitor, PyVisitContext } from '@veoable/lang-py';
 import type Parser from 'web-tree-sitter';
 import type { DjangoUrlMap } from './urls-resolver.js';
 type SyntaxNode = Parser.SyntaxNode;

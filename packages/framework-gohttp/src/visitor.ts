@@ -1,8 +1,8 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type APIEndpoint, type ClientSideAPICaller, type HttpEgressConfidence } from '@adorable/schema';
-import { detectExternalUrl } from '@adorable/plugin-api';
-import type { GoFrameworkVisitor, GoVisitContext } from '@adorable/lang-go';
+import { idFor, type APIEndpoint, type ClientSideAPICaller, type HttpEgressConfidence } from '@veoable/schema';
+import { detectExternalUrl } from '@veoable/plugin-api';
+import type { GoFrameworkVisitor, GoVisitContext } from '@veoable/lang-go';
 
 /**
  * Go net/http + Echo + Fiber framework visitor (#23).

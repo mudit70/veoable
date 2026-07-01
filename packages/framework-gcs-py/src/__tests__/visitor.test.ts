@@ -1,8 +1,8 @@
 import * as path from 'node:path';
 import { describe, expect, it } from 'vitest';
-import type { ClientSideAPICaller, SchemaNode } from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { PyLanguagePlugin } from '@adorable/lang-py';
+import type { ClientSideAPICaller, SchemaNode } from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { PyLanguagePlugin } from '@veoable/lang-py';
 import { GcsPyPlugin } from '../index.js';
 
 const FIXTURE_ROOT = path.resolve(__dirname, '../../../../tests/fixtures/gcs-py/basic');

@@ -1,5 +1,5 @@
 {
-  "name": "@adorable/flow-stitcher",
+  "name": "@veoable/flow-stitcher",
   "version": "0.3.0",
   "private": true,
   "type": "module",
@@ -12,15 +12,15 @@
     }
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts --external @adorable/schema --external @adorable/plugin-api --external @adorable/observability --external @adorable/graph-db --external ts-morph",
-    "dev": "tsup src/index.ts --format esm --dts --external @adorable/schema --external @adorable/plugin-api --external @adorable/observability --external @adorable/graph-db --external ts-morph --watch",
+    "build": "tsup src/index.ts --format esm --dts --external @veoable/schema --external @veoable/plugin-api --external @veoable/observability --external @veoable/graph-db --external ts-morph",
+    "dev": "tsup src/index.ts --format esm --dts --external @veoable/schema --external @veoable/plugin-api --external @veoable/observability --external @veoable/graph-db --external ts-morph --watch",
     "test": "vitest run"
   },
   "dependencies": {
-    "@adorable/graph-db": "workspace:*",
-    "@adorable/observability": "workspace:*",
-    "@adorable/plugin-api": "workspace:*",
-    "@adorable/schema": "workspace:*",
+    "@veoable/graph-db": "workspace:*",
+    "@veoable/observability": "workspace:*",
+    "@veoable/plugin-api": "workspace:*",
+    "@veoable/schema": "workspace:*",
     "ts-morph": "^27.0.0"
   },
   "devDependencies": {

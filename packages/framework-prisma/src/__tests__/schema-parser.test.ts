@@ -9,9 +9,9 @@ import {
   type ForeignKeyEdge,
   type SchemaEdge,
   type SchemaNode,
-} from '@adorable/schema';
-import { makeBatchMeta } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
+} from '@veoable/schema';
+import { makeBatchMeta } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
 import {
   PrismaPlugin,
   extractPrismaSchemas,

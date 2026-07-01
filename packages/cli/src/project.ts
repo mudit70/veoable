@@ -6,19 +6,19 @@ import {
   discoverWorkspacePackages,
   synthesizeWorkspaceCompilerPaths,
 } from './discover.js';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
-import { makeBatchMeta } from '@adorable/plugin-api';
-import type { ResolvesToEndpointEdge } from '@adorable/schema';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
+import { makeBatchMeta } from '@veoable/plugin-api';
+import type { ResolvesToEndpointEdge } from '@veoable/schema';
 import {
   discoverProxyRules,
   buildApplicationScope,
   type Application,
   type ProxyRule,
-} from '@adorable/flow-stitcher';
+} from '@veoable/flow-stitcher';
 import {
   findCanonicalPrismaSchemas,
   PRISMA_PLUGIN_ID,
-} from '@adorable/framework-prisma';
+} from '@veoable/framework-prisma';
 
 /**
  * Project config file schema.

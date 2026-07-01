@@ -677,12 +677,12 @@ This is feasible with ts-morph's `findReferences()` but expensive. A pragmatic a
 
 | Package | Change | Effort |
 |---------|--------|--------|
-| `@adorable/schema` | Add `TRIGGERS`, `MAKES_REQUEST` edge types | Small |
-| `@adorable/lang-ts` | Emit FunctionDefinition for inline JSX callbacks and hook callbacks | Medium |
-| `@adorable/framework-react` | Emit TRIGGERS edges, resolve named function refs | Medium |
-| `@adorable/framework-fetch` | Emit MAKES_REQUEST edges | Small |
-| `@adorable/flow-stitcher` | Update flow walker to use TRIGGERS for scope-accurate tracing | Medium |
-| `@adorable/mcp-server` | Add `list_client_api_calls` tool | Small |
+| `@veoable/schema` | Add `TRIGGERS`, `MAKES_REQUEST` edge types | Small |
+| `@veoable/lang-ts` | Emit FunctionDefinition for inline JSX callbacks and hook callbacks | Medium |
+| `@veoable/framework-react` | Emit TRIGGERS edges, resolve named function refs | Medium |
+| `@veoable/framework-fetch` | Emit MAKES_REQUEST edges | Small |
+| `@veoable/flow-stitcher` | Update flow walker to use TRIGGERS for scope-accurate tracing | Medium |
+| `@veoable/mcp-server` | Add `list_client_api_calls` tool | Small |
 
 ### 7.2 New vs. Modified
 

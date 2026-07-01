@@ -1,4 +1,4 @@
-// @adorable/ui - Graphical interface (React + React Flow)
+// @veoable/ui - Graphical interface (React + React Flow)
 // This package will contain:
 // - Knowledge graph visualization (React Flow + ELK.js)
 // - Filter panel, detail panel, project panel

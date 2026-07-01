@@ -1,9 +1,9 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
 import { beforeAll, describe, expect, it } from 'vitest';
-import { validateNode, type ClientSideProcess } from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { TsLanguagePlugin } from '@adorable/lang-ts';
+import { validateNode, type ClientSideProcess } from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
 import { VuePlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

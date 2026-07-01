@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { idFor, SCHEMA_VERSION } from '@adorable/schema';
-import { makeBatchMeta } from '@adorable/plugin-api';
-import { SQLiteCanonicalGraphStore } from '@adorable/graph-db';
-import { initObservability, resetObservability, withSpan } from '@adorable/observability';
+import { idFor, SCHEMA_VERSION } from '@veoable/schema';
+import { makeBatchMeta } from '@veoable/plugin-api';
+import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
+import { initObservability, resetObservability, withSpan } from '@veoable/observability';
 
 /**
  * Workspace integration smoke test.

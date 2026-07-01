@@ -1,5 +1,5 @@
 import type { Node } from 'ts-morph';
-import type { SourceEvidence } from '@adorable/schema';
+import type { SourceEvidence } from '@veoable/schema';
 
 const MAX_SNIPPET_LENGTH = 500;
 

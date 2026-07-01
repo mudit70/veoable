@@ -1,6 +1,6 @@
 import { Node, SyntaxKind } from 'ts-morph';
-import { idFor } from '@adorable/schema';
-import { type TsFrameworkVisitor, resolveToString } from '@adorable/lang-ts';
+import { idFor } from '@veoable/schema';
+import { type TsFrameworkVisitor, resolveToString } from '@veoable/lang-ts';
 
 /**
  * Redux Saga/Thunk visitor (#133, #61).

@@ -3,7 +3,7 @@ import * as os from 'node:os';
 import * as path from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { Project, type Identifier } from 'ts-morph';
-import { idFor } from '@adorable/schema';
+import { idFor } from '@veoable/schema';
 import { resolveIdentifierTypeToDeclaration } from '../cross-file-resolver.js';
 import { resolveFunctionDefinitionIdFromDecl } from '../resolve-function-id.js';
 import type { TsVisitContext } from '../framework-visitor.js';

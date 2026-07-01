@@ -3,9 +3,9 @@ import { describe, expect, it } from 'vitest';
 import type {
   ClientSideAPICaller,
   SchemaNode,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { RustLanguagePlugin } from '@adorable/lang-rust';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { RustLanguagePlugin } from '@veoable/lang-rust';
 import { AwsrustS3Plugin } from '../index.js';
 
 const FIXTURE_ROOT = path.resolve(__dirname, '../../../../tests/fixtures/awsrust-s3/basic');

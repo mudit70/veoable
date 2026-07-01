@@ -6,8 +6,8 @@ import {
   idFor,
   type SchemaEdge,
   type SchemaNode,
-} from '@adorable/schema';
-import { makeBatchMeta, type NodeBatch } from '@adorable/plugin-api';
+} from '@veoable/schema';
+import { makeBatchMeta, type NodeBatch } from '@veoable/plugin-api';
 import { SQLiteCanonicalGraphStore } from '../canonical-store.js';
 
 let store: SQLiteCanonicalGraphStore;

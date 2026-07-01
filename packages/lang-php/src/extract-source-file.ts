@@ -10,8 +10,8 @@ import {
   type DefinedInEdge,
   type ExportsEdge,
   type CallsFunctionEdge,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
 import type { PhpFrameworkVisitor, PhpVisitContext } from './framework-visitor.js';
 
 /**

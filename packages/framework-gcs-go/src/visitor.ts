@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type ClientSideAPICaller, type HttpEgressConfidence } from '@adorable/schema';
-import type { GoFrameworkVisitor } from '@adorable/lang-go';
+import { idFor, type ClientSideAPICaller, type HttpEgressConfidence } from '@veoable/schema';
+import type { GoFrameworkVisitor } from '@veoable/lang-go';
 
 /**
  * cloud.google.com/go/storage visitor.

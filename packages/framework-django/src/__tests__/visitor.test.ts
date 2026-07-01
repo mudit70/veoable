@@ -5,9 +5,9 @@ import {
   type APIEndpoint,
   type DatabaseInteraction,
   type SchemaNode,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { PyLanguagePlugin } from '@adorable/lang-py';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { PyLanguagePlugin } from '@veoable/lang-py';
 import { DjangoPlugin } from '../index.js';
 
 const FIXTURE_ROOT = path.resolve(__dirname, '../../../../tests/fixtures/python/django');

@@ -1,11 +1,11 @@
-# Adorable — Installing the LLM-Client Skill
+# Veoable — Installing the LLM-Client Skill
 
-`adorable install <client>` writes the canonical Adorable skill into your LLM
-client's expected location so the agent knows when to invoke Adorable's MCP
+`adorable install <client>` writes the canonical Veoable skill into your LLM
+client's expected location so the agent knows when to invoke Veoable's MCP
 tools without you having to explain it. This guide covers the four supported
 clients and the `--auto` shortcut.
 
-If you're new to Adorable, start with the [User Guide](userguide.md) — get
+If you're new to Veoable, start with the [User Guide](userguide.md) — get
 `adorable project analyze` producing a graph DB first, then come back here.
 
 ---
@@ -31,15 +31,15 @@ If you're new to Adorable, start with the [User Guide](userguide.md) — get
 
 ## Mental model
 
-Adorable ships in two pieces for any LLM client:
+Veoable ships in two pieces for any LLM client:
 
 1. **A skill description** — a piece of markdown the agent reads to know
-   *when* Adorable applies. It lists the question shapes that should
-   trigger Adorable tools ("what does this app do?", "what breaks if I
+   *when* Veoable applies. It lists the question shapes that should
+   trigger Veoable tools ("what does this app do?", "what breaks if I
    change this endpoint?") and the question shapes that shouldn't
    (syntax errors, build/CI issues, runtime traces).
 2. **An MCP server entry** — the wiring that lets the agent actually
-   *call* Adorable. The server is `adorable serve <graph.db>` — same
+   *call* Veoable. The server is `adorable serve <graph.db>` — same
    binary you already have installed, pointed at the graph you built
    with `adorable project analyze`.
 
@@ -57,7 +57,7 @@ ships into every adapter.
 Before installing into any client:
 
 ```bash
-# 1. Install Adorable itself.
+# 1. Install Veoable itself.
 git clone https://github.com/mudit70/adorable
 cd adorable
 git checkout v0.3.0
@@ -77,7 +77,7 @@ curl http://localhost:3001/api/tools | jq '.tools[] | .function.name' | head
 ```
 
 You now have `my-project.db` on disk. The client installs below will
-point Adorable's MCP server at it.
+point Veoable's MCP server at it.
 
 ---
 
@@ -161,7 +161,7 @@ picks up the skill and the new MCP server.
 Use the skill: in any Claude Code session, ask a question that matches
 the skill's triggers — "what does this app do?", "what's the login
 flow?", "what breaks if I rename `users.email`?" — and Claude will route
-to Adorable's tools automatically.
+to Veoable's tools automatically.
 
 ### Cursor
 
@@ -229,7 +229,7 @@ adorable install vscode --db my-project.db
 - **Scope:** project-scoped — run from the project root.
 - **Writes:**
   - `.github/copilot-instructions.md` — always. **Upserts a delimited
-    Adorable section**:
+    Veoable section**:
 
     ```markdown
     <!-- adorable:start v=1 (managed by `adorable install vscode`) -->
@@ -316,7 +316,7 @@ After installing into a client:
 
 3. **Restart the client** (or reload the window).
 
-4. **Ask a question that should trigger Adorable**:
+4. **Ask a question that should trigger Veoable**:
 
    > *"What does this app do?"*
    >
@@ -324,11 +324,11 @@ After installing into a client:
    >
    > *"What happens when a user submits the login form?"*
 
-   You should see the agent invoke an Adorable tool (the exact UI
+   You should see the agent invoke an Veoable tool (the exact UI
    varies by client — Claude Code prints "🔧 tool: list_repositories",
    Cursor shows a 🛠️ chip in chat, etc.).
 
-5. **If the agent skips Adorable**, ask it to call `describe_skill`
+5. **If the agent skips Veoable**, ask it to call `describe_skill`
    explicitly:
 
    > *"Call describe_skill, then answer."*
@@ -341,7 +341,7 @@ After installing into a client:
 
 ## Updating the skill
 
-When you upgrade Adorable (e.g. `git pull` + `pnpm install-cli`), the
+When you upgrade Veoable (e.g. `git pull` + `pnpm install-cli`), the
 SKILL.md content may change. Re-run the install command for each client
 you use:
 
@@ -350,7 +350,7 @@ adorable install --auto --db ~/my-project/my-project.db
 ```
 
 All adapters are idempotent — your existing client-specific content
-outside Adorable's marker blocks (especially in
+outside Veoable's marker blocks (especially in
 `.github/copilot-instructions.md`) is preserved.
 
 ---
@@ -412,7 +412,7 @@ For safety, the install command refuses to touch a few things:
 
 ## Troubleshooting
 
-### "The agent doesn't recognize the skill / never calls Adorable tools"
+### "The agent doesn't recognize the skill / never calls Veoable tools"
 
 Most common: the client process started before the install ran, and
 hasn't been restarted. Fully quit the client (not just close the
@@ -424,7 +424,7 @@ If a restart doesn't help:
   agent to call `describe_skill` explicitly. If it returns the
   SKILL.md content, the MCP server is reachable but the trigger-shape
   matching isn't firing — try a more explicit question (e.g.
-  *"Use Adorable to list every API endpoint in this codebase"*).
+  *"Use Veoable to list every API endpoint in this codebase"*).
 - If `describe_skill` fails or isn't found, the MCP server isn't
   reachable. Verify the path in `mcp.json` or `config.json` matches
   the graph DB you actually built (`ls -la <path>`).
@@ -468,7 +468,7 @@ The detection signal looks for the client's config directory
 relocated it (e.g. `$CLAUDE_CONFIG_DIR=/elsewhere`), set the env var
 in your shell or pass an explicit `adorable install <client>` instead.
 
-### "My `.github/copilot-instructions.md` has duplicate Adorable sections"
+### "My `.github/copilot-instructions.md` has duplicate Veoable sections"
 
 A half-broken previous install or a copy-paste error can leave two
 marker pairs. Re-run `adorable install vscode` — the upsert collapses
@@ -496,7 +496,7 @@ adorable serve /abs/path/to/graph.db
 ## What's next
 
 - **Open the [MCP tools guide](mcp-tools-guide.md)** for the full catalog
-  of what Adorable can answer once it's installed.
+  of what Veoable can answer once it's installed.
 - **For live updates** during a session (so your edits reflect in the
   agent's next answer), leave a watcher running in another terminal:
 

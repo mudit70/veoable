@@ -1,7 +1,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { Node, Project, SyntaxKind } from 'ts-morph';
-import { recordConfidenceDecision } from '@adorable/observability';
+import { recordConfidenceDecision } from '@veoable/observability';
 
 /**
  * Build-tool proxy-config detection (#188 Cause 2 / Fix 3).

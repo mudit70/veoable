@@ -880,12 +880,12 @@ This is a detail analyzer concern (R-4.1.4) — the Prisma schema parser can emi
 
 | Package | Change | Effort |
 |---------|--------|--------|
-| `@adorable/schema` | Add `HANDLES`, `PERFORMS`, `MIDDLEWARE` edge types | Small |
-| `@adorable/lang-ts` | Expose `rootDir` in `TsVisitContext` for cross-file handler resolution | Small |
-| `@adorable/framework-express` | Follow imports to resolve handler FunctionDefinition ids, detect `app.use` mounts, emit inline handler FunctionDefinition nodes | Medium |
-| `@adorable/framework-prisma` | Emit `PERFORMS` edges (currently uses `PERFORMED_BY` which is reverse direction), detect cascade rules from schema | Small |
-| `@adorable/flow-stitcher` | Update flow walker to use `HANDLES` edge, support router composition | Medium |
-| `@adorable/mcp-server` | Add `list_server_endpoints` tool with downstream effects summary | Small |
+| `@veoable/schema` | Add `HANDLES`, `PERFORMS`, `MIDDLEWARE` edge types | Small |
+| `@veoable/lang-ts` | Expose `rootDir` in `TsVisitContext` for cross-file handler resolution | Small |
+| `@veoable/framework-express` | Follow imports to resolve handler FunctionDefinition ids, detect `app.use` mounts, emit inline handler FunctionDefinition nodes | Medium |
+| `@veoable/framework-prisma` | Emit `PERFORMS` edges (currently uses `PERFORMED_BY` which is reverse direction), detect cascade rules from schema | Small |
+| `@veoable/flow-stitcher` | Update flow walker to use `HANDLES` edge, support router composition | Medium |
+| `@veoable/mcp-server` | Add `list_server_endpoints` tool with downstream effects summary | Small |
 
 ### 9.2 What Doesn't Change
 

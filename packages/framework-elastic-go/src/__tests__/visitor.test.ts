@@ -5,9 +5,9 @@ import type {
   DatabaseInteraction,
   DatabaseTable,
   SchemaNode,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
-import { GoLanguagePlugin } from '@adorable/lang-go';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
+import { GoLanguagePlugin } from '@veoable/lang-go';
 import { ElasticGoPlugin } from '../index.js';
 
 const __filename = url.fileURLToPath(import.meta.url);

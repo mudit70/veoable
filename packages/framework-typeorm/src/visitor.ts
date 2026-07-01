@@ -5,8 +5,8 @@ import {
   type DatabaseTable,
   type DatabaseColumn,
   type DatabaseOperation,
-} from '@adorable/schema';
-import { type TsFrameworkVisitor, buildEvidence } from '@adorable/lang-ts';
+} from '@veoable/schema';
+import { type TsFrameworkVisitor, buildEvidence } from '@veoable/lang-ts';
 
 /**
  * TypeORM framework visitor (#41, expanded #366).

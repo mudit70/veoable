@@ -1,7 +1,7 @@
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
-import { idFor, type APIEndpoint, type ClientSideAPICaller } from '@adorable/schema';
-import type { PyFrameworkVisitor, PyVisitContext } from '@adorable/lang-py';
+import { idFor, type APIEndpoint, type ClientSideAPICaller } from '@veoable/schema';
+import type { PyFrameworkVisitor, PyVisitContext } from '@veoable/lang-py';
 
 /**
  * Celery visitor — task definitions + task invocations in one pass.

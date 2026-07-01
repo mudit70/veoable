@@ -1,6 +1,6 @@
-# React-Native-Only Adorable: A Minimal Build
+# React-Native-Only Veoable: A Minimal Build
 
-This guide describes how to implement a smaller, focused version of Adorable that supports a **React Native frontend** plus the five backends most commonly paired with it in production. It distills the full architecture (`docs/architecture-2.md`) down to the parts you actually need, names the packages to keep or drop, and walks through the plugin contract you must implement for each backend.
+This guide describes how to implement a smaller, focused version of Veoable that supports a **React Native frontend** plus the five backends most commonly paired with it in production. It distills the full architecture (`docs/architecture-2.md`) down to the parts you actually need, names the packages to keep or drop, and walks through the plugin contract you must implement for each backend.
 
 The goal of the smaller app is the same as the parent project — build a knowledge graph of UI interactions → outbound API calls → server endpoints → DB writes — but scoped so a single developer can stand it up in an afternoon.
 
@@ -181,18 +181,18 @@ Trim `packages/cli/src/discover.ts` (currently 158 lines of imports) to just the
 
 ```ts
 // languages
-import { TsLanguagePlugin } from '@adorable/lang-ts';
-import { PyLanguagePlugin } from '@adorable/lang-py';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
+import { PyLanguagePlugin } from '@veoable/lang-py';
 
 // frameworks
-import { ReactNativePlugin } from '@adorable/framework-react-native';
-import { FetchPlugin } from '@adorable/framework-fetch';
-import { AxiosPlugin } from '@adorable/framework-axios';
-import { ExpressPlugin } from '@adorable/framework-express';
-import { NestjsPlugin } from '@adorable/framework-nestjs';
-import { SupabasePlugin } from '@adorable/framework-supabase';
-import { TrpcPlugin } from '@adorable/framework-trpc';
-import { FastapiPlugin } from '@adorable/framework-fastapi';
+import { ReactNativePlugin } from '@veoable/framework-react-native';
+import { FetchPlugin } from '@veoable/framework-fetch';
+import { AxiosPlugin } from '@veoable/framework-axios';
+import { ExpressPlugin } from '@veoable/framework-express';
+import { NestjsPlugin } from '@veoable/framework-nestjs';
+import { SupabasePlugin } from '@veoable/framework-supabase';
+import { TrpcPlugin } from '@veoable/framework-trpc';
+import { FastapiPlugin } from '@veoable/framework-fastapi';
 ```
 
 Update the `LANGUAGE_REGISTRY` to only `ts` and `py`, and the framework list to the eight above. The orchestration loop in `analyze.ts` is plugin-agnostic — it just iterates whatever `discover.ts` returns — so nothing else changes.
@@ -263,7 +263,7 @@ rn-adorable/
 
 ## 11. Reference: file map
 
-When you're stuck, these are the files to read in the upstream Adorable repo:
+When you're stuck, these are the files to read in the upstream Veoable repo:
 
 | Topic | File |
 |-------|------|

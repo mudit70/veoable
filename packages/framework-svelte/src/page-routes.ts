@@ -5,8 +5,8 @@ import {
   type Screen,
   type SchemaEdge,
   type SchemaNode,
-} from '@adorable/schema';
-import type { NodeBatch } from '@adorable/plugin-api';
+} from '@veoable/schema';
+import type { NodeBatch } from '@veoable/plugin-api';
 
 /**
  * SvelteKit page-as-Screen extractor (#198 PR3c).

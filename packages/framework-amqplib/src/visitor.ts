@@ -1,11 +1,11 @@
 import { Node, type Expression } from 'ts-morph';
-import { idFor, type APIEndpoint, type ClientSideAPICaller } from '@adorable/schema';
+import { idFor, type APIEndpoint, type ClientSideAPICaller } from '@veoable/schema';
 import {
   buildEvidence,
   readStringLiteral,
   type TsFrameworkVisitor,
   type TsVisitContext,
-} from '@adorable/lang-ts';
+} from '@veoable/lang-ts';
 
 /**
  * amqplib visitor.

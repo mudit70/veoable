@@ -6,39 +6,39 @@
  */
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import { type NodeBatch, type LanguagePlugin, type FrameworkPlugin } from '@adorable/plugin-api';
-import { type APIEndpoint, type SchemaNode, validateNode } from '@adorable/schema';
+import { type NodeBatch, type LanguagePlugin, type FrameworkPlugin } from '@veoable/plugin-api';
+import { type APIEndpoint, type SchemaNode, validateNode } from '@veoable/schema';
 import type { ExpectedDetectionResult, ExpectedEndpoint } from './types.js';
 
 // Language plugin factories
-import { TsLanguagePlugin } from '@adorable/lang-ts';
-import { PyLanguagePlugin } from '@adorable/lang-py';
-import { GoLanguagePlugin } from '@adorable/lang-go';
-import { JavaLanguagePlugin } from '@adorable/lang-java';
-import { PhpLanguagePlugin } from '@adorable/lang-php';
-import { RustLanguagePlugin } from '@adorable/lang-rust';
+import { TsLanguagePlugin } from '@veoable/lang-ts';
+import { PyLanguagePlugin } from '@veoable/lang-py';
+import { GoLanguagePlugin } from '@veoable/lang-go';
+import { JavaLanguagePlugin } from '@veoable/lang-java';
+import { PhpLanguagePlugin } from '@veoable/lang-php';
+import { RustLanguagePlugin } from '@veoable/lang-rust';
 
 // Framework plugin factories
-import { ExpressPlugin } from '@adorable/framework-express';
-import { FastifyPlugin } from '@adorable/framework-fastify';
-import { NestjsPlugin } from '@adorable/framework-nestjs';
-import { NextjsPlugin } from '@adorable/framework-nextjs';
-import { KoaPlugin } from '@adorable/framework-koa';
-import { HapiPlugin } from '@adorable/framework-hapi';
-import { HonoPlugin } from '@adorable/framework-hono';
-import { RemixPlugin } from '@adorable/framework-remix';
-import { FastapiPlugin } from '@adorable/framework-fastapi';
-import { FlaskPlugin } from '@adorable/framework-flask';
-import { DjangoPlugin } from '@adorable/framework-django';
-import { GinPlugin } from '@adorable/framework-gin';
-import { GoHttpPlugin } from '@adorable/framework-gohttp';
-import { ActixPlugin } from '@adorable/framework-actix';
-import { AxumPlugin } from '@adorable/framework-axum';
-import { RocketPlugin } from '@adorable/framework-rocket';
-import { SpringPlugin } from '@adorable/framework-spring';
-import { LaravelPlugin } from '@adorable/framework-laravel';
-import { TrpcPlugin } from '@adorable/framework-trpc';
-import { GraphqlPlugin } from '@adorable/framework-graphql';
+import { ExpressPlugin } from '@veoable/framework-express';
+import { FastifyPlugin } from '@veoable/framework-fastify';
+import { NestjsPlugin } from '@veoable/framework-nestjs';
+import { NextjsPlugin } from '@veoable/framework-nextjs';
+import { KoaPlugin } from '@veoable/framework-koa';
+import { HapiPlugin } from '@veoable/framework-hapi';
+import { HonoPlugin } from '@veoable/framework-hono';
+import { RemixPlugin } from '@veoable/framework-remix';
+import { FastapiPlugin } from '@veoable/framework-fastapi';
+import { FlaskPlugin } from '@veoable/framework-flask';
+import { DjangoPlugin } from '@veoable/framework-django';
+import { GinPlugin } from '@veoable/framework-gin';
+import { GoHttpPlugin } from '@veoable/framework-gohttp';
+import { ActixPlugin } from '@veoable/framework-actix';
+import { AxumPlugin } from '@veoable/framework-axum';
+import { RocketPlugin } from '@veoable/framework-rocket';
+import { SpringPlugin } from '@veoable/framework-spring';
+import { LaravelPlugin } from '@veoable/framework-laravel';
+import { TrpcPlugin } from '@veoable/framework-trpc';
+import { GraphqlPlugin } from '@veoable/framework-graphql';
 
 const LANGUAGE_PLUGINS: Record<string, () => LanguagePlugin> = {
   ts: () => new TsLanguagePlugin(),

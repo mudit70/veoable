@@ -8,8 +8,8 @@ import {
   type DatabaseSystem,
   type DatabaseTable,
   type HttpEgressConfidence,
-} from '@adorable/schema';
-import { hasCrateImport, type RustFrameworkVisitor } from '@adorable/lang-rust';
+} from '@veoable/schema';
+import { hasCrateImport, type RustFrameworkVisitor } from '@veoable/lang-rust';
 
 /**
  * aws-sdk-s3 (Rust) visitor.
@@ -309,7 +309,7 @@ function _createAwsrustS3Visitor(
  * framework-mongogo emits for Mongo collection ops.
  */
 function emitDdbDatabaseTriple(args: {
-  ctx: import('@adorable/lang-rust').RustVisitContext;
+  ctx: import('@veoable/lang-rust').RustVisitContext;
   sourceLine: number;
   sourceLineEnd: number;
   snippet: string;

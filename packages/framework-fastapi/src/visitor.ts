@@ -1,5 +1,5 @@
-import { idFor, type APIEndpoint } from '@adorable/schema';
-import type { PyFrameworkVisitor } from '@adorable/lang-py';
+import { idFor, type APIEndpoint } from '@veoable/schema';
+import type { PyFrameworkVisitor } from '@veoable/lang-py';
 import type Parser from 'web-tree-sitter';
 type SyntaxNode = Parser.SyntaxNode;
 
