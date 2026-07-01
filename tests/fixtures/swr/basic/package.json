@@ -1,0 +1,9 @@
+{
+  "name": "swr-fixture",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "swr": "^2.0.0",
+    "react": "^18.0.0"
+  }
+}

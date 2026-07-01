@@ -1,0 +1,7 @@
+{
+  "name": "@combined/api",
+  "version": "0.0.0",
+  "dependencies": {
+    "@combined/db": "workspace:*"
+  }
+}

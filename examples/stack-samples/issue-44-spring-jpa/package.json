@@ -1,0 +1,4 @@
+{
+  "name": "issue-44-frontend",
+  "dependencies": { "react": "^18.0.0" }
+}

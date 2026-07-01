@@ -1,0 +1,9 @@
+// Second model shard — references `User` declared in `user.prisma`.
+// Tests cross-file navigation property detection (the workspace-wide
+// `modelNames` set in pass 1).
+model Post {
+  id       Int    @id @default(autoincrement())
+  title    String
+  authorId Int
+  author   User   @relation(fields: [authorId], references: [id])
+}

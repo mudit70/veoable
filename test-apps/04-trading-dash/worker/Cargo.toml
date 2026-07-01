@@ -1,0 +1,17 @@
+[package]
+name = "trading-dash-worker"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+aws-config = "1"
+aws-sdk-dynamodb = "1"
+aws-sdk-sqs = "1"
+apalis = "0.5"
+apalis-sql = "0.5"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+chrono = { version = "0.4", features = ["serde"] }

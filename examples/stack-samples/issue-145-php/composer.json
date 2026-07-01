@@ -1,0 +1,6 @@
+{
+  "name": "example/userapi",
+  "require": {
+    "laravel/framework": "^11.0"
+  }
+}

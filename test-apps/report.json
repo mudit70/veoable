@@ -1,0 +1,739 @@
+[
+  {
+    "app": "01-task-tracker",
+    "sourceFileCount": 15,
+    "detectedPlugins": [
+      "react",
+      "nextjs",
+      "fetch",
+      "rpc-client",
+      "fastapi",
+      "sqlalchemy",
+      "dom",
+      "pycli"
+    ],
+    "emittingPlugins": [
+      "react",
+      "fetch",
+      "fastapi",
+      "sqlalchemy"
+    ],
+    "expectedPlugins": [
+      "nextjs",
+      "react",
+      "fetch",
+      "fastapi",
+      "sqlalchemy"
+    ],
+    "missingExpected": [],
+    "unexpectedDetections": [],
+    "schemaSummary": {
+      "systems": 1,
+      "tables": 0,
+      "columns": 0
+    },
+    "stitchSummary": {
+      "resolved": 5,
+      "dynamic": 0
+    },
+    "completeFlowCount": 3,
+    "partialFlowCount": 4,
+    "nodeCounts": {
+      "APIEndpoint": 6,
+      "ClientSideAPICaller": 5,
+      "DatabaseInteraction": 6,
+      "DatabaseTable": 1,
+      "DatabaseSystem": 1,
+      "FunctionDefinition": 26,
+      "SourceFile": 15,
+      "ClientSideProcess": 7
+    },
+    "frameworks": {
+      "APIEndpoint": {
+        "fastapi": 6
+      },
+      "ClientSideAPICaller": {
+        "fetch": 5
+      },
+      "DatabaseInteraction": {
+        "(none)": 6
+      },
+      "DatabaseSystem": {
+        "(none)": 1
+      },
+      "ClientSideProcess": {
+        "react": 7
+      }
+    },
+    "endpoints": [
+      {
+        "rp": "/api/health",
+        "m": "GET",
+        "fw": "fastapi"
+      },
+      {
+        "rp": "/api/tasks",
+        "m": "GET",
+        "fw": "fastapi"
+      },
+      {
+        "rp": "/api/tasks/:task_id",
+        "m": "GET",
+        "fw": "fastapi"
+      },
+      {
+        "rp": "/api/tasks",
+        "m": "POST",
+        "fw": "fastapi"
+      },
+      {
+        "rp": "/api/tasks/:task_id/complete",
+        "m": "POST",
+        "fw": "fastapi"
+      },
+      {
+        "rp": "/api/tasks/:task_id",
+        "m": "DELETE",
+        "fw": "fastapi"
+      }
+    ],
+    "callers": [
+      {
+        "u": ":p0/api/tasks",
+        "m": "GET",
+        "fw": "fetch"
+      },
+      {
+        "u": ":p0/api/tasks/:p1",
+        "m": "GET",
+        "fw": "fetch"
+      },
+      {
+        "u": ":p0/api/tasks",
+        "m": "POST",
+        "fw": "fetch"
+      },
+      {
+        "u": ":p0/api/tasks/:p1/complete",
+        "m": "POST",
+        "fw": "fetch"
+      },
+      {
+        "u": ":p0/api/tasks/:p1",
+        "m": "DELETE",
+        "fw": "fetch"
+      }
+    ],
+    "dbInteractions": [
+      {
+        "fw": "sqlalchemy",
+        "verb": "read",
+        "n": 4
+      },
+      {
+        "fw": "sqlalchemy",
+        "verb": "write",
+        "n": 1
+      },
+      {
+        "fw": "sqlalchemy",
+        "verb": "delete",
+        "n": 1
+      }
+    ]
+  },
+  {
+    "app": "02-fleet-monitor",
+    "sourceFileCount": 15,
+    "detectedPlugins": [
+      "react",
+      "axios",
+      "fetch",
+      "rpc-client",
+      "dom",
+      "gin",
+      "gohttp",
+      "mongogo",
+      "gocli",
+      "bundler"
+    ],
+    "emittingPlugins": [
+      "react",
+      "axios",
+      "gin",
+      "mongogo"
+    ],
+    "expectedPlugins": [
+      "react",
+      "axios",
+      "gin",
+      "mongogo"
+    ],
+    "missingExpected": [],
+    "unexpectedDetections": [],
+    "schemaSummary": {
+      "systems": 1,
+      "tables": 0,
+      "columns": 0
+    },
+    "stitchSummary": {
+      "resolved": 4,
+      "dynamic": 0
+    },
+    "completeFlowCount": 3,
+    "partialFlowCount": 1,
+    "nodeCounts": {
+      "APIEndpoint": 6,
+      "ClientSideAPICaller": 4,
+      "DatabaseInteraction": 6,
+      "DatabaseTable": 2,
+      "DatabaseSystem": 1,
+      "FunctionDefinition": 22,
+      "SourceFile": 15,
+      "ClientSideProcess": 4,
+      "Screen": 1
+    },
+    "frameworks": {
+      "APIEndpoint": {
+        "gin": 6
+      },
+      "ClientSideAPICaller": {
+        "axios": 4
+      },
+      "DatabaseInteraction": {
+        "(none)": 6
+      },
+      "DatabaseSystem": {
+        "(none)": 1
+      },
+      "ClientSideProcess": {
+        "react": 4
+      }
+    },
+    "endpoints": [
+      {
+        "rp": "/api/health",
+        "m": "GET",
+        "fw": "gin"
+      },
+      {
+        "rp": "/api/vehicles",
+        "m": "GET",
+        "fw": "gin"
+      },
+      {
+        "rp": "/api/vehicles/:id",
+        "m": "GET",
+        "fw": "gin"
+      },
+      {
+        "rp": "/api/vehicles",
+        "m": "POST",
+        "fw": "gin"
+      },
+      {
+        "rp": "/api/vehicles/:id/pings",
+        "m": "GET",
+        "fw": "gin"
+      },
+      {
+        "rp": "/api/vehicles/:id/pings",
+        "m": "POST",
+        "fw": "gin"
+      }
+    ],
+    "callers": [
+      {
+        "u": "/api/vehicles",
+        "m": "GET",
+        "fw": "axios"
+      },
+      {
+        "u": "/api/vehicles/:p0",
+        "m": "GET",
+        "fw": "axios"
+      },
+      {
+        "u": "/api/vehicles/:p0/pings",
+        "m": "GET",
+        "fw": "axios"
+      },
+      {
+        "u": "/api/vehicles/:p0/pings",
+        "m": "POST",
+        "fw": "axios"
+      }
+    ],
+    "dbInteractions": [
+      {
+        "fw": "mongogo",
+        "verb": "read",
+        "n": 3
+      },
+      {
+        "fw": "mongogo",
+        "verb": "write",
+        "n": 2
+      },
+      {
+        "fw": "mongogo",
+        "verb": "update",
+        "n": 1
+      }
+    ]
+  },
+  {
+    "app": "03-content-cms",
+    "sourceFileCount": 12,
+    "detectedPlugins": [
+      "prisma",
+      "nestjs",
+      "fetch",
+      "rpc-client",
+      "svelte",
+      "dom",
+      "bundler",
+      "ioredis"
+    ],
+    "emittingPlugins": [
+      "prisma",
+      "nestjs",
+      "fetch"
+    ],
+    "expectedPlugins": [
+      "svelte",
+      "fetch",
+      "nestjs",
+      "prisma",
+      "ioredis"
+    ],
+    "missingExpected": [],
+    "unexpectedDetections": [],
+    "schemaSummary": {
+      "systems": 2,
+      "tables": 2,
+      "columns": 11
+    },
+    "stitchSummary": {
+      "resolved": 4,
+      "dynamic": 0
+    },
+    "completeFlowCount": 0,
+    "partialFlowCount": 0,
+    "nodeCounts": {
+      "APIEndpoint": 6,
+      "ClientSideAPICaller": 4,
+      "DatabaseInteraction": 6,
+      "DatabaseTable": 2,
+      "DatabaseSystem": 2,
+      "FunctionDefinition": 26,
+      "SourceFile": 12
+    },
+    "frameworks": {
+      "APIEndpoint": {
+        "nestjs": 6
+      },
+      "ClientSideAPICaller": {
+        "fetch": 4
+      },
+      "DatabaseInteraction": {
+        "(none)": 6
+      },
+      "DatabaseSystem": {
+        "(none)": 2
+      }
+    },
+    "endpoints": [
+      {
+        "rp": "/api/articles",
+        "m": "GET",
+        "fw": "nestjs"
+      },
+      {
+        "rp": "/api/articles/:slug",
+        "m": "GET",
+        "fw": "nestjs"
+      },
+      {
+        "rp": "/api/articles",
+        "m": "POST",
+        "fw": "nestjs"
+      },
+      {
+        "rp": "/api/articles/:id",
+        "m": "PATCH",
+        "fw": "nestjs"
+      },
+      {
+        "rp": "/api/articles/:id/publish",
+        "m": "POST",
+        "fw": "nestjs"
+      },
+      {
+        "rp": "/api/articles/:id",
+        "m": "DELETE",
+        "fw": "nestjs"
+      }
+    ],
+    "callers": [
+      {
+        "u": "/api/articles",
+        "m": "GET",
+        "fw": "fetch"
+      },
+      {
+        "u": "/api/articles/:p0",
+        "m": "GET",
+        "fw": "fetch"
+      },
+      {
+        "u": "/api/articles",
+        "m": "POST",
+        "fw": "fetch"
+      },
+      {
+        "u": "/api/articles/:p0/publish",
+        "m": "POST",
+        "fw": "fetch"
+      }
+    ],
+    "dbInteractions": [
+      {
+        "fw": "prisma",
+        "verb": "read",
+        "n": 2
+      },
+      {
+        "fw": "prisma",
+        "verb": "write",
+        "n": 1
+      },
+      {
+        "fw": "prisma",
+        "verb": "update",
+        "n": 2
+      },
+      {
+        "fw": "prisma",
+        "verb": "delete",
+        "n": 1
+      }
+    ]
+  },
+  {
+    "app": "04-trading-dash",
+    "sourceFileCount": 16,
+    "detectedPlugins": [
+      "fetch",
+      "rpc-client",
+      "vue",
+      "dom",
+      "axum",
+      "bundler",
+      "tokio-spawn",
+      "apalis",
+      "awsrust-s3"
+    ],
+    "emittingPlugins": [
+      "fetch",
+      "axum",
+      "awsrust-s3"
+    ],
+    "expectedPlugins": [
+      "vue",
+      "fetch",
+      "axum",
+      "awsrust-s3",
+      "apalis"
+    ],
+    "missingExpected": [],
+    "unexpectedDetections": [],
+    "schemaSummary": {
+      "systems": 0,
+      "tables": 0,
+      "columns": 0
+    },
+    "stitchSummary": {
+      "resolved": 3,
+      "dynamic": 1
+    },
+    "completeFlowCount": 0,
+    "partialFlowCount": 4,
+    "nodeCounts": {
+      "APIEndpoint": 5,
+      "ClientSideAPICaller": 10,
+      "FunctionDefinition": 25,
+      "SourceFile": 16,
+      "ClientSideProcess": 2,
+      "Screen": 1
+    },
+    "frameworks": {
+      "APIEndpoint": {
+        "axum": 5
+      },
+      "ClientSideAPICaller": {
+        "awsrust-dynamodb": 4,
+        "awsrust-sqs": 2,
+        "fetch": 4
+      },
+      "ClientSideProcess": {
+        "vue-template": 2
+      }
+    },
+    "endpoints": [
+      {
+        "rp": "/api/health",
+        "m": "GET",
+        "fw": "axum"
+      },
+      {
+        "rp": "/api/portfolio",
+        "m": "GET",
+        "fw": "axum"
+      },
+      {
+        "rp": "/api/orders/:id",
+        "m": "DELETE",
+        "fw": "axum"
+      },
+      {
+        "rp": "/api/orders",
+        "m": "POST",
+        "fw": "axum"
+      },
+      {
+        "rp": "/api/orders",
+        "m": "GET",
+        "fw": "axum"
+      }
+    ],
+    "callers": [
+      {
+        "u": "dynamodb://Orders/",
+        "m": "GET",
+        "fw": "awsrust-dynamodb"
+      },
+      {
+        "u": "dynamodb://Orders/",
+        "m": "PATCH",
+        "fw": "awsrust-dynamodb"
+      },
+      {
+        "u": "dynamodb://Orders/",
+        "m": "GET",
+        "fw": "awsrust-dynamodb"
+      },
+      {
+        "u": "dynamodb://Orders/",
+        "m": "PUT",
+        "fw": "awsrust-dynamodb"
+      },
+      {
+        "u": "sqs:orders-incoming",
+        "m": "JOB",
+        "fw": "awsrust-sqs"
+      },
+      {
+        "u": "sqs:orders-incoming",
+        "m": "JOB",
+        "fw": "awsrust-sqs"
+      },
+      {
+        "u": null,
+        "m": null,
+        "fw": "fetch"
+      },
+      {
+        "u": "/api/orders",
+        "m": "GET",
+        "fw": "fetch"
+      },
+      {
+        "u": "/api/portfolio",
+        "m": "GET",
+        "fw": "fetch"
+      },
+      {
+        "u": "/api/orders/:p0",
+        "m": "DELETE",
+        "fw": "fetch"
+      }
+    ],
+    "dbInteractions": []
+  },
+  {
+    "app": "05-photo-share",
+    "sourceFileCount": 17,
+    "detectedPlugins": [
+      "fetch",
+      "rpc-client",
+      "django",
+      "redispy",
+      "boto3-s3",
+      "dom",
+      "pycli",
+      "react-native"
+    ],
+    "emittingPlugins": [
+      "fetch",
+      "django",
+      "redispy",
+      "boto3-s3",
+      "pycli",
+      "react-native"
+    ],
+    "expectedPlugins": [
+      "react-native",
+      "fetch",
+      "django",
+      "boto3-s3",
+      "redispy"
+    ],
+    "missingExpected": [],
+    "unexpectedDetections": [
+      "pycli"
+    ],
+    "schemaSummary": {
+      "systems": 2,
+      "tables": 0,
+      "columns": 0
+    },
+    "stitchSummary": {
+      "resolved": 5,
+      "dynamic": 3
+    },
+    "completeFlowCount": 5,
+    "partialFlowCount": 7,
+    "nodeCounts": {
+      "APIEndpoint": 5,
+      "ClientSideAPICaller": 8,
+      "DatabaseInteraction": 8,
+      "DatabaseTable": 5,
+      "DatabaseSystem": 2,
+      "FunctionDefinition": 30,
+      "SourceFile": 17,
+      "ClientSideProcess": 10,
+      "Screen": 3
+    },
+    "frameworks": {
+      "APIEndpoint": {
+        "django": 5
+      },
+      "ClientSideAPICaller": {
+        "boto3-s3": 2,
+        "fetch": 6
+      },
+      "DatabaseInteraction": {
+        "(none)": 8
+      },
+      "DatabaseSystem": {
+        "(none)": 2
+      },
+      "ClientSideProcess": {
+        "python": 1,
+        "react-native": 9
+      }
+    },
+    "endpoints": [
+      {
+        "rp": "/api/photos",
+        "m": "GET",
+        "fw": "django"
+      },
+      {
+        "rp": "/api/photos",
+        "m": "POST",
+        "fw": "django"
+      },
+      {
+        "rp": "/api/photos/upload-url",
+        "m": "POST",
+        "fw": "django"
+      },
+      {
+        "rp": "/api/photos/:photo_id",
+        "m": "GET",
+        "fw": "django"
+      },
+      {
+        "rp": "/api/photos/:photo_id",
+        "m": "DELETE",
+        "fw": "django"
+      }
+    ],
+    "callers": [
+      {
+        "u": null,
+        "m": "GET",
+        "fw": "boto3-s3"
+      },
+      {
+        "u": null,
+        "m": "DELETE",
+        "fw": "boto3-s3"
+      },
+      {
+        "u": ":p0/api/photos/",
+        "m": "GET",
+        "fw": "fetch"
+      },
+      {
+        "u": ":p0/api/photos/:p1",
+        "m": "GET",
+        "fw": "fetch"
+      },
+      {
+        "u": ":p0/api/photos/upload-url",
+        "m": "POST",
+        "fw": "fetch"
+      },
+      {
+        "u": null,
+        "m": "PUT",
+        "fw": "fetch"
+      },
+      {
+        "u": ":p0/api/photos/",
+        "m": "POST",
+        "fw": "fetch"
+      },
+      {
+        "u": ":p0/api/photos/:p1",
+        "m": "DELETE",
+        "fw": "fetch"
+      }
+    ],
+    "dbInteractions": [
+      {
+        "fw": "redispy",
+        "verb": "read",
+        "n": 1
+      },
+      {
+        "fw": "redispy",
+        "verb": "update",
+        "n": 1
+      },
+      {
+        "fw": "django",
+        "verb": "delete",
+        "n": 2
+      },
+      {
+        "fw": "redispy",
+        "verb": "delete",
+        "n": 1
+      },
+      {
+        "fw": "django",
+        "verb": "write",
+        "n": 1
+      },
+      {
+        "fw": "django",
+        "verb": "read",
+        "n": 2
+      }
+    ]
+  }
+]

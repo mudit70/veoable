@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "build",
+    "redirects": [
+      { "source": "/try", "destination": "/signup", "type": 301 },
+      { "source": "/old-blog/:slug", "destination": "/blog/:slug", "type": 302 },
+      { "source": "/legacy", "destination": "https://example.com/new", "type": 301 }
+    ]
+  }
+}

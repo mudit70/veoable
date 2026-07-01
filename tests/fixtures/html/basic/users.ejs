@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Users</h1>
+
+  <form action="/api/users" method="POST">
+    <input type="text" name="email" />
+    <button type="submit" onclick="track('signup')">Add user</button>
+  </form>
+
+  <ul>
+    <% users.forEach(function(user){ %>
+      <li>
+        <%= user.name %>
+        <form action="/api/users/<%= user.id %>/delete" method="POST">
+          <button type="submit" onclick="confirmDelete()">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>

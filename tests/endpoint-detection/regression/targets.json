@@ -1,0 +1,22 @@
+[
+  {
+    "name": "express-realworld",
+    "description": "Express RealWorld example app (conduit backend)",
+    "repo": "https://github.com/gothinkster/node-express-realworld-example-app",
+    "sha": "b22e141e0e2138791a1a41a09e6d4e1a62867e71",
+    "framework": "express",
+    "language": "ts",
+    "subdir": "",
+    "notes": "Classic Express REST API with JWT auth and MongoDB. Pinned to known-good commit."
+  },
+  {
+    "name": "fastify-demo",
+    "description": "Fastify example from fastify-cli",
+    "repo": "https://github.com/fastify/fastify-cli",
+    "sha": "5ced49f8e7e5e3b75e7e55f1e9e8a8e4c8e7d6c5",
+    "framework": "fastify",
+    "language": "ts",
+    "subdir": "templates/app-ts",
+    "notes": "Official Fastify TypeScript template. Pinned to known-good commit."
+  }
+]

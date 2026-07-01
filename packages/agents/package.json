@@ -1,0 +1,26 @@
+{
+  "name": "@veoable/agents",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --external @veoable/core --external @veoable/graph-db",
+    "dev": "tsup src/index.ts --format esm --dts --external @veoable/core --external @veoable/graph-db --watch"
+  },
+  "dependencies": {
+    "@veoable/core": "workspace:*",
+    "@veoable/graph-db": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0"
+  }
+}

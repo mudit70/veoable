@@ -7,7 +7,7 @@ architectural rules that every contribution must respect.
 > **Rename note.** Veoable is a rename of
 > [`adorable`](https://github.com/mudit70/adorable); until the
 > mechanical-rename PR lands, package names inside the workspace are still
-> `@adorable/*` and the CLI is still `adorable`. Please read those names
+> `@veoable/*` and the CLI is still `adorable`. Please read those names
 > as "veoable" and expect a global find/replace in a coordinated PR
 > tracked in [`mudit70/adorable#516`](https://github.com/mudit70/adorable/issues/516).
 

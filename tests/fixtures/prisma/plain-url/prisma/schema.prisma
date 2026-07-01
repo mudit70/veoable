@@ -1,0 +1,9 @@
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://user:pass@host:5432/mydb"
+}
+
+model Thing {
+  id   Int    @id @default(autoincrement())
+  name String
+}

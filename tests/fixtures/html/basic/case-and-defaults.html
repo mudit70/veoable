@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- Form without `method` should default to GET -->
+  <form action="/api/default-method">
+    <button type="submit">Default method</button>
+  </form>
+
+  <!-- Uppercase ACTION attribute should still match -->
+  <form ACTION="/api/upper-action" METHOD="POST">
+    <button type="submit">Upper action</button>
+  </form>
+
+  <!-- Mixed-case event handler attributes should still match -->
+  <button OnClick="mixedCaseHandler()">Mixed</button>
+  <button ONCLICK="upperCaseHandler()">Upper</button>
+</body>
+</html>

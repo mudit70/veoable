@@ -1,0 +1,12 @@
+datasource alpha {
+  provider = "postgresql"
+  url      = env("ALPHA_DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model UserA {
+  id Int @id
+}

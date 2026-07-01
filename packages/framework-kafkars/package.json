@@ -1,0 +1,32 @@
+{
+  "name": "@veoable/framework-kafkars",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --external @veoable/schema --external @veoable/plugin-api --external @veoable/observability --external @veoable/lang-rust --external web-tree-sitter",
+    "dev": "tsup src/index.ts --format esm --dts --external @veoable/schema --external @veoable/plugin-api --external @veoable/observability --external @veoable/lang-rust --external web-tree-sitter --watch",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@veoable/lang-rust": "workspace:*",
+    "@veoable/observability": "workspace:*",
+    "@veoable/plugin-api": "workspace:*",
+    "@veoable/schema": "workspace:*"
+  },
+  "devDependencies": {
+    "@veoable/graph-db": "workspace:*",
+    "@types/node": "^25.5.2",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}

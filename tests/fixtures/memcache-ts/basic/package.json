@@ -1,0 +1,8 @@
+{
+  "name": "memcache-ts-basic",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "memjs": "^1.3.2"
+  }
+}

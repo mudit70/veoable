@@ -1,0 +1,8 @@
+{
+  "name": "amqplib-basic",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "amqplib": "^0.10.4"
+  }
+}
