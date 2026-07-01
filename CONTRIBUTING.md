@@ -4,12 +4,11 @@ Thank you for taking the time to contribute. This document covers the
 mechanics of getting a change from your machine into `main`, plus the
 architectural rules that every contribution must respect.
 
-> **Rename note.** Veoable is a rename of
-> [`adorable`](https://github.com/mudit70/adorable); until the
-> mechanical-rename PR lands, package names inside the workspace are still
-> `@veoable/*` and the CLI is still `adorable`. Please read those names
-> as "veoable" and expect a global find/replace in a coordinated PR
-> tracked in [`mudit70/adorable#516`](https://github.com/mudit70/adorable/issues/516).
+> **Rename note.** Veoable was previously released as
+> [`adorable`](https://github.com/mudit70/adorable). If you were using
+> `@adorable/*` packages or the `adorable` CLI, upgrade with
+> `npx @veoable/migrate-from-adorable --apply`. See
+> [`packages/migrate-from-adorable/README.md`](./packages/migrate-from-adorable/README.md).
 
 ## Table of contents
 
