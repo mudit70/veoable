@@ -374,18 +374,6 @@ function defaultGlobsForExtensions(rootDir: string): string[] {
 }
 
 /**
- * Detect monorepos whose subpackages carry their own tsconfigs and
- * are NOT reached by the root tsconfig — the case that #529 cares
- * about. Scans `apps/`, `packages/`, and `services/` (the three
- * conventional layouts: NextJS/Turborepo, pnpm/yarn workspaces, and
- * Nx-style services).
- *
- * Returns true as soon as it finds a subpackage tsconfig that the
- * root tsconfig's `references` array does NOT list. If the root
- * tsconfig already references the subpackage, ts-morph's tsconfig
- * load handles the file inclusion and the sweep would only add cost.
- */
-/**
  * Detect the TypeScript project-references "shell" pattern: a root
  * `tsconfig.json` that delegates entirely via `references` and covers
  * no files itself (`files: []` and no `include`). This is the default
@@ -422,6 +410,18 @@ function isProjectReferencesShellTsconfig(rootTsconfigPath: string): boolean {
   }
 }
 
+/**
+ * Detect monorepos whose subpackages carry their own tsconfigs and
+ * are NOT reached by the root tsconfig — the case that #529 cares
+ * about. Scans `apps/`, `packages/`, and `services/` (the three
+ * conventional layouts: NextJS/Turborepo, pnpm/yarn workspaces, and
+ * Nx-style services).
+ *
+ * Returns true as soon as it finds a subpackage tsconfig that the
+ * root tsconfig's `references` array does NOT list. If the root
+ * tsconfig already references the subpackage, ts-morph's tsconfig
+ * load handles the file inclusion and the sweep would only add cost.
+ */
 function hasMonorepoSubpackageTsconfigs(rootDir: string, rootTsconfigPath: string): boolean {
   const referencedPaths = new Set<string>();
   try {
