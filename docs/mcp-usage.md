@@ -4,7 +4,7 @@ A practical guide for connecting an LLM (Claude Code, Cursor, Windsurf, etc.) to
 
 ## What the MCP server is
 
-`adorable serve <graph.db>` starts an MCP server (Model Context Protocol over stdio) backed by a graph database that Veoable produces from `adorable analyze` / `adorable project analyze`. An MCP-aware client (Claude Code etc.) connects, lists the available tools, and the LLM calls them as needed during a conversation.
+`veoable serve <graph.db>` starts an MCP server (Model Context Protocol over stdio) backed by a graph database that Veoable produces from `veoable analyze` / `veoable project analyze`. An MCP-aware client (Claude Code etc.) connects, lists the available tools, and the LLM calls them as needed during a conversation.
 
 The server exposes ~32 tools that read and (selectively) write the graph. It does **not** modify your source code. It can modify the project config file (`*.project.json`) only via explicit stitch-management tools, and those have `dryRun` previews.
 
@@ -16,15 +16,15 @@ The server exposes ~32 tools that read and (selectively) write the graph. It doe
 
 For a single repo:
 ```sh
-adorable analyze /path/to/repo --output graph.db --fresh
+veoable analyze /path/to/repo --output graph.db --fresh
 ```
 
 For a multi-repo project (recommended for any monorepo):
 ```sh
 cd /path/to/your-project
-adorable project init .                # writes <name>.project.json
+veoable project init .                # writes <name>.project.json
 # edit the config to enumerate repos and (optionally) applications
-adorable project analyze your-project.project.json --fresh
+veoable project analyze your-project.project.json --fresh
 ```
 
 If you maintain multiple independent applications in one monorepo (e.g., a mobile client + admin web app, each with its own backend), declare them in the config so the stitcher doesn't cross-link them:
@@ -42,14 +42,14 @@ If you maintain multiple independent applications in one monorepo (e.g., a mobil
 For Claude Code, project-scoped (auto-loads when you `cd` into the repo):
 ```sh
 cd /path/to/your-project
-claude mcp add --scope project adorable -- adorable serve /absolute/path/to/your-project.db --project-config /absolute/path/to/your-project.project.json
+claude mcp add --scope project veoable -- veoable serve /absolute/path/to/your-project.db --project-config /absolute/path/to/your-project.project.json
 ```
 
 The `--` separator is required so Claude Code doesn't intercept `--project-config` as one of its own flags. The `--project-config` argument is what lets the server read your `applications` declaration and apply scope to stitching tools.
 
 For a global registration (loads in every session):
 ```sh
-claude mcp add adorable -- adorable serve /absolute/path/to/your-project.db
+claude mcp add veoable -- veoable serve /absolute/path/to/your-project.db
 ```
 
 ### 3. Verify
@@ -57,13 +57,13 @@ claude mcp add adorable -- adorable serve /absolute/path/to/your-project.db
 ```sh
 claude mcp list
 ```
-Should show `adorable: ... - ✓ Connected`.
+Should show `veoable: ... - ✓ Connected`.
 
 ### 4. Re-analyzing
 
 When code changes:
 ```sh
-adorable project analyze your-project.project.json --fresh
+veoable project analyze your-project.project.json --fresh
 ```
 The MCP server reads the database lazily on each tool call — no restart needed; Claude picks up the new graph on the next question.
 
@@ -285,7 +285,7 @@ The project config's `applications` declaration is persisted into the graph DB a
 
 ### Re-running analysis after code changes
 
-The MCP server reads the database lazily on each tool call. After re-running `adorable project analyze --fresh`, the next MCP call sees the new graph. No need to restart the MCP server or the LLM session.
+The MCP server reads the database lazily on each tool call. After re-running `veoable project analyze --fresh`, the next MCP call sees the new graph. No need to restart the MCP server or the LLM session.
 
 ---
 

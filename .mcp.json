@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "adorable": {
+    "veoable": {
       "command": "node",
       "args": ["packages/cli/dist/cli.js", "serve", "graph.db"]
     }

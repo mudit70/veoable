@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Drives `adorable analyze` over each test-apps subdirectory and prints a
+// Drives `veoable analyze` over each test-apps subdirectory and prints a
 // per-app coverage report: detected plugins, node counts by type, stitch
 // outcomes, and flow shape.
 //

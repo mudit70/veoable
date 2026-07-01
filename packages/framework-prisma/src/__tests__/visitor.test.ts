@@ -570,7 +570,7 @@ describe('#371 — `??` + free-fn-factory chain', () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
     const path = await import('node:path');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-371-xpkg-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-371-xpkg-'));
     try {
       // Layout:
       //   packages/database/src/client.ts   — coalesce-singleton producer
@@ -840,7 +840,7 @@ describe('PrismaPlugin.onProjectLoaded', () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
     const path = await import('node:path');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-x-pkg-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-x-pkg-'));
     try {
       // Workspace layout: schema in packages/prisma/, consumer in apps/web/.
       await fs.mkdir(path.join(tmp, 'packages/prisma'), { recursive: true });
@@ -900,7 +900,7 @@ describe('PrismaPlugin.onProjectLoaded', () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
     const path = await import('node:path');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-no-prisma-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-no-prisma-'));
     try {
       await fs.mkdir(path.join(tmp, 'apps/web'), { recursive: true });
       const plugin = new PrismaPlugin();
@@ -924,7 +924,7 @@ describe('PrismaPlugin.onProjectLoaded', () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
     const path = await import('node:path');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-stray-prisma-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-stray-prisma-'));
     try {
       // A `fixtures.prisma` at workspace root with no `prisma/` parent.
       await fs.mkdir(path.join(tmp, 'apps/web'), { recursive: true });
@@ -949,7 +949,7 @@ describe('PrismaPlugin.onProjectLoaded', () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
     const path = await import('node:path');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-prisma-dir-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-prisma-dir-'));
     try {
       // No `schema.prisma`, but a `prisma/extensions.prisma`.
       await fs.mkdir(path.join(tmp, 'packages/prisma'), { recursive: true });
@@ -990,7 +990,7 @@ describe('PrismaPlugin.onProjectLoaded', () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
     const path = await import('node:path');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-prediscovered-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-prediscovered-'));
     try {
       await fs.mkdir(path.join(tmp, 'packages/prisma'), { recursive: true });
       const schemaPath = path.join(tmp, 'packages/prisma/schema.prisma');
@@ -1029,7 +1029,7 @@ describe('PrismaPlugin.onProjectLoaded', () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
     const path = await import('node:path');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-prediscovered-empty-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-prediscovered-empty-'));
     try {
       // workspaceRoot DOES contain a schema, but the orchestrator
       // says "I scanned and found none." The plugin must trust the
@@ -1066,7 +1066,7 @@ describe('PrismaPlugin.onProjectLoaded', () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
     const path = await import('node:path');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-prediscovered-load-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-prediscovered-load-'));
     try {
       await fs.mkdir(path.join(tmp, 'packages/prisma'), { recursive: true });
       const schemaPath = path.join(tmp, 'packages/prisma/schema.prisma');
@@ -1158,7 +1158,7 @@ describe('PrismaPlugin.onProjectLoaded', () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
     const path = await import('node:path');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-schemafolder-prediscover-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-schemafolder-prediscover-'));
     try {
       // Layout:
       //   prisma/schema.prisma           ← datasource (alphabetically last)
@@ -1234,7 +1234,7 @@ describe('PrismaPlugin.onProjectLoaded', () => {
     const fs = await import('node:fs/promises');
     const os = await import('node:os');
     const path = await import('node:path');
-    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'adorable-single-prediscover-'));
+    const tmp = await fs.mkdtemp(path.join(os.tmpdir(), 'veoable-single-prediscover-'));
     try {
       await fs.mkdir(path.join(tmp, 'prisma'), { recursive: true });
       const schemaPath = path.join(tmp, 'prisma/schema.prisma');

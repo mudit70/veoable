@@ -7,7 +7,7 @@ import { spawnSync } from 'node:child_process';
  * Default Node's `max-old-space-size` is computed from system RAM but
  * can be as low as ~1.7 GB on machines with ≤8 GB. ts-morph keeps a
  * full AST per source file in memory for cross-file resolution, and
- * adorable plus its language plugins easily exceed that on
+ * veoable plus its language plugins easily exceed that on
  * mid-to-large monorepos. Without intervention the run dies with
  * "Ineffective mark-compacts near heap limit" and a stack trace
  * users have no easy way to interpret.
@@ -18,7 +18,7 @@ import { spawnSync } from 'node:child_process';
  *
  * The heuristics:
  *   - Run the bump only when `process.argv[1]` looks like the
- *     adorable CLI entry point. Programmatic imports (tests,
+ *     veoable CLI entry point. Programmatic imports (tests,
  *     library consumers) must not trigger respawn.
  *   - Respect any heap flag the user already set, via
  *     `process.execArgv` or `NODE_OPTIONS`.
@@ -81,10 +81,10 @@ export function ensureHeap(): void {
 function isCliEntryPoint(entry: string): boolean {
   // Linked binaries from pnpm/npm point at one of:
   //   - …/dist/cli.js (direct invocation)
-  //   - …/.bin/adorable (symlink)
+  //   - …/.bin/veoable (symlink)
   // We accept either; tests' importing path (`…/__tests__/foo.test.ts`)
   // never matches.
-  return /(?:^|[/\\])(?:cli\.js|adorable)$/.test(entry);
+  return /(?:^|[/\\])(?:cli\.js|veoable)$/.test(entry);
 }
 
 function parseHeapMb(value: string | undefined): number | null {

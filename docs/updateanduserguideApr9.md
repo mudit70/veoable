@@ -129,7 +129,7 @@ Veoable is a **pnpm monorepo** consisting of **16 TypeScript ESM packages**, org
 
 | Package | Purpose |
 |---------|---------|
-| `@veoable/cli` | CLI entry point. `adorable analyze <path>` runs the full pipeline and prints human-readable flows. `adorable serve <graph.db>` starts the MCP server. Options: `--output`, `--format text\|json`, `--verbose`, `--max-call-depth`, `--exclude`. |
+| `@veoable/cli` | CLI entry point. `veoable analyze <path>` runs the full pipeline and prints human-readable flows. `veoable serve <graph.db>` starts the MCP server. Options: `--output`, `--format text\|json`, `--verbose`, `--max-call-depth`, `--exclude`. |
 | `@veoable/mcp-server` | MCP server exposing 8 tools for AI agent integration. Pure data server, no AI API key needed. |
 
 ### Placeholder Packages
@@ -161,8 +161,8 @@ Veoable is a **pnpm monorepo** consisting of **16 TypeScript ESM packages**, org
 ### Installation
 
 ```bash
-git clone https://github.com/mudit70/adorable.git
-cd adorable
+git clone https://github.com/mudit70/veoable.git
+cd veoable
 pnpm install
 pnpm build
 ```
@@ -223,10 +223,10 @@ For maximum accuracy, use `none` mode and stitch interactively:
 
 ```bash
 # 1. Analyze without stitching
-adorable analyze ./project --output graph.db --stitch-mode none
+veoable analyze ./project --output graph.db --stitch-mode none
 
 # 2. Start the server
-adorable serve graph.db
+veoable serve graph.db
 ```
 
 Then via MCP (Claude Code, Cursor) or REST API:
@@ -257,10 +257,10 @@ Each confirmed stitch stores an audit trail: who confirmed it (`human`, `ai`, or
 Analyze multiple repositories into the same database:
 
 ```bash
-adorable analyze ./frontend     --output project.db --repo-name frontend
-adorable analyze ./user-service --output project.db --repo-name user-api --clean
-adorable analyze ./post-service --output project.db --repo-name post-api --clean
-adorable serve project.db
+veoable analyze ./frontend     --output project.db --repo-name frontend
+veoable analyze ./user-service --output project.db --repo-name user-api --clean
+veoable analyze ./post-service --output project.db --repo-name post-api --clean
+veoable serve project.db
 ```
 
 Each repo's nodes carry a distinct `repository` name. The `--clean` flag deletes old nodes for that repo before re-inserting, so re-analysis is safe. Content-addressed IDs prevent collisions across repos.
@@ -301,16 +301,16 @@ Veoable exposes the knowledge graph via four serve modes. All modes use the same
 
 ```bash
 # 1. stdio MCP — for Claude Code, Cursor, Windsurf, Continue.dev
-adorable serve graph.db
+veoable serve graph.db
 
 # 2. HTTP MCP — for MCP clients that connect over the network
-adorable serve graph.db --transport http --port 3001
+veoable serve graph.db --transport http --port 3001
 
 # 3. REST API — for Ollama, OpenAI Codex, Lovable, LangChain, web UIs, curl
-adorable serve graph.db --rest --port 3001
+veoable serve graph.db --rest --port 3001
 
 # 4. Built-in chat — interactive chat with a local LLM
-adorable chat graph.db --model llama3
+veoable chat graph.db --model llama3
 ```
 
 | Mode | Flag | For |
@@ -331,7 +331,7 @@ To configure manually in another project:
 ```json
 {
   "mcpServers": {
-    "adorable": {
+    "veoable": {
       "command": "node",
       "args": ["packages/cli/dist/cli.js", "serve", "graph.db"]
     }
@@ -346,7 +346,7 @@ To configure manually in another project:
 For MCP clients that connect over HTTP instead of spawning a child process:
 
 ```bash
-adorable serve graph.db --transport http --port 3001
+veoable serve graph.db --transport http --port 3001
 ```
 
 The MCP protocol is exposed at `POST http://localhost:3001/mcp`. Configure your MCP client to point at this URL.
@@ -356,7 +356,7 @@ The MCP protocol is exposed at `POST http://localhost:3001/mcp`. Configure your 
 For LLMs and tools that don't speak MCP:
 
 ```bash
-adorable serve graph.db --rest --port 3001
+veoable serve graph.db --rest --port 3001
 ```
 
 Endpoints:
@@ -392,13 +392,13 @@ For interactive use without setting up a separate client:
 
 ```bash
 # With Ollama (default, localhost:11434)
-adorable chat graph.db --model llama3
+veoable chat graph.db --model llama3
 
 # With LM Studio (localhost:1234)
-adorable chat graph.db --llm http://localhost:1234/v1 --model qwen/qwen2.5-coder-14b
+veoable chat graph.db --llm http://localhost:1234/v1 --model qwen/qwen2.5-coder-14b
 
 # With a remote OpenAI-compatible API
-adorable chat graph.db --llm https://api.openai.com/v1 --model gpt-4
+veoable chat graph.db --llm https://api.openai.com/v1 --model gpt-4
 ```
 
 The chat orchestrator:
@@ -431,12 +431,12 @@ In LM Studio's MCP settings, add the Veoable server. Use absolute paths:
 ```json
 {
   "mcpServers": {
-    "adorable": {
+    "veoable": {
       "command": "node",
       "args": [
-        "/Users/you/projects/adorable/packages/cli/dist/cli.js",
+        "/Users/you/projects/veoable/packages/cli/dist/cli.js",
         "serve",
-        "/Users/you/projects/adorable/graph.db"
+        "/Users/you/projects/veoable/graph.db"
       ]
     }
   }
@@ -450,7 +450,7 @@ LM Studio will spawn the MCP server and make the tools available to the loaded m
 The simplest approach — no LM Studio MCP config needed:
 
 ```bash
-adorable chat graph.db --llm http://localhost:1234/v1 --model qwen/qwen2.5-coder-14b
+veoable chat graph.db --llm http://localhost:1234/v1 --model qwen/qwen2.5-coder-14b
 ```
 
 This connects directly to LM Studio's OpenAI-compatible API and handles the tool-calling loop. The tools execute locally against graph.db — LM Studio just provides the LLM.
@@ -460,7 +460,7 @@ This connects directly to LM Studio's OpenAI-compatible API and handles the tool
 Start the REST server and use LM Studio's chat with manual tool calls:
 
 ```bash
-adorable serve graph.db --rest --port 3001
+veoable serve graph.db --rest --port 3001
 ```
 
 **Tested models with LM Studio:**

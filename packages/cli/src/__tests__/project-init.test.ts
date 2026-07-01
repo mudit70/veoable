@@ -7,7 +7,7 @@ import { initProject } from '../project.js';
 let tmpRoot: string;
 
 beforeEach(() => {
-  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-init-'));
+  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-init-'));
 });
 
 afterEach(() => {

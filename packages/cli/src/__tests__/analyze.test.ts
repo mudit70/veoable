@@ -387,7 +387,7 @@ describe('parseArgs', () => {
 });
 
 // ──────────────────────────────────────────────────────────────────────
-// `adorable tools` — MCP tool listing (#158)
+// `veoable tools` — MCP tool listing (#158)
 // ──────────────────────────────────────────────────────────────────────
 
 describe('listMcpToolsByCategory', () => {
@@ -448,7 +448,7 @@ describe('printHelp', () => {
 
   it('routes "analyze" to the analyze-specific block', () => {
     const out = capture(() => printHelp('analyze'));
-    expect(out).toContain('adorable analyze');
+    expect(out).toContain('veoable analyze');
     expect(out).toContain('--max-call-depth');
     // Block-specific content; should NOT include serve-only flags.
     expect(out).not.toContain('--transport');
@@ -457,7 +457,7 @@ describe('printHelp', () => {
 
   it('routes "serve" to the serve-specific block', () => {
     const out = capture(() => printHelp('serve'));
-    expect(out).toContain('adorable serve');
+    expect(out).toContain('veoable serve');
     expect(out).toContain('--transport');
     expect(out).toContain('--project-config');
     // Should NOT include analyze-only flags.
@@ -466,7 +466,7 @@ describe('printHelp', () => {
 
   it('routes "chat" to the chat-specific block including the api-key resolution order', () => {
     const out = capture(() => printHelp('chat'));
-    expect(out).toContain('adorable chat');
+    expect(out).toContain('veoable chat');
     expect(out).toContain('--api-key');
     expect(out).toContain('API key resolution order');
     expect(out).toContain('OPENROUTER_API_KEY / OPENAI_API_KEY');
@@ -474,13 +474,13 @@ describe('printHelp', () => {
 
   it('routes "project" to the project-specific block listing both subcommands', () => {
     const out = capture(() => printHelp('project'));
-    expect(out).toContain('adorable project init');
-    expect(out).toContain('adorable project analyze');
+    expect(out).toContain('veoable project init');
+    expect(out).toContain('veoable project analyze');
   });
 
   it('routes "tools" to the tools-specific block', () => {
     const out = capture(() => printHelp('tools'));
-    expect(out).toContain('adorable tools');
+    expect(out).toContain('veoable tools');
   });
 
   it('falls back to the overview for an empty command (top-level --help path)', () => {
@@ -564,7 +564,7 @@ describe('runProjectInit + printInitGuidance', () => {
     // Stitch-rule tip with the canonical example.
     expect(out).toContain('"stripPrefix": "/api"');
     // Next-command instruction with --verbose --fresh.
-    expect(out).toContain(`adorable project analyze ${outputFile} --verbose --fresh`);
+    expect(out).toContain(`veoable project analyze ${outputFile} --verbose --fresh`);
   });
 });
 
@@ -712,7 +712,7 @@ describe('--output flag', () => {
   });
 
   it('writes a SQLite database to disk when dbPath is provided', async () => {
-    tmpFile = path.join(os.tmpdir(), `adorable-test-${Date.now()}.db`);
+    tmpFile = path.join(os.tmpdir(), `veoable-test-${Date.now()}.db`);
     const result = await analyze({ rootDir: STACK_FIXTURE, dbPath: tmpFile });
     result.store.close();
 
@@ -767,7 +767,7 @@ describe('analyze — loadProject without tsconfig', () => {
     // a project that can't even be loaded is NOT a fatal error at the
     // pipeline level; the CLI wraps `analyze` in a try/catch for any
     // truly unrecoverable errors.
-    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-no-tsconfig-'));
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-no-tsconfig-'));
     fs.writeFileSync(path.join(tmpDir, 'index.ts'), 'export const x = 1;');
     try {
       const result = await analyze({ rootDir: tmpDir });
@@ -787,7 +787,7 @@ describe('analyze — loadProject without tsconfig', () => {
 
 describe('discoverSourceFiles — test file exclusion', () => {
   it('excludes .test.ts and .spec.ts files', () => {
-    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-test-excl-'));
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-test-excl-'));
     fs.writeFileSync(path.join(tmpDir, 'app.ts'), 'export const x = 1;');
     fs.writeFileSync(path.join(tmpDir, 'app.test.ts'), 'test("x", () => {});');
     fs.writeFileSync(path.join(tmpDir, 'app.spec.ts'), 'test("x", () => {});');

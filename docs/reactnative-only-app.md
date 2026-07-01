@@ -198,13 +198,13 @@ import { FastapiPlugin } from '@veoable/framework-fastapi';
 Update the `LANGUAGE_REGISTRY` to only `ts` and `py`, and the framework list to the eight above. The orchestration loop in `analyze.ts` is plugin-agnostic — it just iterates whatever `discover.ts` returns — so nothing else changes.
 
 CLI surface to keep:
-- `adorable analyze <path>` — build the graph
-- `adorable analyze <path> -o graph.db` — persist
-- `adorable analyze <path> --format json` — machine-readable output
+- `veoable analyze <path>` — build the graph
+- `veoable analyze <path> -o graph.db` — persist
+- `veoable analyze <path> --format json` — machine-readable output
 
 CLI surface to drop:
-- `adorable project create/add-repo` (multi-repo)
-- `adorable chat` (NLP layer)
+- `veoable project create/add-repo` (multi-repo)
+- `veoable chat` (NLP layer)
 - `--transport http` and the MCP server (`packages/mcp-server`) — nice to have for Claude integration, but not needed for the core build
 
 ---
@@ -212,7 +212,7 @@ CLI surface to drop:
 ## 8. Suggested directory layout
 
 ```
-rn-adorable/
+rn-veoable/
 ├── packages/
 │   ├── schema/                  # copy from upstream, unchanged
 │   ├── plugin-api/              # copy, unchanged

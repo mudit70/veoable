@@ -20,7 +20,7 @@ let dbPath: string;
 const REPO_NAME = 'inc-test';
 
 beforeEach(() => {
-  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-inc-'));
+  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-inc-'));
   dbPath = path.join(tmpRoot, 'x.db');
   fs.mkdirSync(path.join(tmpRoot, 'src'), { recursive: true });
   fs.writeFileSync(path.join(tmpRoot, 'package.json'), JSON.stringify({ name: 'x' }));

@@ -27,7 +27,7 @@ function writeFile(rel: string, contents: string): void {
 }
 
 beforeEach(() => {
-  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-ws-paths-'));
+  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-ws-paths-'));
 });
 
 afterEach(() => {

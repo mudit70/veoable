@@ -9,7 +9,7 @@ let traceFile: string;
 let teardown: () => void = () => undefined;
 
 beforeEach(() => {
-  tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-trace-test-'));
+  tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-trace-test-'));
   traceFile = path.join(tmpDir, 'trace.jsonl');
 });
 

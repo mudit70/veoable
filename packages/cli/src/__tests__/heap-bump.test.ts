@@ -7,11 +7,11 @@ import { decideHeapBump } from '../heap-bump.js';
  * pin every reason the bump should or should not fire.
  */
 describe('decideHeapBump', () => {
-  const CLI_ENTRY = '/usr/local/lib/node_modules/.bin/adorable';
-  const CLI_DIST = '/Users/x/proj/adorable/packages/cli/dist/cli.js';
-  const NOT_CLI = '/Users/x/proj/adorable/packages/cli/src/__tests__/heap-bump.test.ts';
+  const CLI_ENTRY = '/usr/local/lib/node_modules/.bin/veoable';
+  const CLI_DIST = '/Users/x/proj/veoable/packages/cli/dist/cli.js';
+  const NOT_CLI = '/Users/x/proj/veoable/packages/cli/src/__tests__/heap-bump.test.ts';
 
-  it('respawns when entry is the linked adorable binary and no heap flag is set', () => {
+  it('respawns when entry is the linked veoable binary and no heap flag is set', () => {
     const d = decideHeapBump({}, [], ['node', CLI_ENTRY, 'analyze', './x']);
     expect(d.shouldRespawn).toBe(true);
     expect(d.heapMb).toBe(8192);
@@ -75,7 +75,7 @@ describe('decideHeapBump', () => {
   });
 
   it('matches the binary on Windows path separators', () => {
-    const d = decideHeapBump({}, [], ['node', 'C:\\Users\\x\\node_modules\\.bin\\adorable']);
+    const d = decideHeapBump({}, [], ['node', 'C:\\Users\\x\\node_modules\\.bin\\veoable']);
     expect(d.shouldRespawn).toBe(true);
   });
 

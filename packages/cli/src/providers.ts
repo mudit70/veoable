@@ -1,5 +1,5 @@
 /**
- * `adorable chat --provider <name>` — shortcut that maps a known provider
+ * `veoable chat --provider <name>` — shortcut that maps a known provider
  * name to its OpenAI-compatible base URL and conventional API-key env
  * variable. Saves users from memorizing URLs like
  * `https://openrouter.ai/api/v1`.

@@ -17,7 +17,7 @@ import {
 let tmpRoot: string;
 
 beforeEach(() => {
-  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-cross-resolve-'));
+  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-cross-resolve-'));
 });
 
 afterEach(() => {

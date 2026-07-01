@@ -4,14 +4,14 @@ import { idFor } from '../ids.js';
 describe('idFor', () => {
   describe('determinism', () => {
     it('produces the same id for the same inputs', () => {
-      const a = idFor.sourceFile({ repository: 'adorable', filePath: 'src/app.ts' });
-      const b = idFor.sourceFile({ repository: 'adorable', filePath: 'src/app.ts' });
+      const a = idFor.sourceFile({ repository: 'veoable', filePath: 'src/app.ts' });
+      const b = idFor.sourceFile({ repository: 'veoable', filePath: 'src/app.ts' });
       expect(a).toBe(b);
     });
 
     it('produces different ids for different inputs', () => {
-      const a = idFor.sourceFile({ repository: 'adorable', filePath: 'src/app.ts' });
-      const b = idFor.sourceFile({ repository: 'adorable', filePath: 'src/other.ts' });
+      const a = idFor.sourceFile({ repository: 'veoable', filePath: 'src/app.ts' });
+      const b = idFor.sourceFile({ repository: 'veoable', filePath: 'src/other.ts' });
       expect(a).not.toBe(b);
     });
 

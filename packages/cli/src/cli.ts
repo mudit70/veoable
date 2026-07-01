@@ -17,7 +17,7 @@ import { formatJson, formatText } from './format.js';
  * CLI entry point for Adorable.
  *
  * Usage:
- *   adorable analyze <path> [options]
+ *   veoable analyze <path> [options]
  *
  * Options:
  *   --output, -o <file>     Write SQLite graph to disk (default: :memory:)
@@ -56,7 +56,7 @@ export interface CliArgs {
    */
   provider: string;
   projectConfig: string;
-  /** Path to a graph DB. Used by `adorable install <client> --db <path>`. */
+  /** Path to a graph DB. Used by `veoable install <client> --db <path>`. */
   db: string;
   /** Auto-detect every installed LLM client + install into each. */
   auto: boolean;
@@ -208,8 +208,8 @@ function printOverview(): void {
 Adorable — end-to-end flow analysis for AI-written code
 
 Usage:
-  adorable <command> [args] [options]
-  adorable <command> --help        Show command-specific help
+  veoable <command> [args] [options]
+  veoable <command> --help        Show command-specific help
 
 Commands:
   analyze <path>           Analyze a project and print end-to-end flows
@@ -221,20 +221,20 @@ Commands:
   install <client|--auto>  Install Adorable as a skill in an LLM client (claude-code, cursor, continue, vscode, --auto)
 
 Quick start:
-  adorable analyze ./my-project --output graph.db
-  adorable serve graph.db
-  adorable chat graph.db --model anthropic/claude-sonnet-4 --api-key …
+  veoable analyze ./my-project --output graph.db
+  veoable serve graph.db
+  veoable chat graph.db --model anthropic/claude-sonnet-4 --api-key …
 
-Run \`adorable <command> --help\` for command-specific options and examples.
+Run \`veoable <command> --help\` for command-specific options and examples.
 `);
 }
 
 function printAnalyzeHelp(): void {
   console.log(`
-adorable analyze <path> — Analyze a project and print end-to-end flows.
+veoable analyze <path> — Analyze a project and print end-to-end flows.
 
 Usage:
-  adorable analyze <path> [options]
+  veoable analyze <path> [options]
 
 Options:
   --output, -o <file>     Write SQLite graph to disk (default: in-memory only)
@@ -249,29 +249,29 @@ Options:
   --help, -h              Show this help
 
 Examples:
-  adorable analyze .
-  adorable analyze ./my-project --output graph.db --verbose
-  adorable analyze . --format json > flows.json
-  adorable analyze ./api --output project.db --repo-name api --clean
+  veoable analyze .
+  veoable analyze ./my-project --output graph.db --verbose
+  veoable analyze . --format json > flows.json
+  veoable analyze ./api --output project.db --repo-name api --clean
 
 Environment:
   ADORABLE_HEAP_MB        V8 old-space heap budget in MB (default: 8192).
-                          adorable respawns node with --max-old-space-size
+                          veoable respawns node with --max-old-space-size
                           set to this value the first time the CLI starts,
                           unless NODE_OPTIONS already declares a heap flag.
   ADORABLE_NO_HEAP_BUMP   Set to "1" to opt out of the auto heap bump and
                           use whatever heap node was started with.
   NODE_OPTIONS            If this already contains --max-old-space-size,
-                          adorable respects it and skips the auto bump.
+                          veoable respects it and skips the auto bump.
 `);
 }
 
 function printServeHelp(): void {
   console.log(`
-adorable serve <graph.db> — Start an MCP or REST server backed by a pre-built graph.
+veoable serve <graph.db> — Start an MCP or REST server backed by a pre-built graph.
 
 Usage:
-  adorable serve <graph.db> [options]
+  veoable serve <graph.db> [options]
 
 Options:
   --project-root <path>   Project root for source file retrieval (default: graph.db parent dir)
@@ -287,19 +287,19 @@ Server modes (mutually exclusive):
   REST                    --rest — HTTP server with JSON endpoints under /api/* (no MCP)
 
 Examples:
-  adorable serve graph.db
-  adorable serve graph.db --transport http --port 3001
-  adorable serve graph.db --rest --port 3001
-  adorable serve musiccardapp.db --project-root /path/to/musiccardapp
+  veoable serve graph.db
+  veoable serve graph.db --transport http --port 3001
+  veoable serve graph.db --rest --port 3001
+  veoable serve musiccardapp.db --project-root /path/to/musiccardapp
 `);
 }
 
 function printChatHelp(): void {
   console.log(`
-adorable chat <graph.db> — Interactive chat with an LLM using the graph as context.
+veoable chat <graph.db> — Interactive chat with an LLM using the graph as context.
 
 Usage:
-  adorable chat <graph.db> [options]
+  veoable chat <graph.db> [options]
 
 Options:
   --provider <name>       Shortcut for --llm <url> + API-key env-var lookup.
@@ -329,28 +329,28 @@ API key resolution order:
 
 Examples:
   # Local Ollama, no API key needed:
-  adorable chat graph.db --model llama3
+  veoable chat graph.db --model llama3
 
   # OpenRouter — the fastest "try Adorable without installing an LLM client" path:
-  adorable chat graph.db --provider openrouter --model anthropic/claude-sonnet-4
+  veoable chat graph.db --provider openrouter --model anthropic/claude-sonnet-4
   # (with OPENROUTER_API_KEY set in env or .env)
 
   # OpenAI:
-  adorable chat graph.db --provider openai --model gpt-4o
+  veoable chat graph.db --provider openai --model gpt-4o
 
   # Custom endpoint (e.g. a self-hosted OpenAI-compatible proxy):
-  adorable chat graph.db --llm https://llm.mycompany.com/v1 --model my-model
+  veoable chat graph.db --llm https://llm.mycompany.com/v1 --model my-model
 `);
 }
 
 function printProjectHelp(): void {
   console.log(`
-adorable project — Manage multi-repo (monorepo) project configs.
+veoable project — Manage multi-repo (monorepo) project configs.
 
 Usage:
-  adorable project init <path>            Initialize a config from a monorepo root
-  adorable project analyze <config.json>  Analyze every repo in the config
-  adorable project watch <config.json>    Re-analyze affected repos on file changes
+  veoable project init <path>            Initialize a config from a monorepo root
+  veoable project analyze <config.json>  Analyze every repo in the config
+  veoable project watch <config.json>    Re-analyze affected repos on file changes
 
 Options (project analyze):
   --verbose, -v   Show per-file extraction progress
@@ -372,38 +372,38 @@ Options (project watch):
   --verbose, -v   Print per-change file path under the affected repo
 
 Examples:
-  adorable project init /path/to/monorepo
-  adorable project analyze myproject.project.json --verbose
-  adorable project analyze myproject.project.json --verbose --fresh
-  adorable project watch myproject.project.json --debounce 500
-  adorable project watch myproject.project.json --incremental --on-demand
+  veoable project init /path/to/monorepo
+  veoable project analyze myproject.project.json --verbose
+  veoable project analyze myproject.project.json --verbose --fresh
+  veoable project watch myproject.project.json --debounce 500
+  veoable project watch myproject.project.json --incremental --on-demand
 `);
 }
 
 function printInstallHelp(): void {
   console.log(`
-adorable install <client> — Install Adorable as a skill in an LLM client.
+veoable install <client> — Install Adorable as a skill in an LLM client.
 
 Usage:
-  adorable install <client> [--db <path>]
-  adorable install --auto   [--db <path>]
+  veoable install <client> [--db <path>]
+  veoable install --auto   [--db <path>]
 
 Supported clients:
-  claude-code   User-scoped. Writes SKILL.md to \$CLAUDE_CONFIG_DIR/skills/adorable/
-                (or ~/.claude/skills/adorable/ by default). Idempotent.
+  claude-code   User-scoped. Writes SKILL.md to \$CLAUDE_CONFIG_DIR/skills/veoable/
+                (or ~/.claude/skills/veoable/ by default). Idempotent.
                 Does NOT register an MCP server — run
-                  claude mcp add adorable -- adorable serve <project.db>
+                  claude mcp add veoable -- veoable serve <project.db>
                 separately once your project is analyzed.
 
   cursor        Project-scoped. Run from the project directory you want
-                Cursor to use. Writes .cursor/rules/adorable.mdc always,
+                Cursor to use. Writes .cursor/rules/veoable.mdc always,
                 and (when --db is provided) merges .cursor/mcp.json with
-                an "adorable" MCP server entry pointing at the graph DB.
+                an "veoable" MCP server entry pointing at the graph DB.
                 Existing servers in mcp.json are preserved.
 
   continue      User-scoped. Merges $CONTINUE_GLOBAL_DIR/config.json (or
-                ~/.continue/config.json by default) with a /adorable
-                slash command + (when --db is provided) an "adorable"
+                ~/.continue/config.json by default) with a /veoable
+                slash command + (when --db is provided) an "veoable"
                 mcpServers entry. Other customCommands and mcpServers
                 entries are preserved.
 
@@ -412,7 +412,7 @@ Supported clients:
                 Adorable section in .github/copilot-instructions.md
                 (existing instructions outside the markers are
                 preserved verbatim), and (when --db is provided) merges
-                .vscode/mcp.json with an "adorable" server entry.
+                .vscode/mcp.json with an "veoable" server entry.
 
   --auto        Detects each supported client by checking for its
                 expected config directory (~/.claude, .cursor/ in
@@ -421,7 +421,7 @@ Supported clients:
                 every one that's found. Clients without a detection
                 signal are listed as "skipped" so you can install
                 them manually with an explicit
-                \`adorable install <client>\`.
+                \`veoable install <client>\`.
 
 Options:
   --db <path>   For 'cursor' and 'continue': the graph DB to wire into
@@ -437,9 +437,9 @@ agent reads to know which question shapes belong to this tool.
 Typical workflow:
 
   cd ~/my-project
-  adorable project init .
-  adorable project analyze my-project.project.json
-  adorable install cursor --db my-project.db
+  veoable project init .
+  veoable project analyze my-project.project.json
+  veoable install cursor --db my-project.db
   # restart Cursor
 
 (More clients — ChatGPT custom GPT, --auto detection — land in follow-up slices.)
@@ -448,23 +448,23 @@ Typical workflow:
 
 function printToolsHelp(): void {
   console.log(`
-adorable tools — List MCP tools available to LLMs and clients.
+veoable tools — List MCP tools available to LLMs and clients.
 
 Usage:
-  adorable tools [options]
+  veoable tools [options]
 
 Options:
   --help, -h   Show this help
 
 Output groups every registered tool by category with its short description.
-This is the same set the MCP server exposes via \`adorable serve\`, so it
+This is the same set the MCP server exposes via \`veoable serve\`, so it
 matches what an LLM (Claude Code, etc.) sees when connected. No graph file
 is required — the listing is static across analyzed projects.
 `);
 }
 
 /**
- * MCP-tool categories as shown by `adorable tools`. Tools not listed here
+ * MCP-tool categories as shown by `veoable tools`. Tools not listed here
  * are appended under "Other"; the categorization is matched by exact tool
  * name, so adding a new tool to the MCP server requires no CLI change
  * unless you want it grouped — otherwise it surfaces under "Other".
@@ -491,7 +491,7 @@ interface ToolListing {
 /**
  * Enumerate every MCP tool the server registers, grouped by the
  * TOOL_CATEGORIES table. Exported for testing — the CLI command
- * `adorable tools` consumes this and prints it.
+ * `veoable tools` consumes this and prints it.
  *
  * @internal
  */
@@ -506,7 +506,7 @@ export async function listMcpToolsByCategory(): Promise<ToolListing> {
     const { server } = createMcpServer(store);
     const [clientTransport, serverTransport] = InMemoryTransport.createLinkedPair();
     await server.connect(serverTransport);
-    const client = new Client({ name: 'adorable-tools-cli', version: '0.1.0' });
+    const client = new Client({ name: 'veoable-tools-cli', version: '0.1.0' });
     await client.connect(clientTransport);
 
     const { tools } = await client.listTools();
@@ -558,7 +558,7 @@ async function printToolsList(): Promise<void> {
     console.log('');
   }
 
-  console.log('Connect via `adorable serve <graph.db>` to expose these tools to an LLM client.');
+  console.log('Connect via `veoable serve <graph.db>` to expose these tools to an LLM client.');
 }
 
 /** Truncate to a single line at most maxLen characters, '…' suffixed if cut. */
@@ -572,7 +572,7 @@ function oneLine(s: string, maxLen: number): string {
 // ──────────────────────────────────────────────────────────────────────
 
 /**
- * Run `adorable project init` for `rootDir`: detect workspace packages
+ * Run `veoable project init` for `rootDir`: detect workspace packages
  * and write `<projectname>.project.json`. Returns the written filename
  * (relative to cwd). Throws on failure. Caller is responsible for
  * printing the guidance block via `printInitGuidance`.
@@ -620,7 +620,7 @@ export function printInitGuidance(outputFile: string): void {
     `      "transform": { "stripPrefix": "/api" }\n` +
     `    }]\n\n` +
     `Next step:\n` +
-    `  adorable project analyze ${outputFile} --verbose --fresh`
+    `  veoable project analyze ${outputFile} --verbose --fresh`
   );
 }
 
@@ -660,7 +660,7 @@ export type MonorepoAnalyzeAction =
   | { kind: 'init-and-exit'; outputFile: string };
 
 /**
- * Decide what to do when `adorable analyze` is invoked against a
+ * Decide what to do when `veoable analyze` is invoked against a
  * potential monorepo root (#165). Returns one of the
  * {@link MonorepoAnalyzeAction} variants. May prompt the user when
  * stdin is a TTY and no project config already exists.
@@ -695,7 +695,7 @@ export async function handleMonorepoAnalyze(
     console.error(
       `Note: ${projectName} appears to be a monorepo and a project config already exists.\n` +
       `  To analyze using the config:\n` +
-      `    adorable project analyze ${configPath} --verbose --fresh\n` +
+      `    veoable project analyze ${configPath} --verbose --fresh\n` +
       `  Continuing with whole-root analyze (may OOM)…\n`
     );
     return { kind: 'continue-with-existing-config', configPath };
@@ -706,15 +706,15 @@ export async function handleMonorepoAnalyze(
     console.error(
       `Note: ${projectName} appears to be a monorepo (has workspace config).\n` +
       `  Analyzing the entire root may cause out-of-memory errors.\n` +
-      `  Consider: adorable project init ${rootDir}\n` +
-      `  Then:     adorable project analyze ${candidateConfig} --verbose\n`
+      `  Consider: veoable project init ${rootDir}\n` +
+      `  Then:     veoable project analyze ${candidateConfig} --verbose\n`
     );
     return { kind: 'continue-non-interactive' };
   }
 
   const prompt = opts.prompt ?? promptYesNo;
   const accept = await prompt(
-    `\nNote: ${projectName} appears to be a monorepo. Run \`adorable project init\` first to analyze each package separately?`,
+    `\nNote: ${projectName} appears to be a monorepo. Run \`veoable project init\` first to analyze each package separately?`,
     true,
   );
   if (accept) {
@@ -813,7 +813,7 @@ async function main(): Promise<void> {
   }
 
   if (args.command === 'install') {
-    // `adorable install <client>` — drop the Adorable skill into the
+    // `veoable install <client>` — drop the Adorable skill into the
     // named LLM client's expected location. claude-code + continue are
     // user-scoped (~/.claude/skills/, ~/.continue/config.json); cursor
     // is project-scoped (./.cursor/) so it honors cwd. `--auto` walks
@@ -868,8 +868,8 @@ async function main(): Promise<void> {
 
     const client = args.projectPath; // reuse positional
     if (client === '.' || client === '') {
-      console.error('Usage: adorable install <client> [--db <path>]');
-      console.error('       adorable install --auto [--db <path>]');
+      console.error('Usage: veoable install <client> [--db <path>]');
+      console.error('       veoable install --auto [--db <path>]');
       console.error(supportedList);
       process.exit(1);
     }
@@ -909,7 +909,7 @@ async function main(): Promise<void> {
   if (args.command === 'serve') {
     const dbPath = args.projectPath; // reuse the positional arg
     if (dbPath === '.') {
-      console.error('Usage: adorable serve <graph.db> [--project-root <path>]');
+      console.error('Usage: veoable serve <graph.db> [--project-root <path>]');
       process.exit(1);
     }
     try {
@@ -986,7 +986,7 @@ async function main(): Promise<void> {
   if (args.command === 'chat') {
     const dbPath = args.projectPath;
     if (dbPath === '.') {
-      console.error('Usage: adorable chat <graph.db> [--provider <name> | --llm <url>] [--model <name>]');
+      console.error('Usage: veoable chat <graph.db> [--provider <name> | --llm <url>] [--model <name>]');
       process.exit(1);
     }
     try {
@@ -1048,7 +1048,7 @@ async function main(): Promise<void> {
     const thirdArg = process.argv[process.argv.indexOf('project') + 2];
 
     if (subcommand === 'init') {
-      // `adorable project init /path/to/monorepo`
+      // `veoable project init /path/to/monorepo`
       const rootDir = thirdArg ?? '.';
       try {
         const outputFile = await runProjectInit(rootDir);
@@ -1061,9 +1061,9 @@ async function main(): Promise<void> {
     }
 
     if (subcommand === 'analyze') {
-      // `adorable project analyze config.json`
+      // `veoable project analyze config.json`
       if (!thirdArg) {
-        console.error('Usage: adorable project analyze <config.json> [--verbose] [--fresh]');
+        console.error('Usage: veoable project analyze <config.json> [--verbose] [--fresh]');
         process.exit(1);
       }
       try {
@@ -1081,10 +1081,10 @@ async function main(): Promise<void> {
     }
 
     if (subcommand === 'watch') {
-      // `adorable project watch config.json [--debounce N] [--on-demand] [--incremental]`
+      // `veoable project watch config.json [--debounce N] [--on-demand] [--incremental]`
       if (!thirdArg) {
         console.error(
-          'Usage: adorable project watch <config.json> [--debounce <ms>] [--on-demand] [--incremental] [--verbose]',
+          'Usage: veoable project watch <config.json> [--debounce <ms>] [--on-demand] [--incremental] [--verbose]',
         );
         process.exit(1);
       }
@@ -1159,13 +1159,13 @@ async function main(): Promise<void> {
       return;
     }
 
-    console.error('Usage: adorable project <init|analyze|watch> ...');
+    console.error('Usage: veoable project <init|analyze|watch> ...');
     process.exit(1);
   }
 
   if (args.command !== 'analyze') {
     console.error(`Unknown command: ${args.command}`);
-    console.error('Run "adorable --help" for usage.');
+    console.error('Run "veoable --help" for usage.');
     process.exit(1);
   }
 

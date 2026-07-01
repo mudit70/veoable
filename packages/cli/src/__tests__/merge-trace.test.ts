@@ -12,7 +12,7 @@ let traceFile: string;
 let store: SQLiteCanonicalGraphStore;
 
 beforeEach(() => {
-  tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-merge-trace-'));
+  tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-merge-trace-'));
   traceFile = path.join(tmpDir, 'trace.jsonl');
   store = new SQLiteCanonicalGraphStore(':memory:');
 

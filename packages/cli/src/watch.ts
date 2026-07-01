@@ -4,7 +4,7 @@ import chokidar from 'chokidar';
 import { analyzeProject, type ProjectConfig } from './project.js';
 
 /**
- * #294 Phase 1 — `adorable project watch`.
+ * #294 Phase 1 — `veoable project watch`.
  *
  * Long-running command: subscribes to file events under each repo's
  * source root, debounces, then re-analyzes only the affected repos

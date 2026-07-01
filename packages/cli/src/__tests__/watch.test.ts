@@ -6,7 +6,7 @@ import { watchProject } from '../watch.js';
 import { SQLiteCanonicalGraphStore } from '@veoable/graph-db';
 
 /**
- * Tests for #294 Phase 1 — `adorable project watch`.
+ * Tests for #294 Phase 1 — `veoable project watch`.
  *
  * Uses a temp-fs project with two trivial single-file repos. We
  * exercise the watch loop's invariants directly via the
@@ -70,7 +70,7 @@ async function waitForDirty(handle: { dirtyRepos: () => readonly string[] }, rep
 }
 
 beforeEach(() => {
-  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'adorable-watch-'));
+  tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'veoable-watch-'));
   // Two trivial repos.
   writeRepoFile('alpha', 'a.ts', 'export const a = 1;\n');
   writeRepoFile('beta', 'b.ts', 'export const b = 2;\n');

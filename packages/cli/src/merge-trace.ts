@@ -128,7 +128,7 @@ export function mergeTraceFiles(
   }
 
   if (batch.nodes.length > 0 || batch.edges.length > 0) {
-    store.commit(batch, makeBatchMeta('adorable.trace.merge'));
+    store.commit(batch, makeBatchMeta('veoable.trace.merge'));
   }
 
   return {
