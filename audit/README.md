@@ -17,10 +17,10 @@ steps.
 - **License audit:** ✅ compatible. All production dependency licenses
   are permissive (MIT, Apache-2.0, BSD-2/3-Clause, ISC, BlueOak-1.0.0,
   Unlicense). No GPL / AGPL / SSPL / EPL / MPL findings.
-- **License on veoable:** ⚠️ **discrepancy** — `mudit70/veoable`
-  already ships an Apache-2.0 `LICENSE`, but issue #516 refers to
-  adorable's MIT baseline. This is a policy call, not a compliance
-  finding. See [License policy discrepancy](#license-policy-discrepancy).
+- **License on veoable:** ✅ **decided** — veoable ships under
+  **Apache-2.0** (owner decision, 2026-06-30). adorable remains MIT.
+  Both are permissive and compatible with the dependency set. See
+  [F3](#f3--license-policy-discrepancy-apache-20-vs-mit--resolved).
 - **`.env` / credential files:** ✅ none tracked; correctly gitignored.
 - **Third-party attribution:** ⚠️ **needs targeted review** — no
   license-checker was run against the deep-history file set. First-cut
@@ -134,34 +134,34 @@ worth confirming). Consider adding a `pnpm licenses list --prod` step
 to CI so drift shows up as a broken build rather than a launch-day
 surprise.
 
-### F3 — License policy discrepancy: Apache-2.0 vs. MIT ⚠️
+### F3 — License policy discrepancy: Apache-2.0 vs. MIT ✅ resolved
 
-Issue #516 states `LICENSE is MIT (compatible with open-source
-release)` — this is accurate for `mudit70/adorable`, which ships MIT.
+**Decision (2026-06-30):** ship veoable under **Apache-2.0**.
 
-However, `mudit70/veoable`'s initial commit ships an **Apache-2.0**
-`LICENSE`. This is not a compliance finding (both are permissive and
-compatible with the dependency set), but the two projects will ship
-under different licenses if not reconciled.
+Rationale: Apache-2.0's explicit patent grant and per-file license
+identification are valuable for a project accepting third-party
+framework plugins. The production dependency set is fully compatible.
 
-**Options:**
+Implication: veoable and adorable ship under different licenses
+(MIT vs. Apache-2.0). Both are permissive; downstream consumers can
+combine either into their own projects. The `@veoable/migrate-from-adorable`
+migration command should call this out in its documentation so users
+know the license changes when they upgrade.
 
-1. **Ship veoable under Apache-2.0** — Apache-2.0 offers explicit
-   patent grant and per-file license identification, which some
-   downstream consumers prefer. The dependency set supports this.
-2. **Restore MIT on veoable** — matches adorable's baseline and
-   whatever expectations existing contributors had.
-3. **Dual-license both** (MIT + Apache-2.0) — common for pnpm-workspace
-   OSS projects; more paperwork for contributors (need CLA / DCO to
-   preserve both grants).
+Follow-up (not blocking this PR):
 
-The current README, CONTRIBUTING, and CHANGELOG all reference the
-Apache-2.0 file already in the repo. If you pick option 2, the LICENSE
-file needs to be swapped and the README's `License` section updated
-before merge.
+- Contributions should include an Apache-2.0 file header on new source
+  files once the mechanical rename lands (or be exempt by a documented
+  convention if we choose not to).
+- Consider adding a `NOTICE` file at the repo root before first release
+  — Apache-2.0 doesn't require one, but it's the conventional place to
+  aggregate third-party attributions once we identify any.
+- Contributor sign-off: whether to require DCO or CLA is a separate
+  decision (F4 follow-ups).
 
-**Owner decision required.** Non-blocking for the open-source
-readiness PR itself.
+The current README, CONTRIBUTING, and CHANGELOG already reference the
+Apache-2.0 file that shipped in the initial commit. No file swap
+needed.
 
 ### F4 — Third-party attribution: needs targeted review ⚠️
 
@@ -189,9 +189,8 @@ excluded.
 
 Ordered by blocking-ness for the public announcement:
 
-- [ ] **Decide license policy** — Apache-2.0 (current), MIT (adorable
-      baseline), or dual. Update `LICENSE`, `README.md`, and
-      `CHANGELOG.md` to match the decision. (F3)
+- [x] **License policy** — Apache-2.0 confirmed (2026-06-30). No file
+      changes required; docs already reference Apache-2.0. (F3)
 - [ ] **Run a real secret-scanner** on full git history before the
       first `@veoable/*` npm publish. Attach the report as an artifact
       on the rename PR. (F1)

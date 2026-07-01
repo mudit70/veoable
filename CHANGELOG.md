@@ -25,3 +25,7 @@ in the [`mudit70/adorable` CHANGELOG](https://github.com/mudit70/adorable/blob/m
 - Groundwork for the `adorable` → `veoable` rename tracked in
   [`mudit70/adorable#516`](https://github.com/mudit70/adorable/issues/516).
   Source drop and package-namespace rename land in a follow-up PR.
+- **License:** veoable ships under **Apache-2.0** (decision recorded
+  2026-06-30 during open-source readiness review). `mudit70/adorable`
+  remains MIT; the `@veoable/migrate-from-adorable` command will note
+  the license change during upgrade.
