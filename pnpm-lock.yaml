@@ -4563,6 +4563,21 @@ importers:
         specifier: ^2.0.0
         version: 2.1.9(@types/node@25.9.4)
 
+  packages/migrate-from-adorable:
+    devDependencies:
+      '@types/node':
+        specifier: ^25.5.2
+        version: 25.9.4
+      tsup:
+        specifier: ^8.0.0
+        version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
+      typescript:
+        specifier: ^5.5.0
+        version: 5.9.3
+      vitest:
+        specifier: ^2.0.0
+        version: 2.1.9(@types/node@25.9.4)
+
   packages/observability:
     dependencies:
       '@opentelemetry/api':
