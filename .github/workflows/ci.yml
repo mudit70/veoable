@@ -48,7 +48,7 @@ jobs:
       # native modules install cleanly. Harmless on Linux.
       - name: Pin Python 3.11 for node-gyp
         if: steps.workspace.outputs.present == 'true'
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
