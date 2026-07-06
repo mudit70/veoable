@@ -25,7 +25,7 @@
     "tree-sitter-wasms": "^0.1.13"
   },
   "devDependencies": {
-    "@types/node": "^25.5.2",
+    "@types/node": "^26.1.0",
     "tsup": "^8.0.0",
     "typescript": "^5.5.0",
     "vitest": "^2.0.0"

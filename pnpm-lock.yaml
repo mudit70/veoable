@@ -31,7 +31,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/agents:
     dependencies:
@@ -455,8 +455,8 @@ importers:
         version: 4.0.3
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -465,13 +465,13 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/core:
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -507,8 +507,8 @@ importers:
         specifier: ^2.0.0
         version: 2.8.0(@opentelemetry/api@1.9.1)
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -517,7 +517,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-actix:
     dependencies:
@@ -535,8 +535,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -548,7 +548,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-aiohttp:
     dependencies:
@@ -566,8 +566,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -579,7 +579,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-amqp091-go:
     dependencies:
@@ -597,8 +597,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -610,7 +610,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-amqplib:
     dependencies:
@@ -631,8 +631,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -644,7 +644,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-angular:
     dependencies:
@@ -665,8 +665,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -678,7 +678,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-apalis:
     dependencies:
@@ -696,8 +696,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -709,7 +709,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-asynq:
     dependencies:
@@ -727,8 +727,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -740,7 +740,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-aws-s3-ts:
     dependencies:
@@ -761,8 +761,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -774,7 +774,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-awsgo-s3:
     dependencies:
@@ -792,8 +792,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -805,7 +805,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-awsrust-s3:
     dependencies:
@@ -823,8 +823,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -836,7 +836,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-axios:
     dependencies:
@@ -857,8 +857,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -870,7 +870,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-axum:
     dependencies:
@@ -888,8 +888,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -901,7 +901,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-azure-blob-go:
     dependencies:
@@ -919,8 +919,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -932,7 +932,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-azure-blob-py:
     dependencies:
@@ -950,8 +950,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -963,7 +963,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-azure-blob-rs:
     dependencies:
@@ -981,8 +981,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -994,7 +994,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-azure-blob-ts:
     dependencies:
@@ -1015,8 +1015,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1028,7 +1028,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-boto3:
     dependencies:
@@ -1046,8 +1046,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1059,7 +1059,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-bullmq:
     dependencies:
@@ -1080,8 +1080,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1093,7 +1093,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-bundler:
     dependencies:
@@ -1111,8 +1111,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1124,7 +1124,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-celery:
     dependencies:
@@ -1142,8 +1142,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1155,7 +1155,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-chi:
     dependencies:
@@ -1173,8 +1173,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1186,7 +1186,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-diesel:
     dependencies:
@@ -1204,8 +1204,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1217,7 +1217,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-django:
     dependencies:
@@ -1235,8 +1235,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -1245,7 +1245,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-dom:
     dependencies:
@@ -1266,8 +1266,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1279,7 +1279,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-drizzle:
     dependencies:
@@ -1297,8 +1297,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1310,7 +1310,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-echo:
     dependencies:
@@ -1328,8 +1328,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1341,7 +1341,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-elastic-go:
     dependencies:
@@ -1359,8 +1359,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1372,7 +1372,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-elastic-py:
     dependencies:
@@ -1390,8 +1390,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1403,7 +1403,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-elastic-rs:
     dependencies:
@@ -1421,8 +1421,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1434,7 +1434,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-elastic-ts:
     dependencies:
@@ -1455,8 +1455,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1468,7 +1468,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-ent:
     dependencies:
@@ -1486,8 +1486,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1499,7 +1499,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-express:
     dependencies:
@@ -1520,8 +1520,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1533,7 +1533,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-fastapi:
     dependencies:
@@ -1551,8 +1551,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -1561,7 +1561,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-fastify:
     dependencies:
@@ -1582,8 +1582,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1595,7 +1595,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-fetch:
     dependencies:
@@ -1625,8 +1625,8 @@ importers:
         specifier: ^2.0.0
         version: 2.8.0(@opentelemetry/api@1.9.1)
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1638,7 +1638,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-fiber:
     dependencies:
@@ -1656,8 +1656,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1669,7 +1669,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-flask:
     dependencies:
@@ -1687,8 +1687,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -1697,7 +1697,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-gcs-go:
     dependencies:
@@ -1715,8 +1715,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1728,7 +1728,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-gcs-py:
     dependencies:
@@ -1746,8 +1746,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1759,7 +1759,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-gcs-rs:
     dependencies:
@@ -1777,8 +1777,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1790,7 +1790,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-gcs-ts:
     dependencies:
@@ -1811,8 +1811,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1824,7 +1824,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-gin:
     dependencies:
@@ -1842,8 +1842,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1855,7 +1855,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-gocli:
     dependencies:
@@ -1873,8 +1873,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1886,7 +1886,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-gohttp:
     dependencies:
@@ -1904,8 +1904,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1917,7 +1917,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-goredis:
     dependencies:
@@ -1935,8 +1935,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1948,7 +1948,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-gorm:
     dependencies:
@@ -1966,8 +1966,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -1979,7 +1979,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-gosqlx:
     dependencies:
@@ -2000,8 +2000,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2013,7 +2013,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-graphql:
     dependencies:
@@ -2034,8 +2034,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2047,7 +2047,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-grpc-node:
     dependencies:
@@ -2068,8 +2068,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2081,7 +2081,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-grpcgo:
     dependencies:
@@ -2099,8 +2099,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2112,7 +2112,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-grpcio:
     dependencies:
@@ -2130,8 +2130,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2143,7 +2143,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-hapi:
     dependencies:
@@ -2164,8 +2164,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2177,7 +2177,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-hono:
     dependencies:
@@ -2198,8 +2198,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2211,7 +2211,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-httpx:
     dependencies:
@@ -2229,8 +2229,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2242,7 +2242,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-ioredis:
     dependencies:
@@ -2263,8 +2263,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2276,7 +2276,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-jpa:
     dependencies:
@@ -2294,8 +2294,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2307,7 +2307,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-kafkago:
     dependencies:
@@ -2325,8 +2325,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2338,7 +2338,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-kafkajs:
     dependencies:
@@ -2359,8 +2359,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2372,7 +2372,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-kafkapy:
     dependencies:
@@ -2390,8 +2390,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2403,7 +2403,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-kafkars:
     dependencies:
@@ -2421,8 +2421,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2434,7 +2434,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-knex:
     dependencies:
@@ -2452,8 +2452,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2465,7 +2465,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-koa:
     dependencies:
@@ -2486,8 +2486,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2499,7 +2499,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-lapin:
     dependencies:
@@ -2517,8 +2517,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2530,7 +2530,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-laravel:
     dependencies:
@@ -2548,8 +2548,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2561,7 +2561,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-mcp-server:
     dependencies:
@@ -2582,8 +2582,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2595,7 +2595,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-mcp-server-rust:
     dependencies:
@@ -2613,8 +2613,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2626,7 +2626,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-memcache-go:
     dependencies:
@@ -2644,8 +2644,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2657,7 +2657,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-memcache-py:
     dependencies:
@@ -2675,8 +2675,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2688,7 +2688,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-memcache-rs:
     dependencies:
@@ -2706,8 +2706,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2719,7 +2719,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-memcache-ts:
     dependencies:
@@ -2740,8 +2740,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2753,7 +2753,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-mikroorm:
     dependencies:
@@ -2771,8 +2771,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2784,7 +2784,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-mongogo:
     dependencies:
@@ -2802,8 +2802,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2815,7 +2815,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-mongoose:
     dependencies:
@@ -2836,8 +2836,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2849,7 +2849,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-mongorust:
     dependencies:
@@ -2867,8 +2867,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2880,7 +2880,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-nestjs:
     dependencies:
@@ -2901,8 +2901,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2914,7 +2914,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-nextjs:
     dependencies:
@@ -2935,8 +2935,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2948,7 +2948,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-peewee:
     dependencies:
@@ -2966,8 +2966,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -2979,7 +2979,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-pika:
     dependencies:
@@ -2997,8 +2997,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3010,7 +3010,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-poem:
     dependencies:
@@ -3028,8 +3028,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3041,7 +3041,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-prisma:
     dependencies:
@@ -3074,8 +3074,8 @@ importers:
         specifier: ^2.0.0
         version: 2.8.0(@opentelemetry/api@1.9.1)
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3087,7 +3087,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-pycli:
     dependencies:
@@ -3105,8 +3105,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3118,7 +3118,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-pymongo:
     dependencies:
@@ -3136,8 +3136,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3149,7 +3149,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-react:
     dependencies:
@@ -3170,8 +3170,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3183,7 +3183,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-react-native:
     dependencies:
@@ -3204,8 +3204,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3217,7 +3217,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-react-query:
     dependencies:
@@ -3238,8 +3238,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -3248,7 +3248,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-react-router:
     dependencies:
@@ -3269,8 +3269,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3282,7 +3282,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-redirects:
     dependencies:
@@ -3297,8 +3297,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3310,7 +3310,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-redispy:
     dependencies:
@@ -3328,8 +3328,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3341,7 +3341,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-redisrs:
     dependencies:
@@ -3359,8 +3359,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3372,7 +3372,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-remix:
     dependencies:
@@ -3393,8 +3393,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3406,7 +3406,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-reqwest:
     dependencies:
@@ -3424,8 +3424,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3437,7 +3437,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-rocket:
     dependencies:
@@ -3455,8 +3455,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3468,7 +3468,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-rpc-client:
     dependencies:
@@ -3486,8 +3486,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3499,7 +3499,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-rustcli:
     dependencies:
@@ -3517,8 +3517,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3530,7 +3530,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-seaorm:
     dependencies:
@@ -3548,8 +3548,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3561,7 +3561,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-sequelize:
     dependencies:
@@ -3579,8 +3579,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3592,7 +3592,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-spring:
     dependencies:
@@ -3610,8 +3610,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3623,7 +3623,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-sqlalchemy:
     dependencies:
@@ -3641,8 +3641,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -3651,7 +3651,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-sqlmodel:
     dependencies:
@@ -3669,8 +3669,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3682,7 +3682,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-sqlx:
     dependencies:
@@ -3700,8 +3700,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3713,7 +3713,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-state-mgmt:
     dependencies:
@@ -3734,8 +3734,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3747,7 +3747,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-supabase:
     dependencies:
@@ -3768,8 +3768,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3781,7 +3781,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-svelte:
     dependencies:
@@ -3802,8 +3802,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3815,7 +3815,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-swr:
     dependencies:
@@ -3836,8 +3836,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -3846,7 +3846,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-tokio-spawn:
     dependencies:
@@ -3864,8 +3864,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3877,7 +3877,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-tonic:
     dependencies:
@@ -3895,8 +3895,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3908,7 +3908,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-tornado:
     dependencies:
@@ -3926,8 +3926,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3939,7 +3939,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-tortoise:
     dependencies:
@@ -3957,8 +3957,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -3970,7 +3970,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-trpc:
     dependencies:
@@ -3991,8 +3991,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -4004,7 +4004,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-trpc-client:
     dependencies:
@@ -4022,8 +4022,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -4032,7 +4032,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-typeorm:
     dependencies:
@@ -4053,8 +4053,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -4066,7 +4066,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-vue:
     dependencies:
@@ -4087,8 +4087,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -4097,7 +4097,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-warp:
     dependencies:
@@ -4115,8 +4115,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -4128,7 +4128,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-ws-go:
     dependencies:
@@ -4146,8 +4146,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -4159,7 +4159,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-ws-py:
     dependencies:
@@ -4177,8 +4177,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -4190,7 +4190,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-ws-rs:
     dependencies:
@@ -4208,8 +4208,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -4221,7 +4221,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/framework-ws-ts:
     dependencies:
@@ -4242,8 +4242,8 @@ importers:
         version: 27.0.2
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -4255,7 +4255,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/graph-db:
     dependencies:
@@ -4280,7 +4280,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/lang-go:
     dependencies:
@@ -4301,8 +4301,8 @@ importers:
         version: 0.24.7
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -4314,7 +4314,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/lang-html:
     dependencies:
@@ -4338,8 +4338,8 @@ importers:
         version: 0.24.7
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -4348,7 +4348,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/lang-java:
     dependencies:
@@ -4369,8 +4369,8 @@ importers:
         version: 0.24.7
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -4382,7 +4382,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/lang-php:
     dependencies:
@@ -4403,8 +4403,8 @@ importers:
         version: 0.24.7
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -4416,7 +4416,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/lang-py:
     dependencies:
@@ -4437,8 +4437,8 @@ importers:
         version: 0.24.7
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -4450,7 +4450,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/lang-rust:
     dependencies:
@@ -4471,8 +4471,8 @@ importers:
         version: 0.24.7
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -4484,7 +4484,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/lang-ts:
     dependencies:
@@ -4511,8 +4511,8 @@ importers:
         specifier: ^2.0.0
         version: 2.8.0(@opentelemetry/api@1.9.1)
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       '@veoable/graph-db':
         specifier: workspace:*
         version: link:../graph-db
@@ -4524,7 +4524,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/mcp-server:
     dependencies:
@@ -4551,8 +4551,8 @@ importers:
         version: 3.25.76
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -4561,13 +4561,13 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/migrate-from-adorable:
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -4576,7 +4576,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/observability:
     dependencies:
@@ -4591,8 +4591,8 @@ importers:
         version: 2.8.0(@opentelemetry/api@1.9.1)
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -4601,7 +4601,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/plugin-api:
     dependencies:
@@ -4610,8 +4610,8 @@ importers:
         version: link:../schema
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -4620,7 +4620,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/schema:
     dependencies:
@@ -4629,8 +4629,8 @@ importers:
         version: 3.25.76
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -4639,13 +4639,13 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/skill:
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -4654,13 +4654,13 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/trace:
     devDependencies:
       '@types/node':
-        specifier: ^25.5.2
-        version: 25.9.4
+        specifier: ^26.1.0
+        version: 26.1.0
       tsup:
         specifier: ^8.0.0
         version: 8.5.1(postcss@8.5.16)(typescript@5.9.3)
@@ -4669,7 +4669,7 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^2.0.0
-        version: 2.1.9(@types/node@25.9.4)
+        version: 2.1.9(@types/node@26.1.0)
 
   packages/ui:
     dependencies:
@@ -5258,8 +5258,8 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
-  '@types/node@25.9.4':
-    resolution: {integrity: sha512-dszCsrKb5U7ZsVZBWiHFklTloVl0mSEnWH/iZXfZUlI4rzCUnsvGmgqfuVRHL54ugE7/wRuxEIXRa2iMZ+BG6g==}
+  '@types/node@26.1.0':
+    resolution: {integrity: sha512-O0A1G3xPGy4w7AgQdAQYUlQ+BKk2Oovw8eRpofyp5KdBZULnbe+WqaOVNrm705SHphCiG4XHsACrSmPu1f+Kgw==}
 
   '@typescript-eslint/eslint-plugin@8.62.1':
     resolution: {integrity: sha512-4EQM77WgVNxj7OkL/5b/D/xZsw00G577+UriYTC7JF5opcF3T2AuoeY7ueLaZgSVjSgCS6yOAJB5bRGLPSJUzA==}
@@ -6329,8 +6329,8 @@ packages:
   ufo@1.6.4:
     resolution: {integrity: sha512-JFNbkD1Svwe0KvGi8GOeLcP4kAWQ609twvCdcHxq1oSL8svv39ZuSvajcD8B+5D0eL4+s1Is2D/O6KN3qcTeRA==}
 
-  undici-types@7.24.6:
-    resolution: {integrity: sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==}
+  undici-types@8.3.0:
+    resolution: {integrity: sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ==}
 
   unpipe@1.0.0:
     resolution: {integrity: sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==}
@@ -6828,15 +6828,15 @@ snapshots:
 
   '@types/better-sqlite3@7.6.13':
     dependencies:
-      '@types/node': 25.9.4
+      '@types/node': 26.1.0
 
   '@types/estree@1.0.9': {}
 
   '@types/json-schema@7.0.15': {}
 
-  '@types/node@25.9.4':
+  '@types/node@26.1.0':
     dependencies:
-      undici-types: 7.24.6
+      undici-types: 8.3.0
 
   '@typescript-eslint/eslint-plugin@8.62.1(@typescript-eslint/parser@8.62.1(eslint@9.39.4)(typescript@5.9.3))(eslint@9.39.4)(typescript@5.9.3)':
     dependencies:
@@ -6936,13 +6936,13 @@ snapshots:
       chai: 5.3.3
       tinyrainbow: 1.2.0
 
-  '@vitest/mocker@2.1.9(vite@5.4.21(@types/node@25.9.4))':
+  '@vitest/mocker@2.1.9(vite@5.4.21(@types/node@26.1.0))':
     dependencies:
       '@vitest/spy': 2.1.9
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 5.4.21(@types/node@25.9.4)
+      vite: 5.4.21(@types/node@26.1.0)
 
   '@vitest/pretty-format@2.1.9':
     dependencies:
@@ -8001,7 +8001,7 @@ snapshots:
 
   ufo@1.6.4: {}
 
-  undici-types@7.24.6: {}
+  undici-types@8.3.0: {}
 
   unpipe@1.0.0: {}
 
@@ -8013,13 +8013,13 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-node@2.1.9(@types/node@25.9.4):
+  vite-node@2.1.9(@types/node@26.1.0):
     dependencies:
       cac: 6.7.14
       debug: 4.4.3
       es-module-lexer: 1.7.0
       pathe: 1.1.2
-      vite: 5.4.21(@types/node@25.9.4)
+      vite: 5.4.21(@types/node@26.1.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -8031,19 +8031,19 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.4.21(@types/node@25.9.4):
+  vite@5.4.21(@types/node@26.1.0):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.16
       rollup: 4.62.2
     optionalDependencies:
-      '@types/node': 25.9.4
+      '@types/node': 26.1.0
       fsevents: 2.3.3
 
-  vitest@2.1.9(@types/node@25.9.4):
+  vitest@2.1.9(@types/node@26.1.0):
     dependencies:
       '@vitest/expect': 2.1.9
-      '@vitest/mocker': 2.1.9(vite@5.4.21(@types/node@25.9.4))
+      '@vitest/mocker': 2.1.9(vite@5.4.21(@types/node@26.1.0))
       '@vitest/pretty-format': 2.1.9
       '@vitest/runner': 2.1.9
       '@vitest/snapshot': 2.1.9
@@ -8059,11 +8059,11 @@ snapshots:
       tinyexec: 0.3.2
       tinypool: 1.1.1
       tinyrainbow: 1.2.0
-      vite: 5.4.21(@types/node@25.9.4)
-      vite-node: 2.1.9(@types/node@25.9.4)
+      vite: 5.4.21(@types/node@26.1.0)
+      vite-node: 2.1.9(@types/node@26.1.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 25.9.4
+      '@types/node': 26.1.0
     transitivePeerDependencies:
       - less
       - lightningcss
