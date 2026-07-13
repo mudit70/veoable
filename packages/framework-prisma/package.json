@@ -21,14 +21,14 @@
     "@veoable/observability": "workspace:*",
     "@veoable/plugin-api": "workspace:*",
     "@veoable/schema": "workspace:*",
-    "@mrleebo/prisma-ast": "^0.15.0",
+    "@mrleebo/prisma-ast": "^0.16.0",
     "ts-morph": "^27.0.0"
   },
   "devDependencies": {
     "@veoable/graph-db": "workspace:*",
     "@opentelemetry/api": "^1.9.0",
-    "@opentelemetry/sdk-trace-base": "^2.0.0",
-    "@opentelemetry/sdk-trace-node": "^2.0.0",
+    "@opentelemetry/sdk-trace-base": "^2.9.0",
+    "@opentelemetry/sdk-trace-node": "^2.9.0",
     "@types/node": "^25.5.2",
     "tsup": "^8.0.0",
     "typescript": "^5.5.0",
